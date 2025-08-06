@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b27rcach7jtbb"]
+
+[ext_resource type="Script" uid="uid://dcuxjaq8ixgn7" path="res://game/command/VictoryPlayerCommand.cs" id="1_00dnu"]
+
+[node name="VictoryPlayerCommand" type="Node"]
+script = ExtResource("1_00dnu")

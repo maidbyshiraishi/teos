@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://detvqwqihlaoj"]
+
+[ext_resource type="Script" uid="uid://d1cxwx853lomu" path="res://game/command/AddLifeCommand.cs" id="1_vfjx5"]
+
+[node name="AddLifeCommand" type="Node"]
+script = ExtResource("1_vfjx5")

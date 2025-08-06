@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj37pjdv2t2ib"]
+
+[ext_resource type="PackedScene" uid="uid://bovsu61evhei7" path="res://game/mob/mob.tscn" id="1_hxqsb"]
+[ext_resource type="Script" uid="uid://b3xevuwr6ojl3" path="res://game/mob/bullet/SmallBullet.cs" id="2_21uw2"]
+
+[node name="BulletRoot" instance=ExtResource("1_hxqsb")]
+collision_layer = 0
+collision_mask = 40
+script = ExtResource("2_21uw2")
+Pierce = false
+Attack = -1
+EnemyShot = false
+BulletModulate = Color(1, 1, 1, 1)
+BulletModulateBase = Color(1, 1, 1, 1)
+InitialLife = 1
+MaxLife = 1
+InitialApproach = 4.0
+
+[node name="ModulateTimer" type="Timer" parent="." index="1"]
+wait_time = 0.1
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="HitArea2D"]
+[connection signal="body_entered" from="." to="." method="HitNode2D"]
+[connection signal="timeout" from="ModulateTimer" to="." method="ModulateBlink"]

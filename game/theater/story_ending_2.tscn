@@ -1,0 +1,402 @@
+[gd_scene load_steps=40 format=3 uid="uid://r5mbwmmdg3hw"]
+
+[ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://common/theater/scroll_theater.tscn" id="1_oea57"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="2_cvu3c"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://common/command/change_bgm_command.tscn" id="3_d1l78"]
+[ext_resource type="PackedScene" uid="uid://nh4t5ecmenun" path="res://common/command/set_scroll_command.tscn" id="5_o8e4p"]
+[ext_resource type="PackedScene" uid="uid://bxxxgp6ky5syd" path="res://common/trigger/invisible_trigger.tscn" id="5_yivp3"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://common/trigger/visible_trigger.tscn" id="5_yk18a"]
+[ext_resource type="PackedScene" uid="uid://cn7no3720iabm" path="res://common/command/delay_command_container.tscn" id="6_ve6dq"]
+[ext_resource type="Texture2D" uid="uid://dulc6txv1m7rj" path="res://game/contents/image/player/rocket_maid.png" id="7_1crgx"]
+[ext_resource type="PackedScene" uid="uid://dok77dg7j1gew" path="res://common/command/play_animated_sprite_command.tscn" id="7_so84y"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="9_1ty71"]
+[ext_resource type="PackedScene" uid="uid://t1hjabn8aisl" path="res://common/trigger/animated_sprite_finished_trigger.tscn" id="9_so84y"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://common/command/open_screen_command.tscn" id="10_0nalh"]
+[ext_resource type="Texture2D" uid="uid://cxcclyafc3dc4" path="res://game/contents/theater/story_ending_2_1.png" id="11_kmiht"]
+[ext_resource type="AudioStream" uid="uid://bvxquv5u5dkif" path="res://game/contents/bgm/bgm11_song.ogg" id="13_wsncm"]
+[ext_resource type="PackedScene" uid="uid://cc0w3te8ab0ed" path="res://common/command/show_canvas_item_command.tscn" id="14_erue3"]
+[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://common/contents/theme/theme_small.tres" id="14_q5l2u"]
+[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://common/gui/CommandButton.cs" id="15_erue3"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="17_dpbwf"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://common/command/reference_command_container.tscn" id="18_ta5gv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo7bl"]
+atlas = ExtResource("7_1crgx")
+region = Rect2(0, 0, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xddof"]
+atlas = ExtResource("7_1crgx")
+region = Rect2(100, 0, 100, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0mqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo7bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xddof")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmiht"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsncm"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyvqn"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4xyg"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67h3t"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5l2u"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erue3"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpbwf"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5gv"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22uc1"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gapct"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60wa1"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(2200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvqh7"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(2400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkvkm"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(2600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiufc"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(2800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0shyw"]
+atlas = ExtResource("11_kmiht")
+region = Rect2(3000, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wsncm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmiht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsncm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyvqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4xyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67h3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5l2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erue3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpbwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22uc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gapct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60wa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvqh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkvkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oiufc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0shyw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="ScrollTheater" instance=ExtResource("1_oea57")]
+ScrollTime = 80.0
+metadata/_edit_horizontal_guides_ = [2176.0]
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="Background" parent="." index="0"]
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
+visible = false
+layout_mode = 0
+offset_top = 1928.0
+offset_right = 640.0
+offset_bottom = 2408.0
+color = Color(0.588235, 0.588235, 0.588235, 1)
+
+[node name="Contents" type="Control" parent="Path2D/Socket" index="0"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 1803.0
+grow_horizontal = 2
+pivot_offset = Vector2(320, 0)
+theme = ExtResource("2_cvu3c")
+
+[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 19.0
+offset_right = 639.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 30
+text = "宇宙から来たメイド
+vs
+鋼鉄の帝国"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" instance=ExtResource("3_d1l78")]
+
+[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 179.0
+offset_right = 639.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 30
+text = "製造
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label3" type="Label" parent="Path2D/Socket/Contents" index="3"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 412.0
+offset_right = 639.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 30
+text = "開発環境"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="4"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 226.0
+offset_right = 639.0
+offset_bottom = 284.0
+text = "白石
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/Socket/Contents" index="5"]
+position = Vector2(319, 323)
+sprite_frames = SubResource("SpriteFrames_v0mqf")
+autoplay = "default"
+frame_progress = 0.706491
+
+[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="6"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 395.0
+offset_right = 639.0
+offset_bottom = 427.0
+text = "(書くことないので水増し)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label4" type="Label" parent="Path2D/Socket/Contents" index="7"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 491.0
+offset_right = 639.0
+offset_bottom = 1372.0
+text = "Godot Engine 4.4
+Microsoft Windows XP/11
+Lubuntu 24.04 LTS
+Microsoft Office Home and Business 2021
+VisualStudio 2022 Community Edition
+MagicaVoxel
+SpriteStack
+Aseprite
+ClipStudio Paint 1.13
+FL Studio Signature
+MIXTURE
+EZDrummer
+Monster MIDI Pack
+Blues MIDI Pack
+Ultra Analog VA-1
+Ultra Analog VA-3
+Analog Orchestra
+Strum SG-2
+BLUE RHYTHMS
+KOMPLETE 13 SELECT
+bx_console Forcusrite SC
+bx_masterdesk
+DSP Motion
+VOICEVOX:四国めたん
+RX 8 Standard
+秀丸エディタ
+FreeMind
+VirtualBox
+LIFEBOOK UH93/G2
+AUDIOGRAM6
+XP-PEN Artist 12 (2nd Generation)
+GitHub
+Googleサイト
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="8" instance=ExtResource("5_yivp3")]
+position = Vector2(319, 1389)
+
+[node name="SetScrollCommand" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" instance=ExtResource("5_o8e4p")]
+
+[node name="DelayCommandContainer1" parent="Path2D/Socket/Contents/InvisibleTrigger" index="1" instance=ExtResource("6_ve6dq")]
+WaitTime = 1.0
+
+[node name="PlayAnimatedSpriteCommand" parent="Path2D/Socket/Contents/InvisibleTrigger/DelayCommandContainer1" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("7_so84y")]
+AnimatedSprite = NodePath("../../../AnimatedSprite2D2")
+AnimationName = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Path2D/Socket/Contents" index="9"]
+position = Vector2(319, 1555)
+sprite_frames = SubResource("SpriteFrames_wsncm")
+
+[node name="AnimationFinishedTrigger" parent="Path2D/Socket/Contents/AnimatedSprite2D2" index="0" instance=ExtResource("9_so84y")]
+
+[node name="ShowCanvasItemCommand" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("14_erue3")]
+Target = NodePath("../../../Label9")
+
+[node name="DelayCommandContainer" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger" index="1" instance=ExtResource("6_ve6dq")]
+WaitTime = 8.5
+
+[node name="OpenScreenCommand" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("10_0nalh")]
+Screen = "res://game/screen/title_screen.tscn"
+
+[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="10"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 1667.0
+offset_right = 607.0
+offset_bottom = 1755.0
+theme_override_font_sizes/font_size = 30
+text = "最後まで遊んでくれて、
+ありがとう！！"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="11"]
+visible = false
+layout_mode = 0
+offset_left = 31.0
+offset_top = 1755.0
+offset_right = 607.0
+offset_bottom = 1811.0
+theme_override_font_sizes/font_size = 30
+text = "完"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Focus" parent="Path2D/Socket/Contents" index="12" instance=ExtResource("5_yk18a")]
+position = Vector2(43, 38)
+
+[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus" index="0" instance=ExtResource("3_d1l78")]
+Command = 1
+Stream = ExtResource("13_wsncm")
+
+[node name="VisibleTrigger" parent="Path2D/Socket/Contents" index="13" instance=ExtResource("5_yk18a")]
+position = Vector2(447, 411)
+
+[node name="ShowCanvasItemCommand" parent="Path2D/Socket/Contents/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("14_erue3")]
+Target = NodePath("../../../../../Control/CloseButton")
+GrubFocus = true
+
+[node name="CloseButton" type="Button" parent="Control" index="0"]
+visible = false
+light_mask = 2
+layout_mode = 0
+offset_left = 520.0
+offset_top = 424.0
+offset_right = 624.0
+offset_bottom = 456.0
+theme = ExtResource("14_q5l2u")
+text = "タイトルに戻る"
+script = ExtResource("15_erue3")
+
+[node name="Exec" parent="Control/CloseButton" index="0" instance=ExtResource("9_1ty71")]
+
+[node name="PlaySeCommand" parent="Control/CloseButton/Exec" index="0" instance=ExtResource("17_dpbwf")]
+SeName = "menu_select"
+
+[node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("18_ta5gv")]
+Target = NodePath("../../../../CloseCommand")
+
+[node name="Focus" parent="Control/CloseButton" index="1" instance=ExtResource("9_1ty71")]
+
+[node name="PlaySeCommand" parent="Control/CloseButton/Focus" index="0" instance=ExtResource("17_dpbwf")]
+SeName = "menu_move"
+
+[node name="CloseCommand" parent="." index="5" instance=ExtResource("9_1ty71")]
+
+[node name="OpenScreenCommand" parent="CloseCommand" index="0" instance=ExtResource("10_0nalh")]
+Screen = "res://game/screen/title_screen.tscn"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkxkj3tmt5ak7"]
+
+[ext_resource type="PackedScene" uid="uid://bcop8mm2o6pye" path="res://game/screen/result_screen_root.tscn" id="1_uwq1d"]
+
+[node name="ResultScreen" instance=ExtResource("1_uwq1d")]
+
+[node name="Title" parent="." index="1"]
+text = "ハイスコア"

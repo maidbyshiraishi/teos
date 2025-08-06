@@ -1,0 +1,488 @@
+[gd_scene load_steps=60 format=3 uid="uid://c52cbgble83ja"]
+
+[ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://game/weapon/weapon_root.tscn" id="1_ywom7"]
+[ext_resource type="Texture2D" uid="uid://dhq8erd2tdr66" path="res://game/contents/image/weapon/gatling_gun.png" id="2_ng0ab"]
+[ext_resource type="PackedScene" uid="uid://cdou8vt06ok1y" path="res://game/mob/bullet/small_bullet_1.tscn" id="2_uo3bu"]
+[ext_resource type="Animation" uid="uid://dh22vhxeq1oxb" path="res://game/contents/state_machine/weapon/item.tres" id="11_ta2ht"]
+[ext_resource type="Animation" uid="uid://camfd07a5xaye" path="res://game/contents/state_machine/weapon/separate.tres" id="12_q8rf2"]
+[ext_resource type="Animation" uid="uid://ww7f1i78ij12" path="res://game/contents/state_machine/weapon/sleep.tres" id="13_nghib"]
+[ext_resource type="Animation" uid="uid://drlw0ppky2k28" path="res://game/contents/state_machine/weapon/idle.tres" id="13_wv7hj"]
+[ext_resource type="Animation" uid="uid://ewv6bfkr0wpm" path="res://game/contents/state_machine/weapon/broken.tres" id="14_pk4mc"]
+[ext_resource type="Animation" uid="uid://dsyq75fp8nl24" path="res://game/contents/state_machine/weapon/equip.tres" id="14_xxtlv"]
+[ext_resource type="Animation" uid="uid://b50gnru2tsie3" path="res://game/contents/state_machine/weapon/initialize.tres" id="16_b81e1"]
+[ext_resource type="Animation" uid="uid://cpti2lg0reo88" path="res://game/contents/state_machine/weapon/terminate.tres" id="17_ht7i7"]
+[ext_resource type="Animation" uid="uid://d3isqfmn11pi4" path="res://game/contents/state_machine/weapon/trash.tres" id="17_qqmp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmqtf"]
+size = Vector2(68, 24)
+
+[sub_resource type="Animation" id="Animation_wsl7o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:collision_layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pywht"]
+resource_name = "new_animation"
+length = 0.1
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-5, 0), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Fire"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["gun_shot"],
+"method": &"PlaySe"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_25rp5"]
+resource_name = "new_animation"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-2, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["gun_empty"],
+"method": &"PlaySe"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mxbay"]
+length = 0.25
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-2, 0), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Fire"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["gun_shot"],
+"method": &"PlaySe"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_uudi3"]
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.26, 0.39, 0.52, 0.63, 0.69, 0.74),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["gatling_gun_warmingup"],
+"method": &"PlaySe"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vtpn"]
+_data = {
+&"RESET": SubResource("Animation_wsl7o"),
+&"attack": SubResource("Animation_pywht"),
+&"broken": ExtResource("14_pk4mc"),
+&"empty": SubResource("Animation_25rp5"),
+&"enemy_attack": SubResource("Animation_mxbay"),
+&"equip": ExtResource("14_xxtlv"),
+&"idle": ExtResource("13_wv7hj"),
+&"initialize": ExtResource("16_b81e1"),
+&"item": ExtResource("11_ta2ht"),
+&"separate": ExtResource("12_q8rf2"),
+&"sleep": ExtResource("13_nghib"),
+&"terminate": ExtResource("17_ht7i7"),
+&"trash": ExtResource("17_qqmp2"),
+&"warmingup": SubResource("Animation_uudi3")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x7v68"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2hhte"]
+animation = &"broken"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4jupo"]
+animation = &"empty"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h25wm"]
+animation = &"enemy_attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bn5hl"]
+animation = &"broken"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2rq16"]
+animation = &"empty"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vgfa1"]
+animation = &"equip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0qlaa"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cr0y3"]
+animation = &"warmingup"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u37d5"]
+animation = &"equip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_exb1v"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ioywt"]
+animation = &"initialize"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6jfxl"]
+animation = &"item"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5a4rk"]
+animation = &"separate"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6j3n2"]
+animation = &"sleep"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_53y6u"]
+animation = &"terminate"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hy75q"]
+animation = &"trash"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t0vbx"]
+animation = &"warmingup"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1fsbw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0434y"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xg0ne"]
+advance_mode = 2
+advance_condition = &"empty"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_18oof"]
+advance_mode = 2
+advance_condition = &"empty"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3raur"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x3tr1"]
+advance_mode = 2
+advance_condition = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nd0xf"]
+advance_mode = 2
+advance_condition = &"press"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dflhc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s5v5g"]
+advance_mode = 2
+advance_condition = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4xgvu"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dkoq7"]
+advance_mode = 2
+advance_condition = &"press"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sgumi"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yt5dl"]
+advance_mode = 2
+advance_condition = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_alklq"]
+advance_mode = 2
+advance_condition = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yku4v"]
+advance_mode = 2
+advance_condition = &"empty"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0dnoi"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s5xis"]
+advance_mode = 2
+advance_condition = &"empty"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3t3od"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"empty"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_66trw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_co2wf"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s5a0e"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mebst"]
+states/End/position = Vector2(-437.295, 411)
+states/Start/position = Vector2(-437.295, 169)
+states/attack/node = SubResource("AnimationNodeAnimation_x7v68")
+states/attack/position = Vector2(235, 411)
+states/broken/node = SubResource("AnimationNodeAnimation_2hhte")
+states/broken/position = Vector2(389, 284.594)
+states/empty/node = SubResource("AnimationNodeAnimation_4jupo")
+states/empty/position = Vector2(389, 411)
+states/enemy_attack/node = SubResource("AnimationNodeAnimation_h25wm")
+states/enemy_attack/position = Vector2(785.705, 411)
+states/enemy_broken/node = SubResource("AnimationNodeAnimation_bn5hl")
+states/enemy_broken/position = Vector2(994.71, 284.594)
+states/enemy_empty/node = SubResource("AnimationNodeAnimation_2rq16")
+states/enemy_empty/position = Vector2(994.71, 411)
+states/enemy_equip/node = SubResource("AnimationNodeAnimation_vgfa1")
+states/enemy_equip/position = Vector2(785.705, 169)
+states/enemy_idle/node = SubResource("AnimationNodeAnimation_0qlaa")
+states/enemy_idle/position = Vector2(785.705, 284.594)
+states/enemy_warmingup/node = SubResource("AnimationNodeAnimation_cr0y3")
+states/enemy_warmingup/position = Vector2(555.705, 284.594)
+states/equip/node = SubResource("AnimationNodeAnimation_u37d5")
+states/equip/position = Vector2(235, 169)
+states/idle/node = SubResource("AnimationNodeAnimation_exb1v")
+states/idle/position = Vector2(235, 284.594)
+states/initialize/node = SubResource("AnimationNodeAnimation_ioywt")
+states/initialize/position = Vector2(-310.295, 169)
+states/item/node = SubResource("AnimationNodeAnimation_6jfxl")
+states/item/position = Vector2(-310.295, 411)
+states/separate/node = SubResource("AnimationNodeAnimation_5a4rk")
+states/separate/position = Vector2(-95, 169)
+states/sleep/node = SubResource("AnimationNodeAnimation_6j3n2")
+states/sleep/position = Vector2(-437.295, 284.594)
+states/terminate/node = SubResource("AnimationNodeAnimation_53y6u")
+states/terminate/position = Vector2(-95, 284.594)
+states/trash/node = SubResource("AnimationNodeAnimation_hy75q")
+states/trash/position = Vector2(-198, 411)
+states/warmingup/node = SubResource("AnimationNodeAnimation_t0vbx")
+states/warmingup/position = Vector2(54, 284.594)
+transitions = ["initialize", "item", SubResource("AnimationNodeStateMachineTransition_1fsbw"), "empty", "broken", SubResource("AnimationNodeStateMachineTransition_0434y"), "attack", "empty", SubResource("AnimationNodeStateMachineTransition_xg0ne"), "equip", "broken", SubResource("AnimationNodeStateMachineTransition_18oof"), "equip", "idle", SubResource("AnimationNodeStateMachineTransition_3raur"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_x3tr1"), "idle", "warmingup", SubResource("AnimationNodeStateMachineTransition_nd0xf"), "warmingup", "attack", SubResource("AnimationNodeStateMachineTransition_dflhc"), "warmingup", "idle", SubResource("AnimationNodeStateMachineTransition_s5v5g"), "enemy_equip", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_4xgvu"), "enemy_idle", "enemy_warmingup", SubResource("AnimationNodeStateMachineTransition_dkoq7"), "enemy_warmingup", "enemy_attack", SubResource("AnimationNodeStateMachineTransition_sgumi"), "enemy_warmingup", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_yt5dl"), "enemy_attack", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_alklq"), "enemy_attack", "enemy_empty", SubResource("AnimationNodeStateMachineTransition_yku4v"), "enemy_empty", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_0dnoi"), "enemy_equip", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_s5xis"), "initialize", "trash", SubResource("AnimationNodeStateMachineTransition_3t3od"), "separate", "terminate", SubResource("AnimationNodeStateMachineTransition_66trw"), "terminate", "initialize", SubResource("AnimationNodeStateMachineTransition_co2wf"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_s5a0e")]
+graph_offset = Vector2(4.70499, 130.306)
+
+[node name="GatlingGun" instance=ExtResource("1_ywom7")]
+self_modulate = Color(0, 0, 0, 1)
+collision_layer = 0
+EquipSe = "weapon_gatling_gun"
+Approach = 64.0
+MaxSpeed = 200.0
+AutoScrollSpeed = 70.0
+Bullet = ExtResource("2_uo3bu")
+NumOfBullets = 300
+HasEnemyStatemachine = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_fmqtf")
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(22, 0)
+texture = ExtResource("2_ng0ab")
+hframes = 2
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_5vtpn")
+}
+
+[node name="AnimationTree" parent="." index="4"]
+tree_root = SubResource("AnimationNodeStateMachine_mebst")
+parameters/conditions/empty = false
+parameters/conditions/press = false
+parameters/conditions/release = false
+
+[node name="Marker2D" type="Marker2D" parent="Muzzle" index="0"]
+position = Vector2(58, -6)

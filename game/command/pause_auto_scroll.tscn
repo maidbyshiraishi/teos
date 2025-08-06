@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4xmvxnlcoqxn"]
+
+[ext_resource type="Script" uid="uid://13vnh4xrb0v" path="res://game/command/PauseAutoScroll.cs" id="1_ua05e"]
+
+[node name="PauseAutoScroll" type="Node"]
+script = ExtResource("1_ua05e")

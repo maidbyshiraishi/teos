@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddsg81jfw7gew"]
+
+[ext_resource type="PackedScene" uid="uid://dyg37pipmdu78" path="res://game/screen/result_screen.tscn" id="1_833lb"]
+[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://common/gui/CommandButton.cs" id="2_5dmd3"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="3_edhxp"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="4_ct5ou"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://common/command/open_screen_command.tscn" id="5_mniuh"]
+
+[node name="ResultScreen" instance=ExtResource("1_833lb")]
+
+[node name="Title" parent="." index="1"]
+text = "最終結果発表"
+
+[node name="StartEnding" type="Button" parent="Control" index="0"]
+light_mask = 2
+layout_mode = 0
+offset_left = 112.0
+offset_top = 424.0
+offset_right = 320.0
+offset_bottom = 456.0
+size_flags_horizontal = 4
+text = "エンディングを見る"
+script = ExtResource("2_5dmd3")
+
+[node name="Exec" parent="Control/StartEnding" index="0" instance=ExtResource("3_edhxp")]
+
+[node name="PlaySeCommand" parent="Control/StartEnding/Exec" index="0" instance=ExtResource("4_ct5ou")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenScreenCommand" parent="Control/StartEnding/Exec" index="1" instance=ExtResource("5_mniuh")]
+Screen = "res://game/theater/story_ending_1.tscn"
+
+[node name="Focus" parent="Control/StartEnding" index="1" instance=ExtResource("3_edhxp")]
+
+[node name="PlaySeCommand" parent="Control/StartEnding/Focus" index="0" instance=ExtResource("4_ct5ou")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" index="0"]
+ProcessAlways = false
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" index="0"]
+ProcessAlways = false

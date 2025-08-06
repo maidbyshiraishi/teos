@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4x2qs78dvgg"]
+
+[ext_resource type="PackedScene" uid="uid://bovsu61evhei7" path="res://game/mob/mob.tscn" id="1_7k32k"]
+[ext_resource type="Script" uid="uid://83gfjyn3tyf4" path="res://game/weapon/MountPoint.cs" id="2_sdgyk"]
+[ext_resource type="PackedScene" uid="uid://d4nwxoqqvmpv2" path="res://game/mob/event_finder.tscn" id="3_nak7q"]
+[ext_resource type="PackedScene" uid="uid://drc08xeh4qw6l" path="res://game/mob/burial_area.tscn" id="4_m02kk"]
+
+[node name="Fighter" instance=ExtResource("1_7k32k")]
+
+[node name="BurialArea" parent="." index="1" instance=ExtResource("4_m02kk")]
+
+[node name="EventFinder" parent="." index="2" instance=ExtResource("3_nak7q")]
+
+[node name="MountPoint" type="Marker2D" parent="." index="3"]
+script = ExtResource("2_sdgyk")

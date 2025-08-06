@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr21qyu4bdr2s"]
+
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://game/mob/bullet/bullet_root.tscn" id="1_mgnin"]
+[ext_resource type="Texture2D" uid="uid://bp6e8qm2f7yee" path="res://game/contents/image/weapon/laser.png" id="3_revj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xljfl"]
+size = Vector2(600, 8)
+
+[node name="Laser" instance=ExtResource("1_mgnin")]
+Pierce = true
+Attack = -100
+InitialLife = 2
+MaxLife = 10
+InitialMaxSpeed = 200.0
+
+[node name="OnScreen" parent="." index="0"]
+scale = Vector2(1, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture_repeat = 2
+position = Vector2(300, 0)
+texture = ExtResource("3_revj7")
+region_enabled = true
+region_rect = Rect2(0, 0, 600, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(300, 0)
+shape = SubResource("RectangleShape2D_xljfl")

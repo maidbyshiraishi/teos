@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmuds72wmjm26"]
+
+[ext_resource type="Script" uid="uid://b3rhkyrdnseqc" path="res://game/stage/character_manager/ManualCharacterEnabler.cs" id="1_m8trh"]
+
+[node name="ManualCharacterEnabler" type="Node"]
+script = ExtResource("1_m8trh")

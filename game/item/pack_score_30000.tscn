@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwmkv8103jck0"]
+
+[ext_resource type="PackedScene" uid="uid://c87dtcgrwdrpw" path="res://game/item/item_pack_root.tscn" id="1_a36p2"]
+[ext_resource type="PackedScene" uid="uid://brd5hy1fa8yl5" path="res://game/item/item_score_10000.tscn" id="2_kaupj"]
+[ext_resource type="PackedScene" uid="uid://djwsrswe5c1vx" path="res://game/item/item_score_1000.tscn" id="3_2xcm1"]
+
+[node name="PackScore30000" instance=ExtResource("1_a36p2")]
+
+[node name="ItemScore10000_1" parent="." index="0" instance=ExtResource("2_kaupj")]
+
+[node name="ItemScore1000_1" parent="." index="1" instance=ExtResource("3_2xcm1")]
+
+[node name="ItemScore10000_2" parent="." index="2" instance=ExtResource("2_kaupj")]
+
+[node name="ItemScore1000_2" parent="." index="3" instance=ExtResource("3_2xcm1")]
+
+[node name="ItemScore10000_3" parent="." index="4" instance=ExtResource("2_kaupj")]
+
+[node name="ItemScore1000_3" parent="." index="5" instance=ExtResource("3_2xcm1")]

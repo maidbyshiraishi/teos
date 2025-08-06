@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djg2pv2holqob"]
+
+[ext_resource type="PackedScene" uid="uid://dbit4otpyw7v0" path="res://game/mob/bullet/homing_bullet_1.tscn" id="1_6oy5s"]
+
+[node name="HormingBullet" instance=ExtResource("1_6oy5s")]
+Attack = -3

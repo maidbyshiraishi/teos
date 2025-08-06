@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyg37pipmdu78"]
+
+[ext_resource type="PackedScene" uid="uid://bcop8mm2o6pye" path="res://game/screen/result_screen_root.tscn" id="1_1i8rs"]
+
+[node name="ResultScreen" instance=ExtResource("1_1i8rs")]
+
+[node name="Title" parent="." index="1"]
+text = "結果発表"
+
+[node name="Label" type="Label" parent="." index="6"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 56.0
+offset_right = 192.0
+offset_bottom = 80.0
+text = "今回スコア"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="." index="7"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 56.0
+offset_right = 448.0
+offset_bottom = 80.0

@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bafb1w4pq0jmv"]
+
+[ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://game/decoration/Decoration.cs" id="1_s23er"]
+[ext_resource type="Texture2D" uid="uid://tcttpka1554m" path="res://game/contents/image/decoration/danger_signal.png" id="2_uaxrb"]
+[ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://common/trigger/timer_trigger.tscn" id="3_pjmwj"]
+[ext_resource type="PackedScene" uid="uid://b2ykovbxsetao" path="res://game/command/terminate_character_command.tscn" id="4_uaxrb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prp6m"]
+atlas = ExtResource("2_uaxrb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ms6t"]
+atlas = ExtResource("2_uaxrb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_okrh2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prp6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ms6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="DangerSignal" type="Node2D"]
+script = ExtResource("1_s23er")
+SeName = "danger_signal"
+StaticOnScreen = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_okrh2")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="TimerTrigger" parent="Timer" instance=ExtResource("3_pjmwj")]
+
+[node name="TerminateCharacterCommand" parent="Timer/TimerTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("4_uaxrb")]
+Target = NodePath("../../..")

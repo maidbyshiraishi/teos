@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://205eyx0mpk2w"]
+
+[ext_resource type="Script" uid="uid://bmcudyrua5tiu" path="res://game/system/character_manager/VisibleOnScreenCharacterEnabler.cs" id="1_j5c60"]
+
+[node name="VisibleOnScreenCharacterEnabler" type="VisibleOnScreenNotifier2D"]
+script = ExtResource("1_j5c60")

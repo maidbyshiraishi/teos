@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://qyjfbwuobtjm"]
+
+[ext_resource type="PackedScene" uid="uid://c4x2qs78dvgg" path="res://game/mob/fighter.tscn" id="1_h1tyg"]
+[ext_resource type="Script" uid="uid://vk1fxroigyij" path="res://game/mob/enemy/EnemyRoot.cs" id="2_nghu1"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="3_l1wjw"]
+[ext_resource type="PackedScene" uid="uid://ca7v4ux5jvfh7" path="res://game/command/drop_item_command.tscn" id="4_cb3ku"]
+[ext_resource type="PackedScene" uid="uid://d1m64yhaigvik" path="res://game/command/add_score_command.tscn" id="4_fxnj0"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://game/command/show_floating_message_command.tscn" id="5_cb3ku"]
+
+[node name="EnemyRoot" instance=ExtResource("1_h1tyg")]
+collision_layer = 32
+collision_mask = 8
+script = ExtResource("2_nghu1")
+Attack = -1
+Flipped = false
+WeaponEquipEnabled = true
+WeaponRotationEnabled = false
+DirectAttackSe = ""
+AffectedByWeapon = false
+DefaultDirection = Vector2(-1, 0)
+PlaySeEquipWeapon = false
+BulletTargetLayer = 11
+BulletModulate = Color(1, 0.196078, 0.392157, 1)
+InitialLife = 1
+
+[node name="BurialArea" parent="." index="1"]
+visible = false
+
+[node name="EventFinder" parent="." index="2"]
+visible = false
+
+[node name="Dead" parent="." index="4" instance=ExtResource("3_l1wjw")]
+
+[node name="DropItemCommand" parent="Dead" index="0" instance=ExtResource("4_cb3ku")]
+
+[node name="AddScoreCommand" parent="Dead" index="1" instance=ExtResource("4_fxnj0")]
+Score = 300
+
+[node name="ShowFloatingMessageCommand" parent="Dead" index="2" instance=ExtResource("5_cb3ku")]
+Message = "+300"
+
+[connection signal="area_entered" from="." to="." method="EnteredArea2D"]

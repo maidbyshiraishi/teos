@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdou8vt06ok1y"]
+
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://game/mob/bullet/bullet_root.tscn" id="1_v3mag"]
+[ext_resource type="Texture2D" uid="uid://cfi0uvw4d3c1g" path="res://game/contents/image/weapon/small_bullet.png" id="2_g6y36"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe6dn"]
+atlas = ExtResource("2_g6y36")
+region = Rect2(0, 0, 34, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjyw4"]
+atlas = ExtResource("2_g6y36")
+region = Rect2(34, 0, 34, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8v4pi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe6dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjyw4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ymqj"]
+size = Vector2(20, 8)
+
+[node name="SmallBullet" instance=ExtResource("1_v3mag")]
+InitialMaxSpeed = 400.0
+
+[node name="OnScreen" parent="." index="0"]
+position = Vector2(0, -5.96046e-08)
+scale = Vector2(1, 0.3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_8v4pi")
+autoplay = "default"
+frame_progress = 0.0722323
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_5ymqj")

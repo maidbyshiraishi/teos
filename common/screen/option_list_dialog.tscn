@@ -1,0 +1,169 @@
+[gd_scene load_steps=10 format=3 uid="uid://djnbr5bus17iy"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="1_a47km"]
+[ext_resource type="Script" uid="uid://ccueitrspq0fx" path="res://common/screen/DialogRoot.cs" id="2_7w5ns"]
+[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://common/gui/CommandButton.cs" id="3_0n1as"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="4_ry2gn"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="5_8yhiq"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://common/command/open_dialog_command.tscn" id="6_8hqqm"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://common/command/close_dialog_command.tscn" id="8_640k4"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://common/trigger/key_releaseed_trigger.tscn" id="9_y84o5"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://common/command/reference_command_container.tscn" id="10_n7t16"]
+
+[node name="OptionListDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_a47km")
+script = ExtResource("2_7w5ns")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 64.0
+offset_right = 472.0
+offset_bottom = 360.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 168.0
+offset_top = 64.0
+offset_right = 472.0
+offset_bottom = 360.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 232.0
+offset_top = 80.0
+offset_right = 408.0
+offset_bottom = 112.0
+text = "設定一覧"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 280.0
+offset_top = 296.0
+offset_right = 360.0
+offset_bottom = 328.0
+text = "戻る"
+script = ExtResource("3_0n1as")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("4_ry2gn")]
+
+[node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("10_n7t16")]
+Target = NodePath("../../../../Close")
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("4_ry2gn")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_8yhiq")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="VolumeOptions" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 136.0
+offset_right = 384.0
+offset_bottom = 168.0
+text = "音量設定"
+script = ExtResource("3_0n1as")
+
+[node name="Exec" parent="Control/VolumeOptions" instance=ExtResource("4_ry2gn")]
+
+[node name="PlaySeCommand" parent="Control/VolumeOptions/Exec" instance=ExtResource("5_8yhiq")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenDialogCommand" parent="Control/VolumeOptions/Exec" instance=ExtResource("6_8hqqm")]
+DialogPath = "res://common/screen/volume_option_dialog.tscn"
+
+[node name="Focus" parent="Control/VolumeOptions" instance=ExtResource("4_ry2gn")]
+
+[node name="PlaySeCommand" parent="Control/VolumeOptions/Focus" instance=ExtResource("5_8yhiq")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="KeyOptions" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 184.0
+offset_right = 384.0
+offset_bottom = 216.0
+text = "操作設定"
+script = ExtResource("3_0n1as")
+
+[node name="Exec" parent="Control/KeyOptions" instance=ExtResource("4_ry2gn")]
+
+[node name="PlaySeCommand" parent="Control/KeyOptions/Exec" instance=ExtResource("5_8yhiq")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenDialogCommand" parent="Control/KeyOptions/Exec" instance=ExtResource("6_8hqqm")]
+DialogPath = "res://game/screen/key_option_dialog.tscn"
+
+[node name="Focus" parent="Control/KeyOptions" instance=ExtResource("4_ry2gn")]
+
+[node name="PlaySeCommand" parent="Control/KeyOptions/Focus" instance=ExtResource("5_8yhiq")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="ScreenOptions" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 232.0
+offset_right = 384.0
+offset_bottom = 264.0
+text = "画面設定"
+script = ExtResource("3_0n1as")
+
+[node name="Exec" parent="Control/ScreenOptions" instance=ExtResource("4_ry2gn")]
+
+[node name="PlaySeCommand" parent="Control/ScreenOptions/Exec" instance=ExtResource("5_8yhiq")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenDialogCommand" parent="Control/ScreenOptions/Exec" instance=ExtResource("6_8hqqm")]
+DialogPath = "res://common/screen/screen_option_dialog.tscn"
+
+[node name="Focus" parent="Control/ScreenOptions" instance=ExtResource("4_ry2gn")]
+
+[node name="PlaySeCommand" parent="Control/ScreenOptions/Focus" instance=ExtResource("5_8yhiq")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="EscapeKey" parent="." instance=ExtResource("9_y84o5")]
+ActionName = "ui_cancel"
+
+[node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("10_n7t16")]
+Target = NodePath("../../Close")
+
+[node name="OptionKey" parent="." instance=ExtResource("9_y84o5")]
+ActionName = "option"
+
+[node name="ReferenceCommandContainer" parent="OptionKey" node_paths=PackedStringArray("Target") instance=ExtResource("10_n7t16")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("4_ry2gn")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_8yhiq")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("8_640k4")]

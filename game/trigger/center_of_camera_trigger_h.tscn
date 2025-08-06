@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn80wyxggg52h"]
+
+[ext_resource type="Script" uid="uid://q7r8w0rit8po" path="res://common/trigger/TriggerArea2D.cs" id="1_26fyk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26fyk"]
+size = Vector2(64, 16)
+
+[node name="CenterOfCameraTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 512
+script = ExtResource("1_26fyk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_26fyk")
+debug_color = Color(1, 1, 0, 1)
+
+[connection signal="area_entered" from="." to="." method="Exec"]

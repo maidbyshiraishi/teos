@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://vugt6smhadx8"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="1_uu42n"]
+[ext_resource type="Script" uid="uid://ccueitrspq0fx" path="res://common/screen/DialogRoot.cs" id="2_015eg"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="2_5461d"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="3_41fmg"]
+[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://common/gui/CommandButton.cs" id="3_tiwav"]
+[ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://common/command/resume_bgm_command.tscn" id="4_e6yyl"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://common/command/close_dialog_command.tscn" id="5_ey1cc"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://common/trigger/visible_trigger.tscn" id="6_j3hgl"]
+[ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://common/command/pause_bgm_command.tscn" id="7_qoa1w"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://common/trigger/key_releaseed_trigger.tscn" id="8_ai80o"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://common/command/button_pressed_command.tscn" id="9_wuxv0"]
+
+[node name="PauseDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_uu42n")
+script = ExtResource("2_015eg")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 168.0
+offset_right = 448.0
+offset_bottom = 344.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 168.0
+offset_right = 448.0
+offset_bottom = 344.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 200.0
+offset_right = 448.0
+offset_bottom = 230.0
+text = "一時停止"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+offset_top = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 280.0
+offset_top = 240.0
+offset_right = 360.0
+offset_bottom = 272.0
+text = "戻る"
+script = ExtResource("3_tiwav")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("2_5461d")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("3_41fmg")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="ResumeBgmCommand" parent="Control/Back/Exec" instance=ExtResource("4_e6yyl")]
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("5_ey1cc")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("2_5461d")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("3_41fmg")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="Focus" parent="." instance=ExtResource("6_j3hgl")]
+position = Vector2(216, 192)
+
+[node name="PauseBgmCommand" parent="Focus" instance=ExtResource("7_qoa1w")]
+
+[node name="KeyReleaseedTrigger" parent="." instance=ExtResource("8_ai80o")]
+ActionName = "pause"
+
+[node name="ButtonPressedCommand" parent="KeyReleaseedTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("9_wuxv0")]
+Target = NodePath("../../Control/Back")
+
+[node name="EscapeKey" parent="." instance=ExtResource("8_ai80o")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("9_wuxv0")]
+Target = NodePath("../../Control/Back")

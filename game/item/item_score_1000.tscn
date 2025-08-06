@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://djwsrswe5c1vx"]
+
+[ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://game/item/item_root.tscn" id="1_pelss"]
+[ext_resource type="Texture2D" uid="uid://buugjqic56mul" path="res://game/contents/image/item/score1000.png" id="2_mknq5"]
+[ext_resource type="PackedScene" uid="uid://d1m64yhaigvik" path="res://game/command/add_score_command.tscn" id="3_vtpnm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5khr"]
+atlas = ExtResource("2_mknq5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebabi"]
+atlas = ExtResource("2_mknq5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gool"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5khr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebabi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eqmqs"]
+radius = 80.0
+
+[node name="ItemScore1000" instance=ExtResource("1_pelss")]
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_1gool")
+autoplay = "default"
+frame_progress = 0.122266
+
+[node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
+shape = SubResource("CircleShape2D_eqmqs")
+
+[node name="Timer" parent="." index="4"]
+wait_time = 0.2
+
+[node name="AddScoreCommand" parent="." index="5" instance=ExtResource("3_vtpnm")]
+Score = 1000
+
+[node name="PlaySeCommand" parent="." index="6"]
+SeName = "item_score"
+
+[node name="ShowFloatingMessageCommand" parent="." index="7"]
+Message = "+1000"

@@ -1,0 +1,329 @@
+[gd_scene load_steps=15 format=3 uid="uid://3r16tce2nd2t"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="1_dgins"]
+[ext_resource type="Texture2D" uid="uid://si3xgb2yh3n2" path="res://game/contents/screen/key_option_dialog/swap.png" id="2_1qi7l"]
+[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://common/gui/CommandButton.cs" id="2_3h2oq"]
+[ext_resource type="PackedScene" uid="uid://b0u0fyqn1oqdg" path="res://game/command/load_key_options_command.tscn" id="2_b7ksl"]
+[ext_resource type="Script" uid="uid://df5mlk8jlyrud" path="res://game/screen/KeyOptionDialog.cs" id="2_jahy0"]
+[ext_resource type="PackedScene" uid="uid://cu6skmjvn6qt1" path="res://game/command/save_key_options_command.tscn" id="2_o5guw"]
+[ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://common/command/update_dialog_screen_command.tscn" id="2_q4wlk"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="4_h8vmb"]
+[ext_resource type="PackedScene" uid="uid://dy1dvjhw72vd8" path="res://game/command/reset_default_key_options_command.tscn" id="5_dog2l"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="5_kjl5n"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://common/command/close_dialog_command.tscn" id="5_wq4oo"]
+[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://common/contents/theme/theme_small.tres" id="11_eljme"]
+[ext_resource type="Script" uid="uid://c2n2sbxnj7xyb" path="res://common/gui/CommandHSlider.cs" id="13_2wxud"]
+[ext_resource type="PackedScene" uid="uid://c1rbo6273ktjc" path="res://common/command/open_file_manager_command.tscn" id="14_2nrta"]
+
+[node name="KeyOptionDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_dgins")
+script = ExtResource("2_jahy0")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 624.0
+offset_bottom = 416.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 624.0
+offset_bottom = 416.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 224.0
+offset_top = 48.0
+offset_right = 416.0
+offset_bottom = 78.0
+text = "操作設定"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GamePad" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 96.0
+offset_right = 296.0
+offset_bottom = 118.0
+text = "ゲームパッド設定"
+horizontal_alignment = 1
+
+[node name="Sensitivity" type="Label" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 96.0
+offset_right = 584.0
+offset_bottom = 118.0
+text = "ターゲット移動速度"
+horizontal_alignment = 1
+
+[node name="TargetSensitivity" type="Label" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 136.0
+offset_right = 440.0
+offset_bottom = 158.0
+text = "スティック"
+horizontal_alignment = 2
+
+[node name="MouseSensitivity" type="Label" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 168.0
+offset_right = 440.0
+offset_bottom = 190.0
+text = "マウス"
+horizontal_alignment = 2
+
+[node name="PlayerMove" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 240.0
+offset_right = 176.0
+offset_bottom = 264.0
+text = "主人公移動"
+horizontal_alignment = 1
+
+[node name="TargetMove" type="Label" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 240.0
+offset_right = 328.0
+offset_bottom = 262.0
+text = "ターゲット移動"
+horizontal_alignment = 1
+
+[node name="PlayerMoveStick" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 208.0
+offset_right = 184.0
+offset_bottom = 230.0
+text = "左スティック"
+horizontal_alignment = 1
+
+[node name="TargetMoveStick" type="Label" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 208.0
+offset_right = 328.0
+offset_bottom = 230.0
+text = "右スティック"
+horizontal_alignment = 1
+
+[node name="Swap2" type="Sprite2D" parent="."]
+position = Vector2(176, 192)
+scale = Vector2(1.65323, 1)
+texture = ExtResource("2_1qi7l")
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+offset_top = -37.0
+offset_bottom = -37.0
+
+[node name="SwapStick" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 96.0
+offset_top = 173.0
+offset_right = 256.0
+offset_bottom = 205.0
+text = "設定入れ替え"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/SwapStick" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/SwapStick/Exec" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="Focus" parent="Control/SwapStick" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/SwapStick/Focus" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="TargetSensitivity" type="HSlider" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 448.0
+offset_top = 173.0
+offset_right = 600.0
+offset_bottom = 197.0
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 1.0
+script = ExtResource("13_2wxud")
+
+[node name="Focus" parent="Control/TargetSensitivity" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/TargetSensitivity/Focus" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="MouseSensitivity" type="HSlider" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 448.0
+offset_top = 205.0
+offset_right = 600.0
+offset_bottom = 229.0
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 1.0
+script = ExtResource("13_2wxud")
+
+[node name="Focus" parent="Control/MouseSensitivity" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/MouseSensitivity/Focus" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 48.0
+offset_top = 341.0
+offset_right = 304.0
+offset_bottom = 373.0
+text = "保存して戻る"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="SaveKeyOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("2_o5guw")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Back/Exec" instance=ExtResource("2_q4wlk")]
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("5_wq4oo")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="ResetSensitivity" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 237.0
+offset_right = 592.0
+offset_bottom = 269.0
+theme = ExtResource("11_eljme")
+text = "ターゲット移動速度のみリセット"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/ResetSensitivity" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/ResetSensitivity/Exec" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="Focus" parent="Control/ResetSensitivity" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/ResetSensitivity/Focus" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="Undo" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 48.0
+offset_top = 389.0
+offset_right = 304.0
+offset_bottom = 421.0
+text = "前回保存した値にリセット"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/Undo" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Undo/Exec" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="LoadKeyOptionsCommand" parent="Control/Undo/Exec" instance=ExtResource("2_b7ksl")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" instance=ExtResource("2_q4wlk")]
+
+[node name="Focus" parent="Control/Undo" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Undo/Focus" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="Reset" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 389.0
+offset_right = 592.0
+offset_bottom = 421.0
+text = "ゲームの初期値にリセット"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/Reset" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Reset/Exec" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="ResetDefaultKeyOptionsCommand" parent="Control/Reset/Exec" instance=ExtResource("5_dog2l")]
+
+[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" instance=ExtResource("2_q4wlk")]
+
+[node name="Focus" parent="Control/Reset" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/Reset/Focus" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="OpenFileManager" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 341.0
+offset_right = 592.0
+offset_bottom = 373.0
+text = "データフォルダを開く"
+script = ExtResource("2_3h2oq")
+
+[node name="Exec" parent="Control/OpenFileManager" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("14_2nrta")]
+
+[node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" instance=ExtResource("4_h8vmb")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[connection signal="pressed" from="Control/SwapStick" to="." method="SwapStick"]
+[connection signal="value_changed" from="Control/TargetSensitivity" to="." method="TargetSensitivityValueChanged"]
+[connection signal="value_changed" from="Control/MouseSensitivity" to="." method="MouseSensitivityValueChanged"]
+[connection signal="pressed" from="Control/ResetSensitivity" to="." method="ResetSensitivity"]

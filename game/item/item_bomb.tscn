@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://brysj8hlpanae"]
+
+[ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://game/item/item_root.tscn" id="1_ngonf"]
+[ext_resource type="Texture2D" uid="uid://bo7j2xdbartcv" path="res://game/contents/image/item/bomb.png" id="2_yt5db"]
+[ext_resource type="PackedScene" uid="uid://dm1ew8f4l8o0o" path="res://game/command/sweep_command.tscn" id="3_owwf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oxo8"]
+atlas = ExtResource("2_yt5db")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rseqb"]
+atlas = ExtResource("2_yt5db")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23k5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oxo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rseqb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_owwf4"]
+radius = 32.0
+
+[node name="ItemBomb" instance=ExtResource("1_ngonf")]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_23k5o")
+autoplay = "default"
+frame_progress = 0.523312
+
+[node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
+shape = SubResource("CircleShape2D_owwf4")
+
+[node name="SweepCommand" parent="." index="5" instance=ExtResource("3_owwf4")]
+SweepTargetGroup = "EnemyGroup"
+
+[node name="PlaySeCommand" parent="." index="6"]
+SeName = "item_bomb"
+
+[node name="ShowFloatingMessageCommand" parent="." index="7"]
+Message = "ぼんばー"

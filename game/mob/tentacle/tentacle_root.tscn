@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tv7swyqpmfi2"]
+
+[ext_resource type="Script" uid="uid://ogawdofk04ge" path="res://game/mob/tentacle/TentacleRoot.cs" id="1_5s87m"]
+
+[node name="TentacleRoot" type="Node2D"]
+script = ExtResource("1_5s87m")

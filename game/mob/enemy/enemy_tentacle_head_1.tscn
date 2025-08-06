@@ -1,0 +1,193 @@
+[gd_scene load_steps=30 format=3 uid="uid://dmstso2ktftv4"]
+
+[ext_resource type="PackedScene" uid="uid://qyjfbwuobtjm" path="res://game/mob/enemy/enemy_root.tscn" id="1_abs5b"]
+[ext_resource type="Script" uid="uid://cwqoe8km5pat" path="res://game/mob/enemy/EnemyTentacleHead1.cs" id="2_abs5b"]
+[ext_resource type="Texture2D" uid="uid://orpy8b6r8mhi" path="res://game/contents/image/enemy/enemy_tentacle_head.png" id="3_abs5b"]
+[ext_resource type="Animation" uid="uid://mgvu6efw5o08" path="res://game/contents/state_machine/mob/damage_control.tres" id="4_c0p66"]
+[ext_resource type="Animation" uid="uid://0duf4dkh5gnh" path="res://game/contents/state_machine/mob/enemy/damaged.tres" id="5_8i2or"]
+[ext_resource type="Animation" uid="uid://bupvwqs2hdho6" path="res://game/contents/state_machine/mob/enemy/dead.tres" id="6_asdxb"]
+[ext_resource type="Animation" uid="uid://dsu86wydsfu1m" path="res://game/contents/state_machine/mob/enemy/idle.tres" id="7_mxa2e"]
+[ext_resource type="Animation" uid="uid://btplubntmqfba" path="res://game/contents/state_machine/mob/enemy/initialize.tres" id="8_r4tap"]
+[ext_resource type="Animation" uid="uid://b5kg04wygitxb" path="res://game/contents/state_machine/mob/enemy/sleep.tres" id="9_iahxg"]
+[ext_resource type="Animation" uid="uid://cvhub5kga40rk" path="res://game/contents/state_machine/mob/enemy/terminate.tres" id="10_tvitn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evmk1"]
+size = Vector2(16, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfcj4"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cobhl"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_u1hin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2oqqb"]
+_data = {
+&"RESET": SubResource("Animation_u1hin"),
+&"damage_control": ExtResource("4_c0p66"),
+&"damaged": ExtResource("5_8i2or"),
+&"dead": ExtResource("6_asdxb"),
+&"idle": ExtResource("7_mxa2e"),
+&"initialize": ExtResource("8_r4tap"),
+&"sleep": ExtResource("9_iahxg"),
+&"terminate": ExtResource("10_tvitn")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7wco6"]
+animation = &"damage_control"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cqqhs"]
+animation = &"damaged"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h5ujm"]
+animation = &"dead"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vi13p"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e7ev4"]
+animation = &"initialize"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jjuic"]
+animation = &"sleep"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6yk27"]
+animation = &"terminate"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_utt05"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pco6u"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5u06l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xpo4n"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bvl24"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uam1b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wibd1"]
+states/End/position = Vector2(88, 352)
+states/Start/position = Vector2(88, 104)
+states/damage_control/node = SubResource("AnimationNodeAnimation_7wco6")
+states/damage_control/position = Vector2(340, 352)
+states/damaged/node = SubResource("AnimationNodeAnimation_cqqhs")
+states/damaged/position = Vector2(526, 227)
+states/dead/node = SubResource("AnimationNodeAnimation_h5ujm")
+states/dead/position = Vector2(198, 104)
+states/idle/node = SubResource("AnimationNodeAnimation_vi13p")
+states/idle/position = Vector2(340, 227)
+states/initialize/node = SubResource("AnimationNodeAnimation_e7ev4")
+states/initialize/position = Vector2(340, 104)
+states/sleep/node = SubResource("AnimationNodeAnimation_jjuic")
+states/sleep/position = Vector2(88, 227)
+states/terminate/node = SubResource("AnimationNodeAnimation_6yk27")
+states/terminate/position = Vector2(198, 227)
+transitions = ["idle", "damage_control", SubResource("AnimationNodeStateMachineTransition_utt05"), "damage_control", "damaged", SubResource("AnimationNodeStateMachineTransition_pco6u"), "damaged", "idle", SubResource("AnimationNodeStateMachineTransition_5u06l"), "initialize", "idle", SubResource("AnimationNodeStateMachineTransition_xpo4n"), "dead", "terminate", SubResource("AnimationNodeStateMachineTransition_bvl24"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_uam1b")]
+graph_offset = Vector2(-20, 178)
+
+[node name="EnemyTentacleHead1" instance=ExtResource("1_abs5b")]
+script = ExtResource("2_abs5b")
+SearchWaitTime = 1.0
+ClearWaitTime = 3.0
+RandomErrorX = 50.0
+RandomErrorY = 50.0
+LerpAngle = 10.0
+Score = 500
+InitialLife = 5
+InitialApproach = 32.0
+InitialMaxSpeed = 300.0
+InitialReductionApproach = 32.0
+
+[node name="OnScreen" parent="." index="0"]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(2, 2)
+
+[node name="BurialArea" parent="." index="1"]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" index="1"]
+shape = SubResource("RectangleShape2D_evmk1")
+
+[node name="EventFinder" parent="." index="2"]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" index="0"]
+shape = SubResource("CircleShape2D_lfcj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+shape = SubResource("RectangleShape2D_cobhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+texture = ExtResource("3_abs5b")
+hframes = 7
+
+[node name="MountPoint" parent="." index="5"]
+LerpAngle = 50.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_2oqqb")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="7"]
+tree_root = SubResource("AnimationNodeStateMachine_wibd1")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="SearchTargetTimer" type="Timer" parent="." index="8"]
+wait_time = 5.0
+
+[node name="AddScoreCommand" parent="Dead" index="0"]
+Score = 1000
+
+[node name="ShowFloatingMessageCommand" parent="Dead" index="1"]
+Message = "+1000"
+
+[connection signal="timeout" from="SearchTargetTimer" to="." method="ToggleSearch"]

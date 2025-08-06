@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbit4otpyw7v0"]
+
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://game/mob/bullet/bullet_root.tscn" id="1_xww7g"]
+[ext_resource type="Texture2D" uid="uid://dx62xxsx3es54" path="res://game/contents/image/weapon/homing_bullet.png" id="2_b7201"]
+[ext_resource type="Script" uid="uid://d4getiik2v102" path="res://game/mob/bullet/HomingBullet.cs" id="2_hvine"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3u52"]
+atlas = ExtResource("2_b7201")
+region = Rect2(0, 0, 13, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrx40"]
+atlas = ExtResource("2_b7201")
+region = Rect2(13, 0, 13, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6hm6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3u52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrx40")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmiex"]
+size = Vector2(12, 8)
+
+[node name="HormingBullet" instance=ExtResource("1_xww7g")]
+script = ExtResource("2_hvine")
+LerpAngle = 10.0
+InitialMaxSpeed = 200.0
+
+[node name="OnScreen" parent="." index="0"]
+position = Vector2(4.17233e-07, -4.76837e-07)
+scale = Vector2(0.8, 0.6)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_h6hm6")
+autoplay = "default"
+frame_progress = 0.285294
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_kmiex")
+
+[node name="StopHomingTimer" type="Timer" parent="." index="3"]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="ClearTargetTimer" type="Timer" parent="." index="4"]
+
+[node name="FindTargetTimer" type="Timer" parent="." index="5"]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="StopHomingTimer" to="." method="StopHoming"]
+[connection signal="timeout" from="ClearTargetTimer" to="." method="ClearTarget"]
+[connection signal="timeout" from="FindTargetTimer" to="." method="FindTarget"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfeprt22k73qp"]
+
+[ext_resource type="Script" uid="uid://b3bjqvsbuja1i" path="res://game/command/OpenResultScreen.cs" id="1_pfcn1"]
+
+[node name="OpenResultScreen" type="Node"]
+script = ExtResource("1_pfcn1")

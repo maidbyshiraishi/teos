@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0h6y1asdev1b"]
+
+[ext_resource type="Script" uid="uid://cbcvgo3m5lsue" path="res://game/stage/character_manager/CenterOfCameraCharacterEnabler.cs" id="1_1y8sn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y8sn"]
+size = Vector2(64, 16)
+
+[node name="CenterOfCameraCharacterEnabler" type="Area2D"]
+collision_layer = 0
+collision_mask = 512
+script = ExtResource("1_1y8sn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1y8sn")
+debug_color = Color(1, 0, 0, 1)

@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://yltdrtrk01dl"]
+
+[ext_resource type="PackedScene" uid="uid://djnbr5bus17iy" path="res://common/screen/option_list_dialog.tscn" id="1_jcb5i"]
+[ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://common/command/resume_bgm_command.tscn" id="2_1boa5"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://common/trigger/visible_trigger.tscn" id="2_uuw54"]
+[ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://common/command/pause_bgm_command.tscn" id="3_30q8g"]
+
+[node name="OptionListAndPauseDialog" instance=ExtResource("1_jcb5i")]
+
+[node name="Background" parent="." index="0"]
+offset_bottom = 416.0
+
+[node name="Border" parent="." index="1"]
+offset_bottom = 416.0
+
+[node name="Title" parent="." index="2"]
+text = "設定一覧 / ポーズ"
+
+[node name="Label" type="Label" parent="." index="3"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 128.0
+offset_right = 464.0
+offset_bottom = 200.0
+text = "BGMを一時停止しています。
+メニューを選択すると
+BGMの演奏を再開します"
+horizontal_alignment = 1
+
+[node name="Back" parent="Control" index="0"]
+offset_top = 368.0
+offset_bottom = 400.0
+
+[node name="VolumeOptions" parent="Control" index="1"]
+offset_top = 224.0
+offset_bottom = 256.0
+
+[node name="ResumeBgmCommand" parent="Control/VolumeOptions/Exec" index="1" instance=ExtResource("2_1boa5")]
+
+[node name="KeyOptions" parent="Control" index="2"]
+offset_top = 272.0
+offset_bottom = 304.0
+
+[node name="ResumeBgmCommand" parent="Control/KeyOptions/Exec" index="1" instance=ExtResource("2_1boa5")]
+
+[node name="ScreenOptions" parent="Control" index="3"]
+offset_top = 320.0
+offset_bottom = 352.0
+
+[node name="ResumeBgmCommand" parent="Control/ScreenOptions/Exec" index="1" instance=ExtResource("2_1boa5")]
+
+[node name="ResumeBgmCommand" parent="Close" index="1" instance=ExtResource("2_1boa5")]
+
+[node name="Focus" parent="." index="8" instance=ExtResource("2_uuw54")]
+position = Vector2(200, 96)
+
+[node name="PauseBgmCommand" parent="Focus" index="0" instance=ExtResource("3_30q8g")]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dctt81ljv6gk0"]
+
+[ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://game/decoration/Decoration.cs" id="1_hiqpa"]
+[ext_resource type="Texture2D" uid="uid://b8k6rtvfexuqk" path="res://game/contents/image/decoration/excitation.png" id="2_52oy4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e46yr"]
+atlas = ExtResource("2_52oy4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klo65"]
+atlas = ExtResource("2_52oy4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp5yd"]
+atlas = ExtResource("2_52oy4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe0nc"]
+atlas = ExtResource("2_52oy4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1fvw"]
+atlas = ExtResource("2_52oy4")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqmls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e46yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klo65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp5yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe0nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1fvw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Excitation" type="Node2D"]
+script = ExtResource("1_hiqpa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yqmls")
+autoplay = "default"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="TerminateCharacter"]

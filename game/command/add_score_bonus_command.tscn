@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccxojamtxuchw"]
+
+[ext_resource type="Script" uid="uid://drjsadcebiwb5" path="res://game/command/AddScoreBonusCommand.cs" id="1_pb41k"]
+
+[node name="AddScoreBonusCommand" type="Node"]
+script = ExtResource("1_pb41k")

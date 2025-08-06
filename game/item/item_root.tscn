@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://0nlf0c8xqq10"]
+
+[ext_resource type="Script" uid="uid://bs3g0mo3exu1a" path="res://game/item/ItemRoot.cs" id="1_pd6g7"]
+[ext_resource type="Texture2D" uid="uid://bo1a8v0vmgfck" path="res://game/contents/image/item/item_frame.png" id="2_khfog"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="3_4g2ho"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://game/command/show_floating_message_command.tscn" id="3_ui56d"]
+[ext_resource type="PackedScene" uid="uid://6wed4oxwfoko" path="res://common/command/remove_game_node_command.tscn" id="3_ww0lx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4h8a1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it80t"]
+atlas = ExtResource("2_khfog")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_td53a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it80t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ItemRoot" type="Area2D"]
+collision_layer = 1024
+collision_mask = 0
+script = ExtResource("1_pd6g7")
+MaxSpeed = 250.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4h8a1")
+
+[node name="ItemFrame" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_td53a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="ApproachPlayer" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ApproachPlayer"]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="PlaySeCommand" parent="." instance=ExtResource("3_4g2ho")]
+
+[node name="ShowFloatingMessageCommand" parent="." instance=ExtResource("3_ui56d")]
+RandomPosiotion = true
+
+[node name="RemoveGameNodeCommand" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("3_ww0lx")]
+Target = NodePath("..")
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1.6, 1.6)
+
+[connection signal="area_entered" from="ApproachPlayer" to="." method="EnterArea2D"]
+[connection signal="area_exited" from="ApproachPlayer" to="." method="ExitArea2D"]
+[connection signal="timeout" from="Timer" to="." method="Switch"]

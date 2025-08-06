@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://cdw1i41ft8oht"]
+
+[ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://game/decoration/Decoration.cs" id="1_relnv"]
+[ext_resource type="Texture2D" uid="uid://dyt3p21chmws4" path="res://game/contents/image/decoration/danger_signal_boss.png" id="2_vbjgw"]
+[ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://common/trigger/timer_trigger.tscn" id="3_1ldsc"]
+[ext_resource type="PackedScene" uid="uid://b2ykovbxsetao" path="res://game/command/terminate_character_command.tscn" id="4_vbjgw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udg5m"]
+atlas = ExtResource("2_vbjgw")
+region = Rect2(0, 0, 380, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w45hp"]
+atlas = ExtResource("2_vbjgw")
+region = Rect2(380, 0, 380, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fllai"]
+atlas = ExtResource("2_vbjgw")
+region = Rect2(760, 0, 380, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rbq5"]
+atlas = ExtResource("2_vbjgw")
+region = Rect2(1140, 0, 380, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg2r7"]
+atlas = ExtResource("2_vbjgw")
+region = Rect2(1520, 0, 380, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x8rg"]
+atlas = ExtResource("2_vbjgw")
+region = Rect2(1900, 0, 380, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ne6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udg5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w45hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fllai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rbq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg2r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x8rg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="DangerSignalBoss" type="Node2D"]
+script = ExtResource("1_relnv")
+SeName = "danger_signal_boss"
+StaticOnScreen = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3ne6y")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="TimerTrigger" parent="Timer" instance=ExtResource("3_1ldsc")]
+
+[node name="TerminateCharacterCommand" parent="Timer/TimerTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("4_vbjgw")]
+Target = NodePath("../../..")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://xu7h1aceaxya"]
+
+[ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://game/item/item_root.tscn" id="1_45ivm"]
+[ext_resource type="Texture2D" uid="uid://blm1rrj0omf8w" path="res://game/contents/image/item/life1.png" id="2_cbdee"]
+[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://game/command/add_life_command.tscn" id="3_2imyx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74hs4"]
+atlas = ExtResource("2_cbdee")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_toi7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74hs4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gtg0y"]
+radius = 96.0
+
+[node name="ItemLife1" instance=ExtResource("1_45ivm")]
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_toi7v")
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
+shape = SubResource("CircleShape2D_gtg0y")
+
+[node name="AddLifeCommand" parent="." index="5" instance=ExtResource("3_2imyx")]
+
+[node name="PlaySeCommand" parent="." index="6"]
+SeName = "player_recovered"
+
+[node name="ShowFloatingMessageCommand" parent="." index="7"]
+Message = "小回復"

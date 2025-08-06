@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c364lq1bpqb88"]
+
+[ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://game/item/item_root.tscn" id="1_olyho"]
+[ext_resource type="Texture2D" uid="uid://ddiy4q0slscpn" path="res://game/contents/image/item/oneup.png" id="2_u1ol0"]
+[ext_resource type="PackedScene" uid="uid://bwp4y1nte25hm" path="res://game/command/add_remain_command.tscn" id="3_autd3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa8ft"]
+atlas = ExtResource("2_u1ol0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbl8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa8ft")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_op38p"]
+radius = 40.0
+
+[node name="ItemOneup" instance=ExtResource("1_olyho")]
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_bbl8w")
+autoplay = "default"
+
+[node name="ApproachPlayer" parent="." index="3"]
+visible = true
+
+[node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
+shape = SubResource("CircleShape2D_op38p")
+
+[node name="AddRemainCommand" parent="." index="5" instance=ExtResource("3_autd3")]
+
+[node name="ShowFloatingMessageCommand" parent="." index="7"]
+Message = "1up"

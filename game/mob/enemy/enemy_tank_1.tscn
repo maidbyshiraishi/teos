@@ -1,0 +1,180 @@
+[gd_scene load_steps=30 format=3 uid="uid://b6ixw7pqqcldr"]
+
+[ext_resource type="PackedScene" uid="uid://qyjfbwuobtjm" path="res://game/mob/enemy/enemy_root.tscn" id="1_ueql5"]
+[ext_resource type="Script" uid="uid://nx2as8vo3a3h" path="res://game/mob/enemy/EnemySimple1.cs" id="2_pdxlx"]
+[ext_resource type="Texture2D" uid="uid://c6rchxdhj7lra" path="res://game/contents/image/enemy/enemy_tank_1.png" id="3_80i5i"]
+[ext_resource type="Animation" uid="uid://0duf4dkh5gnh" path="res://game/contents/state_machine/mob/enemy/damaged.tres" id="5_76rj0"]
+[ext_resource type="Animation" uid="uid://mgvu6efw5o08" path="res://game/contents/state_machine/mob/damage_control.tres" id="6_ung0t"]
+[ext_resource type="Animation" uid="uid://bupvwqs2hdho6" path="res://game/contents/state_machine/mob/enemy/dead.tres" id="7_v88ua"]
+[ext_resource type="Animation" uid="uid://dsu86wydsfu1m" path="res://game/contents/state_machine/mob/enemy/idle.tres" id="8_h3ugs"]
+[ext_resource type="Animation" uid="uid://btplubntmqfba" path="res://game/contents/state_machine/mob/enemy/initialize.tres" id="9_xs5vv"]
+[ext_resource type="Animation" uid="uid://b5kg04wygitxb" path="res://game/contents/state_machine/mob/enemy/sleep.tres" id="10_a6shb"]
+[ext_resource type="Animation" uid="uid://cvhub5kga40rk" path="res://game/contents/state_machine/mob/enemy/terminate.tres" id="11_mmn3l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evmk1"]
+size = Vector2(40, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfcj4"]
+radius = 16.1245
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1ugj"]
+size = Vector2(32, 41)
+
+[sub_resource type="Animation" id="Animation_ft7u3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5xim0"]
+_data = {
+&"RESET": SubResource("Animation_ft7u3"),
+&"damage_control": ExtResource("6_ung0t"),
+&"damaged": ExtResource("5_76rj0"),
+&"dead": ExtResource("7_v88ua"),
+&"idle": ExtResource("8_h3ugs"),
+&"initialize": ExtResource("9_xs5vv"),
+&"sleep": ExtResource("10_a6shb"),
+&"terminate": ExtResource("11_mmn3l")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7wco6"]
+animation = &"damage_control"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cqqhs"]
+animation = &"damaged"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h5ujm"]
+animation = &"dead"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vi13p"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e7ev4"]
+animation = &"initialize"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jjuic"]
+animation = &"sleep"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6yk27"]
+animation = &"terminate"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_utt05"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pco6u"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5u06l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xpo4n"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bvl24"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y82rm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_s3hvb"]
+states/End/position = Vector2(129, 333)
+states/Start/position = Vector2(129, 104)
+states/damage_control/node = SubResource("AnimationNodeAnimation_7wco6")
+states/damage_control/position = Vector2(412, 333)
+states/damaged/node = SubResource("AnimationNodeAnimation_cqqhs")
+states/damaged/position = Vector2(574, 213)
+states/dead/node = SubResource("AnimationNodeAnimation_h5ujm")
+states/dead/position = Vector2(261, 104)
+states/idle/node = SubResource("AnimationNodeAnimation_vi13p")
+states/idle/position = Vector2(412, 213)
+states/initialize/node = SubResource("AnimationNodeAnimation_e7ev4")
+states/initialize/position = Vector2(412, 104)
+states/sleep/node = SubResource("AnimationNodeAnimation_jjuic")
+states/sleep/position = Vector2(129, 213)
+states/terminate/node = SubResource("AnimationNodeAnimation_6yk27")
+states/terminate/position = Vector2(261, 213)
+transitions = ["idle", "damage_control", SubResource("AnimationNodeStateMachineTransition_utt05"), "damage_control", "damaged", SubResource("AnimationNodeStateMachineTransition_pco6u"), "damaged", "idle", SubResource("AnimationNodeStateMachineTransition_5u06l"), "initialize", "idle", SubResource("AnimationNodeStateMachineTransition_xpo4n"), "dead", "terminate", SubResource("AnimationNodeStateMachineTransition_bvl24"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_y82rm")]
+graph_offset = Vector2(-38, 92)
+
+[node name="EnemyTank1" instance=ExtResource("1_ueql5")]
+script = ExtResource("2_pdxlx")
+SearchWaitTime = 0.5
+ClearWaitTime = 3.0
+
+[node name="OnScreen" parent="." index="0"]
+position = Vector2(0, 1.43051e-06)
+scale = Vector2(4.8, 4)
+
+[node name="BurialArea" parent="." index="1"]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" index="1"]
+shape = SubResource("RectangleShape2D_evmk1")
+
+[node name="EventFinder" parent="." index="2"]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" index="0"]
+shape = SubResource("CircleShape2D_lfcj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_u1ugj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+texture = ExtResource("3_80i5i")
+hframes = 7
+
+[node name="MountPoint" parent="." index="5"]
+position = Vector2(-4, -28)
+LerpAngle = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_5xim0")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="7"]
+tree_root = SubResource("AnimationNodeStateMachine_s3hvb")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="SearchTargetTimer" type="Timer" parent="." index="8"]
+
+[connection signal="timeout" from="SearchTargetTimer" to="." method="ToggleSearch"]

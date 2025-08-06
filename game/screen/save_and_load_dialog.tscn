@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1fq5j7tejrsb"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="1_io2f8"]
+[ext_resource type="Script" uid="uid://spqt5j0axf7u" path="res://game/screen/SaveAndLoadDialog.cs" id="2_lpckr"]
+[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://common/gui/CommandButton.cs" id="3_dcmc3"]
+[ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://common/command/close_dialog_command.tscn" id="4_6n7x1"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="4_exge7"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://common/command/open_dialog_command.tscn" id="4_uwu2y"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="5_dlnm5"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://common/trigger/key_releaseed_trigger.tscn" id="10_ny0qm"]
+[ext_resource type="PackedScene" uid="uid://cl7nkfohuvbj7" path="res://common/command/button_pressed_command.tscn" id="11_jdos6"]
+
+[node name="SaveAndLoadDialog" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_io2f8")
+script = ExtResource("2_lpckr")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 120.0
+offset_top = 136.0
+offset_right = 520.0
+offset_bottom = 352.0
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Border" type="ReferenceRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 120.0
+offset_top = 136.0
+offset_right = 520.0
+offset_bottom = 352.0
+border_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 256.0
+offset_top = 168.0
+offset_right = 396.0
+offset_bottom = 193.0
+text = "セーブ・ロード"
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Save" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 192.0
+offset_top = 224.0
+offset_right = 304.0
+offset_bottom = 256.0
+text = "セーブ"
+script = ExtResource("3_dcmc3")
+
+[node name="Exec" parent="Control/Save" instance=ExtResource("5_dlnm5")]
+
+[node name="PlaySeCommand" parent="Control/Save/Exec" instance=ExtResource("4_exge7")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenDialogCommand" parent="Control/Save/Exec" instance=ExtResource("4_uwu2y")]
+DialogPath = "res://game/screen/save_dialog.tscn"
+
+[node name="Focus" parent="Control/Save" instance=ExtResource("5_dlnm5")]
+
+[node name="PlaySeCommand" parent="Control/Save/Focus" instance=ExtResource("4_exge7")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="Load" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 336.0
+offset_top = 224.0
+offset_right = 448.0
+offset_bottom = 256.0
+text = "ロード"
+script = ExtResource("3_dcmc3")
+
+[node name="Exec" parent="Control/Load" instance=ExtResource("5_dlnm5")]
+
+[node name="PlaySeCommand" parent="Control/Load/Exec" instance=ExtResource("4_exge7")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenDialogCommand" parent="Control/Load/Exec" instance=ExtResource("4_uwu2y")]
+DialogPath = "res://game/screen/load_dialog.tscn"
+
+[node name="Focus" parent="Control/Load" instance=ExtResource("5_dlnm5")]
+
+[node name="PlaySeCommand" parent="Control/Load/Focus" instance=ExtResource("4_exge7")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 0
+offset_left = 280.0
+offset_top = 288.0
+offset_right = 360.0
+offset_bottom = 320.0
+text = "戻る"
+script = ExtResource("3_dcmc3")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("5_dlnm5")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("4_exge7")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_6n7x1")]
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("5_dlnm5")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("4_exge7")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="EscapeKey" parent="." instance=ExtResource("10_ny0qm")]
+ActionName = "ui_cancel"
+
+[node name="ButtonPressedCommand" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("11_jdos6")]
+Target = NodePath("../../Control/Back")

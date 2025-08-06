@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca7v4ux5jvfh7"]
+
+[ext_resource type="Script" uid="uid://dqj13c6ouws72" path="res://game/command/DropItemCommand.cs" id="1_y4271"]
+
+[node name="DropItemCommand" type="Node"]
+script = ExtResource("1_y4271")

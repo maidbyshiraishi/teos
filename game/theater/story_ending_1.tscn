@@ -1,0 +1,1090 @@
+[gd_scene load_steps=57 format=4 uid="uid://c43txyodixmdu"]
+
+[ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://common/theater/story_theater.tscn" id="1_d358e"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="2_gd8bc"]
+[ext_resource type="Texture2D" uid="uid://blyc2w08mwum2" path="res://game/contents/theater/story_ending_1_1.png" id="3_73c1f"]
+[ext_resource type="PackedScene" uid="uid://t1hjabn8aisl" path="res://common/trigger/animated_sprite_finished_trigger.tscn" id="4_n05pt"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://common/trigger/visible_trigger.tscn" id="4_uclh4"]
+[ext_resource type="PackedScene" uid="uid://dok77dg7j1gew" path="res://common/command/play_animated_sprite_command.tscn" id="5_12ygv"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://common/command/change_bgm_command.tscn" id="5_jn6f3"]
+[ext_resource type="PackedScene" uid="uid://c21hot266v86s" path="res://common/command/go_next_page_command.tscn" id="6_hqai5"]
+[ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://game/contents/bgm/bgm6.ogg" id="9_cfg8y"]
+[ext_resource type="PackedScene" uid="uid://o5jehvyyt8gh" path="res://common/command/play_animation_player_command.tscn" id="9_k4hiv"]
+[ext_resource type="Texture2D" uid="uid://ce1l1wlsumgpd" path="res://game/contents/theater/mask.png" id="11_jmh61"]
+[ext_resource type="PackedScene" uid="uid://d1diwdpuom6ss" path="res://common/trigger/animation_player_finished_trigger.tscn" id="11_u5pv3"]
+[ext_resource type="TileSet" uid="uid://vlqhnvwag8d" path="res://game/contents/tilemap/tileset.tres" id="12_mg2b6"]
+[ext_resource type="Texture2D" uid="uid://cb57fifd3nx0s" path="res://game/contents/image/decoration/explosion.png" id="13_mg2b6"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="14_73c1f"]
+[ext_resource type="Texture2D" uid="uid://dulc6txv1m7rj" path="res://game/contents/image/player/rocket_maid.png" id="14_k4hiv"]
+[ext_resource type="Texture2D" uid="uid://bfdhrtxx6lid7" path="res://game/contents/theater/story_ending_1_3.png" id="16_73c1f"]
+[ext_resource type="PackedScene" uid="uid://cn7no3720iabm" path="res://common/command/delay_command_container.tscn" id="17_u5pv3"]
+[ext_resource type="Texture2D" uid="uid://ca6dussxfurjc" path="res://game/contents/theater/story_ending_1_5.png" id="18_mg2b6"]
+[ext_resource type="PackedScene" uid="uid://cc0w3te8ab0ed" path="res://common/command/show_canvas_item_command.tscn" id="18_wudv3"]
+[ext_resource type="Texture2D" uid="uid://ed123i1nmtuk" path="res://game/contents/theater/story_ending_1_4.png" id="19_k4hiv"]
+[ext_resource type="PackedScene" uid="uid://dph8bmjbs5k1c" path="res://common/command/hide_canvas_item_command.tscn" id="20_74367"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://common/command/open_screen_command.tscn" id="20_jmh61"]
+[ext_resource type="AudioStream" uid="uid://bvxquv5u5dkif" path="res://game/contents/bgm/bgm11_song.ogg" id="21_ig1dy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5pv3"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg2b6"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wudv3"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmh61"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4hiv"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74367"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfg8y"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig1dy"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8y0o"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rclwu"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwg0l"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inw3e"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(2200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x4m7"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(2400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvspi"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(2600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cexxh"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(2800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5mh0"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(3000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doehl"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(3200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u6wc"]
+atlas = ExtResource("3_73c1f")
+region = Rect2(3400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f72mv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5pv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg2b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wudv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmh61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4hiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74367")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfg8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig1dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8y0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rclwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwg0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inw3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x4m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvspi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cexxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5mh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doehl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u6wc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_k4hiv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, -120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.436332]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D_1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D_2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D_3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatedSprite2D_4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatedSprite2D_5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatedSprite2D_6:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("StageBoss:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Label:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jmh61"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.666667, 0.85, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-200, -120), Vector2(200, 150), Vector2(215, -91), Vector2(-90, 187)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.85, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.436332, -0.436332, 0.436332]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.85),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D_1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D_1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default"],
+"method": &"play"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D_2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatedSprite2D_2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.06667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default"],
+"method": &"play"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatedSprite2D_3:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.26667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatedSprite2D_3")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.26667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default"],
+"method": &"play"
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimatedSprite2D_4:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimatedSprite2D_4")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.36667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default"],
+"method": &"play"
+}]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AnimatedSprite2D_5:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AnimatedSprite2D_5")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1.43333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default"],
+"method": &"play"
+}]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AnimatedSprite2D_6:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("AnimatedSprite2D_6")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1.53333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default"],
+"method": &"play"
+}]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("StageBoss:self_modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Label:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1.63333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../PlaySeCommand")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.333333, 1.06667, 1.26667, 1.36667, 1.43333, 1.53333, 1.66667, 1.76667, 1.83333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [null, true],
+"method": &"ExecCommand"
+}, {
+"args": [null, true],
+"method": &"ExecCommand"
+}, {
+"args": [null, true],
+"method": &"ExecCommand"
+}, {
+"args": [null, true],
+"method": &"ExecCommand"
+}, {
+"args": [null, true],
+"method": &"ExecCommand"
+}, {
+"args": [null, true],
+"method": &"ExecCommand"
+}, {
+"args": [null, true],
+"method": &"ExecCommand"
+}, {
+"args": [null, true],
+"method": &"ExecCommand"
+}, {
+"args": [null, true],
+"method": &"ExecCommand"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74367"]
+_data = {
+&"RESET": SubResource("Animation_k4hiv"),
+&"default": SubResource("Animation_jmh61")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3yr5"]
+atlas = ExtResource("13_mg2b6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id25a"]
+atlas = ExtResource("13_mg2b6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tyrx"]
+atlas = ExtResource("13_mg2b6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmfs2"]
+atlas = ExtResource("13_mg2b6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wudv3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3yr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id25a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tyrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmfs2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxc6a"]
+atlas = ExtResource("16_73c1f")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64yfu"]
+atlas = ExtResource("16_73c1f")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmh61"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxc6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64yfu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_74367"]
+resource_name = "default"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 4, 2, 5, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.51, 0.61, 0.7, 0.8, 0.9, 0.96, 1.04, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(60, -60), Vector2(120, -120), Vector2(120, -180), Vector2(-60, -240), Vector2(-120, -165), Vector2(-90, -90), Vector2(0, 0), Vector2(300, 0), Vector2(350, 0), Vector2(350, 0), Vector2(700, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Sprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.61, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(10, 10), Vector2(10, 10), Vector2(3, 3), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfg8y"]
+_data = {
+&"default": SubResource("Animation_74367")
+}
+
+[node name="StoryTheater" instance=ExtResource("1_d358e")]
+metadata/_edit_horizontal_guides_ = [118.0, 359.0]
+metadata/_edit_vertical_guides_ = [166.0, 479.0, 320.0]
+
+[node name="Background" parent="." index="0"]
+color = Color(0, 0, 0, 1)
+
+[node name="Contents" type="Control" parent="Socket" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -241.0
+offset_right = 320.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(160, 120)
+theme = ExtResource("2_gd8bc")
+
+[node name="Page1" type="Control" parent="Socket/Contents" index="0"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page1" index="0"]
+position = Vector2(152, 121)
+sprite_frames = SubResource("SpriteFrames_f72mv")
+
+[node name="AnimatedSpriteFinishedTrigger" parent="Socket/Contents/Page1/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="DelayCommandContainer" parent="Socket/Contents/Page1/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="0" instance=ExtResource("17_u5pv3")]
+WaitTime = 0.8
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page1/AnimatedSprite2D/AnimatedSpriteFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page1" index="1" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+Command = 3
+Stream = ExtResource("9_cfg8y")
+
+[node name="PlayAnimatedSpriteCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+AnimatedSprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Page2" type="Control" parent="Socket/Contents" index="1"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Mask" type="Sprite2D" parent="Socket/Contents/Page2" index="0"]
+clip_children = 1
+position = Vector2(152, 97)
+texture = ExtResource("11_jmh61")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Socket/Contents/Page2/Mask" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_74367")
+}
+
+[node name="AnimationPlayerFinishedTrigger" parent="Socket/Contents/Page2/Mask/AnimationPlayer" index="0" instance=ExtResource("11_u5pv3")]
+
+[node name="DelayCommandContainer" parent="Socket/Contents/Page2/Mask/AnimationPlayer/AnimationPlayerFinishedTrigger" index="0" instance=ExtResource("17_u5pv3")]
+WaitTime = 1.5
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page2/Mask/AnimationPlayer/AnimationPlayerFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="StageBoss" type="TileMapLayer" parent="Socket/Contents/Page2/Mask" index="1"]
+position = Vector2(0, 120)
+tile_map_data = PackedByteArray("AAD+//3/AAAGAAgAAAD///7/AAAEAAoAAAD///3/AAAMAAgAAAD9//7/AAAGAAgAAAD+//7/AAAHAAoAAAAAAP7/AAAHAAoAAAAAAP3/AAAHAAoAAAABAP7/AAAHAAoAAAABAP3/AAAHAAgAAAACAP7/AAAHAAgAAAA=")
+tile_set = ExtResource("12_mg2b6")
+
+[node name="AnimatedSprite2D_1" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="2"]
+visible = false
+position = Vector2(0, 48)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_wudv3")
+
+[node name="AnimatedSprite2D_2" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="3"]
+visible = false
+position = Vector2(56, 72)
+sprite_frames = SubResource("SpriteFrames_wudv3")
+
+[node name="AnimatedSprite2D_3" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="4"]
+visible = false
+position = Vector2(32, 24)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_wudv3")
+
+[node name="AnimatedSprite2D_4" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="5"]
+visible = false
+position = Vector2(16, 72)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_wudv3")
+
+[node name="AnimatedSprite2D_5" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="6"]
+visible = false
+position = Vector2(-48, 48)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_wudv3")
+
+[node name="AnimatedSprite2D_6" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="7"]
+visible = false
+position = Vector2(-16, 24)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wudv3")
+
+[node name="Player" type="Sprite2D" parent="Socket/Contents/Page2/Mask" index="8"]
+position = Vector2(-200, -120)
+rotation = 0.436332
+texture = ExtResource("14_k4hiv")
+hframes = 10
+
+[node name="Label" type="Label" parent="Socket/Contents/Page2" index="1"]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_right = 90.0
+offset_bottom = 60.0
+scale = Vector2(4, 4)
+text = "成敗!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page2" index="2" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+
+[node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
+AnimationPlayer = NodePath("../../Mask/AnimationPlayer")
+AnimationName = "default"
+
+[node name="Control" type="Control" parent="Socket/Contents/Page2" index="3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page2" index="4" instance=ExtResource("14_73c1f")]
+SeName = "explosion"
+
+[node name="Page3" type="Control" parent="Socket/Contents" index="2"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page3" index="0"]
+position = Vector2(152, 97)
+sprite_frames = SubResource("SpriteFrames_jmh61")
+
+[node name="AnimatedSpriteFinishedTrigger" parent="Socket/Contents/Page3/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+
+[node name="ShowCanvasItemCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+Target = NodePath("../../../Label")
+
+[node name="DelayCommandContainer" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="1" instance=ExtResource("17_u5pv3")]
+WaitTime = 1.5
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page3" index="1" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+Command = 4
+
+[node name="PlayAnimatedSpriteCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+AnimatedSprite = NodePath("../../AnimatedSprite2D")
+
+[node name="Control" type="Control" parent="Socket/Contents/Page3" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Label" type="Label" parent="Socket/Contents/Page3" index="3"]
+visible = false
+layout_mode = 0
+offset_top = 201.0
+offset_right = 312.0
+offset_bottom = 241.0
+text = "今の・・・文字だった？"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Page4" type="Control" parent="Socket/Contents" index="3"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page4" index="0"]
+visible = false
+position = Vector2(152, 97)
+texture = ExtResource("19_k4hiv")
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page4" index="1" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="PlaySeCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="0" instance=ExtResource("14_73c1f")]
+SeName = "message_stage_0000"
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="1" instance=ExtResource("5_jn6f3")]
+Command = 1
+Stream = ExtResource("21_ig1dy")
+
+[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger" index="2" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+Target = NodePath("../../Sprite2D")
+
+[node name="ShowCanvasItemCommand2" parent="Socket/Contents/Page4/VisibleTrigger" index="3" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+Target = NodePath("../../Label0")
+
+[node name="DelayCommandContainer1" parent="Socket/Contents/Page4/VisibleTrigger" index="4" instance=ExtResource("17_u5pv3")]
+WaitTime = 2.0
+
+[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer1" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
+Target = NodePath("../../../Label0")
+
+[node name="ShowCanvasItemCommand2" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer1" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+Target = NodePath("../../../Label1")
+
+[node name="DelayCommandContainer2" parent="Socket/Contents/Page4/VisibleTrigger" index="5" instance=ExtResource("17_u5pv3")]
+WaitTime = 3.5
+
+[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer2" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
+Target = NodePath("../../../Label1")
+
+[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer2" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+Target = NodePath("../../../Label2")
+
+[node name="DelayCommandContainer3" parent="Socket/Contents/Page4/VisibleTrigger" index="6" instance=ExtResource("17_u5pv3")]
+WaitTime = 4.5
+
+[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer3" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
+Target = NodePath("../../../Label2")
+
+[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer3" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+Target = NodePath("../../../Label3")
+
+[node name="DelayCommandContainer4" parent="Socket/Contents/Page4/VisibleTrigger" index="7" instance=ExtResource("17_u5pv3")]
+WaitTime = 5.5
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer4" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page4" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Label0" type="Label" parent="Socket/Contents/Page4" index="3"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 193.0
+offset_right = 288.0
+offset_bottom = 241.0
+text = "メイド司令部より突撃隊へ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label1" type="Label" parent="Socket/Contents/Page4" index="4"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 193.0
+offset_right = 288.0
+offset_bottom = 241.0
+text = "おーい、何してんの！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Socket/Contents/Page4" index="5"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 193.0
+offset_right = 288.0
+offset_bottom = 241.0
+text = "みんな待ってるよ！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Socket/Contents/Page4" index="6"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 193.0
+offset_right = 288.0
+offset_bottom = 241.0
+text = "イチゴもあるよ！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Page5" type="Control" parent="Socket/Contents" index="4"]
+visible = false
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page5" index="0"]
+position = Vector2(152, 97)
+texture = ExtResource("18_mg2b6")
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page5" index="1" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page5/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+
+[node name="DelayCommandContainer" parent="Socket/Contents/Page5/VisibleTrigger" index="1" instance=ExtResource("17_u5pv3")]
+WaitTime = 2.0
+
+[node name="GoNextPageCommand" parent="Socket/Contents/Page5/VisibleTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
+
+[node name="Control" type="Control" parent="Socket/Contents/Page5" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="Label" type="Label" parent="Socket/Contents/Page5" index="3"]
+layout_mode = 0
+offset_top = 201.0
+offset_right = 312.0
+offset_bottom = 241.0
+text = "イチゴ、見つかったんだ！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Page6" type="Control" parent="Socket/Contents" index="5"]
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 120.0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="VisibleTrigger" parent="Socket/Contents/Page6" index="0" instance=ExtResource("4_uclh4")]
+position = Vector2(16, 17)
+
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+
+[node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
+AnimationPlayer = NodePath("../../AnimationPlayer")
+AnimationName = "default"
+
+[node name="Control" type="Control" parent="Socket/Contents/Page6" index="1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 194.0
+offset_right = 236.0
+offset_bottom = 234.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Socket/Contents/Page6" index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_cfg8y")
+}
+
+[node name="AnimationPlayerFinishedTrigger" parent="Socket/Contents/Page6/AnimationPlayer" index="0" instance=ExtResource("11_u5pv3")]
+
+[node name="DelayCommandContainer" parent="Socket/Contents/Page6/AnimationPlayer/AnimationPlayerFinishedTrigger" index="0" instance=ExtResource("17_u5pv3")]
+WaitTime = 1.0
+
+[node name="OpenScreenCommand" parent="Socket/Contents/Page6/AnimationPlayer/AnimationPlayerFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("20_jmh61")]
+Screen = "res://game/theater/story_ending_2.tscn"
+
+[node name="Label" type="Label" parent="Socket/Contents/Page6" index="3"]
+layout_mode = 0
+offset_top = 201.0
+offset_right = 312.0
+offset_bottom = 241.0
+text = "急いで、帰還する!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="Socket/Contents/Page6" index="4"]
+position = Vector2(64, 137)
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page6/Node2D" index="0"]
+texture = ExtResource("14_k4hiv")
+hframes = 10

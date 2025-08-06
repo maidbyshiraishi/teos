@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo7rtvsbrpmcg"]
+
+[ext_resource type="Script" uid="uid://cwbxonpqmqjy3" path="res://game/stage/character_manager/EnemyDropCharacterEnabler.cs" id="1_46yfy"]
+
+[node name="EnemyDropCharacterEnabler" type="Node"]
+script = ExtResource("1_46yfy")

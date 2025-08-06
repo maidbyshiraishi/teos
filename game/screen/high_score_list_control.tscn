@@ -1,0 +1,361 @@
+[gd_scene load_steps=2 format=3 uid="uid://dopc2wenxil8y"]
+
+[ext_resource type="Script" uid="uid://becgm1warkbap" path="res://game/screen/HighScoreListControl.cs" id="1_tm48w"]
+
+[node name="HighScoreListControl" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 576.0
+offset_bottom = 392.0
+script = ExtResource("1_tm48w")
+
+[node name="Rank_1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 32.0
+
+[node name="Rank" type="Label" parent="Rank_1"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "1"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_1"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_1"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_1"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_2" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 32.0
+offset_right = 512.0
+offset_bottom = 64.0
+
+[node name="Rank" type="Label" parent="Rank_2"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "2"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_2"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_2"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_2"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_3" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 96.0
+
+[node name="Rank" type="Label" parent="Rank_3"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "3"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_3"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_3"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_3"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_4" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 96.0
+offset_right = 512.0
+offset_bottom = 128.0
+
+[node name="Rank" type="Label" parent="Rank_4"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "4"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_4"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_4"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_4"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_5" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 128.0
+offset_right = 512.0
+offset_bottom = 160.0
+
+[node name="Rank" type="Label" parent="Rank_5"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "5"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_5"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_5"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_5"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_6" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 160.0
+offset_right = 512.0
+offset_bottom = 192.0
+
+[node name="Rank" type="Label" parent="Rank_6"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "6"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_6"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_6"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_6"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_7" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 192.0
+offset_right = 512.0
+offset_bottom = 224.0
+
+[node name="Rank" type="Label" parent="Rank_7"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "7"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_7"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_7"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_7"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_8" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 224.0
+offset_right = 512.0
+offset_bottom = 256.0
+
+[node name="Rank" type="Label" parent="Rank_8"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "8"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_8"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_8"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_8"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_9" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 256.0
+offset_right = 512.0
+offset_bottom = 288.0
+
+[node name="Rank" type="Label" parent="Rank_9"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "9"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_9"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_9"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_9"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true
+
+[node name="Rank_10" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 288.0
+offset_right = 512.0
+offset_bottom = 320.0
+
+[node name="Rank" type="Label" parent="Rank_10"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 22.0
+text = "10"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Rank_10"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+text = "記録なし"
+
+[node name="Date" type="Label" parent="Rank_10"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 520.0
+offset_bottom = 22.0
+text = "-"
+horizontal_alignment = 1
+
+[node name="RichScore" type="RichTextLabel" parent="Rank_10"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 320.0
+offset_bottom = 22.0
+bbcode_enabled = true

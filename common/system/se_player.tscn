@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh0d1pl6uidn6"]
+
+[ext_resource type="Script" uid="uid://dbj6cont3jqcc" path="res://common/system/SePlayer.cs" id="1_vw2l8"]
+
+[node name="SePlayer" type="Node"]
+process_mode = 3
+script = ExtResource("1_vw2l8")
+MaxPolyphony = Dictionary[String, int]({
+"enemy_damaged": 2,
+"explosion": 3,
+"gate_close": 2,
+"gun_shot": 2
+})
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="ClearAllAudioStreamPlayer"]

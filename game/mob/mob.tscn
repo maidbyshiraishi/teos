@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bovsu61evhei7"]
+
+[ext_resource type="Script" uid="uid://cjsqqsq42nhgv" path="res://game/mob/Mob.cs" id="1_1ftkj"]
+
+[node name="Mob" type="Area2D"]
+script = ExtResource("1_1ftkj")
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]

@@ -1,0 +1,253 @@
+[gd_scene load_steps=38 format=3 uid="uid://dccy6vitumuvq"]
+
+[ext_resource type="PackedScene" uid="uid://qyjfbwuobtjm" path="res://game/mob/enemy/enemy_root.tscn" id="1_2yjy7"]
+[ext_resource type="Script" uid="uid://3f7yuabfp666" path="res://game/mob/enemy/EnemySpearShell1.cs" id="2_0xqn8"]
+[ext_resource type="Texture2D" uid="uid://dccm4v5aotxlg" path="res://game/contents/image/enemy/enemy_spear_shell_1.png" id="4_2yjy7"]
+[ext_resource type="Animation" uid="uid://mgvu6efw5o08" path="res://game/contents/state_machine/mob/damage_control.tres" id="5_5sk8r"]
+[ext_resource type="Animation" uid="uid://0duf4dkh5gnh" path="res://game/contents/state_machine/mob/enemy/damaged.tres" id="6_0xqn8"]
+[ext_resource type="Animation" uid="uid://bupvwqs2hdho6" path="res://game/contents/state_machine/mob/enemy/dead.tres" id="7_g7hea"]
+[ext_resource type="Animation" uid="uid://dsu86wydsfu1m" path="res://game/contents/state_machine/mob/enemy/idle.tres" id="8_7scxw"]
+[ext_resource type="Animation" uid="uid://btplubntmqfba" path="res://game/contents/state_machine/mob/enemy/initialize.tres" id="9_ku1m4"]
+[ext_resource type="Animation" uid="uid://b5kg04wygitxb" path="res://game/contents/state_machine/mob/enemy/sleep.tres" id="10_3prr0"]
+[ext_resource type="Animation" uid="uid://cvhub5kga40rk" path="res://game/contents/state_machine/mob/enemy/terminate.tres" id="11_lruwd"]
+[ext_resource type="PackedScene" uid="uid://tv7swyqpmfi2" path="res://game/mob/tentacle/tentacle_root.tscn" id="12_g7hea"]
+[ext_resource type="PackedScene" uid="uid://lrib1hldmisj" path="res://game/mob/tentacle/tentacle_neck.tscn" id="13_7scxw"]
+[ext_resource type="PackedScene" uid="uid://cf6s24mqf6yt0" path="res://game/mob/enemy/enemy_tentacle_neck_1.tscn" id="14_ku1m4"]
+[ext_resource type="PackedScene" uid="uid://dlp7nor5ucl85" path="res://game/mob/tentacle/tentacle_head.tscn" id="15_3prr0"]
+[ext_resource type="PackedScene" uid="uid://dmstso2ktftv4" path="res://game/mob/enemy/enemy_tentacle_head_1.tscn" id="16_lruwd"]
+[ext_resource type="PackedScene" uid="uid://dmuds72wmjm26" path="res://game/stage/character_manager/manual_character_enabler.tscn" id="17_m0dj1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjkx1"]
+size = Vector2(38, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yjy7"]
+size = Vector2(64, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr5fx"]
+size = Vector2(60, 16)
+
+[sub_resource type="Animation" id="Animation_u1hin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_g7hea"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2oqqb"]
+_data = {
+&"RESET": SubResource("Animation_u1hin"),
+&"damage_control": ExtResource("5_5sk8r"),
+&"damaged": ExtResource("6_0xqn8"),
+&"dead": ExtResource("7_g7hea"),
+&"idle": ExtResource("8_7scxw"),
+&"initialize": ExtResource("9_ku1m4"),
+&"sleep": ExtResource("10_3prr0"),
+&"stuck": SubResource("Animation_g7hea"),
+&"terminate": ExtResource("11_lruwd")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7wco6"]
+animation = &"damage_control"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cqqhs"]
+animation = &"damaged"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h5ujm"]
+animation = &"dead"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vi13p"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e7ev4"]
+animation = &"initialize"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jjuic"]
+animation = &"sleep"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7scxw"]
+animation = &"stuck"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6yk27"]
+animation = &"terminate"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_utt05"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pco6u"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5u06l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xpo4n"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bvl24"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uam1b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wibd1"]
+states/End/position = Vector2(88, 352)
+states/Start/position = Vector2(88, 104)
+states/damage_control/node = SubResource("AnimationNodeAnimation_7wco6")
+states/damage_control/position = Vector2(340, 352)
+states/damaged/node = SubResource("AnimationNodeAnimation_cqqhs")
+states/damaged/position = Vector2(526, 227)
+states/dead/node = SubResource("AnimationNodeAnimation_h5ujm")
+states/dead/position = Vector2(198, 104)
+states/idle/node = SubResource("AnimationNodeAnimation_vi13p")
+states/idle/position = Vector2(340, 227)
+states/initialize/node = SubResource("AnimationNodeAnimation_e7ev4")
+states/initialize/position = Vector2(340, 104)
+states/sleep/node = SubResource("AnimationNodeAnimation_jjuic")
+states/sleep/position = Vector2(88, 227)
+states/stuck/node = SubResource("AnimationNodeAnimation_7scxw")
+states/stuck/position = Vector2(673, 227)
+states/terminate/node = SubResource("AnimationNodeAnimation_6yk27")
+states/terminate/position = Vector2(198, 227)
+transitions = ["idle", "damage_control", SubResource("AnimationNodeStateMachineTransition_utt05"), "damage_control", "damaged", SubResource("AnimationNodeStateMachineTransition_pco6u"), "damaged", "idle", SubResource("AnimationNodeStateMachineTransition_5u06l"), "initialize", "idle", SubResource("AnimationNodeStateMachineTransition_xpo4n"), "dead", "terminate", SubResource("AnimationNodeStateMachineTransition_bvl24"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_uam1b")]
+graph_offset = Vector2(50, 89)
+
+[node name="EnemySpearShell1" instance=ExtResource("1_2yjy7")]
+script = ExtResource("2_0xqn8")
+LerpAngle = 20.0
+Score = 500
+InitialLife = 10
+InitialMaxSpeed = 200.0
+
+[node name="OnScreen" parent="." index="0"]
+position = Vector2(2.38419e-06, 9.53674e-07)
+scale = Vector2(8, 3.2)
+
+[node name="BurialArea" parent="." index="1"]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" index="1"]
+position = Vector2(-14, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_yjkx1")
+
+[node name="EventFinder" parent="." index="2"]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" index="0"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_2yjy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_rr5fx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_2yjy7")
+hframes = 7
+
+[node name="MountPoint" parent="." index="5"]
+LerpAngle = 50.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_2oqqb")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="7"]
+tree_root = SubResource("AnimationNodeStateMachine_wibd1")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Muzzle" type="Node2D" parent="." index="8"]
+
+[node name="FindTargetTimer" type="Timer" parent="." index="9"]
+wait_time = 0.3
+autostart = true
+
+[node name="StopHomingTimer" type="Timer" parent="." index="10"]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="TentacleRoot_1" parent="." index="11" instance=ExtResource("12_g7hea")]
+position = Vector2(-50, 0)
+
+[node name="TentacleNeck_1" parent="TentacleRoot_1" index="0" instance=ExtResource("13_7scxw")]
+
+[node name="EnemyTentacleNeck" parent="TentacleRoot_1/TentacleNeck_1" index="0" instance=ExtResource("14_ku1m4")]
+
+[node name="TentacleNeck_2" parent="TentacleRoot_1" index="1" instance=ExtResource("13_7scxw")]
+
+[node name="EnemyTentacleNeck" parent="TentacleRoot_1/TentacleNeck_2" index="0" instance=ExtResource("14_ku1m4")]
+
+[node name="TentacleNeck_3" parent="TentacleRoot_1" index="2" instance=ExtResource("13_7scxw")]
+
+[node name="EnemyTentacleNeck" parent="TentacleRoot_1/TentacleNeck_3" index="0" instance=ExtResource("14_ku1m4")]
+
+[node name="TentacleNeck_4" parent="TentacleRoot_1" index="3" instance=ExtResource("13_7scxw")]
+
+[node name="EnemyTentacleNeck" parent="TentacleRoot_1/TentacleNeck_4" index="0" instance=ExtResource("14_ku1m4")]
+
+[node name="TentacleNeck_5" parent="TentacleRoot_1" index="4" instance=ExtResource("13_7scxw")]
+
+[node name="EnemyTentacleNeck" parent="TentacleRoot_1/TentacleNeck_5" index="0" instance=ExtResource("14_ku1m4")]
+
+[node name="TentacleNeck_6" parent="TentacleRoot_1" index="5" instance=ExtResource("13_7scxw")]
+
+[node name="EnemyTentacleNeck" parent="TentacleRoot_1/TentacleNeck_6" index="0" instance=ExtResource("14_ku1m4")]
+
+[node name="TentacleNeck_7" parent="TentacleRoot_1" index="6" instance=ExtResource("13_7scxw")]
+
+[node name="EnemyTentacleNeck" parent="TentacleRoot_1/TentacleNeck_7" index="0" instance=ExtResource("14_ku1m4")]
+
+[node name="TentacleHead" parent="TentacleRoot_1" index="7" instance=ExtResource("15_3prr0")]
+
+[node name="EnemyTentacleHead" parent="TentacleRoot_1/TentacleHead" index="0" instance=ExtResource("16_lruwd")]
+
+[node name="ManualCharacterEnabler" parent="TentacleRoot_1" index="8" node_paths=PackedStringArray("Parent") instance=ExtResource("17_m0dj1")]
+Parent = NodePath("../..")
+
+[node name="AddScoreCommand" parent="Dead" index="0"]
+Score = 500
+
+[node name="ShowFloatingMessageCommand" parent="Dead" index="1"]
+Message = "+500"
+
+[connection signal="timeout" from="FindTargetTimer" to="." method="FindTarget"]
+[connection signal="timeout" from="StopHomingTimer" to="." method="StopHoming"]

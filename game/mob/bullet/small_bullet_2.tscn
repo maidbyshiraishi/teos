@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b22ss726pu0lr"]
+
+[ext_resource type="PackedScene" uid="uid://cdou8vt06ok1y" path="res://game/mob/bullet/small_bullet_1.tscn" id="1_o8vy3"]
+
+[node name="SmallBullet" instance=ExtResource("1_o8vy3")]
+Attack = -2

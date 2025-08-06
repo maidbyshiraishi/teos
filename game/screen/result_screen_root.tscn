@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://bcop8mm2o6pye"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="1_hlehd"]
+[ext_resource type="Script" uid="uid://5if7njfe3jq7" path="res://game/screen/ResultScreen.cs" id="2_r0ebf"]
+[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://common/gui/CommandButton.cs" id="6_tlhuj"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="7_8faqi"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="8_s1m5c"]
+[ext_resource type="AudioStream" uid="uid://yrsd3ic1ixy8" path="res://game/contents/bgm/bgm11.ogg" id="11_ldigc"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://common/command/open_screen_command.tscn" id="11_x64qr"]
+[ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://common/trigger/visible_trigger.tscn" id="12_qj8vk"]
+[ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://common/command/change_bgm_command.tscn" id="14_i8o1y"]
+[ext_resource type="PackedScene" uid="uid://dopc2wenxil8y" path="res://game/screen/high_score_list_control.tscn" id="17_fyyvg"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://common/trigger/key_releaseed_trigger.tscn" id="18_lyrif"]
+
+[node name="ResultScreen" type="Control"]
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_hlehd")
+script = ExtResource("2_r0ebf")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 40.0
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
+[node name="Back" type="Button" parent="Control"]
+light_mask = 2
+layout_mode = 2
+offset_left = 336.0
+offset_top = 424.0
+offset_right = 496.0
+offset_bottom = 456.0
+size_flags_horizontal = 4
+text = "タイトルに戻る"
+script = ExtResource("6_tlhuj")
+
+[node name="Exec" parent="Control/Back" instance=ExtResource("7_8faqi")]
+
+[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("8_s1m5c")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenScreenCommand" parent="Control/Back/Exec" instance=ExtResource("11_x64qr")]
+Screen = "res://game/screen/title_screen.tscn"
+
+[node name="Focus" parent="Control/Back" instance=ExtResource("7_8faqi")]
+
+[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("8_s1m5c")]
+SeName = "menu_move"
+ProcessAlways = true
+
+[node name="Focus" parent="." instance=ExtResource("12_qj8vk")]
+position = Vector2(10, 10)
+
+[node name="ChangeBgmCommand" parent="Focus" instance=ExtResource("14_i8o1y")]
+Command = 1
+Stream = ExtResource("11_ldigc")
+
+[node name="EscapeKey" parent="." instance=ExtResource("18_lyrif")]
+ActionName = "escape"
+
+[node name="OpenScreenCommand" parent="EscapeKey" instance=ExtResource("11_x64qr")]
+Screen = "res://game/screen/title_screen.tscn"
+
+[node name="HighScoreListControl" parent="." instance=ExtResource("17_fyyvg")]
+offset_top = 96.0
+offset_bottom = 416.0

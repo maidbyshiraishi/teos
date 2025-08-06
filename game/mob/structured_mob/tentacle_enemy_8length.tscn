@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://ivxngujrpk4m"]
+
+[ext_resource type="Script" uid="uid://ogawdofk04ge" path="res://game/mob/tentacle/TentacleRoot.cs" id="1_84ts3"]
+[ext_resource type="PackedScene" uid="uid://lrib1hldmisj" path="res://game/mob/tentacle/tentacle_neck.tscn" id="2_jn728"]
+[ext_resource type="PackedScene" uid="uid://cf6s24mqf6yt0" path="res://game/mob/enemy/enemy_tentacle_neck_1.tscn" id="3_pl8k7"]
+[ext_resource type="PackedScene" uid="uid://dlp7nor5ucl85" path="res://game/mob/tentacle/tentacle_head.tscn" id="4_mimb4"]
+[ext_resource type="PackedScene" uid="uid://dmstso2ktftv4" path="res://game/mob/enemy/enemy_tentacle_head_1.tscn" id="5_nxbyk"]
+
+[node name="TentacleEnemy8Length" type="Node2D"]
+script = ExtResource("1_84ts3")
+
+[node name="EnemyTentacleNeck" parent="." instance=ExtResource("3_pl8k7")]
+
+[node name="TentacleNeck_1" parent="." instance=ExtResource("2_jn728")]
+
+[node name="EnemyTentacleNeck" parent="TentacleNeck_1" instance=ExtResource("3_pl8k7")]
+
+[node name="TentacleNeck_2" parent="." instance=ExtResource("2_jn728")]
+
+[node name="EnemyTentacleNeck" parent="TentacleNeck_2" instance=ExtResource("3_pl8k7")]
+
+[node name="TentacleNeck_3" parent="." instance=ExtResource("2_jn728")]
+
+[node name="EnemyTentacleNeck" parent="TentacleNeck_3" instance=ExtResource("3_pl8k7")]
+
+[node name="TentacleNeck_4" parent="." instance=ExtResource("2_jn728")]
+
+[node name="EnemyTentacleNeck" parent="TentacleNeck_4" instance=ExtResource("3_pl8k7")]
+
+[node name="TentacleNeck_5" parent="." instance=ExtResource("2_jn728")]
+
+[node name="EnemyTentacleNeck" parent="TentacleNeck_5" instance=ExtResource("3_pl8k7")]
+
+[node name="TentacleNeck_6" parent="." instance=ExtResource("2_jn728")]
+
+[node name="EnemyTentacleNeck" parent="TentacleNeck_6" instance=ExtResource("3_pl8k7")]
+
+[node name="TentacleNeck_7" parent="." instance=ExtResource("2_jn728")]
+
+[node name="EnemyTentacleNeck" parent="TentacleNeck_7" instance=ExtResource("3_pl8k7")]
+
+[node name="TentacleHead" parent="." instance=ExtResource("4_mimb4")]
+
+[node name="EnemyTentacleHead" parent="TentacleHead" instance=ExtResource("5_nxbyk")]
+WeaponRotationEnabled = true
+
+[node name="AddScoreCommand" parent="TentacleHead/EnemyTentacleHead/Dead" index="0"]
+Score = 0
+
+[node name="ShowFloatingMessageCommand" parent="TentacleHead/EnemyTentacleHead/Dead" index="1"]
+Message = ""
+
+[editable path="TentacleHead/EnemyTentacleHead"]

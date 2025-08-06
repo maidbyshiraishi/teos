@@ -1,0 +1,107 @@
+[gd_scene load_steps=18 format=3 uid="uid://dso37tipw6hb5"]
+
+[ext_resource type="Script" uid="uid://k7onbcuv4lo7" path="res://game/tilemap/CrackBlock.cs" id="1_4c50n"]
+[ext_resource type="Texture2D" uid="uid://dudpy2g634a01" path="res://game/contents/tilemap/crack_block.png" id="1_l8d1x"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="3_l5u65"]
+[ext_resource type="PackedScene" uid="uid://d1m64yhaigvik" path="res://game/command/add_score_command.tscn" id="4_m8j6m"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="4_qe1dq"]
+[ext_resource type="PackedScene" uid="uid://ca7v4ux5jvfh7" path="res://game/command/drop_item_command.tscn" id="4_xjslq"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://game/command/show_floating_message_command.tscn" id="5_xjslq"]
+[ext_resource type="PackedScene" uid="uid://3v68y2am0x6b" path="res://game/command/show_decoration_command.tscn" id="6_qe1dq"]
+[ext_resource type="PackedScene" uid="uid://cn7no3720iabm" path="res://common/command/delay_command_container.tscn" id="9_j1l81"]
+[ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://common/command/queue_free_command.tscn" id="10_j1l81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qwls"]
+atlas = ExtResource("1_l8d1x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le64y"]
+atlas = ExtResource("1_l8d1x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6p2p"]
+atlas = ExtResource("1_l8d1x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jinuh"]
+atlas = ExtResource("1_l8d1x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfaqd"]
+atlas = ExtResource("1_l8d1x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5dya"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qwls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le64y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6p2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jinuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfaqd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b86s0"]
+size = Vector2(32, 32)
+
+[node name="CrackBlock" type="Area2D"]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("1_4c50n")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b5dya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b86s0")
+debug_color = Color(0, 1, 0, 0.313726)
+
+[node name="Dead" parent="." instance=ExtResource("3_l5u65")]
+
+[node name="PlaySeCommand" parent="Dead" instance=ExtResource("4_qe1dq")]
+SeName = "crack_block_breaked"
+
+[node name="DropItemCommand" parent="Dead" instance=ExtResource("4_xjslq")]
+
+[node name="AddScoreCommand" parent="Dead" instance=ExtResource("4_m8j6m")]
+Score = 2000
+
+[node name="ShowFloatingMessageCommand" parent="Dead" instance=ExtResource("5_xjslq")]
+Message = "+2000"
+
+[node name="ShowDecorationCommand_1" parent="Dead" instance=ExtResource("6_qe1dq")]
+Path = "res://game/decoration/explosion.tscn"
+
+[node name="ShowDecorationCommand_2" parent="Dead" instance=ExtResource("6_qe1dq")]
+Path = "res://game/decoration/explosion.tscn"
+RandomPosiotion = true
+
+[node name="ShowDecorationCommand_3" parent="Dead" instance=ExtResource("6_qe1dq")]
+Path = "res://game/decoration/explosion.tscn"
+RandomPosiotion = true
+
+[node name="DelayCommandContainer" parent="Dead" instance=ExtResource("9_j1l81")]
+WaitTime = 0.85
+
+[node name="QueueFreeCommand" parent="Dead/DelayCommandContainer" node_paths=PackedStringArray("Target") instance=ExtResource("10_j1l81")]
+Target = NodePath("../../..")
+
+[node name="Damaged" parent="." instance=ExtResource("3_l5u65")]
+
+[node name="PlaySeCommand" parent="Damaged" instance=ExtResource("4_qe1dq")]
+SeName = "enemy_damaged"

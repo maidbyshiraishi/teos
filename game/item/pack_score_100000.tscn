@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dumbbygy60ouy"]
+
+[ext_resource type="PackedScene" uid="uid://c87dtcgrwdrpw" path="res://game/item/item_pack_root.tscn" id="1_7shs8"]
+[ext_resource type="PackedScene" uid="uid://bkij6q8t5n4de" path="res://game/item/item_score_100000.tscn" id="2_7shs8"]
+
+[node name="PackScoreBoss100000" instance=ExtResource("1_7shs8")]
+
+[node name="ItemScore100000" parent="." index="0" instance=ExtResource("2_7shs8")]

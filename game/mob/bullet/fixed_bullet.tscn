@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3es3oeyqy3tl"]
+
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://game/mob/bullet/bullet_root.tscn" id="1_g64bm"]
+[ext_resource type="Script" uid="uid://jla6gqb8plh8" path="res://game/mob/bullet/BulletRoot.cs" id="2_frmt7"]
+
+[node name="FixedBullet" instance=ExtResource("1_g64bm")]
+script = ExtResource("2_frmt7")
+InitialMaxSpeed = 180.0
+
+[node name="OnScreen" parent="." index="0"]
+position = Vector2(0, -5.96046e-08)
+scale = Vector2(1, 0.3)
+
+[node name="Timer" type="Timer" parent="." index="1"]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="Switch"]

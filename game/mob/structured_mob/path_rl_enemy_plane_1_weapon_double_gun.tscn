@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu4qd6fbks2r0"]
+
+[ext_resource type="Script" uid="uid://b3enqjgwsjt0b" path="res://common/path/Path.cs" id="1_a6ykk"]
+[ext_resource type="Script" uid="uid://etipmx6dpuow" path="res://common/path/PathFollow.cs" id="2_0yk4s"]
+[ext_resource type="PackedScene" uid="uid://b3ee3yj6cktje" path="res://game/mob/enemy/enemy_plane_1.tscn" id="3_rwn01"]
+[ext_resource type="PackedScene" uid="uid://dn10ef6ikja86" path="res://game/weapon/double_gun.tscn" id="4_0sr38"]
+
+[sub_resource type="Curve2D" id="Curve2D_08nms"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -800, 0)
+}
+point_count = 2
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_08nms")
+script = ExtResource("1_a6ykk")
+metadata/_edit_vertical_guides_ = [-640.0]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+cubic_interp = false
+script = ExtResource("2_0yk4s")
+Speed = 60.0
+
+[node name="EnemyPlane1" parent="PathFollow2D" instance=ExtResource("3_rwn01")]
+Score = 0
+WeaponRotationEnabled = true
+
+[node name="AddScoreCommand" parent="PathFollow2D/EnemyPlane1/Dead" index="0"]
+Score = 0
+
+[node name="ShowFloatingMessageCommand" parent="PathFollow2D/EnemyPlane1/Dead" index="1"]
+Message = ""
+
+[node name="DoubleGun" parent="PathFollow2D/EnemyPlane1" instance=ExtResource("4_0sr38")]
+rotation = 3.14159
+
+[editable path="PathFollow2D/EnemyPlane1"]

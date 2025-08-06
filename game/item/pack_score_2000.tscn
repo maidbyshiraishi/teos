@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://82q5gith82u0"]
+
+[ext_resource type="PackedScene" uid="uid://c87dtcgrwdrpw" path="res://game/item/item_pack_root.tscn" id="1_cgbok"]
+[ext_resource type="PackedScene" uid="uid://djwsrswe5c1vx" path="res://game/item/item_score_1000.tscn" id="2_0tocf"]
+
+[node name="PackScore2000" instance=ExtResource("1_cgbok")]
+
+[node name="ItemScore1000_1" parent="." index="0" instance=ExtResource("2_0tocf")]
+
+[node name="ItemScore1000_2" parent="." index="1" instance=ExtResource("2_0tocf")]

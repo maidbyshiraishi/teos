@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ykovbxsetao"]
+
+[ext_resource type="Script" uid="uid://ch3uy35hyb67p" path="res://game/command/TerminateCharacterCommand.cs" id="1_pt5r3"]
+
+[node name="TerminateCharacterCommand" type="Node"]
+script = ExtResource("1_pt5r3")

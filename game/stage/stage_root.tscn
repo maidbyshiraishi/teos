@@ -1,0 +1,230 @@
+[gd_scene load_steps=29 format=3 uid="uid://ddw2g00yqtlmx"]
+
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="1_7ly80"]
+[ext_resource type="Script" uid="uid://rmx1t3loo6oa" path="res://game/stage/GameStageRoot.cs" id="2_3hrrl"]
+[ext_resource type="Script" uid="uid://6lv42xkeogwo" path="res://common/tilemap/TileMapManager.cs" id="3_kiuo3"]
+[ext_resource type="TileSet" uid="uid://vlqhnvwag8d" path="res://game/contents/tilemap/tileset.tres" id="4_w2etb"]
+[ext_resource type="PackedScene" uid="uid://c42o6ebyl3yqa" path="res://game/mob/player/player.tscn" id="5_epwon"]
+[ext_resource type="Script" uid="uid://b16wn3qxfw61c" path="res://common/tilemap/ObservationHole.cs" id="5_omjrv"]
+[ext_resource type="Script" uid="uid://b3enqjgwsjt0b" path="res://common/path/Path.cs" id="7_cpqe1"]
+[ext_resource type="PackedScene" uid="uid://cbmktshrlt18s" path="res://game/stage/camera.tscn" id="7_cwvs4"]
+[ext_resource type="Script" uid="uid://etipmx6dpuow" path="res://common/path/PathFollow.cs" id="8_elhkq"]
+[ext_resource type="PackedScene" uid="uid://cr2lwjlb07c3g" path="res://game/stage/hud/hud.tscn" id="8_u0rxu"]
+[ext_resource type="Script" uid="uid://cuuhv8lyx0qtp" path="res://game/mob/player/ObservationHoleCenter.cs" id="9_jg5on"]
+[ext_resource type="Texture2D" uid="uid://bjtcxc55616g" path="res://game/contents/image/player/target_marker.png" id="9_m2rsf"]
+[ext_resource type="Script" uid="uid://8ex3is6br4aa" path="res://game/stage/CenterOfCamera.cs" id="9_q34mi"]
+[ext_resource type="Script" uid="uid://dsm3lng06gyiy" path="res://game/mob/player/TargetMarker.cs" id="9_tbeiw"]
+[ext_resource type="PackedScene" uid="uid://dp3bmt6wc5mjp" path="res://game/stage/character_manager/character_manager.tscn" id="10_s44a6"]
+[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://common/command/command_container.tscn" id="10_ubbni"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://common/command/play_se_command.tscn" id="11_rkaqo"]
+[ext_resource type="PackedScene" uid="uid://cfeprt22k73qp" path="res://game/command/open_result_screen.tscn" id="11_v6viv"]
+[ext_resource type="PackedScene" uid="uid://cn7no3720iabm" path="res://common/command/delay_command_container.tscn" id="12_nyma3"]
+[ext_resource type="PackedScene" uid="uid://7lc2ks6h6ce" path="res://common/trigger/shortcut_keys.tscn" id="13_rx2t0"]
+[ext_resource type="PackedScene" uid="uid://bnnyybt486nvs" path="res://common/system/game_speed_manager.tscn" id="17_ivm8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fhsg"]
+size = Vector2(4, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c38uu"]
+size = Vector2(60, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfu1x"]
+radius = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14q6p"]
+atlas = ExtResource("9_m2rsf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no2ie"]
+atlas = ExtResource("9_m2rsf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3gxg"]
+atlas = ExtResource("9_m2rsf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owebc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14q6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no2ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3gxg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Stage" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_7ly80")
+script = ExtResource("2_3hrrl")
+MouseCaptured = true
+metadata/_edit_horizontal_guides_ = [240.0, 0.0, 480.0]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Parallax2D_1" type="Parallax2D" parent="Background"]
+z_index = -1000
+repeat_size = Vector2(1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Background/Parallax2D_1"]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0.447059, 0.678431, 0.933333, 1)
+
+[node name="Parallax2D_2" type="Parallax2D" parent="Background"]
+z_index = -990
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(640, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D_2"]
+modulate = Color(1, 1, 1, 0.196078)
+centered = false
+
+[node name="Parallax2D_3" type="Parallax2D" parent="Background"]
+visible = false
+z_index = -980
+repeat_size = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D_3"]
+scale = Vector2(2, 2)
+centered = false
+
+[node name="TileMap" type="Node2D" parent="."]
+
+[node name="Background" type="TileMapLayer" parent="TileMap"]
+self_modulate = Color(0.627451, 0.627451, 0.627451, 1)
+z_index = -20
+tile_set = ExtResource("4_w2etb")
+collision_enabled = false
+
+[node name="Ground" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("4_w2etb")
+script = ExtResource("3_kiuo3")
+
+[node name="ObservationHole" type="Polygon2D" parent="TileMap"]
+clip_children = 1
+z_index = 70
+invert_enabled = true
+invert_border = 16384.0
+script = ExtResource("5_omjrv")
+
+[node name="Foreground" type="TileMapLayer" parent="TileMap/ObservationHole"]
+tile_set = ExtResource("4_w2etb")
+collision_enabled = false
+
+[node name="Bullet" type="Node2D" parent="."]
+z_index = 60
+
+[node name="Enemy" type="Node2D" parent="."]
+z_index = 30
+
+[node name="Item" type="Node2D" parent="."]
+z_index = 10
+
+[node name="AutoScrollPath" type="Path2D" parent="."]
+script = ExtResource("7_cpqe1")
+
+[node name="AutoScroll" type="PathFollow2D" parent="AutoScrollPath"]
+rotates = false
+script = ExtResource("8_elhkq")
+Speed = 90.0
+PathEndType = 0
+
+[node name="PlayerBorderRect" type="ReferenceRect" parent="AutoScrollPath/AutoScroll"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -224.0
+offset_right = 304.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" parent="AutoScrollPath/AutoScroll" node_paths=PackedStringArray("Target", "BorderRect", "Hud") instance=ExtResource("5_epwon")]
+unique_name_in_owner = true
+z_index = 50
+Target = NodePath("../TargetMarker")
+BorderRect = NodePath("../PlayerBorderRect")
+Hud = NodePath("../../../Hud")
+
+[node name="ObservationHoleCenter" type="Node2D" parent="AutoScrollPath/AutoScroll/Player" node_paths=PackedStringArray("Target")]
+script = ExtResource("9_jg5on")
+Target = NodePath("../../../../TileMap/ObservationHole")
+
+[node name="GameOver" parent="AutoScrollPath/AutoScroll/Player" instance=ExtResource("10_ubbni")]
+
+[node name="PlaySeCommand" parent="AutoScrollPath/AutoScroll/Player/GameOver" instance=ExtResource("11_rkaqo")]
+SeName = "player_game_over"
+
+[node name="DelayCommandContainer" parent="AutoScrollPath/AutoScroll/Player/GameOver" instance=ExtResource("12_nyma3")]
+WaitTime = 2.0
+
+[node name="OpenResultScreen" parent="AutoScrollPath/AutoScroll/Player/GameOver/DelayCommandContainer" instance=ExtResource("11_v6viv")]
+
+[node name="StageVictory" parent="AutoScrollPath/AutoScroll/Player" instance=ExtResource("10_ubbni")]
+
+[node name="Camera" parent="AutoScrollPath/AutoScroll" instance=ExtResource("7_cwvs4")]
+unique_name_in_owner = true
+
+[node name="Area2D" type="Area2D" parent="AutoScrollPath/AutoScroll"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D_1" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/Area2D"]
+shape = SubResource("RectangleShape2D_0fhsg")
+debug_color = Color(1, 0, 1, 0.54902)
+
+[node name="CollisionShape2D_2" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/Area2D"]
+shape = SubResource("RectangleShape2D_c38uu")
+debug_color = Color(1, 0, 1, 0.54902)
+
+[node name="CenterOfCamera" type="Area2D" parent="AutoScrollPath/AutoScroll"]
+collision_layer = 512
+collision_mask = 0
+script = ExtResource("9_q34mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/CenterOfCamera"]
+shape = SubResource("CircleShape2D_yfu1x")
+debug_color = Color(1, 0, 1, 1)
+
+[node name="StaticDecoration" type="Node2D" parent="AutoScrollPath/AutoScroll"]
+z_index = 40
+
+[node name="TargetMarker" type="Node2D" parent="AutoScrollPath/AutoScroll" node_paths=PackedStringArray("BorderRect")]
+script = ExtResource("9_tbeiw")
+BorderRect = NodePath("../PlayerBorderRect")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AutoScrollPath/AutoScroll/TargetMarker"]
+z_index = 20
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_owebc")
+autoplay = "default"
+
+[node name="Decoration_1" type="Node2D" parent="."]
+z_index = 40
+
+[node name="Decoration_2" type="Node2D" parent="."]
+z_index = -10
+
+[node name="Scenario" type="Node2D" parent="."]
+
+[node name="CharacterManager" parent="." instance=ExtResource("10_s44a6")]
+
+[node name="Hud" parent="." instance=ExtResource("8_u0rxu")]
+
+[node name="ShortcutKeys" parent="." instance=ExtResource("13_rx2t0")]
+
+[node name="GameSpeedManager" parent="." instance=ExtResource("17_ivm8h")]

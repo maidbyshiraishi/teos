@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0u0fyqn1oqdg"]
+
+[ext_resource type="Script" uid="uid://8dfp0ego0f0y" path="res://game/command/LoadKeyOptionsCommand.cs" id="1_eeru6"]
+
+[node name="LoadKeyOptionsCommand" type="Node"]
+script = ExtResource("1_eeru6")

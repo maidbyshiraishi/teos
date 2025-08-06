@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr2lwjlb07c3g"]
+
+[ext_resource type="Script" uid="uid://cwsufbgy5awh0" path="res://game/stage/hud/Hud.cs" id="1_paadw"]
+[ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="3_bwh5j"]
+[ext_resource type="Texture2D" uid="uid://dss3mqlprg6fn" path="res://game/contents/stage/hud/life.png" id="4_wpn8b"]
+[ext_resource type="Texture2D" uid="uid://cp384ca26svlv" path="res://game/contents/stage/hud/rotation_lock.png" id="5_e1str"]
+[ext_resource type="Texture2D" uid="uid://bywx24kvk8t5h" path="res://game/contents/stage/hud/remain.png" id="6_yli5s"]
+[ext_resource type="Texture2D" uid="uid://bkriva4vdycw2" path="res://game/contents/stage/hud/bullet.png" id="10_xak3t"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_paadw")
+metadata/_edit_vertical_guides_ = [320.0]
+metadata/_edit_horizontal_guides_ = [240.0]
+
+[node name="Score" type="Label" parent="."]
+light_mask = 2
+anchors_preset = -1
+anchor_left = -0.1125
+anchor_right = 0.0375
+offset_left = 200.0
+offset_top = 8.0
+offset_right = 360.0
+offset_bottom = 32.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("3_bwh5j")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Life" type="TextureProgressBar" parent="."]
+light_mask = 2
+offset_left = 16.0
+offset_top = 440.0
+offset_right = 112.0
+offset_bottom = 472.0
+max_value = 5.0
+value = 3.0
+texture_progress = ExtResource("4_wpn8b")
+metadata/_edit_use_anchors_ = true
+
+[node name="RemainIcon" type="Sprite2D" parent="."]
+position = Vector2(552, 456)
+texture = ExtResource("6_yli5s")
+
+[node name="Remain" type="Label" parent="."]
+light_mask = 2
+offset_left = 576.0
+offset_top = 440.0
+offset_right = 608.0
+offset_bottom = 464.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("3_bwh5j")
+text = "0"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Rotation" type="Sprite2D" parent="."]
+position = Vector2(408, 456)
+texture = ExtResource("5_e1str")
+hframes = 2
+
+[node name="Bullets" type="Label" parent="."]
+light_mask = 2
+anchors_preset = -1
+anchor_left = -0.0171875
+anchor_right = -0.0171875
+offset_left = 480.0
+offset_top = 440.0
+offset_right = 528.0
+offset_bottom = 464.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("3_bwh5j")
+text = "0"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Control" parent="."]
+visible = false
+light_mask = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+theme = ExtResource("3_bwh5j")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label_1" type="Label" parent="Start"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.566334
+anchor_right = 0.435937
+anchor_bottom = 0.568417
+offset_top = 0.159836
+offset_right = 213.0
+offset_bottom = 30.1598
+scale = Vector2(1.3, 1.3)
+text = "ああああああああああ"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label_2" type="Label" parent="Start"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.650167
+anchor_right = 0.435937
+anchor_bottom = 0.65225
+offset_top = -0.0801849
+offset_right = 213.0
+offset_bottom = 29.9198
+scale = Vector2(1.3, 1.3)
+text = "ああああああああああ"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label_3" type="Label" parent="Start"]
+light_mask = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.732999
+anchor_right = 0.435937
+anchor_bottom = 0.735082
+offset_top = 0.160522
+offset_right = 213.0
+offset_bottom = 30.1605
+scale = Vector2(1.3, 1.3)
+text = "ああああああああああ"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Bullet" type="Sprite2D" parent="."]
+position = Vector2(448, 456)
+texture = ExtResource("10_xak3t")
