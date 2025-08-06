@@ -522,6 +522,7 @@ Speed = 20.0
 
 [node name="EnemyTank_1" parent="Enemy/Path2D_12/PathFollow2D" index="0" instance=ExtResource("13_f4xtr")]
 rotation = -0.785398
+WeaponRotationEnabled = true
 
 [node name="PackScore5000" parent="Enemy/Path2D_12/PathFollow2D/EnemyTank_1" index="8" instance=ExtResource("15_3ujr4")]
 
@@ -535,6 +536,7 @@ rotation = -2.96706
 
 [node name="EnemyTank_1" parent="Enemy" index="12" instance=ExtResource("13_f4xtr")]
 position = Vector2(5741, -507)
+WeaponRotationEnabled = true
 
 [node name="DoubleGun" parent="Enemy/EnemyTank_1" index="8" instance=ExtResource("14_jcvrs")]
 rotation = 2.96706
@@ -657,6 +659,7 @@ position = Vector2(-342, -23)
 
 [node name="EnemyTank_2" parent="Enemy" index="19" instance=ExtResource("13_f4xtr")]
 position = Vector2(6560, -540)
+WeaponRotationEnabled = true
 
 [node name="PackScore5000" parent="Enemy/EnemyTank_2" index="8" instance=ExtResource("15_3ujr4")]
 
@@ -682,6 +685,7 @@ Speed = 20.0
 PathEndType = 0
 
 [node name="EnemyTank_1" parent="Enemy/Path2D_19/PathFollow2D" index="0" instance=ExtResource("13_f4xtr")]
+WeaponRotationEnabled = true
 
 [node name="LaserGun_1" parent="Enemy/Path2D_19/PathFollow2D/EnemyTank_1" index="8" instance=ExtResource("16_3ujr4")]
 rotation = 3.14159
@@ -708,6 +712,7 @@ Speed = 20.0
 PathEndType = 0
 
 [node name="EnemyTank_1" parent="Enemy/Path2D_20/PathFollow2D" index="0" instance=ExtResource("13_f4xtr")]
+WeaponRotationEnabled = true
 
 [node name="DoubleGun" parent="Enemy/Path2D_20/PathFollow2D/EnemyTank_1" index="8" instance=ExtResource("14_jcvrs")]
 rotation = 3.14159
@@ -734,6 +739,7 @@ Speed = 20.0
 PathEndType = 0
 
 [node name="EnemyTank_1" parent="Enemy/Path2D_21/PathFollow2D" index="0" instance=ExtResource("13_f4xtr")]
+WeaponRotationEnabled = true
 
 [node name="HomingGun" parent="Enemy/Path2D_21/PathFollow2D/EnemyTank_1" index="8" instance=ExtResource("17_qqh51")]
 
@@ -759,6 +765,7 @@ Speed = 20.0
 PathEndType = 0
 
 [node name="EnemyTank_1" parent="Enemy/Path2D_22/PathFollow2D" index="0" instance=ExtResource("13_f4xtr")]
+WeaponRotationEnabled = true
 
 [node name="LaserGun_1" parent="Enemy/Path2D_22/PathFollow2D/EnemyTank_1" index="0" instance=ExtResource("16_3ujr4")]
 
@@ -977,6 +984,7 @@ UnlimitedMode = true
 [node name="EnemyGunMount_2" parent="Enemy/BossPath2D_1/PathFollow2D/StageBoss2" index="3" instance=ExtResource("34_0k03y")]
 position = Vector2(-80, -192)
 rotation = 3.14159
+WeaponRotationEnabled = true
 
 [node name="VisibleOnScreenCharacterEnabler" parent="Enemy/BossPath2D_1/PathFollow2D/StageBoss2/EnemyGunMount_2" index="8" node_paths=PackedStringArray("ReparentNode") instance=ExtResource("35_hjedc")]
 ReparentNode = NodePath("../..")
@@ -1001,6 +1009,7 @@ UnlimitedMode = true
 
 [node name="EnemyGunMount_4" parent="Enemy/BossPath2D_1/PathFollow2D/StageBoss2" index="5" instance=ExtResource("34_0k03y")]
 position = Vector2(192, -80)
+WeaponRotationEnabled = true
 
 [node name="VisibleOnScreenCharacterEnabler" parent="Enemy/BossPath2D_1/PathFollow2D/StageBoss2/EnemyGunMount_4" index="8" node_paths=PackedStringArray("ReparentNode") instance=ExtResource("35_hjedc")]
 ReparentNode = NodePath("../..")
@@ -1263,6 +1272,7 @@ UnlimitedMode = true
 
 [node name="EnemyGunMount_2" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2" index="3" instance=ExtResource("34_0k03y")]
 position = Vector2(80, 192)
+WeaponRotationEnabled = true
 
 [node name="VisibleOnScreenCharacterEnabler" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2/EnemyGunMount_2" index="8" node_paths=PackedStringArray("ReparentNode") instance=ExtResource("35_hjedc")]
 ReparentNode = NodePath("../..")
@@ -1287,6 +1297,7 @@ UnlimitedMode = true
 
 [node name="EnemyGunMount_4" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2" index="5" instance=ExtResource("34_0k03y")]
 position = Vector2(-192, 80)
+WeaponRotationEnabled = true
 
 [node name="VisibleOnScreenCharacterEnabler" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2/EnemyGunMount_4" index="8" node_paths=PackedStringArray("ReparentNode") instance=ExtResource("35_hjedc")]
 ReparentNode = NodePath("../..")

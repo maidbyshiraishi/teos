@@ -2826,6 +2826,7 @@ Speed = 30.0
 
 [node name="EnemyPlane1" parent="Enemy/Path2D_87/PathFollow2D/Path2D_1/PathFollow2D" index="0" instance=ExtResource("19_vw0b8")]
 scale = Vector2(1.5, 1.5)
+WeaponRotationEnabled = true
 
 [node name="FourwayGun_1" parent="Enemy/Path2D_87/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="9" instance=ExtResource("11_deoh6")]
 rotation = -3.14159
@@ -2862,6 +2863,7 @@ script = ExtResource("14_rak5d")
 Speed = 30.0
 
 [node name="EnemyPlane1" parent="Enemy/Path2D_88/PathFollow2D/Path2D_1/PathFollow2D" index="0" instance=ExtResource("19_vw0b8")]
+WeaponRotationEnabled = true
 
 [node name="PackScore3000" parent="Enemy/Path2D_88/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="9" instance=ExtResource("20_bbtmu")]
 
@@ -2896,6 +2898,7 @@ script = ExtResource("14_rak5d")
 Speed = 30.0
 
 [node name="EnemyPlane1" parent="Enemy/Path2D_89/PathFollow2D/Path2D_1/PathFollow2D" index="0" instance=ExtResource("19_vw0b8")]
+WeaponRotationEnabled = true
 
 [node name="PackScore3000" parent="Enemy/Path2D_89/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="9" instance=ExtResource("20_bbtmu")]
 
@@ -2932,6 +2935,7 @@ script = ExtResource("14_rak5d")
 Speed = 30.0
 
 [node name="EnemyPlane1" parent="Enemy/Path2D_90/PathFollow2D/Path2D_1/PathFollow2D" index="0" instance=ExtResource("19_vw0b8")]
+WeaponRotationEnabled = true
 
 [node name="FourwayGun_1" parent="Enemy/Path2D_90/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="9" instance=ExtResource("11_deoh6")]
 rotation = -3.14159
@@ -2971,6 +2975,7 @@ script = ExtResource("14_rak5d")
 Speed = 30.0
 
 [node name="EnemyPlane1" parent="Enemy/Path2D_91/PathFollow2D/Path2D_1/PathFollow2D" index="0" instance=ExtResource("19_vw0b8")]
+WeaponRotationEnabled = true
 
 [node name="FourwayGun_1" parent="Enemy/Path2D_91/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="9" instance=ExtResource("11_deoh6")]
 rotation = -3.14159
