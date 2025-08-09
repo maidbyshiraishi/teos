@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Collections;
-using teos.game.mob.enemy;
 using teos.game.stage.character_manager;
 
 namespace teos.game.mob.tentacle;
@@ -13,12 +12,12 @@ public partial class TentacleRoot : Node2D, ICharacterManager
     private TentacleHead _head;
     private bool _disable = false;
     private bool _disableRoot = true;
-    private EnemyRoot _neckRoot;
+    private Node _neckRoot;
 
     public override void _Ready()
     {
         _head = GetNodeOrNull<TentacleHead>("TentacleHead");
-        _neckRoot = GetNodeOrNull<EnemyRoot>("EnemyTentacleNeck");
+        _neckRoot = GetNodeOrNull("EnemyTentacleNeck");
         AddToGroup(CharacterManager.CharacterGroup);
     }
 
@@ -56,7 +55,10 @@ public partial class TentacleRoot : Node2D, ICharacterManager
             }
         }
 
-        _neckRoot?.Sweep();
+        if (_neckRoot is ISweep sweep)
+        {
+            sweep.Sweep();
+        }
     }
 
     public void SweepRoot()
