@@ -80,8 +80,8 @@ public partial class Hud : CanvasLayer, IGameNode
 
     public void SetMessage(string text1, string text2, string text3)
     {
-        Text1 = string.IsNullOrEmpty(text1) ? "" : text1;
-        Text2 = string.IsNullOrEmpty(text2) ? "" : text2;
-        Text3 = string.IsNullOrEmpty(text3) ? "" : text3;
+        Text1 = string.IsNullOrWhiteSpace(text1) ? "" : text1;
+        Text2 = string.IsNullOrWhiteSpace(text2) ? "" : text2;
+        Text3 = string.IsNullOrWhiteSpace(text3) ? "" : text3;
     }
 }

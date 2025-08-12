@@ -13,7 +13,7 @@ public partial class DialogArgument : Node
 
     public void SetArgument(string key, Array<Variant> argument)
     {
-        if (string.IsNullOrEmpty(key) || argument == null || dictinary.ContainsKey(key))
+        if (string.IsNullOrWhiteSpace(key) || argument == null || dictinary.ContainsKey(key))
         {
             return;
         }
@@ -23,7 +23,7 @@ public partial class DialogArgument : Node
 
     public Array<Variant> GetArgument(string key)
     {
-        if (string.IsNullOrEmpty(key) || !dictinary.TryGetValue(key, out Array<Variant> argument))
+        if (string.IsNullOrWhiteSpace(key) || !dictinary.TryGetValue(key, out Array<Variant> argument))
         {
             return [];
         }

@@ -141,7 +141,7 @@ public partial class LicenseDialog : DialogRoot
                     {
                         string item = sub_name.Trim();
 
-                        if (!string.IsNullOrEmpty(item))
+                        if (!string.IsNullOrWhiteSpace(item))
                         {
                             _licenseList.AddItem(item);
                         }

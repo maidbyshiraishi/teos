@@ -27,7 +27,7 @@ public partial class KeyReleaseedTrigger : Node
 
     public override void _Process(double delta)
     {
-        if (_enabled && !string.IsNullOrEmpty(ActionName) && Input.IsActionJustReleased(ActionName))
+        if (_enabled && !string.IsNullOrWhiteSpace(ActionName) && Input.IsActionJustReleased(ActionName))
         {
             CommandRoot.ExecChildren(this, Target, true);
             _enabled = false;

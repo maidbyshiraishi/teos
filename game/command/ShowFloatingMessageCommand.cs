@@ -22,7 +22,7 @@ public partial class ShowFloatingMessageCommand : ShowDecorationCommand
 
     public override void ExecCommand(Node node, bool flag)
     {
-        if (ExecFlag != flag || string.IsNullOrWhiteSpace(Path) || string.IsNullOrEmpty(Message))
+        if (ExecFlag != flag || string.IsNullOrWhiteSpace(Path) || string.IsNullOrWhiteSpace(Message))
         {
             return;
         }
