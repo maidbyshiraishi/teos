@@ -12,7 +12,7 @@ config_version=5
 
 config/name="teos"
 config/description="イチゴを食べてしまったメイド突撃隊は罰を受け、戦場へ送られた。『宇宙から来たメイド vs 鋼鉄の帝国』は全3ステージ、短時間でサクッと遊べて飽きる前に終わるシューティングゲームです。 "
-config/version="1.0.2"
+config/version="1.0.3"
 run/main_scene="res://common/screen/splash_screen.tscn"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="uid://dw8xnf1kurmvx"
