@@ -9,6 +9,7 @@
 [ext_resource type="Animation" uid="uid://dh22vhxeq1oxb" path="res://game/contents/state_machine/weapon/item.tres" id="10_78puh"]
 [ext_resource type="Animation" uid="uid://camfd07a5xaye" path="res://game/contents/state_machine/weapon/separate.tres" id="11_6kpd0"]
 [ext_resource type="Animation" uid="uid://ww7f1i78ij12" path="res://game/contents/state_machine/weapon/sleep.tres" id="12_cw3nx"]
+[ext_resource type="Animation" uid="uid://c4i4h4s5l4pxu" path="res://game/contents/state_machine/weapon/empty.tres" id="13_fpttq"]
 [ext_resource type="Animation" uid="uid://cpti2lg0reo88" path="res://game/contents/state_machine/weapon/terminate.tres" id="13_pniuy"]
 [ext_resource type="Animation" uid="uid://d3isqfmn11pi4" path="res://game/contents/state_machine/weapon/trash.tres" id="14_acmmw"]
 [ext_resource type="Animation" uid="uid://dsyq75fp8nl24" path="res://game/contents/state_machine/weapon/equip.tres" id="14_ecp26"]
@@ -125,48 +126,6 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_pdot1"]
-resource_name = "default"
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.95),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(0, 0), Vector2(-2, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["gun_empty"],
-"method": &"PlaySe"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_281if"]
 length = 0.9
 loop_mode = 1
@@ -229,7 +188,7 @@ _data = {
 &"RESET": SubResource("Animation_nyqnr"),
 &"attack": SubResource("Animation_rt06n"),
 &"broken": ExtResource("5_gu0bm"),
-&"empty": SubResource("Animation_pdot1"),
+&"empty": ExtResource("13_fpttq"),
 &"enemy_attack": SubResource("Animation_281if"),
 &"equip": ExtResource("14_ecp26"),
 &"idle": ExtResource("8_u15vs"),
@@ -393,7 +352,7 @@ states/terminate/position = Vector2(-39, -96)
 states/trash/node = SubResource("AnimationNodeAnimation_bh5ki")
 states/trash/position = Vector2(-172, 33)
 transitions = ["idle", "attack", SubResource("AnimationNodeStateMachineTransition_7f0kr"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_5uo8n"), "attack", "empty", SubResource("AnimationNodeStateMachineTransition_so7hh"), "equip", "idle", SubResource("AnimationNodeStateMachineTransition_nbo1b"), "empty", "broken", SubResource("AnimationNodeStateMachineTransition_341va"), "equip", "broken", SubResource("AnimationNodeStateMachineTransition_jea1f"), "initialize", "item", SubResource("AnimationNodeStateMachineTransition_v4jlu"), "separate", "terminate", SubResource("AnimationNodeStateMachineTransition_5jyn2"), "initialize", "trash", SubResource("AnimationNodeStateMachineTransition_0tys6"), "enemy_idle", "enemy_attack", SubResource("AnimationNodeStateMachineTransition_avev4"), "enemy_attack", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_ahhij"), "enemy_attack", "enemy_empty", SubResource("AnimationNodeStateMachineTransition_nasbl"), "enemy_equip", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_xj2gc"), "enemy_equip", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_jcvr5"), "enemy_empty", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_g7s7h"), "terminate", "initialize", SubResource("AnimationNodeStateMachineTransition_qv7ka"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_fag12")]
-graph_offset = Vector2(-141, -175)
+graph_offset = Vector2(72, -175)
 
 [node name="HomingGun" instance=ExtResource("1_v3bgv")]
 self_modulate = Color(0.196078, 0.196078, 0.196078, 1)
@@ -407,21 +366,21 @@ Bullet = ExtResource("2_eitu6")
 NumOfBullets = 100
 HasEnemyStatemachine = true
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(21, 0)
 shape = SubResource("RectangleShape2D_ggebh")
 
-[node name="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" parent="." index="1"]
 position = Vector2(21, 0)
 texture = ExtResource("3_kuj7g")
 hframes = 2
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="2"]
 libraries = {
 &"": SubResource("AnimationLibrary_rkbl2")
 }
 
-[node name="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeStateMachine_1mcwl")
 parameters/conditions/empty = false
 parameters/conditions/press = false

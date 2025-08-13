@@ -10,6 +10,7 @@
 [ext_resource type="Animation" uid="uid://camfd07a5xaye" path="res://game/contents/state_machine/weapon/separate.tres" id="11_d7btn"]
 [ext_resource type="Animation" uid="uid://ww7f1i78ij12" path="res://game/contents/state_machine/weapon/sleep.tres" id="12_hfpql"]
 [ext_resource type="Animation" uid="uid://cpti2lg0reo88" path="res://game/contents/state_machine/weapon/terminate.tres" id="13_gs218"]
+[ext_resource type="Animation" uid="uid://c4i4h4s5l4pxu" path="res://game/contents/state_machine/weapon/empty.tres" id="13_lu20u"]
 [ext_resource type="Animation" uid="uid://d3isqfmn11pi4" path="res://game/contents/state_machine/weapon/trash.tres" id="14_3oudi"]
 [ext_resource type="Animation" uid="uid://dsyq75fp8nl24" path="res://game/contents/state_machine/weapon/equip.tres" id="14_bcb0j"]
 
@@ -126,49 +127,6 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_5cpdg"]
-resource_name = "default"
-length = 0.3
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(0, 0), Vector2(-2, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["gun_empty"],
-"method": &"PlaySe"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_0rpav"]
 length = 0.8
 loop_mode = 1
@@ -231,7 +189,7 @@ _data = {
 &"RESET": SubResource("Animation_start"),
 &"attack": SubResource("Animation_8gx3h"),
 &"broken": ExtResource("5_v5oil"),
-&"empty": SubResource("Animation_5cpdg"),
+&"empty": ExtResource("13_lu20u"),
 &"enemy_attack": SubResource("Animation_0rpav"),
 &"equip": ExtResource("14_bcb0j"),
 &"idle": ExtResource("8_icjc6"),
@@ -407,21 +365,21 @@ Bullet = ExtResource("2_5acs8")
 NumOfBullets = 200
 HasEnemyStatemachine = true
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_k5u0o")
 
-[node name="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" parent="." index="1"]
 position = Vector2(6, 0)
 texture = ExtResource("2_7dj4i")
 hframes = 2
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="2"]
 libraries = {
 &"": SubResource("AnimationLibrary_35ewt")
 }
 
-[node name="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeStateMachine_1fdec")
 parameters/conditions/empty = false
 parameters/conditions/press = false

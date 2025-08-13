@@ -11,6 +11,7 @@
 [ext_resource type="Animation" uid="uid://camfd07a5xaye" path="res://game/contents/state_machine/weapon/separate.tres" id="12_dgodm"]
 [ext_resource type="Animation" uid="uid://ww7f1i78ij12" path="res://game/contents/state_machine/weapon/sleep.tres" id="13_tor2p"]
 [ext_resource type="Animation" uid="uid://cpti2lg0reo88" path="res://game/contents/state_machine/weapon/terminate.tres" id="14_nnpfa"]
+[ext_resource type="Animation" uid="uid://c4i4h4s5l4pxu" path="res://game/contents/state_machine/weapon/empty.tres" id="14_sypie"]
 [ext_resource type="Animation" uid="uid://d3isqfmn11pi4" path="res://game/contents/state_machine/weapon/trash.tres" id="15_rk88w"]
 [ext_resource type="Animation" uid="uid://dsyq75fp8nl24" path="res://game/contents/state_machine/weapon/equip.tres" id="15_xjamn"]
 
@@ -114,36 +115,6 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_un5wc"]
-resource_name = "default"
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(0, 0), Vector2(-2, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["gun_empty"],
-"method": &"PlaySe"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_n7fq2"]
 length = 0.8
 loop_mode = 1
@@ -194,7 +165,7 @@ _data = {
 &"RESET": SubResource("Animation_nyqnr"),
 &"attack": SubResource("Animation_rfvo2"),
 &"broken": ExtResource("6_138j5"),
-&"empty": SubResource("Animation_un5wc"),
+&"empty": ExtResource("14_sypie"),
 &"enemy_attack": SubResource("Animation_n7fq2"),
 &"equip": ExtResource("15_xjamn"),
 &"idle": ExtResource("9_c081v"),

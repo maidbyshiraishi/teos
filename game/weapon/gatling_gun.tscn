@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cdou8vt06ok1y" path="res://game/mob/bullet/small_bullet_1.tscn" id="2_uo3bu"]
 [ext_resource type="Animation" uid="uid://dh22vhxeq1oxb" path="res://game/contents/state_machine/weapon/item.tres" id="11_ta2ht"]
 [ext_resource type="Animation" uid="uid://camfd07a5xaye" path="res://game/contents/state_machine/weapon/separate.tres" id="12_q8rf2"]
+[ext_resource type="Animation" uid="uid://c4i4h4s5l4pxu" path="res://game/contents/state_machine/weapon/empty.tres" id="13_hciu2"]
 [ext_resource type="Animation" uid="uid://ww7f1i78ij12" path="res://game/contents/state_machine/weapon/sleep.tres" id="13_nghib"]
 [ext_resource type="Animation" uid="uid://drlw0ppky2k28" path="res://game/contents/state_machine/weapon/idle.tres" id="13_wv7hj"]
 [ext_resource type="Animation" uid="uid://ewv6bfkr0wpm" path="res://game/contents/state_machine/weapon/broken.tres" id="14_pk4mc"]
@@ -125,49 +126,6 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_25rp5"]
-resource_name = "new_animation"
-length = 0.1
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.09),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(0, 0), Vector2(-2, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["gun_empty"],
-"method": &"PlaySe"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_mxbay"]
 length = 0.25
 loop_mode = 1
@@ -260,7 +218,7 @@ _data = {
 &"RESET": SubResource("Animation_wsl7o"),
 &"attack": SubResource("Animation_pywht"),
 &"broken": ExtResource("14_pk4mc"),
-&"empty": SubResource("Animation_25rp5"),
+&"empty": ExtResource("13_hciu2"),
 &"enemy_attack": SubResource("Animation_mxbay"),
 &"equip": ExtResource("14_xxtlv"),
 &"idle": ExtResource("13_wv7hj"),
@@ -464,21 +422,21 @@ Bullet = ExtResource("2_uo3bu")
 NumOfBullets = 300
 HasEnemyStatemachine = true
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(22, 0)
 shape = SubResource("RectangleShape2D_fmqtf")
 
-[node name="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" parent="." index="1"]
 position = Vector2(22, 0)
 texture = ExtResource("2_ng0ab")
 hframes = 2
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="2"]
 libraries = {
 &"": SubResource("AnimationLibrary_5vtpn")
 }
 
-[node name="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeStateMachine_mebst")
 parameters/conditions/empty = false
 parameters/conditions/press = false
