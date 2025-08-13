@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cgo5nw4mlh7pe"]
+[gd_scene load_steps=20 format=3 uid="uid://cgo5nw4mlh7pe"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://common/contents/theme/theme_default.tres" id="1_d5hvi"]
 [ext_resource type="Script" uid="uid://cf7w4x10j02ww" path="res://game/screen/JukeboxDialog.cs" id="2_lfgcj"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://bvxquv5u5dkif" path="res://game/contents/bgm/bgm11_song.ogg" id="9_fldbg"]
 [ext_resource type="AudioStream" uid="uid://desswc5ojc6g7" path="res://game/contents/bgm/bgm12.ogg" id="9_o72l3"]
 [ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://game/contents/bgm/bgm6.ogg" id="12_60qon"]
-[ext_resource type="AudioStream" uid="uid://b80xdq1t3o76e" path="res://game/contents/bgm/bgm9.ogg" id="15_rvqik"]
 [ext_resource type="PackedScene" uid="uid://cxuhm7osw7v00" path="res://common/command/load_game_options_command.tscn" id="16_rncda"]
 [ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://common/command/set_game_options_command.tscn" id="17_54top"]
 [ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://common/command/update_dialog_screen_command.tscn" id="18_ngv3k"]
@@ -200,7 +199,7 @@ light_mask = 2
 layout_mode = 0
 offset_left = 88.0
 offset_top = 320.0
-offset_right = 312.0
+offset_right = 552.0
 offset_bottom = 352.0
 text = "メイドを超えろ"
 script = ExtResource("3_jq3u4")
@@ -216,28 +215,6 @@ ProcessAlways = true
 [node name="ChangeBgmCommand" parent="Control/Data_6/Exec" instance=ExtResource("4_vx7g3")]
 Command = 1
 Stream = ExtResource("12_60qon")
-
-[node name="Data_9" type="Button" parent="Control"]
-light_mask = 2
-layout_mode = 0
-offset_left = 328.0
-offset_top = 320.0
-offset_right = 552.0
-offset_bottom = 352.0
-text = "地球のメイドの一休み"
-script = ExtResource("3_jq3u4")
-
-[node name="Focus" parent="Control/Data_9" instance=ExtResource("6_3u2lt")]
-
-[node name="PlaySeCommand" parent="Control/Data_9/Focus" instance=ExtResource("7_dkqhw")]
-SeName = "menu_move"
-ProcessAlways = true
-
-[node name="Exec" parent="Control/Data_9" instance=ExtResource("6_3u2lt")]
-
-[node name="ChangeBgmCommand" parent="Control/Data_9/Exec" instance=ExtResource("4_vx7g3")]
-Command = 1
-Stream = ExtResource("15_rvqik")
 
 [node name="Back" type="Button" parent="Control"]
 light_mask = 2
