@@ -2123,7 +2123,10 @@ visible = true
 [node name="PlaySeCommand" parent="AutoScrollPath/AutoScroll/Player/StageVictory" index="0" instance=ExtResource("5_m67ra")]
 SeName = "player_victory"
 
-[node name="DelayCommandContainer" parent="AutoScrollPath/AutoScroll/Player/StageVictory" index="1" instance=ExtResource("52_tygt3")]
+[node name="PlaySeCommand2" parent="AutoScrollPath/AutoScroll/Player/StageVictory" index="1" instance=ExtResource("5_m67ra")]
+SeName = "rocket_maid"
+
+[node name="DelayCommandContainer" parent="AutoScrollPath/AutoScroll/Player/StageVictory" index="2" instance=ExtResource("52_tygt3")]
 WaitTime = 2.5
 
 [node name="TravelStageCommand" parent="AutoScrollPath/AutoScroll/Player/StageVictory/DelayCommandContainer" index="0" instance=ExtResource("54_kkcmr")]

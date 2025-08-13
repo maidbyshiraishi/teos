@@ -3642,7 +3642,10 @@ position = Vector2(320, 240)
 [node name="PlaySeCommand" parent="AutoScrollPath/AutoScroll/Player/StageVictory" index="0" instance=ExtResource("5_5bh4n")]
 SeName = "player_victory"
 
-[node name="DelayCommandContainer" parent="AutoScrollPath/AutoScroll/Player/StageVictory" index="1" instance=ExtResource("57_nel8p")]
+[node name="PlaySeCommand2" parent="AutoScrollPath/AutoScroll/Player/StageVictory" index="1" instance=ExtResource("5_5bh4n")]
+SeName = "rocket_maid"
+
+[node name="DelayCommandContainer" parent="AutoScrollPath/AutoScroll/Player/StageVictory" index="2" instance=ExtResource("57_nel8p")]
 WaitTime = 2.5
 
 [node name="OpenResultScreen" parent="AutoScrollPath/AutoScroll/Player/StageVictory/DelayCommandContainer" index="0" instance=ExtResource("53_x10cp")]

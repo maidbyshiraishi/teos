@@ -1043,6 +1043,9 @@ shape = SubResource("RectangleShape2D_6fjmj")
 
 [node name="InitializeCharacter" parent="." index="10" instance=ExtResource("5_obiyy")]
 
+[node name="PlaySeCommand2" parent="InitializeCharacter" index="0" instance=ExtResource("6_m7mfw")]
+SeName = "rocket_maid"
+
 [node name="TerminateCharacter" parent="." index="11" instance=ExtResource("5_obiyy")]
 
 [node name="Dead" parent="." index="12" instance=ExtResource("5_obiyy")]
@@ -1064,6 +1067,9 @@ SeName = "player_damaged"
 
 [node name="PlaySeCommand" parent="Resurrected" index="1" instance=ExtResource("6_m7mfw")]
 SeName = "player_resurrected"
+
+[node name="PlaySeCommand2" parent="Resurrected" index="2" instance=ExtResource("6_m7mfw")]
+SeName = "rocket_maid"
 
 [node name="SeparateWeapon" parent="." index="15" instance=ExtResource("5_obiyy")]
 

@@ -1048,7 +1048,10 @@ position = Vector2(16, 17)
 
 [node name="ChangeBgmCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
 
-[node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
+[node name="PlaySeCommand2" parent="Socket/Contents/Page6/VisibleTrigger" index="1" instance=ExtResource("14_73c1f")]
+SeName = "rocket_maid"
+
+[node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="2" node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
 AnimationPlayer = NodePath("../../AnimationPlayer")
 AnimationName = "default"
 
