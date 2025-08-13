@@ -140,7 +140,6 @@ ClearWaitTime = 3.0
 RandomErrorX = 50.0
 RandomErrorY = 50.0
 LerpAngle = 10.0
-Score = 500
 InitialLife = 5
 InitialApproach = 32.0
 InitialMaxSpeed = 300.0
@@ -184,10 +183,10 @@ anim_player = NodePath("../AnimationPlayer")
 [node name="SearchTargetTimer" type="Timer" parent="." index="8"]
 wait_time = 5.0
 
-[node name="AddScoreCommand" parent="Dead" index="0"]
+[node name="AddScoreCommand" parent="Dead" index="1"]
 Score = 1000
 
-[node name="ShowFloatingMessageCommand" parent="Dead" index="1"]
+[node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
 Message = "+1000"
 
 [connection signal="timeout" from="SearchTargetTimer" to="." method="ToggleSearch"]

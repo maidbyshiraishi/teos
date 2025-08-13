@@ -638,7 +638,7 @@ tracks/1/path = NodePath("Node2D/Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.51, 0.61, 0.7, 0.8, 0.9, 0.96, 1.04, 1.2),
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.51, 0.61, 0.7, 0.8, 0.9, 0.96, 1.04, 1.199),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(60, -60), Vector2(120, -120), Vector2(120, -180), Vector2(-60, -240), Vector2(-120, -165), Vector2(-90, -90), Vector2(0, 0), Vector2(300, 0), Vector2(350, 0), Vector2(350, 0), Vector2(700, 0)]

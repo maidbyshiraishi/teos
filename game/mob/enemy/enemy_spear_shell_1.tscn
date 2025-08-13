@@ -150,7 +150,6 @@ graph_offset = Vector2(50, 89)
 [node name="EnemySpearShell1" instance=ExtResource("1_2yjy7")]
 script = ExtResource("2_0xqn8")
 LerpAngle = 20.0
-Score = 500
 InitialLife = 10
 InitialMaxSpeed = 200.0
 
@@ -243,10 +242,10 @@ position = Vector2(-50, 0)
 [node name="ManualCharacterEnabler" parent="TentacleRoot_1" index="8" node_paths=PackedStringArray("Parent") instance=ExtResource("17_m0dj1")]
 Parent = NodePath("../..")
 
-[node name="AddScoreCommand" parent="Dead" index="0"]
+[node name="AddScoreCommand" parent="Dead" index="1"]
 Score = 500
 
-[node name="ShowFloatingMessageCommand" parent="Dead" index="1"]
+[node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
 Message = "+500"
 
 [connection signal="timeout" from="FindTargetTimer" to="." method="FindTarget"]

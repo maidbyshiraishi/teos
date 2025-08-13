@@ -133,7 +133,6 @@ transitions = ["idle", "damage_control", SubResource("AnimationNodeStateMachineT
 graph_offset = Vector2(-123, 43.5638)
 
 [node name="EnemyTentacleNeck1" instance=ExtResource("1_5gijm")]
-Score = 0
 WeaponEquipEnabled = false
 InitialLife = 999
 MaxLife = 999
@@ -175,10 +174,10 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="SearchTargetTimer" type="Timer" parent="." index="8"]
 
-[node name="AddScoreCommand" parent="Dead" index="0"]
+[node name="AddScoreCommand" parent="Dead" index="1"]
 Score = 0
 
-[node name="ShowFloatingMessageCommand" parent="Dead" index="1"]
+[node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
 Message = ""
 
 [connection signal="timeout" from="SearchTargetTimer" to="." method="ToggleSearch"]

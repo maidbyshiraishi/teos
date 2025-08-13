@@ -137,7 +137,6 @@ graph_offset = Vector2(-259, 72)
 [node name="EnemyDrone1" instance=ExtResource("1_fpe40")]
 script = ExtResource("2_fpe40")
 Bullet = ExtResource("3_yjkx1")
-Score = 100
 
 [node name="OnScreen" parent="." index="0"]
 position = Vector2(9.53674e-07, -3.52859e-06)
@@ -187,10 +186,10 @@ position = Vector2(21, 14)
 [node name="ShotTimer" type="Timer" parent="." index="9"]
 autostart = true
 
-[node name="AddScoreCommand" parent="Dead" index="0"]
+[node name="AddScoreCommand" parent="Dead" index="1"]
 Score = 100
 
-[node name="ShowFloatingMessageCommand" parent="Dead" index="1"]
+[node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
 Message = "+100"
 
 [connection signal="timeout" from="ShotTimer" to="." method="Fire"]
