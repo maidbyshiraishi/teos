@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qwbs76yai02y" path="res://game/contents/image/weapon/laser_gun_1.png" id="5_o2aws"]
 [ext_resource type="Texture2D" uid="uid://cgcgxtsxa03lf" path="res://game/contents/image/weapon/laser_gun_2.png" id="6_ggkvv"]
 [ext_resource type="Animation" uid="uid://drlw0ppky2k28" path="res://game/contents/state_machine/weapon/idle.tres" id="7_u2uy4"]
-[ext_resource type="Animation" uid="uid://b50gnru2tsie3" path="res://game/contents/state_machine/weapon/initialize.tres" id="8_8dauk"]
 [ext_resource type="Animation" uid="uid://ww7f1i78ij12" path="res://game/contents/state_machine/weapon/sleep.tres" id="9_rd70r"]
-[ext_resource type="Animation" uid="uid://cpti2lg0reo88" path="res://game/contents/state_machine/weapon/terminate.tres" id="10_l16ij"]
 [ext_resource type="Animation" uid="uid://dsyq75fp8nl24" path="res://game/contents/state_machine/weapon/equip.tres" id="11_rerk4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vd1n"]
@@ -367,6 +365,61 @@ tracks/4/keys = {
 "values": [0.785398]
 }
 
+[sub_resource type="Animation" id="Animation_bdlje"]
+resource_name = "initialize"
+length = 0.01
+step = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"InitializeCharacter"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Up/AnimatedSprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Down/AnimatedSprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_yaj4t"]
 length = 0.9
 loop_mode = 1
@@ -495,6 +548,60 @@ tracks/5/keys = {
 "values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_lppwi"]
+length = 0.001
+step = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"TerminateCharacter"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Up/AnimatedSprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Down/AnimatedSprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_axdbc"]
 length = 0.001
 step = 0.01
@@ -609,11 +716,11 @@ _data = {
 &"empty": SubResource("Animation_f8n15"),
 &"equip": ExtResource("11_rerk4"),
 &"idle": ExtResource("7_u2uy4"),
-&"initialize": ExtResource("8_8dauk"),
+&"initialize": SubResource("Animation_bdlje"),
 &"item": SubResource("Animation_yaj4t"),
 &"separate": SubResource("Animation_vrbsl"),
 &"sleep": ExtResource("9_rd70r"),
-&"terminate": ExtResource("10_l16ij"),
+&"terminate": SubResource("Animation_lppwi"),
 &"trash": SubResource("Animation_axdbc"),
 &"warmingup": SubResource("Animation_orprx")
 }
@@ -774,7 +881,7 @@ frame_progress = 0.0868832
 
 [node name="Sprite2D" parent="." index="4"]
 visible = false
-self_modulate = Color(0.196078, 0.196078, 0.196078, 1)
+self_modulate = Color(0.392157, 0.392157, 0.392157, 1)
 position = Vector2(30, 6)
 centered = false
 offset = Vector2(-16, -16)
