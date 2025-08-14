@@ -62,7 +62,7 @@ public partial class EnemyTentacleHead1 : EnemyRoot
                     m_MountPoint.RotateWeapon(delta, (m_Player.GlobalPosition - GlobalPosition).Angle());
                 }
 
-                weapon.Update(true);
+                weapon.Update(m_Trigger);
             }
 
             if (_tentacleHead is not null)

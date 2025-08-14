@@ -47,7 +47,7 @@ public partial class EnemySimple2 : EnemyRoot
 
     public virtual void Fire()
     {
-        if (Bullet is null || Bullet.Instantiate() is not BulletRoot)
+        if (!m_Trigger || m_StateMachine.GetCurrentNode() != "idle" || Bullet is null || Bullet.Instantiate() is not BulletRoot)
         {
             return;
         }

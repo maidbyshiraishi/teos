@@ -43,6 +43,7 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
     protected Array<PathFollow> m_PathFollow;
     protected Sprite2D m_Sprite2d;
     protected Vector2 m_OldPosition;
+    protected bool m_Trigger = true;
 
     private Array<EnemyDropCharacterEnabler> _dropItemCharacterEnabler = [];
 
@@ -140,6 +141,12 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
             }
         }
     }
+
+    public override void Dead()
+    {
+        m_Trigger = false;
+        base.Dead();
+    }
     #endregion
 
     #region ICharacterManagerインタフェース
@@ -188,8 +195,7 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
     {
         if (IsInstanceValid(this))
         {
-            base.AddLife(int.MinValue);
-            m_StateMachine.Travel("damage_control");
+            m_StateMachine.Start("dead");
         }
     }
     #endregion

@@ -44,7 +44,7 @@ public partial class EnemySimple1 : EnemyRoot
                     m_MountPoint.RotateWeapon(delta, (_targetPosition - GlobalPosition).Angle());
                 }
 
-                weapon.Update(true);
+                weapon.Update(m_Trigger);
             }
 
             PathFollowMove(m_PathFollow, delta);
