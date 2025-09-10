@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://glvulbgmq66c"]
+
+[ext_resource type="Script" uid="uid://b876r8log2p8f" path="res://system/DialogArgument.cs" id="1_8ueot"]
+
+[node name="DialogArgument" type="Node"]
+process_mode = 3
+script = ExtResource("1_8ueot")

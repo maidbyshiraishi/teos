@@ -1,0 +1,160 @@
+[gd_scene load_steps=32 format=3 uid="uid://bn1mdfrdailj6"]
+
+[ext_resource type="Script" uid="uid://b47xonbt2i8nk" path="res://system/game_button_controller/GameButtonStateMachine.cs" id="1_rgw3d"]
+
+[sub_resource type="Animation" id="Animation_4i1fr"]
+length = 0.001
+step = 0.01
+
+[sub_resource type="Animation" id="Animation_d4ss3"]
+length = 0.001
+step = 0.01
+
+[sub_resource type="Animation" id="Animation_gkiti"]
+length = 0.5
+step = 0.01
+
+[sub_resource type="Animation" id="Animation_hntl4"]
+length = 0.3
+step = 0.01
+
+[sub_resource type="Animation" id="Animation_di55b"]
+length = 0.001
+step = 0.01
+
+[sub_resource type="Animation" id="Animation_l70fx"]
+length = 0.8
+step = 0.01
+
+[sub_resource type="Animation" id="Animation_5fy04"]
+length = 0.8
+step = 0.01
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wl4re"]
+_data = {
+&"RESET": SubResource("Animation_4i1fr"),
+&"long_press": SubResource("Animation_d4ss3"),
+&"press": SubResource("Animation_gkiti"),
+&"press_release": SubResource("Animation_hntl4"),
+&"release": SubResource("Animation_di55b"),
+&"repeat_press": SubResource("Animation_l70fx"),
+&"repeat_release": SubResource("Animation_5fy04")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n7htw"]
+animation = &"long_press"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ataal"]
+animation = &"press"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o4vq3"]
+animation = &"press_release"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r4lh1"]
+animation = &"release"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yihmn"]
+animation = &"repeat_press"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v6w6c"]
+animation = &"repeat_release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4ca7e"]
+advance_mode = 2
+advance_condition = &"press"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_shths"]
+advance_mode = 2
+advance_condition = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s7iif"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5ycri"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3uiv2"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nbyos"]
+states/End/position = Vector2(849, 2)
+states/RepeatPress/node = SubResource("AnimationNodeAnimation_yihmn")
+states/RepeatPress/position = Vector2(599, 2)
+states/RepeatRelease/node = SubResource("AnimationNodeAnimation_v6w6c")
+states/RepeatRelease/position = Vector2(599, 120)
+states/Start/position = Vector2(368, 2)
+transitions = ["RepeatRelease", "RepeatPress", SubResource("AnimationNodeStateMachineTransition_4ca7e"), "RepeatPress", "RepeatRelease", SubResource("AnimationNodeStateMachineTransition_shths"), "RepeatPress", "End", SubResource("AnimationNodeStateMachineTransition_s7iif"), "RepeatRelease", "End", SubResource("AnimationNodeStateMachineTransition_5ycri"), "Start", "RepeatPress", SubResource("AnimationNodeStateMachineTransition_3uiv2")]
+graph_offset = Vector2(92, -85)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cl3yx"]
+advance_mode = 2
+advance_condition = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_271ry"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7fveq"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"press"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d18y3"]
+advance_mode = 2
+advance_condition = &"press"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_huokc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_guo4p"]
+advance_mode = 2
+advance_condition = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0gm0l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hck4q"]
+advance_mode = 2
+advance_condition = &"press"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t6qrh"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a2pgc"]
+states/End/position = Vector2(711, 9)
+states/Start/position = Vector2(150, 9)
+states/long_press/node = SubResource("AnimationNodeAnimation_n7htw")
+states/long_press/position = Vector2(343, 276)
+states/press/node = SubResource("AnimationNodeAnimation_ataal")
+states/press/position = Vector2(515, 276)
+states/press_release/node = SubResource("AnimationNodeAnimation_o4vq3")
+states/press_release/position = Vector2(711, 383)
+states/release/node = SubResource("AnimationNodeAnimation_r4lh1")
+states/release/position = Vector2(428, 9)
+states/repeat/node = SubResource("AnimationNodeStateMachine_nbyos")
+states/repeat/position = Vector2(150, 383)
+transitions = ["long_press", "release", SubResource("AnimationNodeStateMachineTransition_cl3yx"), "repeat", "release", SubResource("AnimationNodeStateMachineTransition_271ry"), "repeat", "long_press", SubResource("AnimationNodeStateMachineTransition_7fveq"), "release", "press", SubResource("AnimationNodeStateMachineTransition_d18y3"), "press", "long_press", SubResource("AnimationNodeStateMachineTransition_huokc"), "press", "press_release", SubResource("AnimationNodeStateMachineTransition_guo4p"), "press_release", "release", SubResource("AnimationNodeStateMachineTransition_0gm0l"), "press_release", "repeat", SubResource("AnimationNodeStateMachineTransition_hck4q"), "Start", "release", SubResource("AnimationNodeStateMachineTransition_t6qrh")]
+graph_offset = Vector2(-6, -91)
+
+[node name="GameButtonStateMachine" type="Node"]
+script = ExtResource("1_rgw3d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_wl4re")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_a2pgc")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/press = false
+parameters/conditions/release = false
+parameters/repeat/conditions/press = false
+parameters/repeat/conditions/release = false

@@ -12,28 +12,28 @@ config_version=5
 
 config/name="teos"
 config/description="イチゴを食べてしまったメイド突撃隊は罰を受け、戦場へ送られた。『宇宙から来たメイド vs 鋼鉄の帝国』は全3ステージ、短時間でサクッと遊べて飽きる前に終わるシューティングゲームです。 "
-config/version="1.0.5"
-run/main_scene="res://common/screen/splash_screen.tscn"
+config/version="1.0.6"
+run/main_scene="res://screen/splash_screen.tscn"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="uid://dw8xnf1kurmvx"
 
 [audio]
 
-buses/default_bus_layout="res://common/contents/audio/default_bus_layout.tres"
+buses/default_bus_layout="res://contents/audio/default_bus_layout.tres"
 
 [autoload]
 
-ScreenOption="*res://common/system/screen_option.tscn"
-DialogLayer="*res://game/system/game_dialog_layer.tscn"
-DialogArgument="*res://common/system/dialog_argument.tscn"
-ScreenFader="*res://common/system/screen_fader.tscn"
-GameOption="*res://common/system/game_option.tscn"
-GameKeyOption="*res://game/system/game_key_option.tscn"
-GameDataManager="*res://game/system/game_data_manager.tscn"
-HighScoreManager="*res://game/system/high_score_manager.tscn"
-MusicPlayer="*res://common/system/music_player.tscn"
-SePlayer="*res://common/system/se_player.tscn"
-Screenshot="*res://common/system/screenshot.tscn"
+ScreenOption="*res://system/screen_option.tscn"
+DialogLayer="*res://system/game_dialog_layer.tscn"
+DialogArgument="*res://system/dialog_argument.tscn"
+ScreenFader="*res://system/screen_fader.tscn"
+GameOption="*res://system/game_option.tscn"
+GameKeyOption="*res://system/game_key_option.tscn"
+GameDataManager="*res://system/game_data_manager.tscn"
+HighScoreManager="*res://system/high_score_manager.tscn"
+MusicPlayer="*res://system/music_player.tscn"
+SePlayer="*res://system/se_player.tscn"
+Screenshot="*res://system/screenshot.tscn"
 
 [debug]
 
@@ -605,7 +605,7 @@ escape={
 [internationalization]
 
 locale/translation_remaps={}
-locale/translations=PackedStringArray("res://game/talk.ja.translation")
+locale/translations=PackedStringArray("res://contents/translation/talk.ja.translation")
 
 [layer_names]
 

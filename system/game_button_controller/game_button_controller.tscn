@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://by3qxttnk3kiw"]
+
+[ext_resource type="Script" uid="uid://f8q4xx5m2vpd" path="res://system/game_button_controller/GameButtonController.cs" id="1_rokgj"]
+[ext_resource type="PackedScene" uid="uid://bn1mdfrdailj6" path="res://system/game_button_controller/game_button_state_machine.tscn" id="2_3xekr"]
+
+[node name="GameButtonController" type="Node"]
+script = ExtResource("1_rokgj")
+
+[node name="game_a" parent="." instance=ExtResource("2_3xekr")]
+
+[node name="game_b" parent="." instance=ExtResource("2_3xekr")]

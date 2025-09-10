@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj7uh2jaobi4v"]
+
+[ext_resource type="Script" uid="uid://dc3di1my3lgjp" path="res://command/QueueFreeCommand.cs" id="1_68i0l"]
+
+[node name="QueueFreeCommand" type="Node"]
+script = ExtResource("1_68i0l")
