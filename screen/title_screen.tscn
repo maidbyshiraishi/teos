@@ -124,7 +124,6 @@ offset_right = 336.0
 offset_bottom = 432.0
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../OptionList")
-focus_neighbor_right = NodePath("../Etc")
 text = "終了"
 script = ExtResource("6_xtjut")
 
@@ -187,7 +186,6 @@ offset_bottom = 384.0
 size_flags_horizontal = 4
 focus_neighbor_left = NodePath("../OptionList")
 focus_neighbor_top = NodePath("../Story")
-focus_neighbor_bottom = NodePath("../Etc")
 text = "ハイスコア"
 script = ExtResource("6_xtjut")
 
@@ -209,36 +207,30 @@ ProcessAlways = true
 [node name="ResetTimerCommand" parent="Control/HighScore/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("11_e2f0q")]
 Target = NodePath("../../../../Timer")
 
-[node name="Etc" type="Button" parent="Control"]
+[node name="BGM" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 0
 offset_left = 352.0
 offset_top = 400.0
-offset_right = 512.0
+offset_right = 504.0
 offset_bottom = 432.0
 size_flags_horizontal = 4
-focus_neighbor_left = NodePath("../Quit")
-focus_neighbor_top = NodePath("../HighScore")
-text = "その他"
+text = "BGMを聞く"
 script = ExtResource("6_xtjut")
 
-[node name="Exec" parent="Control/Etc" instance=ExtResource("8_l4ku3")]
+[node name="Exec" parent="Control/BGM" instance=ExtResource("8_l4ku3")]
 
-[node name="PlaySeCommand" parent="Control/Etc/Exec" instance=ExtResource("9_bvcnx")]
+[node name="PlaySeCommand" parent="Control/BGM/Exec" instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenDialogCommand" parent="Control/Etc/Exec" instance=ExtResource("7_0002q")]
-DialogPath = "res://screen/etc_dialog.tscn"
+[node name="OpenDialogCommand" parent="Control/BGM/Exec" instance=ExtResource("7_0002q")]
+DialogPath = "res://screen/jukebox_dialog.tscn"
 
-[node name="Focus" parent="Control/Etc" instance=ExtResource("8_l4ku3")]
+[node name="Focus" parent="Control/BGM" instance=ExtResource("8_l4ku3")]
 
-[node name="PlaySeCommand" parent="Control/Etc/Focus" instance=ExtResource("9_bvcnx")]
+[node name="PlaySeCommand" parent="Control/BGM/Focus" instance=ExtResource("9_bvcnx")]
 SeName = "menu_move"
 ProcessAlways = true
-
-[node name="ResetTimerCommand" parent="Control/Etc/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("11_e2f0q")]
-Target = NodePath("../../../../Timer")
 
 [node name="Focus" parent="." instance=ExtResource("13_6nn80")]
 position = Vector2(10, 10)
