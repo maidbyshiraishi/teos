@@ -95,6 +95,7 @@ SeName = "menu_move"
 ProcessAlways = true
 
 [node name="Toggled" parent="Control/FullscreenCheck" instance=ExtResource("4_qsf5g")]
+script = null
 
 [node name="PlaySeCommand1" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"

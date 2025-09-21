@@ -1,5 +1,4 @@
 using Godot;
-using static Godot.DisplayServer;
 
 namespace teos.system;
 
@@ -23,11 +22,6 @@ public partial class GameOption : Node
     /// 効果音音量
     /// </summary>
     public float SeVolume { get; set; } = DefaultVolume;
-
-    /// <summary>
-    /// ウィンドウ・フルスクリーン表示
-    /// </summary>
-    public bool Fullscreen { get; set; } = false;
 
     public override void _Ready()
     {
@@ -105,21 +99,5 @@ public partial class GameOption : Node
         float v = Mathf.Clamp(volume / 100f, 0f, 1f);
         float db = Mathf.LinearToDb(v);
         return db;
-    }
-
-    /// <summary>
-    /// ウィンドウ・フルスクリーン表示を切り替える
-    /// ウィンドウの位置とサイズの保存と復元は行わない
-    /// </summary>
-    public void ChangeOnlyWindowMode()
-    {
-        if (!Fullscreen && WindowGetMode() is WindowMode.Fullscreen)
-        {
-            WindowSetMode(WindowMode.Windowed);
-        }
-        else if (Fullscreen && WindowGetMode() is WindowMode.Windowed)
-        {
-            WindowSetMode(WindowMode.Fullscreen);
-        }
     }
 }

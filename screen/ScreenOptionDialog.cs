@@ -30,7 +30,7 @@ public partial class ScreenOptionDialog : DialogRoot
     /// </summary>
     public override void UpdateDialogScreen()
     {
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
         Fullscreen = option.Fullscreen;
         SetFullscreenCheck(Fullscreen);
     }
@@ -48,16 +48,6 @@ public partial class ScreenOptionDialog : DialogRoot
         ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
         option.Fullscreen = Fullscreen;
         option.ChangeWindowMode();
-    }
-
-    public override void _Input(InputEvent ievent)
-    {
-        GameOption option = GetNode<GameOption>("/root/GameOption");
-
-        if (option.Fullscreen != GetNode<CheckButton>("Control/FullscreenCheck").ButtonPressed)
-        {
-            SetFullscreenCheck(option.Fullscreen);
-        }
     }
 
     private void SetFullscreenCheck(bool flag)
