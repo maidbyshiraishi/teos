@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1diwdpuom6ss"]
+
+[ext_resource type="Script" uid="uid://cnanplvvu77pu" path="res://trigger/AnimationPlayerFinishedTrigger.cs" id="1_xrldn"]
+
+[node name="AnimationPlayerFinishedTrigger" type="Node"]
+script = ExtResource("1_xrldn")

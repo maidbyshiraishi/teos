@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fd5mu6dinejm"]
+
+[ext_resource type="Script" uid="uid://bdbo40muy28tt" path="res://command/CallGroupCommand.cs" id="1_me8fg"]
+
+[node name="CallGroupCommand" type="Node"]
+script = ExtResource("1_me8fg")

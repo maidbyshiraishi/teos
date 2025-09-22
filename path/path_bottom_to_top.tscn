@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cluwh6vn2uvsw"]
+
+[ext_resource type="Script" uid="uid://b3enqjgwsjt0b" path="res://path/Path.cs" id="1_611fr"]
+[ext_resource type="Script" uid="uid://etipmx6dpuow" path="res://path/PathFollow.cs" id="2_lbyl4"]
+
+[sub_resource type="Curve2D" id="Curve2D_611fr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -600)
+}
+point_count = 2
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_611fr")
+script = ExtResource("1_611fr")
+metadata/_edit_vertical_guides_ = [-640.0]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+cubic_interp = false
+script = ExtResource("2_lbyl4")
+Speed = 60.0

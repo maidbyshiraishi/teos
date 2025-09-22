@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7tac0dcph05y"]
+
+[ext_resource type="Script" uid="uid://cdrivxcgh650k" path="res://command/PrintCommand.cs" id="1_80srl"]
+
+[node name="PrintCommand" type="Node"]
+script = ExtResource("1_80srl")

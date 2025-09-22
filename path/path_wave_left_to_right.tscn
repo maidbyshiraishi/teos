@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnvdxuhqqoshf"]
+
+[ext_resource type="Script" uid="uid://b3enqjgwsjt0b" path="res://path/Path.cs" id="1_8567k"]
+[ext_resource type="Script" uid="uid://etipmx6dpuow" path="res://path/PathFollow.cs" id="2_hsos5"]
+
+[sub_resource type="Curve2D" id="Curve2D_08nms"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 800, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_8567k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, -20)
+}
+point_count = 2
+
+[node name="Path2D" type="Path2D" node_paths=PackedStringArray("PathFollow")]
+curve = SubResource("Curve2D_08nms")
+script = ExtResource("1_8567k")
+PathFollow = NodePath("PathFollow2D/Path2D/PathFollow2D")
+metadata/_edit_vertical_guides_ = [-640.0]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+cubic_interp = false
+script = ExtResource("2_hsos5")
+Speed = 60.0
+
+[node name="Path2D" type="Path2D" parent="PathFollow2D"]
+curve = SubResource("Curve2D_8567k")
+script = ExtResource("1_8567k")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PathFollow2D/Path2D"]
+progress = 20.0
+rotates = false
+cubic_interp = false
+script = ExtResource("2_hsos5")
+Speed = 30.0

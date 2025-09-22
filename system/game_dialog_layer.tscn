@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://v2xofs2poe0j"]
+
+[ext_resource type="Script" uid="uid://bbl465fg53ukd" path="res://system/GameDialogLayer.cs" id="1_1gw6x"]
+
+[node name="DialogLayer" type="CanvasLayer"]
+process_mode = 3
+layer = 50
+script = ExtResource("1_1gw6x")

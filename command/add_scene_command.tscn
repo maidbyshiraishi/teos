@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp84v1vmxi1jx"]
+
+[ext_resource type="Script" uid="uid://cilvgdu8sigen" path="res://command/AddSceneCommand.cs" id="1_5n3po"]
+
+[node name="AddSceneCommand" type="Node"]
+script = ExtResource("1_5n3po")
