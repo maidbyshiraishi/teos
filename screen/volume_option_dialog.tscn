@@ -241,7 +241,7 @@ SeName = "menu_move"
 ProcessAlways = true
 
 [node name="EscapeKey" parent="." instance=ExtResource("16_yg6hs")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("15_deamu")]
 Target = NodePath("../../Close")
@@ -261,8 +261,6 @@ ProcessAlways = true
 [node name="LoadGameOptionsCommand" parent="Close" instance=ExtResource("10_12k4t")]
 
 [node name="SetGameOptionsCommand" parent="Close" instance=ExtResource("11_0e2uc")]
-
-[node name="UpdateDialogScreenCommand" parent="Close" instance=ExtResource("12_xh88y")]
 
 [node name="CloseDialogCommand" parent="Close" instance=ExtResource("9_x2o4e")]
 

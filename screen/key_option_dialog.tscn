@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://3r16tce2nd2t"]
+[gd_scene load_steps=17 format=3 uid="uid://3r16tce2nd2t"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_dgins"]
 [ext_resource type="Texture2D" uid="uid://si3xgb2yh3n2" path="res://contents/screen/key_option_dialog/swap.png" id="2_1qi7l"]
@@ -14,6 +14,8 @@
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="11_eljme"]
 [ext_resource type="Script" uid="uid://c2n2sbxnj7xyb" path="res://gui/CommandHSlider.cs" id="13_2wxud"]
 [ext_resource type="PackedScene" uid="uid://c1rbo6273ktjc" path="res://command/open_file_manager_command.tscn" id="14_2nrta"]
+[ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="15_ucmy4"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="16_slu4a"]
 
 [node name="KeyOptionDialog" type="Control"]
 light_mask = 2
@@ -214,8 +216,6 @@ ProcessAlways = true
 
 [node name="SaveKeyOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("2_o5guw")]
 
-[node name="UpdateDialogScreenCommand" parent="Control/Back/Exec" instance=ExtResource("2_q4wlk")]
-
 [node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("5_wq4oo")]
 
 [node name="Focus" parent="Control/Back" instance=ExtResource("5_kjl5n")]
@@ -322,6 +322,28 @@ ProcessAlways = true
 [node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" instance=ExtResource("4_h8vmb")]
 SeName = "menu_move"
 ProcessAlways = true
+
+[node name="EscapeKey" parent="." instance=ExtResource("15_ucmy4")]
+ActionName = "escape"
+
+[node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("16_slu4a")]
+Target = NodePath("../../Close")
+
+[node name="OptionKey" parent="." instance=ExtResource("15_ucmy4")]
+ActionName = "option"
+
+[node name="ReferenceCommandContainer" parent="OptionKey" node_paths=PackedStringArray("Target") instance=ExtResource("16_slu4a")]
+Target = NodePath("../../Close")
+
+[node name="Close" parent="." instance=ExtResource("5_kjl5n")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("4_h8vmb")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="LoadKeyOptionsCommand" parent="Close" instance=ExtResource("2_b7ksl")]
+
+[node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_wq4oo")]
 
 [connection signal="pressed" from="Control/SwapStick" to="." method="SwapStick"]
 [connection signal="value_changed" from="Control/TargetSensitivity" to="." method="TargetSensitivityValueChanged"]

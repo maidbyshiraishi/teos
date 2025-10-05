@@ -9,6 +9,8 @@ namespace teos.trigger;
 /// </summary>
 public partial class KeyReleaseedTrigger : Node
 {
+    public static readonly string KeyTriggerGroup = "KeyTriggerGroup";
+
     /// <summary>
     /// コマンドを実行するアクション名
     /// </summary>
@@ -23,6 +25,7 @@ public partial class KeyReleaseedTrigger : Node
     public override void _Ready()
     {
         AddToGroup(StageRoot.ProcessGroup);
+        AddToGroup(KeyTriggerGroup);
     }
 
     public override void _Process(double delta)
@@ -30,12 +33,16 @@ public partial class KeyReleaseedTrigger : Node
         if (_enabled && !string.IsNullOrWhiteSpace(ActionName) && Input.IsActionJustReleased(ActionName))
         {
             CommandRoot.ExecChildren(this, Target, true);
-            _enabled = false;
+            GetTree().CallGroup(KeyTriggerGroup, MethodName.WaitKey);
         }
-        else if (!_enabled && !Input.IsActionPressed(ActionName))
-        {
-            // 例えば、ポーズ画面をPキーで閉じると再度ポーズ画面が開くのを回避する
-            _enabled = true;
-        }
+    }
+
+    public async void WaitKey()
+    {
+        // キー操作をポーズから復帰した画面やダイアログが拾ってしまうため
+        // 操作後0.05秒間、キー操作を無効にする。
+        _enabled = false;
+        _ = await ToSignal(GetTree().CreateTimer(0.05f), Timer.SignalName.Timeout);
+        _enabled = true;
     }
 }

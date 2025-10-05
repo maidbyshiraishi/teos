@@ -149,7 +149,7 @@ SeName = "menu_move"
 ProcessAlways = true
 
 [node name="EscapeKey" parent="." instance=ExtResource("9_y84o5")]
-ActionName = "ui_cancel"
+ActionName = "escape"
 
 [node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("10_n7t16")]
 Target = NodePath("../../Close")
