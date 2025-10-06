@@ -399,6 +399,7 @@ SeName = "menu_move"
 
 [node name="PlaySeCommand" parent="Close" index="0" instance=ExtResource("17_dpbwf")]
 SeName = "menu_select"
+ProcessAlways = true
 
 [node name="OpenScreenCommand" parent="Close" index="1" instance=ExtResource("10_0nalh")]
 Screen = "res://screen/title_screen.tscn"

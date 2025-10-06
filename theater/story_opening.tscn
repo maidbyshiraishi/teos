@@ -160,5 +160,6 @@ SeName = "menu_move"
 
 [node name="PlaySeCommand" parent="Close" index="0" instance=ExtResource("13_ehk5a")]
 SeName = "menu_select"
+ProcessAlways = true
 
 [node name="CloseDialogCommand" parent="Close" index="1" instance=ExtResource("8_42s1e")]
