@@ -124,10 +124,10 @@ position = Vector2(200, 158)
 
 [node name="PauseBgmCommand" parent="Focus" instance=ExtResource("10_2mcok")]
 
-[node name="KeyReleaseedTrigger" parent="." instance=ExtResource("11_0jy0p")]
+[node name="EscapeKey" parent="." instance=ExtResource("11_0jy0p")]
 ActionName = "escape"
 
-[node name="ReferenceCommandContainer" parent="KeyReleaseedTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("9_41aka")]
+[node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("9_41aka")]
 Target = NodePath("../../Escape")
 
 [node name="Escape" parent="." instance=ExtResource("7_8rrvl")]
