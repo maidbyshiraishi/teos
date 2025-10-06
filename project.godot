@@ -603,11 +603,6 @@ escape={
 ]
 }
 
-[internationalization]
-
-locale/translation_remaps={}
-locale/translations=PackedStringArray("res://contents/translation/talk.ja.translation")
-
 [layer_names]
 
 2d_physics/layer_1="tilemap"
