@@ -37,7 +37,7 @@ layout_mode = 0
 offset_left = 160.0
 offset_top = 119.0
 offset_right = 480.0
-offset_bottom = 368.0
+offset_bottom = 367.0
 border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
@@ -73,9 +73,9 @@ anchors_preset = 0
 [node name="Back" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 248.0
+offset_left = 240.0
 offset_top = 256.0
-offset_right = 391.0
+offset_right = 400.0
 offset_bottom = 288.0
 text = "戻る"
 
@@ -100,9 +100,9 @@ ProcessAlways = true
 [node name="Title" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
-offset_left = 248.0
+offset_left = 240.0
 offset_top = 304.0
-offset_right = 390.0
+offset_right = 400.0
 offset_bottom = 336.0
 text = "タイトルに戻る"
 

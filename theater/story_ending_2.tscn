@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://r5mbwmmdg3hw"]
+[gd_scene load_steps=41 format=3 uid="uid://r5mbwmmdg3hw"]
 
 [ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_oea57"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_cvu3c"]
@@ -16,9 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://bvxquv5u5dkif" path="res://contents/bgm/bgm11_song.ogg" id="13_wsncm"]
 [ext_resource type="PackedScene" uid="uid://cc0w3te8ab0ed" path="res://command/show_canvas_item_command.tscn" id="14_erue3"]
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="14_q5l2u"]
-[ext_resource type="Script" uid="uid://0jkocrc3v6kr" path="res://command/CommandContainer.cs" id="16_gke2r"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="16_72ksj"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="17_dpbwf"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="18_ta5gv"]
+[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="19_pbtbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yo7bl"]
 atlas = ExtResource("7_1crgx")
@@ -383,21 +384,21 @@ theme = ExtResource("14_q5l2u")
 text = "タイトルに戻る"
 
 [node name="Exec" type="Node" parent="Control/CloseButton" index="0"]
-script = ExtResource("16_gke2r")
+script = ExtResource("16_72ksj")
 
-[node name="PlaySeCommand" parent="Control/CloseButton/Exec" index="0" instance=ExtResource("17_dpbwf")]
-SeName = "menu_select"
-
-[node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("18_ta5gv")]
-Target = NodePath("../../../../CloseCommand")
+[node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("18_ta5gv")]
+Target = NodePath("../../../../Close")
 
 [node name="Focus" type="Node" parent="Control/CloseButton" index="1"]
-script = ExtResource("16_gke2r")
+script = ExtResource("19_pbtbi")
 
 [node name="PlaySeCommand" parent="Control/CloseButton/Focus" index="0" instance=ExtResource("17_dpbwf")]
 SeName = "menu_move"
 
-[node name="CloseCommand" parent="." index="5" instance=ExtResource("9_1ty71")]
+[node name="Close" parent="." index="5" instance=ExtResource("9_1ty71")]
 
-[node name="OpenScreenCommand" parent="CloseCommand" index="0" instance=ExtResource("10_0nalh")]
+[node name="PlaySeCommand" parent="Close" index="0" instance=ExtResource("17_dpbwf")]
+SeName = "menu_select"
+
+[node name="OpenScreenCommand" parent="Close" index="1" instance=ExtResource("10_0nalh")]
 Screen = "res://screen/title_screen.tscn"
