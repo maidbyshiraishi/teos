@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcop8mm2o6pye"]
+[gd_scene load_steps=14 format=3 uid="uid://bcop8mm2o6pye"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_hlehd"]
 [ext_resource type="Script" uid="uid://5if7njfe3jq7" path="res://screen/ResultScreen.cs" id="2_r0ebf"]
-[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://gui/CommandButton.cs" id="6_tlhuj"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="4_cbytk"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="7_8faqi"]
+[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="7_y4nud"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="8_s1m5c"]
 [ext_resource type="AudioStream" uid="uid://yrsd3ic1ixy8" path="res://contents/bgm/bgm11.ogg" id="11_ldigc"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/open_screen_command.tscn" id="11_x64qr"]
+[ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="11_y4nud"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="12_qj8vk"]
 [ext_resource type="PackedScene" uid="uid://bwnbq0d05nrbf" path="res://command/change_bgm_command.tscn" id="14_i8o1y"]
 [ext_resource type="PackedScene" uid="uid://dopc2wenxil8y" path="res://screen/high_score_list_control.tscn" id="17_fyyvg"]
@@ -47,18 +49,15 @@ offset_right = 496.0
 offset_bottom = 456.0
 size_flags_horizontal = 4
 text = "タイトルに戻る"
-script = ExtResource("6_tlhuj")
 
-[node name="Exec" parent="Control/Back" instance=ExtResource("7_8faqi")]
+[node name="Exec" type="Node" parent="Control/Back"]
+script = ExtResource("4_cbytk")
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("8_s1m5c")]
-SeName = "menu_select"
-ProcessAlways = true
+[node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("11_y4nud")]
+Target = NodePath("../../../../Close")
 
-[node name="OpenScreenCommand" parent="Control/Back/Exec" instance=ExtResource("11_x64qr")]
-Screen = "res://screen/title_screen.tscn"
-
-[node name="Focus" parent="Control/Back" instance=ExtResource("7_8faqi")]
+[node name="Focus" type="Node" parent="Control/Back"]
+script = ExtResource("7_y4nud")
 
 [node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("8_s1m5c")]
 SeName = "menu_move"
@@ -74,9 +73,18 @@ Stream = ExtResource("11_ldigc")
 [node name="EscapeKey" parent="." instance=ExtResource("18_lyrif")]
 ActionName = "escape"
 
-[node name="OpenScreenCommand" parent="EscapeKey" instance=ExtResource("11_x64qr")]
-Screen = "res://screen/title_screen.tscn"
+[node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("11_y4nud")]
+Target = NodePath("../../Close")
 
 [node name="HighScoreListControl" parent="." instance=ExtResource("17_fyyvg")]
 offset_top = 96.0
 offset_bottom = 416.0
+
+[node name="Close" parent="." instance=ExtResource("7_8faqi")]
+
+[node name="PlaySeCommand" parent="Close" instance=ExtResource("8_s1m5c")]
+SeName = "menu_select"
+ProcessAlways = true
+
+[node name="OpenScreenCommand" parent="Close" instance=ExtResource("11_x64qr")]
+Screen = "res://screen/title_screen.tscn"

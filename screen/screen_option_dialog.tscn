@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkbeng4umqnfc"]
+[gd_scene load_steps=14 format=3 uid="uid://bkbeng4umqnfc"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_m16sm"]
 [ext_resource type="Script" uid="uid://322xyg67h8tu" path="res://screen/ScreenOptionDialog.cs" id="2_luj6q"]
+[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="3_8jhn7"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="4_qsf5g"]
+[ext_resource type="Script" uid="uid://13wq5kxb50mv" path="res://command/ToggledCommandContainer.cs" id="5_6qy83"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_hmtv0"]
-[ext_resource type="Script" uid="uid://c0nc5lnhrt2xe" path="res://gui/CommandCheckButton.cs" id="6_jig6l"]
-[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://gui/CommandButton.cs" id="7_puljb"]
+[ext_resource type="PackedScene" uid="uid://b7tac0dcph05y" path="res://command/print_command.tscn" id="6_6qy83"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="6_pt5pa"]
 [ext_resource type="PackedScene" uid="uid://c3y2panllhvxf" path="res://command/save_screen_options_command.tscn" id="7_qwuuy"]
 [ext_resource type="PackedScene" uid="uid://c1rbo6273ktjc" path="res://command/open_file_manager_command.tscn" id="9_0ojyc"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="9_mjuga"]
@@ -83,16 +85,16 @@ offset_top = 128.0
 offset_right = 392.0
 offset_bottom = 160.0
 alignment = 1
-script = ExtResource("6_jig6l")
 
-[node name="Focus" parent="Control/FullscreenCheck" instance=ExtResource("4_qsf5g")]
+[node name="Focus" type="Node" parent="Control/FullscreenCheck"]
+script = ExtResource("3_8jhn7")
 
 [node name="PlaySeCommand" parent="Control/FullscreenCheck/Focus" instance=ExtResource("5_hmtv0")]
 SeName = "menu_move"
 ProcessAlways = true
 
-[node name="Toggled" parent="Control/FullscreenCheck" instance=ExtResource("4_qsf5g")]
-script = null
+[node name="Toggled" type="Node" parent="Control/FullscreenCheck"]
+script = ExtResource("5_6qy83")
 
 [node name="PlaySeCommand1" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"
@@ -103,6 +105,13 @@ SeName = "menu_select"
 ProcessAlways = true
 ExecFlag = false
 
+[node name="PrintCommand" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("6_6qy83")]
+Log = "on"
+
+[node name="PrintCommand2" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("6_6qy83")]
+Log = "off"
+ExecFlag = false
+
 [node name="Reset" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
@@ -111,15 +120,16 @@ offset_top = 240.0
 offset_right = 456.0
 offset_bottom = 272.0
 text = "ゲームの初期値にリセット"
-script = ExtResource("7_puljb")
 
-[node name="Exec" parent="Control/Reset" instance=ExtResource("4_qsf5g")]
+[node name="Exec" type="Node" parent="Control/Reset"]
+script = ExtResource("6_pt5pa")
 
 [node name="PlaySeCommand" parent="Control/Reset/Exec" instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="Focus" parent="Control/Reset" instance=ExtResource("4_qsf5g")]
+[node name="Focus" type="Node" parent="Control/Reset"]
+script = ExtResource("3_8jhn7")
 
 [node name="PlaySeCommand" parent="Control/Reset/Focus" instance=ExtResource("5_hmtv0")]
 SeName = "menu_move"
@@ -133,19 +143,15 @@ offset_top = 192.0
 offset_right = 400.0
 offset_bottom = 224.0
 text = "保存して戻る"
-script = ExtResource("7_puljb")
 
-[node name="Exec" parent="Control/Back" instance=ExtResource("4_qsf5g")]
+[node name="Exec" type="Node" parent="Control/Back"]
+script = ExtResource("6_pt5pa")
 
-[node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_hmtv0")]
-SeName = "menu_select"
-ProcessAlways = true
+[node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("17_jkvoy")]
+Target = NodePath("../../../../Close")
 
-[node name="SaveScreenOptionsCommand" parent="Control/Back/Exec" instance=ExtResource("7_qwuuy")]
-
-[node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("9_mjuga")]
-
-[node name="Focus" parent="Control/Back" instance=ExtResource("4_qsf5g")]
+[node name="Focus" type="Node" parent="Control/Back"]
+script = ExtResource("3_8jhn7")
 
 [node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_hmtv0")]
 SeName = "menu_move"
@@ -159,9 +165,9 @@ offset_top = 288.0
 offset_right = 440.0
 offset_bottom = 320.0
 text = "データフォルダを開く"
-script = ExtResource("7_puljb")
 
-[node name="Exec" parent="Control/OpenFileManager" instance=ExtResource("4_qsf5g")]
+[node name="Exec" type="Node" parent="Control/OpenFileManager"]
+script = ExtResource("6_pt5pa")
 
 [node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"
@@ -169,7 +175,8 @@ ProcessAlways = true
 
 [node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("9_0ojyc")]
 
-[node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("4_qsf5g")]
+[node name="Focus" type="Node" parent="Control/OpenFileManager"]
+script = ExtResource("3_8jhn7")
 
 [node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" instance=ExtResource("5_hmtv0")]
 SeName = "menu_move"

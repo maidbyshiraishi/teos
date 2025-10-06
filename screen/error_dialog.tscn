@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://mbd4e44xpe7f"]
+[gd_scene load_steps=7 format=3 uid="uid://mbd4e44xpe7f"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_6muvo"]
 [ext_resource type="Script" uid="uid://ddk60vwe56eol" path="res://screen/ErrorDialog.cs" id="2_e1527"]
-[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://gui/CommandButton.cs" id="3_uaioc"]
-[ext_resource type="Script" uid="uid://dlh8ao6i1ypbj" path="res://gui/CommandTextEdit.cs" id="3_y8be8"]
+[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="3_5n66a"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_3qtxr"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="5_grdc1"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_sodei"]
-[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_y6bfa"]
 
 [node name="ErrorDialog" type="Control"]
 light_mask = 2
@@ -58,9 +57,9 @@ offset_top = 143.0
 offset_right = 536.0
 offset_bottom = 327.0
 wrap_mode = 1
-script = ExtResource("3_y8be8")
 
-[node name="Focus" parent="Control/Message" instance=ExtResource("6_y6bfa")]
+[node name="Focus" type="Node" parent="Control/Message"]
+script = ExtResource("3_5n66a")
 
 [node name="PlaySeCommand" parent="Control/Message/Focus" instance=ExtResource("5_sodei")]
 SeName = "menu_move"
@@ -75,9 +74,9 @@ offset_right = 360.0
 offset_bottom = 391.0
 text = "戻る
 "
-script = ExtResource("3_uaioc")
 
-[node name="Exec" parent="Control/Back" instance=ExtResource("6_y6bfa")]
+[node name="Exec" type="Node" parent="Control/Back"]
+script = ExtResource("5_grdc1")
 
 [node name="PlaySeCommand" parent="Control/Back/Exec" instance=ExtResource("5_sodei")]
 SeName = "menu_select"
@@ -85,7 +84,8 @@ ProcessAlways = true
 
 [node name="CloseDialogCommand" parent="Control/Back/Exec" instance=ExtResource("4_3qtxr")]
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("6_y6bfa")]
+[node name="Focus" type="Node" parent="Control/Back"]
+script = ExtResource("3_5n66a")
 
 [node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_sodei")]
 SeName = "menu_move"

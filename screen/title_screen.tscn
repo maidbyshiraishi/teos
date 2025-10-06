@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://ccueitrspq0fx" path="res://screen/DialogRoot.cs" id="2_247ql"]
 [ext_resource type="SpriteFrames" uid="uid://conv8w2dmcsmi" path="res://contents/screen/title_screen/title_logo.tres" id="3_7xxci"]
 [ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="4_dhnnd"]
-[ext_resource type="Script" uid="uid://c4dysl28gldho" path="res://gui/CommandButton.cs" id="6_xtjut"]
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="7_0002q"]
-[ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="8_l4ku3"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="9_bvcnx"]
 [ext_resource type="PackedScene" uid="uid://closkw7p3bd1g" path="res://command/open_game_command.tscn" id="9_lh4gl"]
 [ext_resource type="PackedScene" uid="uid://dnubvgc50546i" path="res://command/reset_timer_command.tscn" id="11_e2f0q"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="11_j6aw5"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/open_screen_command.tscn" id="11_xa21i"]
+[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="12_eevub"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="13_6nn80"]
 [ext_resource type="PackedScene" uid="uid://l7xudjpc38ac" path="res://command/start_timer_command.tscn" id="13_hmmf8"]
 [ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="15_3la61"]
@@ -64,9 +64,9 @@ size_flags_horizontal = 4
 focus_neighbor_right = NodePath("../Story")
 focus_neighbor_bottom = NodePath("../OptionList")
 text = "最初から"
-script = ExtResource("6_xtjut")
 
-[node name="Exec" parent="Control/Start" instance=ExtResource("8_l4ku3")]
+[node name="Exec" type="Node" parent="Control/Start"]
+script = ExtResource("11_j6aw5")
 
 [node name="PlaySeCommand" parent="Control/Start/Exec" instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
@@ -74,7 +74,8 @@ ProcessAlways = true
 
 [node name="OpenGameCommand" parent="Control/Start/Exec" instance=ExtResource("9_lh4gl")]
 
-[node name="Focus" parent="Control/Start" instance=ExtResource("8_l4ku3")]
+[node name="Focus" type="Node" parent="Control/Start"]
+script = ExtResource("12_eevub")
 
 [node name="PlaySeCommand" parent="Control/Start/Focus" instance=ExtResource("9_bvcnx")]
 SeName = "menu_move"
@@ -95,9 +96,9 @@ focus_neighbor_top = NodePath("../Start")
 focus_neighbor_right = NodePath("../HighScore")
 focus_neighbor_bottom = NodePath("../Quit")
 text = "設定一覧"
-script = ExtResource("6_xtjut")
 
-[node name="Exec" parent="Control/OptionList" instance=ExtResource("8_l4ku3")]
+[node name="Exec" type="Node" parent="Control/OptionList"]
+script = ExtResource("11_j6aw5")
 
 [node name="PlaySeCommand" parent="Control/OptionList/Exec" instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
@@ -106,7 +107,8 @@ ProcessAlways = true
 [node name="OpenDialogCommand" parent="Control/OptionList/Exec" instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/option_list_dialog.tscn"
 
-[node name="Focus" parent="Control/OptionList" instance=ExtResource("8_l4ku3")]
+[node name="Focus" type="Node" parent="Control/OptionList"]
+script = ExtResource("12_eevub")
 
 [node name="PlaySeCommand" parent="Control/OptionList/Focus" instance=ExtResource("9_bvcnx")]
 SeName = "menu_move"
@@ -125,9 +127,9 @@ offset_bottom = 432.0
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../OptionList")
 text = "終了"
-script = ExtResource("6_xtjut")
 
-[node name="Exec" parent="Control/Quit" instance=ExtResource("8_l4ku3")]
+[node name="Exec" type="Node" parent="Control/Quit"]
+script = ExtResource("11_j6aw5")
 
 [node name="PlaySeCommand" parent="Control/Quit/Exec" instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
@@ -136,7 +138,8 @@ ProcessAlways = true
 [node name="OpenDialogCommand" parent="Control/Quit/Exec" instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/quit_dialog.tscn"
 
-[node name="Focus" parent="Control/Quit" instance=ExtResource("8_l4ku3")]
+[node name="Focus" type="Node" parent="Control/Quit"]
+script = ExtResource("12_eevub")
 
 [node name="PlaySeCommand" parent="Control/Quit/Focus" instance=ExtResource("9_bvcnx")]
 SeName = "menu_move"
@@ -156,9 +159,9 @@ size_flags_horizontal = 4
 focus_neighbor_left = NodePath("../Start")
 focus_neighbor_bottom = NodePath("../HighScore")
 text = "ストーリー"
-script = ExtResource("6_xtjut")
 
-[node name="Exec" parent="Control/Story" instance=ExtResource("8_l4ku3")]
+[node name="Exec" type="Node" parent="Control/Story"]
+script = ExtResource("11_j6aw5")
 
 [node name="PlaySeCommand" parent="Control/Story/Exec" instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
@@ -167,7 +170,8 @@ ProcessAlways = true
 [node name="OpenDialogCommand" parent="Control/Story/Exec" instance=ExtResource("7_0002q")]
 DialogPath = "res://theater/story_opening.tscn"
 
-[node name="Focus" parent="Control/Story" instance=ExtResource("8_l4ku3")]
+[node name="Focus" type="Node" parent="Control/Story"]
+script = ExtResource("12_eevub")
 
 [node name="PlaySeCommand" parent="Control/Story/Focus" instance=ExtResource("9_bvcnx")]
 SeName = "menu_move"
@@ -187,9 +191,9 @@ size_flags_horizontal = 4
 focus_neighbor_left = NodePath("../OptionList")
 focus_neighbor_top = NodePath("../Story")
 text = "ハイスコア"
-script = ExtResource("6_xtjut")
 
-[node name="Exec" parent="Control/HighScore" instance=ExtResource("8_l4ku3")]
+[node name="Exec" type="Node" parent="Control/HighScore"]
+script = ExtResource("11_j6aw5")
 
 [node name="PlaySeCommand" parent="Control/HighScore/Exec" instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
@@ -198,7 +202,8 @@ ProcessAlways = true
 [node name="OpenScreenCommand" parent="Control/HighScore/Exec" instance=ExtResource("11_xa21i")]
 Screen = "res://screen/high_score_screen.tscn"
 
-[node name="Focus" parent="Control/HighScore" instance=ExtResource("8_l4ku3")]
+[node name="Focus" type="Node" parent="Control/HighScore"]
+script = ExtResource("12_eevub")
 
 [node name="PlaySeCommand" parent="Control/HighScore/Focus" instance=ExtResource("9_bvcnx")]
 SeName = "menu_move"
@@ -209,15 +214,16 @@ Target = NodePath("../../../../Timer")
 
 [node name="BGM" type="Button" parent="Control"]
 light_mask = 2
+layout_mode = 0
 offset_left = 352.0
 offset_top = 400.0
 offset_right = 504.0
 offset_bottom = 432.0
 size_flags_horizontal = 4
 text = "BGMを聞く"
-script = ExtResource("6_xtjut")
 
-[node name="Exec" parent="Control/BGM" instance=ExtResource("8_l4ku3")]
+[node name="Exec" type="Node" parent="Control/BGM"]
+script = ExtResource("11_j6aw5")
 
 [node name="PlaySeCommand" parent="Control/BGM/Exec" instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
@@ -226,7 +232,8 @@ ProcessAlways = true
 [node name="OpenDialogCommand" parent="Control/BGM/Exec" instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/jukebox_dialog.tscn"
 
-[node name="Focus" parent="Control/BGM" instance=ExtResource("8_l4ku3")]
+[node name="Focus" type="Node" parent="Control/BGM"]
+script = ExtResource("12_eevub")
 
 [node name="PlaySeCommand" parent="Control/BGM/Focus" instance=ExtResource("9_bvcnx")]
 SeName = "menu_move"
