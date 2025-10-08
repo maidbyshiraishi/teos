@@ -1,16 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://cex2tqli4fmgg"]
+[gd_scene load_steps=19 format=3 uid="uid://cex2tqli4fmgg"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_cy00v"]
 [ext_resource type="Script" uid="uid://ccueitrspq0fx" path="res://screen/DialogRoot.cs" id="2_247ql"]
 [ext_resource type="SpriteFrames" uid="uid://conv8w2dmcsmi" path="res://contents/screen/title_screen/title_logo.tres" id="3_7xxci"]
 [ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="4_dhnnd"]
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="7_0002q"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="9_7ac0i"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="9_bvcnx"]
 [ext_resource type="PackedScene" uid="uid://closkw7p3bd1g" path="res://command/open_game_command.tscn" id="9_lh4gl"]
-[ext_resource type="PackedScene" uid="uid://dnubvgc50546i" path="res://command/reset_timer_command.tscn" id="11_e2f0q"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="11_j6aw5"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/open_screen_command.tscn" id="11_xa21i"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="12_eevub"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="13_6nn80"]
 [ext_resource type="PackedScene" uid="uid://l7xudjpc38ac" path="res://command/start_timer_command.tscn" id="13_hmmf8"]
 [ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="15_3la61"]
@@ -49,6 +48,23 @@ wait_time = 8.0
 [node name="OpenDialogCommand_1" parent="Timer/TimerTrigger" instance=ExtResource("7_0002q")]
 DialogPath = "res://theater/story_opening.tscn"
 
+[node name="LabelVersion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 440.0
+offset_right = 96.0
+offset_bottom = 464.0
+text = "Version"
+vertical_alignment = 2
+
+[node name="LabelVersionNo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 440.0
+offset_right = 208.0
+offset_bottom = 464.0
+vertical_alignment = 2
+
 [node name="Control" type="Control" parent="."]
 light_mask = 2
 anchors_preset = 0
@@ -74,15 +90,7 @@ ProcessAlways = true
 
 [node name="OpenGameCommand" parent="Control/Start/Exec" instance=ExtResource("9_lh4gl")]
 
-[node name="Focus" type="Node" parent="Control/Start"]
-script = ExtResource("12_eevub")
-
-[node name="PlaySeCommand" parent="Control/Start/Focus" instance=ExtResource("9_bvcnx")]
-SeName = "menu_move"
-ProcessAlways = true
-
-[node name="ResetTimerCommand" parent="Control/Start/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("11_e2f0q")]
-Target = NodePath("../../../../Timer")
+[node name="Focus" parent="Control/Start" instance=ExtResource("9_7ac0i")]
 
 [node name="OptionList" type="Button" parent="Control"]
 light_mask = 2
@@ -107,15 +115,7 @@ ProcessAlways = true
 [node name="OpenDialogCommand" parent="Control/OptionList/Exec" instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/option_list_dialog.tscn"
 
-[node name="Focus" type="Node" parent="Control/OptionList"]
-script = ExtResource("12_eevub")
-
-[node name="PlaySeCommand" parent="Control/OptionList/Focus" instance=ExtResource("9_bvcnx")]
-SeName = "menu_move"
-ProcessAlways = true
-
-[node name="ResetTimerCommand" parent="Control/OptionList/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("11_e2f0q")]
-Target = NodePath("../../../../Timer")
+[node name="Focus" parent="Control/OptionList" instance=ExtResource("9_7ac0i")]
 
 [node name="Quit" type="Button" parent="Control"]
 light_mask = 2
@@ -138,15 +138,7 @@ ProcessAlways = true
 [node name="OpenDialogCommand" parent="Control/Quit/Exec" instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/quit_dialog.tscn"
 
-[node name="Focus" type="Node" parent="Control/Quit"]
-script = ExtResource("12_eevub")
-
-[node name="PlaySeCommand" parent="Control/Quit/Focus" instance=ExtResource("9_bvcnx")]
-SeName = "menu_move"
-ProcessAlways = true
-
-[node name="ResetTimerCommand" parent="Control/Quit/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("11_e2f0q")]
-Target = NodePath("../../../../Timer")
+[node name="Focus" parent="Control/Quit" instance=ExtResource("9_7ac0i")]
 
 [node name="Story" type="Button" parent="Control"]
 light_mask = 2
@@ -170,15 +162,7 @@ ProcessAlways = true
 [node name="OpenDialogCommand" parent="Control/Story/Exec" instance=ExtResource("7_0002q")]
 DialogPath = "res://theater/story_opening.tscn"
 
-[node name="Focus" type="Node" parent="Control/Story"]
-script = ExtResource("12_eevub")
-
-[node name="PlaySeCommand" parent="Control/Story/Focus" instance=ExtResource("9_bvcnx")]
-SeName = "menu_move"
-ProcessAlways = true
-
-[node name="ResetTimerCommand" parent="Control/Story/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("11_e2f0q")]
-Target = NodePath("../../../../Timer")
+[node name="Focus" parent="Control/Story" instance=ExtResource("9_7ac0i")]
 
 [node name="HighScore" type="Button" parent="Control"]
 light_mask = 2
@@ -202,15 +186,7 @@ ProcessAlways = true
 [node name="OpenScreenCommand" parent="Control/HighScore/Exec" instance=ExtResource("11_xa21i")]
 Screen = "res://screen/high_score_screen.tscn"
 
-[node name="Focus" type="Node" parent="Control/HighScore"]
-script = ExtResource("12_eevub")
-
-[node name="PlaySeCommand" parent="Control/HighScore/Focus" instance=ExtResource("9_bvcnx")]
-SeName = "menu_move"
-ProcessAlways = true
-
-[node name="ResetTimerCommand" parent="Control/HighScore/Focus" node_paths=PackedStringArray("Target") instance=ExtResource("11_e2f0q")]
-Target = NodePath("../../../../Timer")
+[node name="Focus" parent="Control/HighScore" instance=ExtResource("9_7ac0i")]
 
 [node name="BGM" type="Button" parent="Control"]
 light_mask = 2
@@ -232,12 +208,7 @@ ProcessAlways = true
 [node name="OpenDialogCommand" parent="Control/BGM/Exec" instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/jukebox_dialog.tscn"
 
-[node name="Focus" type="Node" parent="Control/BGM"]
-script = ExtResource("12_eevub")
-
-[node name="PlaySeCommand" parent="Control/BGM/Focus" instance=ExtResource("9_bvcnx")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/BGM" instance=ExtResource("9_7ac0i")]
 
 [node name="Focus" parent="." instance=ExtResource("13_6nn80")]
 position = Vector2(10, 10)
@@ -259,20 +230,3 @@ VersionLabel = NodePath("../../LabelVersionNo")
 ActionName = "escape"
 
 [node name="QuitGameCommand" parent="EscapeKey" instance=ExtResource("18_85irx")]
-
-[node name="LabelVersion" type="Label" parent="."]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 440.0
-offset_right = 96.0
-offset_bottom = 464.0
-text = "Version"
-vertical_alignment = 2
-
-[node name="LabelVersionNo" type="Label" parent="."]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 440.0
-offset_right = 208.0
-offset_bottom = 464.0
-vertical_alignment = 2

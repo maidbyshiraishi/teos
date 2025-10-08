@@ -3,8 +3,8 @@
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_hlehd"]
 [ext_resource type="Script" uid="uid://5if7njfe3jq7" path="res://screen/ResultScreen.cs" id="2_r0ebf"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="4_cbytk"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="5_y4nud"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="7_8faqi"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="7_y4nud"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="8_s1m5c"]
 [ext_resource type="AudioStream" uid="uid://yrsd3ic1ixy8" path="res://contents/bgm/bgm11.ogg" id="11_ldigc"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/open_screen_command.tscn" id="11_x64qr"]
@@ -36,6 +36,10 @@ offset_right = 384.0
 offset_bottom = 40.0
 horizontal_alignment = 1
 
+[node name="HighScoreListControl" parent="." instance=ExtResource("17_fyyvg")]
+offset_top = 96.0
+offset_bottom = 416.0
+
 [node name="Control" type="Control" parent="."]
 light_mask = 2
 anchors_preset = 0
@@ -56,12 +60,7 @@ script = ExtResource("4_cbytk")
 [node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("11_y4nud")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" type="Node" parent="Control/Back"]
-script = ExtResource("7_y4nud")
-
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("8_s1m5c")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/Back" instance=ExtResource("5_y4nud")]
 
 [node name="Focus" parent="." instance=ExtResource("12_qj8vk")]
 position = Vector2(10, 10)
@@ -75,10 +74,6 @@ ActionName = "escape"
 
 [node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("11_y4nud")]
 Target = NodePath("../../Close")
-
-[node name="HighScoreListControl" parent="." instance=ExtResource("17_fyyvg")]
-offset_top = 96.0
-offset_bottom = 416.0
 
 [node name="Close" parent="." instance=ExtResource("7_8faqi")]
 

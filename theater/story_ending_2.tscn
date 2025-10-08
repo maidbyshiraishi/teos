@@ -18,8 +18,8 @@
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="14_q5l2u"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="16_72ksj"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="17_dpbwf"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="18_72ksj"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="18_ta5gv"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="19_pbtbi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yo7bl"]
 atlas = ExtResource("7_1crgx")
@@ -389,11 +389,7 @@ script = ExtResource("16_72ksj")
 [node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("18_ta5gv")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" type="Node" parent="Control/CloseButton" index="1"]
-script = ExtResource("19_pbtbi")
-
-[node name="PlaySeCommand" parent="Control/CloseButton/Focus" index="0" instance=ExtResource("17_dpbwf")]
-SeName = "menu_move"
+[node name="Focus" parent="Control/CloseButton" index="1" instance=ExtResource("18_72ksj")]
 
 [node name="Close" parent="." index="5" instance=ExtResource("9_1ty71")]
 

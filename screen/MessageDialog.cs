@@ -30,7 +30,7 @@ public partial class MessageDialog : DialogRoot
 
     public void SetMessage(string message)
     {
-        GetNode<Label>("Control/Message").Text = message;
+        GetNode<Label>("Message").Text = message;
     }
 
     protected override string GetDefaultFocusNodeName()

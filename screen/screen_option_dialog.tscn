@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_m16sm"]
 [ext_resource type="Script" uid="uid://322xyg67h8tu" path="res://screen/ScreenOptionDialog.cs" id="2_luj6q"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="3_8jhn7"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="4_qsf5g"]
 [ext_resource type="Script" uid="uid://13wq5kxb50mv" path="res://command/ToggledCommandContainer.cs" id="5_6qy83"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="5_8jhn7"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_hmtv0"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="6_pt5pa"]
 [ext_resource type="PackedScene" uid="uid://c3y2panllhvxf" path="res://command/save_screen_options_command.tscn" id="7_qwuuy"]
@@ -85,13 +85,6 @@ offset_right = 392.0
 offset_bottom = 160.0
 alignment = 1
 
-[node name="Focus" type="Node" parent="Control/FullscreenCheck"]
-script = ExtResource("3_8jhn7")
-
-[node name="PlaySeCommand" parent="Control/FullscreenCheck/Focus" instance=ExtResource("5_hmtv0")]
-SeName = "menu_move"
-ProcessAlways = true
-
 [node name="Toggled" type="Node" parent="Control/FullscreenCheck"]
 script = ExtResource("5_6qy83")
 
@@ -103,6 +96,8 @@ ProcessAlways = true
 SeName = "menu_select"
 ProcessAlways = true
 ExecFlag = false
+
+[node name="Focus" parent="Control/FullscreenCheck" instance=ExtResource("5_8jhn7")]
 
 [node name="Back" type="Button" parent="Control"]
 light_mask = 2
@@ -119,12 +114,7 @@ script = ExtResource("6_pt5pa")
 [node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("17_jkvoy")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" type="Node" parent="Control/Back"]
-script = ExtResource("3_8jhn7")
-
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_hmtv0")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/Back" instance=ExtResource("5_8jhn7")]
 
 [node name="Reset" type="Button" parent="Control"]
 light_mask = 2
@@ -142,12 +132,7 @@ script = ExtResource("6_pt5pa")
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="Focus" type="Node" parent="Control/Reset"]
-script = ExtResource("3_8jhn7")
-
-[node name="PlaySeCommand" parent="Control/Reset/Focus" instance=ExtResource("5_hmtv0")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/Reset" instance=ExtResource("5_8jhn7")]
 
 [node name="OpenFileManager" type="Button" parent="Control"]
 light_mask = 2
@@ -167,12 +152,7 @@ ProcessAlways = true
 
 [node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("9_0ojyc")]
 
-[node name="Focus" type="Node" parent="Control/OpenFileManager"]
-script = ExtResource("3_8jhn7")
-
-[node name="PlaySeCommand" parent="Control/OpenFileManager/Focus" instance=ExtResource("5_hmtv0")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("5_8jhn7")]
 
 [node name="EscapeKey" parent="." instance=ExtResource("16_fr1ca")]
 ActionName = "escape"

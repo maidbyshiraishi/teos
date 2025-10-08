@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://didcowdro63l3"]
+[gd_scene load_steps=11 format=3 uid="uid://didcowdro63l3"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_joip0"]
 [ext_resource type="Script" uid="uid://cekplpvh6gcvo" path="res://screen/MessageDialog.cs" id="2_2kunl"]
+[ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="3_ia1ty"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="3_r7xw0"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_be5gd"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="4_r7xw0"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="5_ia1ty"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_ny3dk"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="6_8kyvh"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="6_ia1ty"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="7_nxi2a"]
 
 [node name="MessageDialog" type="Control"]
@@ -21,45 +22,46 @@ script = ExtResource("2_2kunl")
 light_mask = 2
 layout_mode = 0
 offset_left = 64.0
-offset_top = 63.0
+offset_top = 64.0
 offset_right = 576.0
-offset_bottom = 233.0
+offset_bottom = 320.0
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Border" type="ReferenceRect" parent="."]
 light_mask = 2
 layout_mode = 0
 offset_left = 64.0
-offset_top = 63.0
+offset_top = 64.0
 offset_right = 576.0
-offset_bottom = 233.0
+offset_bottom = 320.0
 border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Control" type="Control" parent="."]
-light_mask = 2
-anchors_preset = 0
-
-[node name="Message" type="Label" parent="Control"]
+[node name="Message" type="Label" parent="."]
 light_mask = 2
 layout_mode = 0
-offset_left = 67.0
-offset_top = 66.0
-offset_right = 574.0
-offset_bottom = 174.0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 560.0
+offset_bottom = 240.0
+theme = ExtResource("3_ia1ty")
 text = "メッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージ"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+anchors_preset = 0
+
 [node name="Back" type="Button" parent="Control"]
 light_mask = 2
 layout_mode = 0
 offset_left = 280.0
-offset_top = 180.0
+offset_top = 256.0
 offset_right = 360.0
-offset_bottom = 212.0
+offset_bottom = 288.0
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath(".")
@@ -75,12 +77,7 @@ script = ExtResource("3_r7xw0")
 [node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("4_r7xw0")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" type="Node" parent="Control/Back"]
-script = ExtResource("5_ia1ty")
-
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_ny3dk")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/Back" instance=ExtResource("6_ia1ty")]
 
 [node name="EscapeKey" parent="." instance=ExtResource("7_nxi2a")]
 ActionName = "escape"

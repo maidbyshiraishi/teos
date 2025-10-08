@@ -12,8 +12,8 @@
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="9_76s3t"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="9_nxx3m"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="10_al1n2"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="11_al1n2"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="13_ehk5a"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="13_qm5t7"]
 
 [node name="ScrollTheater" instance=ExtResource("1_6emye")]
 ScrollTime = 30.0
@@ -150,11 +150,7 @@ script = ExtResource("10_al1n2")
 [node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_nxx3m")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" type="Node" parent="Control/CloseButton" index="1"]
-script = ExtResource("13_qm5t7")
-
-[node name="PlaySeCommand" parent="Control/CloseButton/Focus" index="0" instance=ExtResource("13_ehk5a")]
-SeName = "menu_move"
+[node name="Focus" parent="Control/CloseButton" index="1" instance=ExtResource("11_al1n2")]
 
 [node name="Close" parent="." index="5" instance=ExtResource("9_0lcym")]
 

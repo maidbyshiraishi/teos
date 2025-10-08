@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dyg37pipmdu78" path="res://screen/result_screen.tscn" id="1_833lb"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="2_edv6i"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_ct5ou"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="5_jxgce"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="5_dpp0h"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/open_screen_command.tscn" id="5_mniuh"]
 
 [node name="ResultScreen" instance=ExtResource("1_833lb")]
@@ -31,12 +31,7 @@ ProcessAlways = true
 [node name="OpenScreenCommand" parent="Control/StartEnding/Exec" index="1" instance=ExtResource("5_mniuh")]
 Screen = "res://theater/story_ending_1.tscn"
 
-[node name="Focus" type="Node" parent="Control/StartEnding" index="1"]
-script = ExtResource("5_jxgce")
+[node name="Focus" parent="Control/StartEnding" index="1" instance=ExtResource("5_dpp0h")]
 
-[node name="PlaySeCommand" parent="Control/StartEnding/Focus" index="0" instance=ExtResource("4_ct5ou")]
-SeName = "menu_move"
-ProcessAlways = true
-
-[node name="PlaySeCommand" parent="Control/Back/Focus" index="0"]
-ProcessAlways = false
+[node name="EscapeKey" parent="." index="7"]
+ActionName = ""

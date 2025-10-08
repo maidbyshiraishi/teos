@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_6muvo"]
 [ext_resource type="Script" uid="uid://ddk60vwe56eol" path="res://screen/ErrorDialog.cs" id="2_e1527"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="3_5n66a"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="3_ojohy"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="4_3qtxr"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="5_grdc1"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="5_sodei"]
@@ -61,12 +61,7 @@ offset_right = 536.0
 offset_bottom = 327.0
 wrap_mode = 1
 
-[node name="Focus" type="Node" parent="Control/Message"]
-script = ExtResource("3_5n66a")
-
-[node name="PlaySeCommand" parent="Control/Message/Focus" instance=ExtResource("5_sodei")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/Message" instance=ExtResource("3_ojohy")]
 
 [node name="Back" type="Button" parent="Control"]
 light_mask = 2
@@ -84,12 +79,7 @@ script = ExtResource("5_grdc1")
 [node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("6_ojohy")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" type="Node" parent="Control/Back"]
-script = ExtResource("3_5n66a")
-
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("5_sodei")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/Back" instance=ExtResource("3_ojohy")]
 
 [node name="EscapeKey" parent="." instance=ExtResource("7_87al4")]
 ActionName = "escape"

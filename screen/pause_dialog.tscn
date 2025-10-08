@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="3_vbqgr"]
 [ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://command/resume_bgm_command.tscn" id="4_e6yyl"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/close_dialog_command.tscn" id="5_ey1cc"]
-[ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="5_uroh5"]
+[ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="5_vbqgr"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="6_j3hgl"]
 [ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://command/pause_bgm_command.tscn" id="7_qoa1w"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="8_ai80o"]
@@ -26,7 +26,7 @@ layout_mode = 0
 offset_left = 192.0
 offset_top = 168.0
 offset_right = 448.0
-offset_bottom = 344.0
+offset_bottom = 316.0
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Border" type="ReferenceRect" parent="."]
@@ -35,7 +35,7 @@ layout_mode = 0
 offset_left = 192.0
 offset_top = 168.0
 offset_right = 448.0
-offset_bottom = 344.0
+offset_bottom = 316.0
 border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
@@ -61,9 +61,9 @@ offset_bottom = 40.0
 light_mask = 2
 layout_mode = 0
 offset_left = 280.0
-offset_top = 240.0
+offset_top = 216.0
 offset_right = 360.0
-offset_bottom = 272.0
+offset_bottom = 248.0
 text = "戻る"
 
 [node name="Exec" type="Node" parent="Control/Back"]
@@ -72,12 +72,7 @@ script = ExtResource("3_vbqgr")
 [node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("9_p5xs1")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" type="Node" parent="Control/Back"]
-script = ExtResource("5_uroh5")
-
-[node name="PlaySeCommand" parent="Control/Back/Focus" instance=ExtResource("3_41fmg")]
-SeName = "menu_move"
-ProcessAlways = true
+[node name="Focus" parent="Control/Back" instance=ExtResource("5_vbqgr")]
 
 [node name="Focus" parent="." instance=ExtResource("6_j3hgl")]
 position = Vector2(216, 192)
