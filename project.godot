@@ -17,10 +17,6 @@ run/main_scene="res://screen/splash_screen.tscn"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="uid://dw8xnf1kurmvx"
 
-[audio]
-
-buses/default_bus_layout="res://contents/audio/default_bus_layout.tres"
-
 [autoload]
 
 ScreenOption="*res://system/screen_option.tscn"
@@ -34,10 +30,6 @@ HighScoreManager="*res://system/high_score_manager.tscn"
 MusicPlayer="*res://system/music_player.tscn"
 SePlayer="*res://system/se_player.tscn"
 Screenshot="*res://system/screenshot.tscn"
-
-[debug]
-
-file_logging/enable_file_logging.pc=false
 
 [display]
 
