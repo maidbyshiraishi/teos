@@ -175,6 +175,3 @@ ProcessAlways = true
 [node name="SaveScreenOptionsCommand" parent="Close" instance=ExtResource("7_qwuuy")]
 
 [node name="CloseDialogCommand" parent="Close" instance=ExtResource("9_mjuga")]
-
-[connection signal="toggled" from="Control/FullscreenCheck" to="." method="FullscreenChanged"]
-[connection signal="pressed" from="Control/Reset" to="." method="ResetDefaultScreenOptions"]

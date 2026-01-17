@@ -56,7 +56,3 @@ autostart = true
 [node name="FindTargetTimer" type="Timer" parent="." index="5"]
 wait_time = 0.3
 autostart = true
-
-[connection signal="timeout" from="StopHomingTimer" to="." method="StopHoming"]
-[connection signal="timeout" from="ClearTargetTimer" to="." method="ClearTarget"]
-[connection signal="timeout" from="FindTargetTimer" to="." method="FindTarget"]

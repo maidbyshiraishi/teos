@@ -176,5 +176,3 @@ tree_root = SubResource("AnimationNodeStateMachine_s3hvb")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="SearchTargetTimer" type="Timer" parent="." index="8"]
-
-[connection signal="timeout" from="SearchTargetTimer" to="." method="ToggleSearch"]

@@ -38,5 +38,3 @@ Score = 300
 
 [node name="ShowFloatingMessageCommand" parent="Dead" index="2" instance=ExtResource("5_cb3ku")]
 Message = "+300"
-
-[connection signal="area_entered" from="." to="." method="EnteredArea2D"]

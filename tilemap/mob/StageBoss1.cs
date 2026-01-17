@@ -15,6 +15,10 @@ public partial class StageBoss1 : TileMapMob
     {
         _timer = GetNode<Timer>("Timer");
         base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = _timer.Connect(Timer.SignalName.Timeout, new(this, MethodName.TimerTimeout));
     }
 
     public override void _Process(double delta)

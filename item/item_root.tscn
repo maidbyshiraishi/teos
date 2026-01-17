@@ -57,7 +57,3 @@ Target = NodePath("..")
 
 [node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(1.6, 1.6)
-
-[connection signal="area_entered" from="ApproachPlayer" to="." method="EnterArea2D"]
-[connection signal="area_exited" from="ApproachPlayer" to="." method="ExitArea2D"]
-[connection signal="timeout" from="Timer" to="." method="Switch"]

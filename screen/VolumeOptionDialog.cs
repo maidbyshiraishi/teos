@@ -20,6 +20,16 @@ public partial class VolumeOptionDialog : DialogRoot
     [Export]
     public float SeVolume { get; set; } = 100f;
 
+    public override void _Ready()
+    {
+        base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<HSlider>("Control/BgmSlider")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.BgmVolumeChanged));
+        _ = GetNodeOrNull<HSlider>("Control/SeSlider")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.SeVolumeChanged));
+    }
+
     public override void Active()
     {
         UpdateDialogScreen();

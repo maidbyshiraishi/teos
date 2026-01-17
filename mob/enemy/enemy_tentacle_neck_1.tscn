@@ -179,5 +179,3 @@ Score = 0
 
 [node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
 Message = ""
-
-[connection signal="timeout" from="SearchTargetTimer" to="." method="ToggleSearch"]

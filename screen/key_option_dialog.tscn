@@ -305,8 +305,3 @@ ProcessAlways = true
 [node name="SaveKeyOptionsCommand" parent="Close" instance=ExtResource("2_o5guw")]
 
 [node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_wq4oo")]
-
-[connection signal="pressed" from="Control/SwapStick" to="." method="SwapStick"]
-[connection signal="value_changed" from="Control/TargetSensitivity" to="." method="TargetSensitivityValueChanged"]
-[connection signal="value_changed" from="Control/MouseSensitivity" to="." method="MouseSensitivityValueChanged"]
-[connection signal="pressed" from="Control/ResetSensitivity" to="." method="ResetSensitivity"]

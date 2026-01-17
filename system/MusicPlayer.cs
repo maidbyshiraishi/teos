@@ -58,6 +58,10 @@ public partial class MusicPlayer : Node
 
     public override void _Ready()
     {
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<AnimationPlayer>("Fader")?.Connect(AnimationMixer.SignalName.AnimationFinished, new(this, MethodName.Finished));
+
         _deck1 = GetNode<AudioStreamPlayer>("Deck_1");
         _deck2 = GetNode<AudioStreamPlayer>("Deck_2");
         _deck1.VolumeDb = 0;

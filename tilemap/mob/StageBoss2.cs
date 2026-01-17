@@ -14,6 +14,16 @@ public partial class StageBoss2 : TileMapMob
     private Array<ulong> _piles = [];
     private int _pileIndex = 0;
 
+    public override void _Ready()
+    {
+        base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Timer>("StartRotateTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.StartRotate));
+        _ = GetNodeOrNull<Timer>("ActivePileTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.ActivePile));
+    }
+
     public override void _Process(double delta)
     {
         if (!m_Active)

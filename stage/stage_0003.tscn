@@ -3760,6 +3760,3 @@ position = Vector2(8864, 720)
 
 [node name="SweepCommand" parent="Scenario/CenterOfCameraTrigger_6" index="1" instance=ExtResource("56_scodl")]
 SweepTargetGroup = "EnemyGroup"
-
-[connection signal="timeout" from="Enemy/BossPath2D/PathFollow2D/StageBoss_1/Timer" to="Enemy/BossPath2D/PathFollow2D/StageBoss_1" method="MakeTentacle"]
-[connection signal="timeout" from="Enemy/Path2D_92/PathFollow2D/EnemySpawner_1/Timer" to="Enemy/Path2D_92/PathFollow2D/EnemySpawner_1" method="SpqwnEnemy"]

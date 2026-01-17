@@ -18,6 +18,15 @@ public partial class KeyOptionDialog : DialogRoot
 
     public override void _Ready()
     {
+        base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Button>("Control/SwapStick")?.Connect(BaseButton.SignalName.Pressed, new(this, MethodName.SwapStick));
+        _ = GetNodeOrNull<HSlider>("Control/TargetSensitivity")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.TargetSensitivityValueChanged));
+        _ = GetNodeOrNull<HSlider>("Control/MouseSensitivity")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.MouseSensitivityValueChanged));
+        _ = GetNodeOrNull<Button>("Control/ResetSensitivity")?.Connect(BaseButton.SignalName.Pressed, new(this, MethodName.ResetSensitivity));
+
         UpdateDialogScreen();
     }
 

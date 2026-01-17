@@ -19,7 +19,3 @@ InitialApproach = 4.0
 [node name="ModulateTimer" type="Timer" parent="." index="1"]
 wait_time = 0.1
 autostart = true
-
-[connection signal="area_entered" from="." to="." method="HitArea2D"]
-[connection signal="body_entered" from="." to="." method="HitNode2D"]
-[connection signal="timeout" from="ModulateTimer" to="." method="ModulateBlink"]

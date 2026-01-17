@@ -13,5 +13,3 @@ script = ExtResource("1_26fyk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_26fyk")
 debug_color = Color(1, 1, 0, 1)
-
-[connection signal="area_entered" from="." to="." method="Exec"]

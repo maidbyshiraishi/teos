@@ -188,5 +188,3 @@ Score = 1000
 
 [node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
 Message = "+1000"
-
-[connection signal="timeout" from="SearchTargetTimer" to="." method="ToggleSearch"]

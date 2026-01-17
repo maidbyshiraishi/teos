@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxfl848bkvs5a"]
+[gd_scene load_steps=5 format=3 uid="uid://dxfl848bkvs5a"]
 
 [ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://decoration/Decoration.cs" id="1_ha4ic"]
 [ext_resource type="SpriteFrames" uid="uid://cpmt75upvvy6m" path="res://contents/image/decoration/explosion.tres" id="2_ytvpr"]
+[ext_resource type="PackedScene" uid="uid://t1hjabn8aisl" path="res://trigger/animated_sprite_finished_trigger.tscn" id="3_r3rpb"]
+[ext_resource type="PackedScene" uid="uid://b2ykovbxsetao" path="res://command/terminate_character_command.tscn" id="4_br3oi"]
 
 [node name="BigExplosion" type="Node2D"]
 script = ExtResource("1_ha4ic")
@@ -12,4 +14,7 @@ scale = Vector2(5, 5)
 sprite_frames = ExtResource("2_ytvpr")
 autoplay = "default"
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="TerminateCharacter"]
+[node name="AnimationFinishedTrigger" parent="AnimatedSprite2D" instance=ExtResource("3_r3rpb")]
+
+[node name="TerminateCharacterCommand" parent="AnimatedSprite2D/AnimationFinishedTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("4_br3oi")]
+Target = NodePath("../../..")

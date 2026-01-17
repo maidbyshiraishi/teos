@@ -49,6 +49,10 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
 
     public override void _Ready()
     {
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.EnteredArea2D));
+
         m_MountPoint = GetNode<MountPoint>("MountPoint");
         m_AnimationTree = GetNode<AnimationTree>("AnimationTree");
         m_StateMachine = (AnimationNodeStateMachinePlayback)m_AnimationTree.Get("parameters/playback");

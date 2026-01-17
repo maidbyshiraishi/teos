@@ -14,6 +14,15 @@ public partial class JukeboxDialog : DialogRoot
     [Export]
     public float BgmVolume { get; set; } = 100f;
 
+    public override void _Ready()
+    {
+        base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<HSlider>("Control/BgmSlider")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.BgmVolumeChanged));
+    }
+
     public override void Active()
     {
         UpdateDialogScreen();

@@ -1457,6 +1457,3 @@ Value = 45
 position = Vector2(5888, 40)
 State = 1
 Value = 45
-
-[connection signal="timeout" from="Enemy/EnemySpawner_1/Timer" to="Enemy/EnemySpawner_1" method="SpqwnEnemy"]
-[connection signal="timeout" from="Enemy/BossPath2D/PathFollow2D/StageBoss_1/Timer" to="Enemy/BossPath2D/PathFollow2D/StageBoss_1" method="TimerTimeout"]

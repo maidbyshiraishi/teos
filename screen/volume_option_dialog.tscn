@@ -230,6 +230,3 @@ ProcessAlways = true
 [node name="SaveGameOptionsCommand" parent="Close" instance=ExtResource("8_6ciug")]
 
 [node name="CloseDialogCommand2" parent="Close" instance=ExtResource("9_x2o4e")]
-
-[connection signal="value_changed" from="Control/BgmSlider" to="." method="BgmVolumeChanged"]
-[connection signal="value_changed" from="Control/SeSlider" to="." method="SeVolumeChanged"]

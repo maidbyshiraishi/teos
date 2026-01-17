@@ -104,5 +104,3 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_ipbui")
 }
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="AnimationFinished"]

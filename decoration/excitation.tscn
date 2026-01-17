@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dctt81ljv6gk0"]
+[gd_scene load_steps=11 format=3 uid="uid://dctt81ljv6gk0"]
 
 [ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://decoration/Decoration.cs" id="1_hiqpa"]
 [ext_resource type="Texture2D" uid="uid://b8k6rtvfexuqk" path="res://contents/image/decoration/excitation.png" id="2_52oy4"]
+[ext_resource type="PackedScene" uid="uid://t1hjabn8aisl" path="res://trigger/animated_sprite_finished_trigger.tscn" id="3_wyaxi"]
+[ext_resource type="PackedScene" uid="uid://b2ykovbxsetao" path="res://command/terminate_character_command.tscn" id="4_aq0d5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e46yr"]
 atlas = ExtResource("2_52oy4")
@@ -53,4 +55,7 @@ script = ExtResource("1_hiqpa")
 sprite_frames = SubResource("SpriteFrames_yqmls")
 autoplay = "default"
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="TerminateCharacter"]
+[node name="AnimationFinishedTrigger" parent="AnimatedSprite2D" instance=ExtResource("3_wyaxi")]
+
+[node name="TerminateCharacterCommand" parent="AnimatedSprite2D/AnimationFinishedTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("4_aq0d5")]
+Target = NodePath("../../..")

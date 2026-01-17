@@ -16,6 +16,16 @@ public partial class ExplosiveBullet : BulletRoot
     private Area2D _explosiveArea2D;
     private uint _targetLayerBackup;
 
+    public override void _Ready()
+    {
+        base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Area2D>("ExplosiveArea2D")?.Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.HitExplosiveArea2D));
+        _ = GetNodeOrNull<Area2D>("ExplosiveArea2D")?.Connect(Area2D.SignalName.BodyEntered, new(this, MethodName.HitExplosiveNode2D));
+    }
+
     public override void _Process(double delta)
     {
         _speed = HomingFunction.MoveToward(this, _speed, m_MaxSpeed, m_Acceleration, delta);

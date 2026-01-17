@@ -15,6 +15,13 @@ public partial class HomingBullet : BulletRoot
     public override void _Ready()
     {
         base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Timer>("StopHomingTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.StopHoming));
+        _ = GetNodeOrNull<Timer>("ClearTargetTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.ClearTarget));
+        _ = GetNodeOrNull<Timer>("FindTargetTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.FindTarget));
+
         _homing = new(this, LerpAngle);
     }
 

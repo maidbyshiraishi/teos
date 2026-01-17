@@ -22,7 +22,12 @@ public partial class FloatingMessage : Node2D
         GetNode<Label>("Label").Text = Text;
         GetNode<Label>("Label").SelfModulate = Color;
         GetNode<SePlayer>("/root/SePlayer").Play(SeName);
-        GetNode<AnimationPlayer>("AnimationPlayer").Play("floating_message");
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        AnimationPlayer player = GetNode<AnimationPlayer>("AnimationPlayer");
+        _ = player.Connect(AnimationMixer.SignalName.AnimationFinished, new(this, MethodName.AnimationFinished));
+        player.Play("floating_message");
     }
 
     public void AnimationFinished(StringName animName)

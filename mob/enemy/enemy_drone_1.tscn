@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://c3f5k4cp4go2k"]
 
 [ext_resource type="PackedScene" uid="uid://qyjfbwuobtjm" path="res://mob/enemy/enemy_root.tscn" id="1_fpe40"]
-[ext_resource type="Script" uid="uid://n0nsn1dosp2v" path="res://mob/enemy/EnemySimple2.cs" id="2_fpe40"]
+[ext_resource type="Script" uid="uid://n0nsn1dosp2v" path="res://mob/enemy/EnemyDrone1.cs" id="2_fpe40"]
 [ext_resource type="Texture2D" uid="uid://spkwnddsdj88" path="res://contents/image/enemy/enemy_drone_1.png" id="3_fpe40"]
 [ext_resource type="PackedScene" uid="uid://cdou8vt06ok1y" path="res://mob/bullet/small_bullet_1.tscn" id="3_yjkx1"]
 [ext_resource type="Animation" uid="uid://mgvu6efw5o08" path="res://contents/state_machine/mob/damage_control.tres" id="5_yjkx1"]
@@ -191,5 +191,3 @@ Score = 100
 
 [node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
 Message = "+100"
-
-[connection signal="timeout" from="ShotTimer" to="." method="Fire"]

@@ -16,6 +16,15 @@ public partial class StageBoss3 : TileMapMob
     private int _index = 0;
     private AddSceneCommand _addSceneCommand;
 
+    public override void _Ready()
+    {
+        base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.MakeTentacle));
+    }
+
     public override void _Process(double delta)
     {
         if (!m_Active)

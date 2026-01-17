@@ -29,6 +29,12 @@ public partial class ItemRoot : Area2D, IGameNode, IItem
 
     public override void _Ready()
     {
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Area2D>("ApproachPlayer")?.Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.EnterArea2D));
+        _ = GetNodeOrNull<Area2D>("ApproachPlayer")?.Connect(Area2D.SignalName.AreaExited, new(this, MethodName.ExitArea2D));
+        _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.Switch));
+
         ActivateOnScreen();
         _collisionShape = GetNodeOrNull<CollisionShape2D>("ApproachPlayer/CollisionShape2D");
         AddToGroup(IGameNode.GameNodeGroup);

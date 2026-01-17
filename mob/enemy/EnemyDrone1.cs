@@ -6,9 +6,9 @@ using teos.weapon;
 namespace teos.mob.enemy;
 
 /// <summary>
-/// 敵シンプル2
+/// 敵ドローン1
 /// </summary>
-public partial class EnemySimple2 : EnemyRoot
+public partial class EnemyDrone1 : EnemyRoot
 {
     [ExportGroup("Bullet")]
 
@@ -21,6 +21,10 @@ public partial class EnemySimple2 : EnemyRoot
     {
         _muzzle = WeaponRoot.FindMuzzle(GetNodeOrNull("Muzzle"));
         base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Timer>("ShotTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.Fire));
     }
 
     public override void _Process(double delta)

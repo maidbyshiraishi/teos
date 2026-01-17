@@ -33,6 +33,13 @@ public partial class BulletRoot : Mob, ISweep
     public override void _Ready()
     {
         base._Ready();
+
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.HitArea2D));
+        _ = Connect(Area2D.SignalName.BodyEntered, new(this, MethodName.HitNode2D));
+        _ = GetNodeOrNull<Timer>("ModulateTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.ModulateBlink));
+
         _collisionShape = GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
     }
 

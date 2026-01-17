@@ -247,6 +247,3 @@ Score = 500
 
 [node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
 Message = "+500"
-
-[connection signal="timeout" from="FindTargetTimer" to="." method="FindTarget"]
-[connection signal="timeout" from="StopHomingTimer" to="." method="StopHoming"]

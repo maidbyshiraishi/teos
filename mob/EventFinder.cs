@@ -15,6 +15,10 @@ public partial class EventFinder : Area2D
 
     public override void _Ready()
     {
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.Switch));
+
         if (GetParent() is Fighter fighter)
         {
             _target = fighter;

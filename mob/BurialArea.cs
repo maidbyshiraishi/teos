@@ -12,6 +12,10 @@ public partial class BurialArea : Area2D
 
     public override void _Ready()
     {
+        // Godotエディタからシグナルを接続すると
+        // リリースビルドのエクスポート時、接続が失われることがある。
+        _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.Switch));
+
         _collisionShape = GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
     }
 

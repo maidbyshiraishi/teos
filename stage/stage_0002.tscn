@@ -2818,9 +2818,3 @@ Text3 = "破壊せよ！"
 WaitTime = 4.0
 
 [node name="HideHudMessageCommand" parent="Scenario/CenterOfCameraTrigger_5/DelayCommandContainer_2" index="0" instance=ExtResource("7_nsf58")]
-
-[connection signal="timeout" from="Enemy/EnemySpawner_1/Timer" to="Enemy/EnemySpawner_1" method="SpqwnEnemy"]
-[connection signal="timeout" from="Enemy/BossPath2D_1/PathFollow2D/StageBoss2/ActivePileTimer" to="Enemy/BossPath2D_1/PathFollow2D/StageBoss2" method="ActivePile"]
-[connection signal="timeout" from="Enemy/BossPath2D_1/PathFollow2D/StageBoss2/StartRotateTimer" to="Enemy/BossPath2D_1/PathFollow2D/StageBoss2" method="StartRotate"]
-[connection signal="timeout" from="Enemy/BossPath2D_1/PathFollow2D/StageBoss2/StartRotateTimer" to="Enemy/BossPath2D_2/PathFollow2D/StageBoss2" method="StartRotate"]
-[connection signal="timeout" from="Enemy/BossPath2D_2/PathFollow2D/StageBoss2/ActivePileTimer" to="Enemy/BossPath2D_2/PathFollow2D/StageBoss2" method="ActivePile"]
