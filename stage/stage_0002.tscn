@@ -1514,7 +1514,10 @@ position = Vector2(208, 16)
 
 [node name="EnemyDropCharacterEnabler" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2/CrackBlock_6/PackScore3000" index="4" instance=ExtResource("28_mf0ru")]
 
-[node name="Dead" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2" index="18" instance=ExtResource("22_fk8tk")]
+[node name="StartRotateTimer" type="Timer" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2" index="18"]
+wait_time = 2.0
+
+[node name="Dead" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2" index="19" instance=ExtResource("22_fk8tk")]
 
 [node name="DropItemCommand" parent="Enemy/BossPath2D_2/PathFollow2D/StageBoss2/Dead" index="0" instance=ExtResource("20_qu5ts")]
 
