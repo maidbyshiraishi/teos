@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using teos.command;
+using teos.command.stage;
 using teos.stage;
 using teos.trigger;
 

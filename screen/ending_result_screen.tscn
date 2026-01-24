@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dyg37pipmdu78" path="res://screen/result_screen.tscn" id="1_833lb"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="2_edv6i"]
-[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/play_se_command.tscn" id="4_ct5ou"]
+[ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="4_ct5ou"]
 [ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="5_dpp0h"]
-[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/open_screen_command.tscn" id="5_mniuh"]
+[ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/open_screen_command.tscn" id="5_mniuh"]
 
 [node name="ResultScreen" instance=ExtResource("1_833lb")]
 

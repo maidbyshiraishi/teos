@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3vj12jirphv0"]
+
+[ext_resource type="Script" uid="uid://c26p32sjuy0id" path="res://command/timer/ResumeTimerCommand.cs" id="1_ebl54"]
+
+[node name="ResumeTimerCommand" type="Node"]
+script = ExtResource("1_ebl54")

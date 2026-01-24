@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://l7xudjpc38ac"]
+
+[ext_resource type="Script" uid="uid://bpkwubpaayc5s" path="res://command/timer/StartTimerCommand.cs" id="1_wfity"]
+
+[node name="StartTimerCommand" type="Node"]
+script = ExtResource("1_wfity")

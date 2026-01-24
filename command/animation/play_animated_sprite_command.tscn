@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dok77dg7j1gew"]
+
+[ext_resource type="Script" uid="uid://cfgf8bpsqnkbq" path="res://command/animation/PlayAnimatedSpriteCommand.cs" id="1_dcw2l"]
+
+[node name="PlayAnimatedSpriteCommand" type="Node"]
+script = ExtResource("1_dcw2l")

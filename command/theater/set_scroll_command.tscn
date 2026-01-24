@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://nh4t5ecmenun"]
+
+[ext_resource type="Script" uid="uid://b0xd6h3hepplh" path="res://command/theater/SetScrollCommand.cs" id="1_1kkkb"]
+
+[node name="SetScrollCommand" type="Node"]
+script = ExtResource("1_1kkkb")

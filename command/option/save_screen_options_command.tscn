@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3y2panllhvxf"]
+
+[ext_resource type="Script" uid="uid://d0exbmhdvtl7s" path="res://command/dialog/SaveScreenOptionsCommand.cs" id="1_a05o2"]
+
+[node name="SaveScreenOptionsCommand" type="Node"]
+script = ExtResource("1_a05o2")

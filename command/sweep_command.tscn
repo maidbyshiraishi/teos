@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm1ew8f4l8o0o"]
-
-[ext_resource type="Script" uid="uid://p5w51kugguot" path="res://command/SweepCommand.cs" id="1_t0ljt"]
-
-[node name="SweepCommand" type="Node"]
-script = ExtResource("1_t0ljt")

@@ -1,0 +1,26 @@
+using Godot;
+using teos.system;
+
+namespace teos.command.flag;
+
+/// <summary>
+/// ゲームフラグを削除するコマンド
+/// </summary>
+public partial class RemoveFlagDataCommand : CommandRoot
+{
+    /// <summary>
+    /// フラグ名
+    /// </summary>
+    [Export]
+    public string Target { get; set; }
+
+    public override void ExecCommand(Node node, bool flag)
+    {
+        if (ExecFlag != flag)
+        {
+            return;
+        }
+
+        GetNode<GameDataManager>("/root/GameDataManager").RemoveFlagData(Target);
+    }
+}

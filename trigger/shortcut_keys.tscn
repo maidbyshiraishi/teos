@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7lc2ks6h6ce"]
 
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="1_ie4ch"]
-[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/open_dialog_command.tscn" id="3_3cafv"]
+[ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="3_3cafv"]
 
 [node name="ShortcutKeys" type="Node"]
 

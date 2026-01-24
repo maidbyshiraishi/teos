@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://decoration/Decoration.cs" id="1_hiqpa"]
 [ext_resource type="Texture2D" uid="uid://b8k6rtvfexuqk" path="res://contents/image/decoration/excitation.png" id="2_52oy4"]
 [ext_resource type="PackedScene" uid="uid://t1hjabn8aisl" path="res://trigger/animated_sprite_finished_trigger.tscn" id="3_wyaxi"]
-[ext_resource type="PackedScene" uid="uid://b2ykovbxsetao" path="res://command/terminate_character_command.tscn" id="4_aq0d5"]
+[ext_resource type="PackedScene" uid="uid://b2ykovbxsetao" path="res://command/stage/terminate_character_command.tscn" id="4_aq0d5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e46yr"]
 atlas = ExtResource("2_52oy4")

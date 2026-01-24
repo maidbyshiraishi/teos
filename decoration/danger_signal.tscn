@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://decoration/Decoration.cs" id="1_s23er"]
 [ext_resource type="Texture2D" uid="uid://tcttpka1554m" path="res://contents/image/decoration/danger_signal.png" id="2_uaxrb"]
 [ext_resource type="PackedScene" uid="uid://cxafv8tj6dexo" path="res://trigger/timer_trigger.tscn" id="3_pjmwj"]
-[ext_resource type="PackedScene" uid="uid://b2ykovbxsetao" path="res://command/terminate_character_command.tscn" id="4_uaxrb"]
+[ext_resource type="PackedScene" uid="uid://b2ykovbxsetao" path="res://command/stage/terminate_character_command.tscn" id="4_uaxrb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prp6m"]
 atlas = ExtResource("2_uaxrb")

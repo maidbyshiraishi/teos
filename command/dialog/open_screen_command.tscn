@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvbavm6ut2uel"]
+
+[ext_resource type="Script" uid="uid://c5tlcek0bo0go" path="res://command/dialog/OpenScreenCommand.cs" id="1_g8x0u"]
+
+[node name="OpenScreenCommand" type="Node"]
+script = ExtResource("1_g8x0u")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mm6miyrmbjvb"]
+
+[ext_resource type="Script" uid="uid://ceurtmb74y4sa" path="res://command/hud/ShowHudMessageCommand.cs" id="1_1u47y"]
+
+[node name="ShowHudMessageCommand" type="Node"]
+script = ExtResource("1_1u47y")

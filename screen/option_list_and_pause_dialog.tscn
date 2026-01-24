@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://yltdrtrk01dl"]
 
 [ext_resource type="PackedScene" uid="uid://djnbr5bus17iy" path="res://screen/option_list_dialog.tscn" id="1_jcb5i"]
-[ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://command/resume_bgm_command.tscn" id="2_1boa5"]
+[ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://command/audio/resume_bgm_command.tscn" id="2_1boa5"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="2_uuw54"]
-[ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://command/pause_bgm_command.tscn" id="3_30q8g"]
+[ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://command/audio/pause_bgm_command.tscn" id="3_30q8g"]
 
 [node name="OptionListAndPauseDialog" instance=ExtResource("1_jcb5i")]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://item/item_root.tscn" id="1_ngonf"]
 [ext_resource type="Texture2D" uid="uid://bo7j2xdbartcv" path="res://contents/image/item/bomb.png" id="2_yt5db"]
-[ext_resource type="PackedScene" uid="uid://dm1ew8f4l8o0o" path="res://command/sweep_command.tscn" id="3_owwf4"]
+[ext_resource type="PackedScene" uid="uid://dm1ew8f4l8o0o" path="res://command/stage/sweep_command.tscn" id="3_owwf4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7oxo8"]
 atlas = ExtResource("2_yt5db")

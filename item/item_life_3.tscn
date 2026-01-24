@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://item/item_root.tscn" id="1_v12jw"]
 [ext_resource type="Texture2D" uid="uid://blm1rrj0omf8w" path="res://contents/image/item/life1.png" id="2_wf70k"]
-[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/add_life_command.tscn" id="3_iet8d"]
+[ext_resource type="PackedScene" uid="uid://detvqwqihlaoj" path="res://command/stage/add_life_command.tscn" id="3_iet8d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74hs4"]
 atlas = ExtResource("2_wf70k")

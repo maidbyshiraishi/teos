@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnnyybt486nvs"]
 
 [ext_resource type="Script" uid="uid://bsuhxdl3nbr0t" path="res://system/GameSpeedManager.cs" id="1_tkmm5"]
-[ext_resource type="PackedScene" uid="uid://c28wba61tarxk" path="res://command/change_game_speed_command.tscn" id="1_w2r8h"]
+[ext_resource type="PackedScene" uid="uid://c28wba61tarxk" path="res://command/stage/change_game_speed_command.tscn" id="1_w2r8h"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="2_b4qvg"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="4_u1xoo"]
 
