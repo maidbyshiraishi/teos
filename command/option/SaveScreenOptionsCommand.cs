@@ -1,7 +1,7 @@
 using Godot;
 using teos.system;
 
-namespace teos.command.dialog;
+namespace teos.command.option;
 
 /// <summary>
 /// 画面オプションを保存するコマンド
