@@ -15,6 +15,7 @@ visible = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+deterministic = false
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="Muzzle" type="Node2D" parent="."]
