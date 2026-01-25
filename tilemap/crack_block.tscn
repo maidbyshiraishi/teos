@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://d1m64yhaigvik" path="res://command/stage/add_score_command.tscn" id="4_m8j6m"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="4_qe1dq"]
 [ext_resource type="PackedScene" uid="uid://ca7v4ux5jvfh7" path="res://command/stage/drop_item_command.tscn" id="4_xjslq"]
-[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="5_xjslq"]
-[ext_resource type="PackedScene" uid="uid://3v68y2am0x6b" path="res://command/show_decoration_command.tscn" id="6_qe1dq"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/decoration/show_floating_message_command.tscn" id="5_xjslq"]
+[ext_resource type="PackedScene" uid="uid://3v68y2am0x6b" path="res://command/decoration/show_decoration_command.tscn" id="6_qe1dq"]
 [ext_resource type="PackedScene" uid="uid://cn7no3720iabm" path="res://command/delay_command_container.tscn" id="9_j1l81"]
 [ext_resource type="PackedScene" uid="uid://dj7uh2jaobi4v" path="res://command/queue_free_command.tscn" id="10_j1l81"]
 

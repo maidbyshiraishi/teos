@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.command;
+namespace teos.command.dialog;
 
 /// <summary>
 /// システムのファイルマネージャで指定フォルダを開くコマンド

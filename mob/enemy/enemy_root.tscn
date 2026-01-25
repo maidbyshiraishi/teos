@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="3_l1wjw"]
 [ext_resource type="PackedScene" uid="uid://ca7v4ux5jvfh7" path="res://command/stage/drop_item_command.tscn" id="4_cb3ku"]
 [ext_resource type="PackedScene" uid="uid://d1m64yhaigvik" path="res://command/stage/add_score_command.tscn" id="4_fxnj0"]
-[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/show_floating_message_command.tscn" id="5_cb3ku"]
+[ext_resource type="PackedScene" uid="uid://81medvmp06lf" path="res://command/decoration/show_floating_message_command.tscn" id="5_cb3ku"]
 
 [node name="EnemyRoot" instance=ExtResource("1_h1tyg")]
 collision_layer = 32

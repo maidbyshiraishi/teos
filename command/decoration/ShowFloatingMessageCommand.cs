@@ -2,7 +2,7 @@ using Godot;
 using teos.decoration;
 using teos.system;
 
-namespace teos.command;
+namespace teos.command.decoration;
 
 /// <summary>
 /// フローティングメッセージを表示するコマンド

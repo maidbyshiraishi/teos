@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://command/option/set_game_options_command.tscn" id="11_0e2uc"]
 [ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/dialog/update_dialog_screen_command.tscn" id="12_xh88y"]
 [ext_resource type="PackedScene" uid="uid://db5heldrmq227" path="res://command/option/reset_default_game_options_command.tscn" id="13_4ty8t"]
-[ext_resource type="PackedScene" uid="uid://c1rbo6273ktjc" path="res://command/open_file_manager_command.tscn" id="13_wbecy"]
+[ext_resource type="PackedScene" uid="uid://c1rbo6273ktjc" path="res://command/dialog/open_file_manager_command.tscn" id="13_wbecy"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="15_deamu"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="16_yg6hs"]
 
