@@ -44,10 +44,10 @@ script = ExtResource("1_84ts3")
 [node name="EnemyTentacleHead" parent="TentacleHead" instance=ExtResource("5_nxbyk")]
 WeaponRotationEnabled = true
 
-[node name="AddScoreCommand" parent="TentacleHead/EnemyTentacleHead/Dead" index="0"]
+[node name="AddScoreCommand" parent="TentacleHead/EnemyTentacleHead/Dead" index="1"]
 Score = 0
 
-[node name="ShowFloatingMessageCommand" parent="TentacleHead/EnemyTentacleHead/Dead" index="1"]
+[node name="ShowFloatingMessageCommand" parent="TentacleHead/EnemyTentacleHead/Dead" index="2"]
 Message = ""
 
 [editable path="TentacleHead/EnemyTentacleHead"]

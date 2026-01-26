@@ -71,7 +71,7 @@ anchors_preset = 0
 
 [node name="Start" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 128.0
 offset_top = 304.0
 offset_right = 288.0
@@ -119,7 +119,7 @@ DialogPath = "res://screen/option_list_dialog.tscn"
 
 [node name="Quit" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 176.0
 offset_top = 400.0
 offset_right = 336.0
@@ -142,7 +142,7 @@ DialogPath = "res://screen/quit_dialog.tscn"
 
 [node name="Story" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 304.0
 offset_top = 304.0
 offset_right = 464.0
@@ -166,7 +166,7 @@ DialogPath = "res://theater/story_opening.tscn"
 
 [node name="HighScore" type="Button" parent="Control"]
 light_mask = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 328.0
 offset_top = 352.0
 offset_right = 488.0

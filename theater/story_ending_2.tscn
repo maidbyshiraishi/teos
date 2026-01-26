@@ -314,8 +314,8 @@ position = Vector2(319, 1389)
 WaitTime = 1.0
 
 [node name="PlayAnimatedSpriteCommand" parent="Path2D/Socket/Contents/InvisibleTrigger/DelayCommandContainer1" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("7_so84y")]
-AnimatedSprite = NodePath("../../../AnimatedSprite2D2")
 AnimationName = "default"
+AnimatedSprite = NodePath("../../../AnimatedSprite2D2")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Path2D/Socket/Contents" index="9"]
 position = Vector2(319, 1555)
@@ -369,8 +369,8 @@ Stream = ExtResource("13_wsncm")
 position = Vector2(447, 411)
 
 [node name="ShowCanvasItemCommand" parent="Path2D/Socket/Contents/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("14_erue3")]
-Target = NodePath("../../../../../Control/CloseButton")
 GrubFocus = true
+Target = NodePath("../../../../../Control/CloseButton")
 
 [node name="CloseButton" type="Button" parent="Control" index="0"]
 visible = false

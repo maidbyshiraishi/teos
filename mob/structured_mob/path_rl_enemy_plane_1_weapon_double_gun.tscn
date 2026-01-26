@@ -23,13 +23,13 @@ script = ExtResource("2_0yk4s")
 Speed = 60.0
 
 [node name="EnemyPlane1" parent="PathFollow2D" instance=ExtResource("3_rwn01")]
-Score = 0
 WeaponRotationEnabled = true
-
-[node name="AddScoreCommand" parent="PathFollow2D/EnemyPlane1/Dead" index="0"]
 Score = 0
 
-[node name="ShowFloatingMessageCommand" parent="PathFollow2D/EnemyPlane1/Dead" index="1"]
+[node name="AddScoreCommand" parent="PathFollow2D/EnemyPlane1/Dead" index="1"]
+Score = 0
+
+[node name="ShowFloatingMessageCommand" parent="PathFollow2D/EnemyPlane1/Dead" index="2"]
 Message = ""
 
 [node name="DoubleGun" parent="PathFollow2D/EnemyPlane1" instance=ExtResource("4_0sr38")]

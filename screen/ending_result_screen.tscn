@@ -11,6 +11,9 @@
 [node name="Title" parent="." index="1"]
 text = "最終結果発表"
 
+[node name="HighScoreListControl" parent="." index="2"]
+layout_mode = 0
+
 [node name="StartEnding" type="Button" parent="Control" index="0"]
 light_mask = 2
 layout_mode = 0
@@ -32,6 +35,9 @@ ProcessAlways = true
 Screen = "res://theater/story_ending_1.tscn"
 
 [node name="Focus" parent="Control/StartEnding" index="1" instance=ExtResource("5_dpp0h")]
+
+[node name="Back" parent="Control" index="1"]
+layout_mode = 0
 
 [node name="EscapeKey" parent="." index="7"]
 ActionName = ""

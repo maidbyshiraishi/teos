@@ -680,6 +680,9 @@ metadata/_edit_vertical_guides_ = [166.0, 479.0, 320.0]
 [node name="Background" parent="." index="0"]
 color = Color(0, 0, 0, 1)
 
+[node name="Socket" parent="." index="1"]
+layout_mode = 0
+
 [node name="Contents" type="Control" parent="Socket" index="0"]
 layout_mode = 1
 anchors_preset = 8
@@ -726,7 +729,6 @@ Stream = ExtResource("9_cfg8y")
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -821,11 +823,10 @@ position = Vector2(16, 17)
 [node name="ChangeBgmCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
 
 [node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
-AnimationPlayer = NodePath("../../Mask/AnimationPlayer")
 AnimationName = "default"
+AnimationPlayer = NodePath("../../Mask/AnimationPlayer")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page2" index="3"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -867,7 +868,6 @@ Command = 4
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page3" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -946,7 +946,6 @@ WaitTime = 5.5
 [node name="GoNextPageCommand" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer4" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page4" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -1020,7 +1019,6 @@ WaitTime = 2.0
 [node name="GoNextPageCommand" parent="Socket/Contents/Page5/VisibleTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
 
 [node name="Control" type="Control" parent="Socket/Contents/Page5" index="2"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
@@ -1052,11 +1050,10 @@ position = Vector2(16, 17)
 SeName = "rocket_maid"
 
 [node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="2" node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
-AnimationPlayer = NodePath("../../AnimationPlayer")
 AnimationName = "default"
+AnimationPlayer = NodePath("../../AnimationPlayer")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page6" index="1"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0

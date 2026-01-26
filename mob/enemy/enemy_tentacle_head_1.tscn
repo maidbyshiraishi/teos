@@ -135,12 +135,12 @@ graph_offset = Vector2(-20, 178)
 
 [node name="EnemyTentacleHead1" instance=ExtResource("1_abs5b")]
 script = ExtResource("2_abs5b")
+InitialLife = 5
 SearchWaitTime = 1.0
 ClearWaitTime = 3.0
 RandomErrorX = 50.0
 RandomErrorY = 50.0
 LerpAngle = 10.0
-InitialLife = 5
 InitialApproach = 32.0
 InitialMaxSpeed = 300.0
 InitialReductionApproach = 32.0
