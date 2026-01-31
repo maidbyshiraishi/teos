@@ -22,10 +22,16 @@ public partial class GameKeyOption : Node
     }
 
     [Export]
-    public double TargetSensitivity { get; set; } = 1.0f;
+    public double DefaultTargetSensitivity { get; set; } = 0.4f;
 
     [Export]
-    public double MouseSensitivity { get; set; } = 1.0f;
+    public double DefaultMouseSensitivity { get; set; } = 0.4f;
+
+    [Export]
+    public double TargetSensitivity { get; set; } = 0.4f;
+
+    [Export]
+    public double MouseSensitivity { get; set; } = 0.4f;
 
     private bool _reverse;
     private static readonly string KeyOptionFilePath = "user://key_options.dat";
@@ -39,8 +45,8 @@ public partial class GameKeyOption : Node
     {
         _reverse = false;
         InputMap.LoadFromProjectSettings();
-        TargetSensitivity = 1.0f;
-        MouseSensitivity = 1.0f;
+        TargetSensitivity = DefaultTargetSensitivity;
+        MouseSensitivity = DefaultMouseSensitivity;
     }
 
     public void LoadKeyOptions()
@@ -61,8 +67,8 @@ public partial class GameKeyOption : Node
         }
 
         Reverse = keyOptions.GetValue("KeyOption", "Reverse", false).AsBool();
-        TargetSensitivity = keyOptions.GetValue("KeyOption", "TargetSensitivity", 1.0f).AsDouble();
-        MouseSensitivity = keyOptions.GetValue("KeyOption", "MouseSensitivity", 1.0f).AsDouble();
+        TargetSensitivity = keyOptions.GetValue("KeyOption", "TargetSensitivity", DefaultTargetSensitivity).AsDouble();
+        MouseSensitivity = keyOptions.GetValue("KeyOption", "MouseSensitivity", DefaultMouseSensitivity).AsDouble();
     }
 
 
