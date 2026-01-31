@@ -6,9 +6,3 @@
 
 [node name="Title" parent="." index="1"]
 text = "ハイスコア"
-
-[node name="HighScoreListControl" parent="." index="2"]
-layout_mode = 0
-
-[node name="Back" parent="Control" index="0"]
-layout_mode = 0

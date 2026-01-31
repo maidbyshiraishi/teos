@@ -11,15 +11,12 @@
 [node name="Title" parent="." index="1"]
 text = "最終結果発表"
 
-[node name="HighScoreListControl" parent="." index="2"]
-layout_mode = 0
-
 [node name="StartEnding" type="Button" parent="Control" index="0"]
 light_mask = 2
 layout_mode = 0
-offset_left = 112.0
+offset_left = 96.0
 offset_top = 424.0
-offset_right = 320.0
+offset_right = 304.0
 offset_bottom = 456.0
 size_flags_horizontal = 4
 text = "エンディングを見る"
@@ -35,9 +32,6 @@ ProcessAlways = true
 Screen = "res://theater/story_ending_1.tscn"
 
 [node name="Focus" parent="Control/StartEnding" index="1" instance=ExtResource("5_dpp0h")]
-
-[node name="Back" parent="Control" index="1"]
-layout_mode = 0
 
 [node name="EscapeKey" parent="." index="7"]
 ActionName = ""

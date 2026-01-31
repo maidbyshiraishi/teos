@@ -5,10 +5,8 @@
 [node name="HighScoreListControl" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 64.0
-offset_top = 72.0
-offset_right = 576.0
-offset_bottom = 392.0
+offset_right = 512.0
+offset_bottom = 320.0
 script = ExtResource("1_tm48w")
 
 [node name="Rank_1" type="Control" parent="."]

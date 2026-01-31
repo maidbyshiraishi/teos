@@ -7,9 +7,6 @@
 [node name="Title" parent="." index="1"]
 text = "結果発表"
 
-[node name="HighScoreListControl" parent="." index="2"]
-layout_mode = 0
-
 [node name="Label" type="Label" parent="." index="3"]
 layout_mode = 0
 offset_left = 72.0
@@ -25,6 +22,3 @@ offset_left = 192.0
 offset_top = 56.0
 offset_right = 448.0
 offset_bottom = 80.0
-
-[node name="Back" parent="Control" index="0"]
-layout_mode = 0
