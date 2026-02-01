@@ -50,7 +50,7 @@ public partial class Player : Fighter, ICharacterManager
 
     public override void _Process(double delta)
     {
-        Vector2 input = Input.GetVector("game_left", "game_right", "game_up", "game_down");
+        Vector2 input = Getinput();
 
         switch (m_StateMachine.GetCurrentNode())
         {
@@ -93,6 +93,35 @@ public partial class Player : Fighter, ICharacterManager
 
                 break;
         }
+    }
+
+    private Vector2 Getinput()
+    {
+        Vector2 input = Vector2.Zero;
+        bool up = Input.IsActionPressed("game_up");
+        bool down = Input.IsActionPressed("game_down");
+        bool left = Input.IsActionPressed("game_left");
+        bool right = Input.IsActionPressed("game_right");
+
+        if (left && !right)
+        {
+            input += Vector2.Left;
+        }
+        else if (!left && right)
+        {
+            input += Vector2.Right;
+        }
+
+        if (up && !down)
+        {
+            input += Vector2.Up;
+        }
+        else if (!up && down)
+        {
+            input += Vector2.Down;
+        }
+
+        return input;
     }
 
     private void CalcPosition(double delta)
