@@ -50,7 +50,7 @@ public partial class Player : Fighter, ICharacterManager
 
     public override void _Process(double delta)
     {
-        Vector2 input = Getinput();
+        Vector2 input = GetInput();
 
         switch (m_StateMachine.GetCurrentNode())
         {
@@ -95,7 +95,7 @@ public partial class Player : Fighter, ICharacterManager
         }
     }
 
-    private Vector2 Getinput()
+    private Vector2 GetInput()
     {
         Vector2 input = Vector2.Zero;
         bool up = Input.IsActionPressed("game_up");
