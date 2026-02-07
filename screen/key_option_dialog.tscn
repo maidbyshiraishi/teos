@@ -176,6 +176,7 @@ autoplay = "default"
 
 [node name="PlayerBorderRect" type="ReferenceRect" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -188,6 +189,7 @@ offset_right = 576.0
 offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
+editor_only = false
 
 [node name="Control" type="Control" parent="."]
 light_mask = 2
