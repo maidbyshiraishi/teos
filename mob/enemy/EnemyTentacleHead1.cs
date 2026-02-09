@@ -82,10 +82,7 @@ public partial class EnemyTentacleHead1 : EnemyRoot
         _homing.StartHoming();
     }
 
-    public void ClearTarget()
-    {
-        _homing.ClearTarget();
-    }
+    public void ClearTarget() => _homing.ClearTarget();
 
     #region ICharacterManagerインタフェース
     public override void InitializeCharacter()

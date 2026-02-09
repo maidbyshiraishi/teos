@@ -28,10 +28,7 @@ public partial class EventFinder : Area2D
         _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.Area2DEntered));
     }
 
-    public void Area2DEntered(Area2D area)
-    {
-        _ = CallDeferred(MethodName.DeferredNodeEntered, [area]);
-    }
+    public void Area2DEntered(Area2D area) => _ = CallDeferred(MethodName.DeferredNodeEntered, [area]);
 
     public void DeferredNodeEntered(Area2D node)
     {

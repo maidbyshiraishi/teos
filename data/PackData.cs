@@ -22,15 +22,9 @@ public class PackData : DataRoot
         Backup();
     }
 
-    public void Backup()
-    {
-        _stageDataBackup = StageData.Copy();
-    }
+    public void Backup() => _stageDataBackup = StageData.Copy();
 
-    public void Restore()
-    {
-        StageData = _stageDataBackup.Copy();
-    }
+    public void Restore() => StageData = _stageDataBackup.Copy();
 
     public override Error SetConfigFile(ConfigFile file)
     {
@@ -99,13 +93,7 @@ public class PackData : DataRoot
         FlagData.RemoveIllegalKey(file);
     }
 
-    public override string[] GetSectionKeys(ConfigFile file)
-    {
-        return [.. PlayerData.GetSectionKeys(file), .. StageData.GetSectionKeys(file), .. FlagData.GetSectionKeys(file)];
-    }
+    public override string[] GetSectionKeys(ConfigFile file) => [.. PlayerData.GetSectionKeys(file), .. StageData.GetSectionKeys(file), .. FlagData.GetSectionKeys(file)];
 
-    public override Array GetSectionValues(ConfigFile file)
-    {
-        return [.. PlayerData.GetSectionValues(file), .. StageData.GetSectionValues(file), .. FlagData.GetSectionValues(file)];
-    }
+    public override Array GetSectionValues(ConfigFile file) => [.. PlayerData.GetSectionValues(file), .. StageData.GetSectionValues(file), .. FlagData.GetSectionValues(file)];
 }

@@ -29,10 +29,7 @@ public partial class HomingFunction(Node2D controlTarget, float lerpAngle)
         _speed = MoveToward(ControlTarget, _speed, maxSpeed, acceleration, delta);
     }
 
-    public void MoveOnly(double delta, float maxSpeed, float acceleration)
-    {
-        _speed = MoveToward(ControlTarget, _speed, maxSpeed, acceleration, delta);
-    }
+    public void MoveOnly(double delta, float maxSpeed, float acceleration) => _speed = MoveToward(ControlTarget, _speed, maxSpeed, acceleration, delta);
 
     public Mob FindTarget(bool searchEnemy, bool searchPlayer)
     {
@@ -73,30 +70,15 @@ public partial class HomingFunction(Node2D controlTarget, float lerpAngle)
         return null;
     }
 
-    public void StopHoming()
-    {
-        _active = false;
-    }
+    public void StopHoming() => _active = false;
 
-    public void StartHoming()
-    {
-        _active = true;
-    }
+    public void StartHoming() => _active = true;
 
-    public void ClearTarget()
-    {
-        TargetPosition = Vector2.Inf;
-    }
+    public void ClearTarget() => TargetPosition = Vector2.Inf;
 
-    public void SetTarget(Vector2 target)
-    {
-        TargetPosition = target;
-    }
+    public void SetTarget(Vector2 target) => TargetPosition = target;
 
-    public bool HasTarget()
-    {
-        return TargetPosition != Vector2.Inf;
-    }
+    public bool HasTarget() => TargetPosition != Vector2.Inf;
 
     public static float MoveToward(Node2D node, float speed, float maxSpeed, float acceleration, double delta)
     {

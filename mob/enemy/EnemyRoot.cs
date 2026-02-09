@@ -154,15 +154,9 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
     #endregion
 
     #region ICharacterManagerインタフェース
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        m_CharacterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => m_CharacterManager = characterManager;
 
-    public virtual void ActiveCharacter(bool active)
-    {
-        m_StateMachine.Start(active ? "initialize" : "sleep");
-    }
+    public virtual void ActiveCharacter(bool active) => m_StateMachine.Start(active ? "initialize" : "sleep");
 
     public virtual void InitializeCharacter()
     {
@@ -205,10 +199,7 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
     #endregion
 
     #region IItemDropperインタフェース
-    public void AddItemDropper(EnemyDropCharacterEnabler enabler)
-    {
-        _dropItemCharacterEnabler.Add(enabler);
-    }
+    public void AddItemDropper(EnemyDropCharacterEnabler enabler) => _dropItemCharacterEnabler.Add(enabler);
 
     public void DropItem()
     {

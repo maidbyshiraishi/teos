@@ -35,20 +35,11 @@ public partial class Hud : CanvasLayer, IGameNode
         AddToGroup(IGameNode.GameNodeGroup);
     }
 
-    public void UpdateScore(int score)
-    {
-        _score.Text = score.ToString("N0");
-    }
+    public void UpdateScore(int score) => _score.Text = score.ToString("N0");
 
-    public void UpdateLife(int life)
-    {
-        _life.Value = life;
-    }
+    public void UpdateLife(int life) => _life.Value = life;
 
-    public void UpdateRemain(int remain)
-    {
-        _remain.Text = remain.ToString();
-    }
+    public void UpdateRemain(int remain) => _remain.Text = remain.ToString();
 
     public void UpdateWeapon(WeaponRoot weapon)
     {
@@ -72,10 +63,7 @@ public partial class Hud : CanvasLayer, IGameNode
         GetNode<Control>("Start").Show();
     }
 
-    public void HideMessage()
-    {
-        GetNode<Control>("Start").Hide();
-    }
+    public void HideMessage() => GetNode<Control>("Start").Hide();
 
     public void SetMessage(string text1, string text2, string text3)
     {

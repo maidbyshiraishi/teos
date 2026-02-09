@@ -65,15 +65,9 @@ public partial class EnemySimple1 : EnemyRoot
         }
     }
 
-    public void SearchTarget()
-    {
-        _targetPosition = m_Player.GlobalPosition;
-    }
+    public void SearchTarget() => _targetPosition = m_Player.GlobalPosition;
 
-    public void ClearTarget()
-    {
-        _targetPosition = Vector2.Inf;
-    }
+    public void ClearTarget() => _targetPosition = Vector2.Inf;
 
     #region ICharacterManagerインタフェース
     public override void InitializeCharacter()

@@ -32,19 +32,10 @@ public partial class VisibleOnScreenCharacterEnabler : VisibleOnScreenNotifier2D
         }
     }
 
-    public ICharacterManager GetCharacter()
-    {
-        return _target;
-    }
+    public ICharacterManager GetCharacter() => _target;
 
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        _characterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => _characterManager = characterManager;
 
-    public void ReparentCharacterEnabler(Node characterEnablerList)
-    {
-        Reparent(ReparentNode is not null ? ReparentNode : characterEnablerList);
-    }
+    public void ReparentCharacterEnabler(Node characterEnablerList) => Reparent(ReparentNode is not null ? ReparentNode : characterEnablerList);
     #endregion
 }

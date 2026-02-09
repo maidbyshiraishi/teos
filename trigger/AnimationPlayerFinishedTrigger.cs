@@ -19,8 +19,5 @@ public partial class AnimationPlayerFinishedTrigger : Node
         }
     }
 
-    public virtual void Exec(string animName)
-    {
-        CommandRoot.ExecChildren(this, Target, true);
-    }
+    public virtual void Exec(string animName) => CommandRoot.ExecChildren(this, Target, true);
 }

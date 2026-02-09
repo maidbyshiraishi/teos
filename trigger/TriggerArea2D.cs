@@ -38,12 +38,10 @@ public partial class TriggerArea2D : Area2D
 
     protected bool m_Opened = false;
 
-    public override void _Ready()
-    {
+    public override void _Ready() =>
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
         _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.Exec));
-    }
 
     public virtual void Exec(Node2D node)
     {
@@ -61,8 +59,5 @@ public partial class TriggerArea2D : Area2D
         CommandRoot.ExecChildren(this, Target is null ? node : Target, true);
     }
 
-    public virtual void SetOpened(bool opened)
-    {
-        m_Opened = opened;
-    }
+    public virtual void SetOpened(bool opened) => m_Opened = opened;
 }

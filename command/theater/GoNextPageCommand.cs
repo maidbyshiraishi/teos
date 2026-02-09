@@ -10,10 +10,7 @@ public partial class GoNextPageCommand : CommandRoot, IStoryTheaterContent
 {
     private StoryTheater _storyTheater = null;
 
-    public override void _Ready()
-    {
-        AddToGroup(StoryTheater.StoryTheaterContent);
-    }
+    public override void _Ready() => AddToGroup(StoryTheater.StoryTheaterContent);
 
     public override void ExecCommand(Node node, bool flag)
     {
@@ -26,9 +23,6 @@ public partial class GoNextPageCommand : CommandRoot, IStoryTheaterContent
     }
 
     #region IStoryTheaterContentインタフェース
-    public void InitializeStoryTheaterContent(StoryTheater storyTheater)
-    {
-        _storyTheater = storyTheater;
-    }
+    public void InitializeStoryTheaterContent(StoryTheater storyTheater) => _storyTheater = storyTheater;
     #endregion
 }

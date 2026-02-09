@@ -36,10 +36,7 @@ public partial class VolumeOptionDialog : DialogRoot
         base.Active();
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "BgmSlider";
-    }
+    protected override string GetDefaultFocusNodeName() => "BgmSlider";
 
     /// <summary>
     /// GUI設定値を更新する

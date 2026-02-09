@@ -12,12 +12,10 @@ public partial class SePlayer : Node
     [Export]
     public Dictionary<string, int> MaxPolyphony { get; set; } = [];
 
-    public override void _Ready()
-    {
+    public override void _Ready() =>
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
         _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.ClearAllAudioStreamPlayer));
-    }
 
     public void Play(string name, bool processAlways = false, bool voice = false)
     {

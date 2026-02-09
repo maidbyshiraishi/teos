@@ -63,10 +63,7 @@ public partial class EnemyEmpty : Node2D, IGameNode, ICharacterManager, ISweep, 
     }
 
     #region ICharacterManagerインタフェース
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        m_CharacterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => m_CharacterManager = characterManager;
 
     public virtual void ActiveCharacter(bool active)
     {
@@ -91,16 +88,10 @@ public partial class EnemyEmpty : Node2D, IGameNode, ICharacterManager, ISweep, 
     #endregion
 
     #region IGameNodeインタフェース
-    public virtual void RemoveNode()
-    {
-        Mob.ThrowAwayNode2D(this);
-    }
+    public virtual void RemoveNode() => Mob.ThrowAwayNode2D(this);
     #endregion
 
     #region ISweepインタフェース
-    public void Sweep()
-    {
-        TerminateCharacter();
-    }
+    public void Sweep() => TerminateCharacter();
     #endregion
 }

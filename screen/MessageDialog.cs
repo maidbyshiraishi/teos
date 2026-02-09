@@ -28,13 +28,7 @@ public partial class MessageDialog : DialogRoot
         }
     }
 
-    public void SetMessage(string message)
-    {
-        GetNode<Label>("Message").Text = message;
-    }
+    public void SetMessage(string message) => GetNode<Label>("Message").Text = message;
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "Back";
-    }
+    protected override string GetDefaultFocusNodeName() => "Back";
 }

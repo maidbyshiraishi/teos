@@ -158,10 +158,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
     }
 
     #region IGameNodeインタフェース
-    public virtual void InitializeNode()
-    {
-        _ = Connect(SignalName.SceneAdded, new(GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot(), GameStageRoot.MethodName.AddScene));
-    }
+    public virtual void InitializeNode() => _ = Connect(SignalName.SceneAdded, new(GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot(), GameStageRoot.MethodName.AddScene));
 
     public virtual void ExitScreen()
     {
@@ -171,10 +168,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
         }
     }
 
-    public virtual void RemoveNode()
-    {
-        Mob.ThrowAwayNode2D(this);
-    }
+    public virtual void RemoveNode() => Mob.ThrowAwayNode2D(this);
     #endregion
 
     #region ICharacterManagerインタフェース
@@ -185,10 +179,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
         FindWeakPoint();
     }
 
-    public virtual void InitializeCharacter()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("InitializeCharacter"), this, true);
-    }
+    public virtual void InitializeCharacter() => CommandRoot.ExecChildren(GetNodeOrNull("InitializeCharacter"), this, true);
 
     public virtual void TerminateCharacter()
     {
@@ -198,10 +189,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
     #endregion
 
     #region IItemDropperインタフェース
-    public void AddItemDropper(EnemyDropCharacterEnabler enabler)
-    {
-        _dropItemCharacterEnabler.Add(enabler);
-    }
+    public void AddItemDropper(EnemyDropCharacterEnabler enabler) => _dropItemCharacterEnabler.Add(enabler);
 
     public void DropItem()
     {

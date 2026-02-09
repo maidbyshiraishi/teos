@@ -179,10 +179,7 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
         _mutex.Unlock();
     }
 
-    public void PlaySe(string name)
-    {
-        GetNode<SePlayer>("/root/SePlayer").Play(name);
-    }
+    public void PlaySe(string name) => GetNode<SePlayer>("/root/SePlayer").Play(name);
 
     public static Array<Marker2D> FindMuzzle(Node root)
     {
@@ -205,17 +202,11 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
     }
 
     #region IGameNodeインタフェース
-    public virtual void InitializeNode()
-    {
-        _ = Connect(SignalName.SceneAdded, new(GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot(), GameStageRoot.MethodName.AddScene));
-    }
+    public virtual void InitializeNode() => _ = Connect(SignalName.SceneAdded, new(GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot(), GameStageRoot.MethodName.AddScene));
     #endregion
 
     #region ICharacterManagerインタフェース
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        _characterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => _characterManager = characterManager;
 
     public void ActiveCharacter(bool active)
     {
@@ -232,14 +223,8 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
         m_StateMachine.Travel(active ? "initialize" : "sleep");
     }
 
-    public void InitializeCharacter()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("InitializeCharacter"), this, true);
-    }
+    public void InitializeCharacter() => CommandRoot.ExecChildren(GetNodeOrNull("InitializeCharacter"), this, true);
 
-    public void TerminateCharacter()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("TerminateCharacter"), this, true);
-    }
+    public void TerminateCharacter() => CommandRoot.ExecChildren(GetNodeOrNull("TerminateCharacter"), this, true);
     #endregion
 }

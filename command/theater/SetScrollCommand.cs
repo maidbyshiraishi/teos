@@ -16,10 +16,7 @@ public partial class SetScrollCommand : CommandRoot, IScrollTheaterContent
 
     private ScrollTheater _scrollTheater = null;
 
-    public override void _Ready()
-    {
-        AddToGroup(ScrollTheater.ScrollTheaterContent);
-    }
+    public override void _Ready() => AddToGroup(ScrollTheater.ScrollTheaterContent);
 
     public override void ExecCommand(Node node, bool flag)
     {
@@ -32,9 +29,6 @@ public partial class SetScrollCommand : CommandRoot, IScrollTheaterContent
     }
 
     #region IScrollTheaterContentインタフェース
-    public void InitializeScrollTheaterContent(ScrollTheater scrollTheater)
-    {
-        _scrollTheater = scrollTheater;
-    }
+    public void InitializeScrollTheaterContent(ScrollTheater scrollTheater) => _scrollTheater = scrollTheater;
     #endregion
 }

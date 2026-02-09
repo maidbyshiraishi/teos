@@ -60,10 +60,7 @@ public partial class ExplosiveBullet : BulletRoot
         base.HitNode2D(node);
     }
 
-    public void HitExplosiveArea2D(Area2D node)
-    {
-        HitExplosiveNode2D(node);
-    }
+    public void HitExplosiveArea2D(Area2D node) => HitExplosiveNode2D(node);
 
     public void HitExplosiveNode2D(Node2D node)
     {

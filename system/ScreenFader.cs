@@ -12,12 +12,10 @@ public partial class ScreenFader : CanvasLayer
     [Signal]
     public delegate void ScreenFadeFinishedEventHandler();
 
-    public override void _Ready()
-    {
+    public override void _Ready() =>
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
         _ = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D")?.Connect(AnimatedSprite2D.SignalName.AnimationFinished, new(this, MethodName.AnimationFinished));
-    }
 
     public void ScreenFade(string effectName)
     {
@@ -44,8 +42,5 @@ public partial class ScreenFader : CanvasLayer
         AnimationFinished();
     }
 
-    public void AnimationFinished()
-    {
-        _ = EmitSignal(SignalName.ScreenFadeFinished);
-    }
+    public void AnimationFinished() => _ = EmitSignal(SignalName.ScreenFadeFinished);
 }

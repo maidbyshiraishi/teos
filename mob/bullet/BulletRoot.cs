@@ -43,10 +43,7 @@ public partial class BulletRoot : Mob, ISweep
         _collisionShape = GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
     }
 
-    public virtual void HitArea2D(Area2D node)
-    {
-        HitNode2D(node);
-    }
+    public virtual void HitArea2D(Area2D node) => HitNode2D(node);
 
     public virtual void HitNode2D(Node2D node)
     {
@@ -100,9 +97,6 @@ public partial class BulletRoot : Mob, ISweep
     #endregion
 
     #region ISweepインタフェース
-    private void Sweep()
-    {
-        RemoveNode();
-    }
+    private void Sweep() => RemoveNode();
     #endregion
 }

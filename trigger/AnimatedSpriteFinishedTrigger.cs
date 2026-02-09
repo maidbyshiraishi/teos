@@ -19,8 +19,5 @@ public partial class AnimatedSpriteFinishedTrigger : Node
         }
     }
 
-    public virtual void Exec()
-    {
-        CommandRoot.ExecChildren(this, Target, true);
-    }
+    public virtual void Exec() => CommandRoot.ExecChildren(this, Target, true);
 }

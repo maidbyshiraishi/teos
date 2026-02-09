@@ -46,13 +46,7 @@ public partial class ScrollTheater : DialogRoot
         }
     }
 
-    public override void GetArgument()
-    {
-        GetDialogArgument("ScrollTheater");
-    }
+    public override void GetArgument() => GetDialogArgument("ScrollTheater");
 
-    public void SetScroll(bool running)
-    {
-        _running = running;
-    }
+    public void SetScroll(bool running) => _running = running;
 }

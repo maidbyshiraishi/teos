@@ -226,10 +226,7 @@ public partial class Player : Fighter, ICharacterManager
         CommandRoot.ExecChildren(GetNodeOrNull("StageVictory"), this, true);
     }
 
-    public void Resurrected()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("Resurrected"), this, true);
-    }
+    public void Resurrected() => CommandRoot.ExecChildren(GetNodeOrNull("Resurrected"), this, true);
 
     public void AddRemain(int value)
     {
@@ -278,15 +275,9 @@ public partial class Player : Fighter, ICharacterManager
         Hud?.UpdateLife(Life);
     }
 
-    public override void Burialed(Node2D node)
-    {
-        AddLife(-1);
-    }
+    public override void Burialed(Node2D node) => AddLife(-1);
 
-    public void DamageControl()
-    {
-        m_StateMachine.Travel(Life == 0 ? "dead" : "damaged");
-    }
+    public void DamageControl() => m_StateMachine.Travel(Life == 0 ? "dead" : "damaged");
 
     public void JudgeGameOver()
     {
@@ -321,10 +312,7 @@ public partial class Player : Fighter, ICharacterManager
         _autoScrollPathFollow?.SetSpeed(autoScrollSpeed);
     }
 
-    public static Player GetPlayer(Node root)
-    {
-        return root.GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().GetNode<Player>("%Player");
-    }
+    public static Player GetPlayer(Node root) => root.GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().GetNode<Player>("%Player");
 
     #region IGameNodeインタフェース
     public override void InitializeNode()
@@ -364,15 +352,9 @@ public partial class Player : Fighter, ICharacterManager
     #endregion
 
     #region ICharacterManagerインタフェース
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        _characterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => _characterManager = characterManager;
 
-    public void ActiveCharacter(bool active)
-    {
-        m_StateMachine.Start(active ? "initialize" : "sleep");
-    }
+    public void ActiveCharacter(bool active) => m_StateMachine.Start(active ? "initialize" : "sleep");
 
     public void InitializeCharacter()
     {
@@ -384,9 +366,6 @@ public partial class Player : Fighter, ICharacterManager
         CommandRoot.ExecChildren(GetNodeOrNull("InitializeCharacter"), this, true);
     }
 
-    public void TerminateCharacter()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("TerminateCharacter"), this, true);
-    }
+    public void TerminateCharacter() => CommandRoot.ExecChildren(GetNodeOrNull("TerminateCharacter"), this, true);
     #endregion
 }

@@ -40,10 +40,7 @@ public partial class MountPoint : Marker2D
         }
     }
 
-    public WeaponRoot GetWeapon()
-    {
-        return _weapon;
-    }
+    public WeaponRoot GetWeapon() => _weapon;
 
     public void RotateWeapon(double delta, float angle)
     {

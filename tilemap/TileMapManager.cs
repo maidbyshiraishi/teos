@@ -7,30 +7,15 @@ namespace teos.tilemap;
 /// </summary>
 public partial class TileMapManager : TileMapLayer
 {
-    public TileData GetTileData(Vector2I coords)
-    {
-        return GetTileData(coords, this);
-    }
+    public TileData GetTileData(Vector2I coords) => GetTileData(coords, this);
 
-    public bool GetCustomDataAsBool(Vector2I coords, string name)
-    {
-        return GetCustomDataAsBool(coords, name, this);
-    }
+    public bool GetCustomDataAsBool(Vector2I coords, string name) => GetCustomDataAsBool(coords, name, this);
 
-    public int GetCustomDataAsInt(Vector2I coords, string name)
-    {
-        return GetCustomDataAsInt(coords, name, this);
-    }
+    public int GetCustomDataAsInt(Vector2I coords, string name) => GetCustomDataAsInt(coords, name, this);
 
-    public Variant GetCustomDataAsVariant(Vector2I coords, string name)
-    {
-        return GetCustomDataAsVariant(coords, name, this);
-    }
+    public Variant GetCustomDataAsVariant(Vector2I coords, string name) => GetCustomDataAsVariant(coords, name, this);
 
-    public void RemoveBlock(Vector2I coords)
-    {
-        RemoveBlock(coords, this);
-    }
+    public void RemoveBlock(Vector2I coords) => RemoveBlock(coords, this);
 
 
     /// <summary>
@@ -94,8 +79,5 @@ public partial class TileMapManager : TileMapLayer
     /// </summary>
     /// <param name="coords">座標</param>
     /// <param name="tileMapLayer">TileMapLayer</param>
-    public static void RemoveBlock(Vector2I coords, TileMapLayer tileMapLayer)
-    {
-        tileMapLayer.EraseCell(tileMapLayer.LocalToMap(coords));
-    }
+    public static void RemoveBlock(Vector2I coords, TileMapLayer tileMapLayer) => tileMapLayer.EraseCell(tileMapLayer.LocalToMap(coords));
 }

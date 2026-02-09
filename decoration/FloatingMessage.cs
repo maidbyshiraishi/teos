@@ -30,8 +30,5 @@ public partial class FloatingMessage : Node2D
         player.Play("floating_message");
     }
 
-    public void AnimationFinished(StringName animName)
-    {
-        QueueFree();
-    }
+    public void AnimationFinished(StringName animName) => QueueFree();
 }

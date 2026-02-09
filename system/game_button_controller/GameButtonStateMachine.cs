@@ -26,17 +26,14 @@ public partial class GameButtonStateMachine : Node
         m_AnimationTree.Set("parameters/conditions/release", !press);
     }
 
-    public GameButtonState GetButtonState()
+    public GameButtonState GetButtonState() => (string)m_StateMachine.GetCurrentNode() switch
     {
-        return (string)m_StateMachine.GetCurrentNode() switch
-        {
-            "release" => GameButtonState.Release,
-            "long_press" => GameButtonState.LongPress,
-            "repeat" => GameButtonState.Repeat,
-            "press" or "press_release" => GameButtonState.Unstable,
-            _ => GameButtonState.Null,
-        };
-    }
+        "release" => GameButtonState.Release,
+        "long_press" => GameButtonState.LongPress,
+        "repeat" => GameButtonState.Repeat,
+        "press" or "press_release" => GameButtonState.Unstable,
+        _ => GameButtonState.Null,
+    };
 
     private void ClearStateMachine()
     {

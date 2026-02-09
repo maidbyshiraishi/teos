@@ -36,10 +36,7 @@ public partial class GameKeyOption : Node
     private bool _reverse;
     private static readonly string KeyOptionFilePath = "user://key_options.dat";
 
-    public override void _Ready()
-    {
-        LoadKeyOptions();
-    }
+    public override void _Ready() => LoadKeyOptions();
 
     public void ResetDefaultKeyOptions()
     {

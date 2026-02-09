@@ -33,15 +33,12 @@ public class PlayerData : DataRoot
         ExtendScore = 0;
     }
 
-    public PlayerData Copy()
+    public PlayerData Copy() => new()
     {
-        return new()
-        {
-            Remain = Remain,
-            Score = Score,
-            ExtendScore = ExtendScore,
-        };
-    }
+        Remain = Remain,
+        Score = Score,
+        ExtendScore = ExtendScore,
+    };
 
     public override Error SetConfigFile(ConfigFile file)
     {
@@ -87,15 +84,9 @@ public class PlayerData : DataRoot
         }
     }
 
-    public override string[] GetSectionKeys(ConfigFile file)
-    {
-        return [.. AllKey];
-    }
+    public override string[] GetSectionKeys(ConfigFile file) => [.. AllKey];
 
-    public override Array GetSectionValues(ConfigFile file)
-    {
-        return [Remain, Score, ExtendScore];
-    }
+    public override Array GetSectionValues(ConfigFile file) => [Remain, Score, ExtendScore];
 
     public int AddScore(int score)
     {

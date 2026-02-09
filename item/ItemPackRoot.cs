@@ -12,10 +12,7 @@ public partial class ItemPackRoot : Node2D, ICharacterManager
 {
     private CharacterManager _characterManager;
 
-    public override void _Ready()
-    {
-        AddToGroup(CharacterManager.CharacterGroup);
-    }
+    public override void _Ready() => AddToGroup(CharacterManager.CharacterGroup);
 
     #region ICharacterManagerインタフェース
     public void ActiveCharacter(bool active)
@@ -47,9 +44,6 @@ public partial class ItemPackRoot : Node2D, ICharacterManager
         }
     }
 
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        _characterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => _characterManager = characterManager;
     #endregion
 }

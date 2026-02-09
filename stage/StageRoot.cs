@@ -50,14 +50,8 @@ public partial class StageRoot : DialogRoot, IStateful
     /// ステージ状態の保存を行う。
     /// 画面切り替え前、セーブ前に行われる
     /// </summary>
-    public void SaveState()
-    {
-        GetTree().CallGroup(IStateful.StatefulGroup, "StateSave");
-    }
+    public void SaveState() => GetTree().CallGroup(IStateful.StatefulGroup, "StateSave");
 
-    public void LoadState()
-    {
-        GetTree().CallGroup(IStateful.StatefulGroup, "StateLoad");
-    }
+    public void LoadState() => GetTree().CallGroup(IStateful.StatefulGroup, "StateLoad");
     #endregion
 }

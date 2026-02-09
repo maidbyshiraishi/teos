@@ -41,15 +41,9 @@ public partial class Fighter : Mob
     {
     }
 
-    public virtual void EquipWeapon(WeaponRoot weapon, bool instantly = false)
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("EquipWeapon"), this, true);
-    }
+    public virtual void EquipWeapon(WeaponRoot weapon, bool instantly = false) => CommandRoot.ExecChildren(GetNodeOrNull("EquipWeapon"), this, true);
 
-    public virtual void SeparateWeapon()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("SeparateWeapon"), this, true);
-    }
+    public virtual void SeparateWeapon() => CommandRoot.ExecChildren(GetNodeOrNull("SeparateWeapon"), this, true);
 
     public override void CalcSpeed(float speed, float approach, float reductionApproach)
     {

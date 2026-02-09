@@ -58,8 +58,5 @@ public partial class GameDialogLayer : DialogLayer
         DeferredOpenScreen(path, fadeout, fadein);
     }
 
-    public GameStageRoot GetCurrentGameRoot()
-    {
-        return GetCurrentStageRoot() is GameStageRoot gameStageRoot ? gameStageRoot : null;
-    }
+    public GameStageRoot GetCurrentGameRoot() => GetCurrentStageRoot() is GameStageRoot gameStageRoot ? gameStageRoot : null;
 }

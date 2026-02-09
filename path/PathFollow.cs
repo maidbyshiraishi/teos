@@ -148,10 +148,7 @@ public partial class PathFollow : PathFollow2D
         }
     }
 
-    public void SetSpeed(float speed)
-    {
-        SetDeferred("Speed", speed);
-    }
+    public void SetSpeed(float speed) => SetDeferred("Speed", speed);
 
     public void SetAutoScrollAll(bool autoScroll)
     {

@@ -132,13 +132,7 @@ public partial class StoryTheater : DialogRoot
         OpenPage(_index);
     }
 
-    public override void GetArgument()
-    {
-        GetDialogArgument("StoryTheater");
-    }
+    public override void GetArgument() => GetDialogArgument("StoryTheater");
 
-    private void CloseStory()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("CloseCommand"), this, true);
-    }
+    private void CloseStory() => CommandRoot.ExecChildren(GetNodeOrNull("CloseCommand"), this, true);
 }

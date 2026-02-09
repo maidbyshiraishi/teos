@@ -14,30 +14,15 @@ public partial class ManualCharacterEnabler : Node, ICharacterManagerEnabler
 
     private CharacterManager _characterManager;
 
-    public override void _Ready()
-    {
-        m_Target = GetParentOrNull<ICharacterManager>();
-    }
+    public override void _Ready() => m_Target = GetParentOrNull<ICharacterManager>();
 
     #region ICharacterManagerEnablerインタフェース
-    public void EnableCharacter()
-    {
-        _characterManager?.EnableCharacterNode(m_Target, true);
-    }
+    public void EnableCharacter() => _characterManager?.EnableCharacterNode(m_Target, true);
 
-    public ICharacterManager GetCharacter()
-    {
-        return m_Target;
-    }
+    public ICharacterManager GetCharacter() => m_Target;
 
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        _characterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => _characterManager = characterManager;
 
-    public void ReparentCharacterEnabler(Node characterEnablerList)
-    {
-        Reparent(Parent);
-    }
+    public void ReparentCharacterEnabler(Node characterEnablerList) => Reparent(Parent);
     #endregion
 }

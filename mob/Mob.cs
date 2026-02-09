@@ -95,10 +95,7 @@ public partial class Mob : Area2D, IGameNode, ILife
         m_ReductionAcceleration = CalcAcceleration(m_MaxSpeed, m_ReductionApproach);
     }
 
-    public static float CalcAcceleration(float speed, float approach)
-    {
-        return Mathf.Pow(speed, 2f) / (approach * 2f);
-    }
+    public static float CalcAcceleration(float speed, float approach) => Mathf.Pow(speed, 2f) / (approach * 2f);
 
     protected virtual void PlaySe(string name)
     {
@@ -155,25 +152,13 @@ public partial class Mob : Area2D, IGameNode, ILife
         }
     }
 
-    public virtual void FullRecovered()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("FullRecovered"), this, true);
-    }
+    public virtual void FullRecovered() => CommandRoot.ExecChildren(GetNodeOrNull("FullRecovered"), this, true);
 
-    public virtual void Recovered()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("Recovered"), this, true);
-    }
+    public virtual void Recovered() => CommandRoot.ExecChildren(GetNodeOrNull("Recovered"), this, true);
 
-    public virtual void Damaged()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("Damaged"), this, true);
-    }
+    public virtual void Damaged() => CommandRoot.ExecChildren(GetNodeOrNull("Damaged"), this, true);
 
-    public virtual void Dead()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("Dead"), this, true);
-    }
+    public virtual void Dead() => CommandRoot.ExecChildren(GetNodeOrNull("Dead"), this, true);
     #endregion
 
     #region IGameNodeインタフェース
@@ -191,9 +176,6 @@ public partial class Mob : Area2D, IGameNode, ILife
         }
     }
 
-    public virtual void RemoveNode()
-    {
-        ThrowAwayNode2D(this);
-    }
+    public virtual void RemoveNode() => ThrowAwayNode2D(this);
     #endregion
 }

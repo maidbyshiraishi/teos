@@ -53,10 +53,7 @@ public partial class SecretCharacterEnabler : Area2D, ILife, ICharacterManagerEn
         }
     }
 
-    public void Damaged()
-    {
-        CommandRoot.ExecChildren(GetNodeOrNull("Damaged"), this, true);
-    }
+    public void Damaged() => CommandRoot.ExecChildren(GetNodeOrNull("Damaged"), this, true);
 
     public void Dead()
     {
@@ -76,19 +73,10 @@ public partial class SecretCharacterEnabler : Area2D, ILife, ICharacterManagerEn
         }
     }
 
-    public ICharacterManager GetCharacter()
-    {
-        return _target;
-    }
+    public ICharacterManager GetCharacter() => _target;
 
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        _characterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => _characterManager = characterManager;
 
-    public void ReparentCharacterEnabler(Node characterEnablerList)
-    {
-        Reparent(characterEnablerList);
-    }
+    public void ReparentCharacterEnabler(Node characterEnablerList) => Reparent(characterEnablerList);
     #endregion
 }

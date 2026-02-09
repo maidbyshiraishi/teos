@@ -25,8 +25,5 @@ public partial class ErrorDialog : DialogRoot
     /// メッセージを設定する
     /// </summary>
     /// <param name="message">エラーメッセージ</param>
-    public void SetMessage(string message)
-    {
-        GetNode<TextEdit>("Control/Message").Text = message;
-    }
+    public void SetMessage(string message) => GetNode<TextEdit>("Control/Message").Text = message;
 }

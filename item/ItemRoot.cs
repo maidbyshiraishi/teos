@@ -108,21 +108,12 @@ public partial class ItemRoot : Area2D, IGameNode, IItem
 
     #region IGameNodeインタフェース
 
-    public void ExitScreen()
-    {
-        RemoveNode();
-    }
+    public void ExitScreen() => RemoveNode();
 
-    public void RemoveNode()
-    {
-        Mob.ThrowAwayNode2D(this);
-    }
+    public void RemoveNode() => Mob.ThrowAwayNode2D(this);
     #endregion
 
     #region IItemインタフェース
-    public void ExecItem(Area2D node)
-    {
-        CommandRoot.ExecChildren(this, node, true);
-    }
+    public void ExecItem(Area2D node) => CommandRoot.ExecChildren(this, node, true);
     #endregion
 }

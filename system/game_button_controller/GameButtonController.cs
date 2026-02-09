@@ -19,15 +19,12 @@ public partial class GameButtonController : Node
         _b = GetNode<GameButtonStateMachine>("game_b");
     }
 
-    public GameButtonState GetButtonState(string action)
+    public GameButtonState GetButtonState(string action) => action switch
     {
-        return action switch
-        {
-            "game_a" => _a.GetButtonState(),
-            "game_b" => _b.GetButtonState(),
-            _ => GameButtonState.Null
-        };
-    }
+        "game_a" => _a.GetButtonState(),
+        "game_b" => _b.GetButtonState(),
+        _ => GameButtonState.Null
+    };
 
     public void Reset()
     {

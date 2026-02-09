@@ -51,8 +51,5 @@ public partial class HomingBullet : BulletRoot
         }
     }
 
-    public void ClearTarget()
-    {
-        _homing.ClearTarget();
-    }
+    public void ClearTarget() => _homing.ClearTarget();
 }

@@ -18,10 +18,7 @@ public partial class Decoration : Node2D, ICharacterManager
     [Export]
     public bool StaticOnScreen { get; set; } = false;
 
-    public override void _Ready()
-    {
-        AddToGroup(CharacterManager.CharacterGroup);
-    }
+    public override void _Ready() => AddToGroup(CharacterManager.CharacterGroup);
 
     #region ICharacterManagerインタフェース
     public void ActiveCharacter(bool active)
@@ -37,11 +34,9 @@ public partial class Decoration : Node2D, ICharacterManager
         }
     }
 
-    public void TerminateCharacter()
-    {
+    public void TerminateCharacter() =>
         // スプライトアニメーションと効果音のみのデコレーションは
         // 直接QueueFree()を読んでも問題が発生しない場合に利用される。
         QueueFree();
-    }
     #endregion
 }

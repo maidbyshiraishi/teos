@@ -40,10 +40,7 @@ public partial class GameStageRoot : StageRoot
         }
     }
 
-    public static string GetResourcePath(StageData stageData)
-    {
-        return string.Format(StagePath, stageData.StageNo);
-    }
+    public static string GetResourcePath(StageData stageData) => string.Format(StagePath, stageData.StageNo);
 
     public void AddScene(Node node, string parentNodeName)
     {
@@ -53,10 +50,7 @@ public partial class GameStageRoot : StageRoot
         }
     }
 
-    public void AddSceneToNode(Node node, Node parentNode)
-    {
-        _ = CallDeferred(MethodName.DeferredAddSceneToNode, [node, parentNode]);
-    }
+    public void AddSceneToNode(Node node, Node parentNode) => _ = CallDeferred(MethodName.DeferredAddSceneToNode, [node, parentNode]);
 
     private void DeferredAddSceneToNode(Node node, Node parentNode)
     {
@@ -102,8 +96,5 @@ public partial class GameStageRoot : StageRoot
         }
     }
 
-    public void ReparentNode(Node2D node, string nodeName)
-    {
-        _ = node?.CallDeferred(Node.MethodName.Reparent, [GetNode(nodeName)]);
-    }
+    public void ReparentNode(Node2D node, string nodeName) => _ = node?.CallDeferred(Node.MethodName.Reparent, [GetNode(nodeName)]);
 }

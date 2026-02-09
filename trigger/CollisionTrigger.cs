@@ -32,23 +32,11 @@ public partial class CollisionTrigger : Area2D
         }
     }
 
-    public void Exec(Node2D node)
-    {
-        CommandRoot.ExecChildren(this, Target is null ? node : Target, true);
-    }
+    public void Exec(Node2D node) => CommandRoot.ExecChildren(this, Target is null ? node : Target, true);
 
-    public void ExecArea2D(Area2D node)
-    {
-        CommandRoot.ExecChildren(this, Target is null ? node : Target, true);
-    }
+    public void ExecArea2D(Area2D node) => CommandRoot.ExecChildren(this, Target is null ? node : Target, true);
 
-    public void ExecExit(Node2D node)
-    {
-        CommandRoot.ExecChildren(this, Target is null ? node : Target, false);
-    }
+    public void ExecExit(Node2D node) => CommandRoot.ExecChildren(this, Target is null ? node : Target, false);
 
-    public void ExecExitArea2D(Area2D node)
-    {
-        CommandRoot.ExecChildren(this, Target is null ? node : Target, false);
-    }
+    public void ExecExitArea2D(Area2D node) => CommandRoot.ExecChildren(this, Target is null ? node : Target, false);
 }

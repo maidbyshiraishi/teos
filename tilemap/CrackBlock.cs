@@ -41,10 +41,7 @@ public partial class CrackBlock : Area2D, ILife, IItemDropper
         }
     }
 
-    public virtual void RemoveNode()
-    {
-        Mob.ThrowAwayNode2D(this);
-    }
+    public virtual void RemoveNode() => Mob.ThrowAwayNode2D(this);
 
     protected virtual void PlaySe(string name)
     {
@@ -88,10 +85,7 @@ public partial class CrackBlock : Area2D, ILife, IItemDropper
     #endregion
 
     #region IItemDropperインタフェース
-    public void AddItemDropper(EnemyDropCharacterEnabler enabler)
-    {
-        _dropItemCharacterEnabler.Add(enabler);
-    }
+    public void AddItemDropper(EnemyDropCharacterEnabler enabler) => _dropItemCharacterEnabler.Add(enabler);
 
     public void DropItem()
     {

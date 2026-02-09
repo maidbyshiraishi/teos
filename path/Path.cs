@@ -27,10 +27,7 @@ public partial class Path : Path2D
         }
     }
 
-    private PathFollow SearchParentPathFollow()
-    {
-        return _parentPathFollow is null ? GetParentOrNull<PathFollow>() : _parentPathFollow;
-    }
+    private PathFollow SearchParentPathFollow() => _parentPathFollow is null ? GetParentOrNull<PathFollow>() : _parentPathFollow;
 
     public void SearchPathFollow()
     {
@@ -113,8 +110,5 @@ public partial class Path : Path2D
         }
     }
 
-    public void ManualScroll(double delta)
-    {
-        _parentPathFollow?.ManualScroll(delta);
-    }
+    public void ManualScroll(double delta) => _parentPathFollow?.ManualScroll(delta);
 }

@@ -30,10 +30,7 @@ public partial class ScreenOptionDialog : DialogRoot
         base.Active();
     }
 
-    protected override string GetDefaultFocusNodeName()
-    {
-        return "FullscreenCheck";
-    }
+    protected override string GetDefaultFocusNodeName() => "FullscreenCheck";
 
     /// <summary>
     /// GUI設定値を更新する

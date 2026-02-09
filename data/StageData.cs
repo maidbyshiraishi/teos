@@ -20,13 +20,10 @@ public class StageData : DataRoot
         StageNo = stageNo;
     }
 
-    public StageData Copy()
+    public StageData Copy() => new()
     {
-        return new()
-        {
-            StageNo = StageNo,
-        };
-    }
+        StageNo = StageNo,
+    };
 
     public override Error GetConfigFile(ConfigFile file)
     {
@@ -68,13 +65,7 @@ public class StageData : DataRoot
         }
     }
 
-    public override string[] GetSectionKeys(ConfigFile file)
-    {
-        return [.. NecessaryKey];
-    }
+    public override string[] GetSectionKeys(ConfigFile file) => [.. NecessaryKey];
 
-    public override Array GetSectionValues(ConfigFile file)
-    {
-        return [StageNo];
-    }
+    public override Array GetSectionValues(ConfigFile file) => [StageNo];
 }

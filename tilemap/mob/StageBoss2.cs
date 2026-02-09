@@ -55,10 +55,7 @@ public partial class StageBoss2 : TileMapMob
         }
     }
 
-    public void StartRotate()
-    {
-        AdvanceBossState(1, 30);
-    }
+    public void StartRotate() => AdvanceBossState(1, 30);
 
     public override void AdvanceBossState(int state, int value)
     {

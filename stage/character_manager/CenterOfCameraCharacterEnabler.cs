@@ -31,24 +31,12 @@ public partial class CenterOfCameraCharacterEnabler : Area2D, ICharacterManagerE
     }
 
     #region ICharacterManagerEnablerインタフェース
-    public void EnableCharacter()
-    {
-        _characterManager?.EnableCharacterNode(_target, true);
-    }
+    public void EnableCharacter() => _characterManager?.EnableCharacterNode(_target, true);
 
-    public ICharacterManager GetCharacter()
-    {
-        return _target;
-    }
+    public ICharacterManager GetCharacter() => _target;
 
-    public void SetCharacterManager(CharacterManager characterManager)
-    {
-        _characterManager = characterManager;
-    }
+    public void SetCharacterManager(CharacterManager characterManager) => _characterManager = characterManager;
 
-    public void ReparentCharacterEnabler(Node characterEnablerList)
-    {
-        Reparent(characterEnablerList);
-    }
+    public void ReparentCharacterEnabler(Node characterEnablerList) => Reparent(characterEnablerList);
     #endregion
 }

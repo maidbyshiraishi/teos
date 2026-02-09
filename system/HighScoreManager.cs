@@ -23,10 +23,7 @@ public partial class HighScoreManager : Node
     private List<ScoreData> _highScoreList = null;
     private int _lastEntry = -1;
 
-    public override void _Ready()
-    {
-        _highScoreList = LoadHighScore();
-    }
+    public override void _Ready() => _highScoreList = LoadHighScore();
 
     private List<ScoreData> LoadHighScore()
     {
@@ -110,8 +107,5 @@ public partial class HighScoreManager : Node
         return _lastEntry;
     }
 
-    public List<ScoreData> GetHighScoreList()
-    {
-        return _highScoreList;
-    }
+    public List<ScoreData> GetHighScoreList() => _highScoreList;
 }
