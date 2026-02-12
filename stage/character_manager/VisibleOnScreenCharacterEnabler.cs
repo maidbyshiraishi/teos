@@ -19,7 +19,15 @@ public partial class VisibleOnScreenCharacterEnabler : VisibleOnScreenNotifier2D
     public override void _Ready()
     {
         _target = GetParentOrNull<ICharacterManager>();
-        _ = Connect(EnableOffScreen ? VisibleOnScreenNotifier2D.SignalName.ScreenExited : VisibleOnScreenNotifier2D.SignalName.ScreenEntered, new(this, MethodName.EnableCharacter));
+
+        if (EnableOffScreen)
+        {
+            ScreenExited += EnableCharacter;
+        }
+        else
+        {
+            ScreenEntered += EnableCharacter;
+        }
     }
 
     #region ICharacterManagerEnablerインタフェース

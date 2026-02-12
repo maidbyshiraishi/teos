@@ -38,8 +38,8 @@ public partial class AddSceneCommand : CommandRoot
     public override void _Ready()
     {
         _gameStageRoot = GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot();
-        _ = Connect(SignalName.SceneAdded, new(_gameStageRoot, GameStageRoot.MethodName.AddScene));
-        _ = Connect(SignalName.SceneToNodeAdded, new(_gameStageRoot, GameStageRoot.MethodName.AddSceneToNode));
+        SceneAdded += _gameStageRoot.AddScene;
+        SceneToNodeAdded += _gameStageRoot.AddSceneToNode;
     }
 
     public override void ExecCommand(Node node, bool flag)

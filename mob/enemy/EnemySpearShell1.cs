@@ -20,8 +20,15 @@ public partial class EnemySpearShell1 : EnemyRoot
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Timer>("FindTargetTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.FindTarget));
-        _ = GetNodeOrNull<Timer>("StopHomingTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.StopHoming));
+        if (GetNodeOrNull("FindTargetTimer") is Timer findTargetTimer)
+        {
+            findTargetTimer.Timeout += FindTarget;
+        }
+
+        if (GetNodeOrNull("StopHomingTimer") is Timer stopHomingTimer)
+        {
+            stopHomingTimer.Timeout += StopHoming;
+        }
 
         _homing = new(this, LerpAngle);
     }

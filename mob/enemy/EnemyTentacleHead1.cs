@@ -32,13 +32,13 @@ public partial class EnemyTentacleHead1 : EnemyRoot
     {
         if (GetNodeOrNull("SearchTargetTimer") is Timer timer1)
         {
-            _ = timer1.Connect(Timer.SignalName.Timeout, new(this, MethodName.SearchTarget));
+            timer1.Timeout += SearchTarget;
             timer1.WaitTime = SearchWaitTime;
         }
 
         if (GetNodeOrNull("ClearTargetTimer") is Timer timer2)
         {
-            _ = timer2.Connect(Timer.SignalName.Timeout, new(this, MethodName.ClearTarget));
+            timer2.Timeout += ClearTarget;
             timer2.WaitTime = ClearWaitTime;
         }
 

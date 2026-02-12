@@ -26,7 +26,7 @@ public partial class FloatingMessage : Node2D
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
         AnimationPlayer player = GetNode<AnimationPlayer>("AnimationPlayer");
-        _ = player.Connect(AnimationMixer.SignalName.AnimationFinished, new(this, MethodName.AnimationFinished));
+        player.AnimationFinished += AnimationFinished;
         player.Play("floating_message");
     }
 

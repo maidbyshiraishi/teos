@@ -27,7 +27,7 @@ public partial class ScreenOption : Node
         {
             // Godotエディタからシグナルを接続すると
             // リリースビルドのエクスポート時、接続が失われることがある。
-            _ = timer.Connect(Timer.SignalName.Timeout, new(this, MethodName.CorrectOnScreen));
+            timer.Timeout += CorrectOnScreen;
 
             timer.Start();
         }

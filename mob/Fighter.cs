@@ -28,8 +28,16 @@ public partial class Fighter : Mob
 
     public override void _Ready()
     {
-        _ = GetNodeOrNull<EventFinder>("EventFinder")?.Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.EventOccurred));
-        _ = GetNodeOrNull<BurialArea>("BurialArea")?.Connect(Area2D.SignalName.BodyEntered, new(this, MethodName.Burialed));
+        if (GetNodeOrNull("EventFinder") is EventFinder eventFinder)
+        {
+            eventFinder.AreaEntered += EventOccurred;
+        }
+
+        if (GetNodeOrNull<BurialArea>("BurialArea") is BurialArea burialArea)
+        {
+            burialArea.BodyEntered += Burialed;
+        }
+
         base._Ready();
     }
 

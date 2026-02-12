@@ -70,7 +70,7 @@ public partial class Mob : Area2D, IGameNode, ILife
 
         if (m_OnScreen is not null && RemoveScreenExited)
         {
-            _ = m_OnScreen?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, MethodName.ExitScreen));
+            m_OnScreen.ScreenExited += ExitScreen;
         }
 
         _ = await ToSignal(GetTree().CreateTimer(0.05f, false), Timer.SignalName.Timeout);
@@ -164,7 +164,7 @@ public partial class Mob : Area2D, IGameNode, ILife
     #region IGameNodeインタフェース
     public virtual void InitializeNode()
     {
-        _ = Connect(SignalName.SceneAdded, new(GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot(), GameStageRoot.MethodName.AddScene));
+        SceneAdded += GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().AddScene;
         InitialSpeed();
     }
 

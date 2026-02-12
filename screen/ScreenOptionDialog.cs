@@ -20,8 +20,8 @@ public partial class ScreenOptionDialog : DialogRoot
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<CheckButton>("Control/FullscreenCheck")?.Connect(BaseButton.SignalName.Toggled, new(this, MethodName.FullscreenChanged));
-        _ = GetNodeOrNull<Button>("Control/Reset")?.Connect(BaseButton.SignalName.Pressed, new(this, MethodName.ResetDefaultScreenOptions));
+        GetNode<CheckButton>("Control/FullscreenCheck").Toggled += FullscreenChanged;
+        GetNode<Button>("Control/Reset").Pressed += ResetDefaultScreenOptions;
     }
 
     public override void Active()

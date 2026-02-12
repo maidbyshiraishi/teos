@@ -20,8 +20,15 @@ public partial class StageBoss2 : TileMapMob
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Timer>("StartRotateTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.StartRotate));
-        _ = GetNodeOrNull<Timer>("ActivePileTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.ActivePile));
+        if (GetNodeOrNull("StartRotateTimer") is Timer startRotateTimer)
+        {
+            startRotateTimer.Timeout += StartRotate;
+        }
+
+        if (GetNodeOrNull("ActivePileTimer") is Timer activePileTimer)
+        {
+            activePileTimer.Timeout += ActivePile;
+        }
     }
 
     public override void _Process(double delta)

@@ -24,7 +24,10 @@ public partial class EnemyDrone1 : EnemyRoot
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Timer>("ShotTimer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.Fire));
+        if (GetNodeOrNull("ShotTimer") is Timer timer)
+        {
+            timer.Timeout += Fire;
+        }
     }
 
     public override void _Process(double delta)

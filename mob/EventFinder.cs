@@ -17,7 +17,10 @@ public partial class EventFinder : Area2D
     {
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.Switch));
+        if (GetNodeOrNull("Timer") is Timer timer)
+        {
+            timer.Timeout += Switch;
+        }
 
         if (GetParent() is Fighter fighter)
         {
@@ -25,10 +28,10 @@ public partial class EventFinder : Area2D
         }
 
         _collisionShape = GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
-        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.Area2DEntered));
+        AreaEntered += Area2DEntered;
     }
 
-    public void Area2DEntered(Area2D area) => _ = CallDeferred(MethodName.DeferredNodeEntered, [area]);
+    public void Area2DEntered(Area2D area) => CallDeferred(MethodName.DeferredNodeEntered, [area]);
 
     public void DeferredNodeEntered(Area2D node)
     {

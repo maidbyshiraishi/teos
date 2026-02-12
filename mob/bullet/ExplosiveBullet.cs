@@ -22,8 +22,11 @@ public partial class ExplosiveBullet : BulletRoot
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Area2D>("ExplosiveArea2D")?.Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.HitExplosiveArea2D));
-        _ = GetNodeOrNull<Area2D>("ExplosiveArea2D")?.Connect(Area2D.SignalName.BodyEntered, new(this, MethodName.HitExplosiveNode2D));
+        if (GetNodeOrNull("ExplosiveArea2D") is Area2D area2D)
+        {
+            area2D.AreaEntered += HitExplosiveArea2D;
+            area2D.BodyEntered += HitExplosiveNode2D;
+        }
     }
 
     public override void _Process(double delta)
