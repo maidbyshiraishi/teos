@@ -13,6 +13,9 @@ public partial class FixedBullet : BulletRoot
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, BulletRoot.MethodName.Switch));
+        if (GetNodeOrNull("Timer") is Timer timer)
+        {
+            timer.Timeout += Switch;
+        }
     }
 }

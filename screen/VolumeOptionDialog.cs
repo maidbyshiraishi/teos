@@ -26,8 +26,8 @@ public partial class VolumeOptionDialog : DialogRoot
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<HSlider>("Control/BgmSlider")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.BgmVolumeChanged));
-        _ = GetNodeOrNull<HSlider>("Control/SeSlider")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.SeVolumeChanged));
+        GetNode<HSlider>("Control/BgmSlider").ValueChanged += BgmVolumeChanged;
+        GetNode<HSlider>("Control/SeSlider").ValueChanged += SeVolumeChanged;
     }
 
     public override void Active()
@@ -56,9 +56,9 @@ public partial class VolumeOptionDialog : DialogRoot
     /// BGM音量が変更された
     /// </summary>
     /// <param name="value">音量</param>
-    public void BgmVolumeChanged(float value)
+    public void BgmVolumeChanged(double value)
     {
-        BgmVolume = value;
+        BgmVolume = (float)value;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.BgmVolume = BgmVolume;
@@ -69,9 +69,9 @@ public partial class VolumeOptionDialog : DialogRoot
     /// 効果音音量が変更された
     /// </summary>
     /// <param name="value">音量</param>
-    public void SeVolumeChanged(float value)
+    public void SeVolumeChanged(double value)
     {
-        SeVolume = value;
+        SeVolume = (float)value;
         GetNode<Label>("SeValue").Text = $"{SeVolume}%";
         GameOption option = GetNode<GameOption>("/root/GameOption");
         option.SeVolume = SeVolume;

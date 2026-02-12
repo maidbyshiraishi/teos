@@ -15,9 +15,9 @@ public partial class AnimationPlayerFinishedTrigger : Node
     {
         if (GetParent() is AnimationPlayer animationPlayer)
         {
-            _ = animationPlayer.Connect(AnimationMixer.SignalName.AnimationFinished, new(this, MethodName.Exec));
+            animationPlayer.AnimationFinished += Exec;
         }
     }
 
-    public virtual void Exec(string animName) => CommandRoot.ExecChildren(this, Target, true);
+    public virtual void Exec(StringName animName) => CommandRoot.ExecChildren(this, Target, true);
 }

@@ -31,9 +31,16 @@ public partial class ItemRoot : Area2D, IGameNode, IItem
     {
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Area2D>("ApproachPlayer")?.Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.EnterArea2D));
-        _ = GetNodeOrNull<Area2D>("ApproachPlayer")?.Connect(Area2D.SignalName.AreaExited, new(this, MethodName.ExitArea2D));
-        _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.Switch));
+        if (GetNodeOrNull("ApproachPlayer") is Area2D area2D)
+        {
+            area2D.AreaEntered += EnterArea2D;
+            area2D.AreaExited += ExitArea2D;
+        }
+
+        if (GetNodeOrNull("Timer") is Timer timer)
+        {
+            timer.Timeout += Switch;
+        }
 
         ActivateOnScreen();
         _collisionShape = GetNodeOrNull<CollisionShape2D>("ApproachPlayer/CollisionShape2D");
@@ -48,7 +55,7 @@ public partial class ItemRoot : Area2D, IGameNode, IItem
 
         if (m_OnScreen is not null && RemoveScreenExited)
         {
-            _ = m_OnScreen?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, Mob.MethodName.ExitScreen));
+            m_OnScreen.ScreenExited += ExitScreen;
         }
 
         _ = await ToSignal(GetTree().CreateTimer(0.05f, false), Timer.SignalName.Timeout);

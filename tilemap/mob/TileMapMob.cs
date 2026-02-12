@@ -42,11 +42,10 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
 
     private async void ActivateOnScreen()
     {
-        m_OnScreen = GetNodeOrNull<VisibleOnScreenNotifier2D>("OnScreen");
-
-        if (m_OnScreen is not null && RemoveScreenExited)
+        if (GetNodeOrNull<VisibleOnScreenNotifier2D>("OnScreen") is VisibleOnScreenNotifier2D visibleOnScreenNotifier2D && RemoveScreenExited)
         {
-            _ = m_OnScreen?.Connect(VisibleOnScreenNotifier2D.SignalName.ScreenExited, new(this, Mob.MethodName.ExitScreen));
+            m_OnScreen = visibleOnScreenNotifier2D;
+            m_OnScreen.ScreenExited += ExitScreen;
         }
 
         _ = await ToSignal(GetTree().CreateTimer(0.05f, false), Timer.SignalName.Timeout);
@@ -158,7 +157,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
     }
 
     #region IGameNodeインタフェース
-    public virtual void InitializeNode() => _ = Connect(SignalName.SceneAdded, new(GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot(), GameStageRoot.MethodName.AddScene));
+    public virtual void InitializeNode() => SceneAdded += GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().AddScene;
 
     public virtual void ExitScreen()
     {

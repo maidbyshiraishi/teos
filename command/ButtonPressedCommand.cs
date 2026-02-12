@@ -20,6 +20,6 @@ public partial class ButtonPressedCommand : CommandRoot
             return;
         }
 
-        _ = Target?.EmitSignal(BaseButton.SignalName.Pressed);
+        _ = (Target?.EmitSignal(BaseButton.SignalName.Pressed));
     }
 }

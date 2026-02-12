@@ -20,6 +20,6 @@ public partial class QueueFreeCommand : CommandRoot
             return;
         }
 
-        _ = Target.CallDeferred(Node.MethodName.QueueFree);
+        Target.QueueFree();
     }
 }

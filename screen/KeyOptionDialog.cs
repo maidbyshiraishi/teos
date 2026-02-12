@@ -22,10 +22,10 @@ public partial class KeyOptionDialog : DialogRoot
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Button>("Control/SwapStick")?.Connect(BaseButton.SignalName.Pressed, new(this, MethodName.SwapStick));
-        _ = GetNodeOrNull<HSlider>("Control/TargetSensitivity")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.TargetSensitivityValueChanged));
-        _ = GetNodeOrNull<HSlider>("Control/MouseSensitivity")?.Connect(Range.SignalName.ValueChanged, new(this, MethodName.MouseSensitivityValueChanged));
-        _ = GetNodeOrNull<Button>("Control/ResetSensitivity")?.Connect(BaseButton.SignalName.Pressed, new(this, MethodName.ResetSensitivity));
+        GetNode<Button>("Control/SwapStick").Pressed += SwapStick;
+        GetNode<HSlider>("Control/TargetSensitivity").ValueChanged += TargetSensitivityValueChanged;
+        GetNode<HSlider>("Control/MouseSensitivity").ValueChanged += MouseSensitivityValueChanged;
+        GetNode<Button>("Control/ResetSensitivity").Pressed += ResetSensitivity;
 
         UpdateDialogScreen();
     }
@@ -56,13 +56,13 @@ public partial class KeyOptionDialog : DialogRoot
         UpdateDialogScreen();
     }
 
-    public void TargetSensitivityValueChanged(float value)
+    public void TargetSensitivityValueChanged(double value)
     {
         GameKeyOption gameKeyOption = GetNode<GameKeyOption>("/root/GameKeyOption");
         gameKeyOption.TargetSensitivity = Mathf.Clamp(value, 0.1f, 3f);
     }
 
-    public void MouseSensitivityValueChanged(float value)
+    public void MouseSensitivityValueChanged(double value)
     {
         GameKeyOption gameKeyOption = GetNode<GameKeyOption>("/root/GameKeyOption");
         gameKeyOption.MouseSensitivity = Mathf.Clamp(value, 0.1f, 3f);

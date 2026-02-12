@@ -11,7 +11,7 @@ public partial class BossController : Area2D
         if (GetParent() is TileMapMob boss)
         {
             _boss = boss;
-            _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.AdvanceBoss));
+            AreaEntered += AdvanceBoss;
         }
     }
 

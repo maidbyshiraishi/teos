@@ -17,17 +17,17 @@ public partial class FocusedCommandContainer : CommandContainer
 
         if (_control.HasSignal(Control.SignalName.FocusEntered))
         {
-            _ = _control.Connect(Control.SignalName.FocusEntered, new(this, MethodName.ExecFocusEntered));
+            _control.FocusEntered += ExecFocusEntered;
         }
 
         if (_control.HasSignal(Control.SignalName.FocusExited))
         {
-            _ = _control.Connect(Control.SignalName.FocusExited, new(this, MethodName.ExecFocusExited));
+            _control.FocusExited += ExecFocusExited;
         }
 
         if (_control.HasSignal(Control.SignalName.MouseEntered))
         {
-            _ = _control.Connect(Control.SignalName.MouseEntered, new(this, MethodName.ExecMouseEntered));
+            _control.MouseEntered += ExecMouseEntered;
         }
     }
 

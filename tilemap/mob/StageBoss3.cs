@@ -22,7 +22,10 @@ public partial class StageBoss3 : TileMapMob
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。
-        _ = GetNodeOrNull<Timer>("Timer")?.Connect(Timer.SignalName.Timeout, new(this, MethodName.MakeTentacle));
+        if (GetNodeOrNull("Timer") is Timer timer)
+        {
+            timer.Timeout += MakeTentacle;
+        }
     }
 
     public override void _Process(double delta)

@@ -17,7 +17,7 @@ public partial class CenterOfCameraCharacterEnabler : Area2D, ICharacterManagerE
     public override void _Ready()
     {
         _target = GetParentOrNull<ICharacterManager>();
-        _ = Connect(Area2D.SignalName.AreaEntered, new(this, MethodName.EnterArea2D));
+        AreaEntered += EnterArea2D;
     }
 
     public void EnterArea2D(Area2D area)
