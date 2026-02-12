@@ -15,9 +15,9 @@ public partial class ToggledCommandContainer : CommandContainer
         base._Ready();
         _control = GetParent<Control>();
 
-        if (_control is not null && _control.HasSignal(BaseButton.SignalName.Toggled))
+        if (_control is BaseButton baseButton)
         {
-            _ = _control.Connect(BaseButton.SignalName.Toggled, new(this, MethodName.Toggled));
+            baseButton.Toggled += Toggled;
         }
     }
 
