@@ -30,7 +30,15 @@ public partial class TimerTrigger : Node
 
     public virtual void Exec()
     {
-        CommandRoot.ExecChildren(this, Target is null ? _timer : Target, ExecFlag);
+        if (Target is not null)
+        {
+            CommandRoot.ExecChildren(this, Target, ExecFlag);
+        }
+        else if (_timer is not null)
+        {
+            CommandRoot.ExecChildren(this, _timer, ExecFlag);
+        }
+
         ExecFlag = SwapExecFlag ? !ExecFlag : ExecFlag;
     }
 
