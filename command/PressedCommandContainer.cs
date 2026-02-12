@@ -15,9 +15,9 @@ public partial class PressedCommandContainer : CommandContainer
         base._Ready();
         _control = GetParent<Control>();
 
-        if (_control is not null && _control.HasSignal(BaseButton.SignalName.Pressed))
+        if (_control is BaseButton baseButton)
         {
-            _ = _control.Connect(BaseButton.SignalName.Pressed, new(this, MethodName.Pressed));
+            baseButton.Pressed += Pressed;
         }
     }
 
