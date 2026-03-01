@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuskrdbpbllm2"]
+[gd_scene format=3 uid="uid://cuskrdbpbllm2"]
 
 [ext_resource type="Script" uid="uid://c5vqylaumoiik" path="res://command/state/StateSaveCommand.cs" id="1_dg6dq"]
 
-[node name="StateSaveCommand" type="Node"]
+[node name="StateSaveCommand" type="Node" unique_id=1514016321]
 script = ExtResource("1_dg6dq")

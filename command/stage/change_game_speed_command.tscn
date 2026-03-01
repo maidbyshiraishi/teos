@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c28wba61tarxk"]
+[gd_scene format=3 uid="uid://c28wba61tarxk"]
 
 [ext_resource type="Script" uid="uid://dw3wnsdrt0rbb" path="res://command/stage/ChangeGameSpeedCommand.cs" id="1_ayvpd"]
 
-[node name="ChangeGameSpeedCommand" type="Node"]
+[node name="ChangeGameSpeedCommand" type="Node" unique_id=351790905]
 script = ExtResource("1_ayvpd")

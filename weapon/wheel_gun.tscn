@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b1owyaexbyvlj"]
+[gd_scene format=3 uid="uid://b1owyaexbyvlj"]
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_7akvg"]
 [ext_resource type="Script" uid="uid://x4clbl6og2w2" path="res://weapon/WheelGun.cs" id="2_tox07"]
@@ -331,7 +331,7 @@ states/trash/position = Vector2(-193, 35)
 transitions = ["idle", "attack", SubResource("AnimationNodeStateMachineTransition_7f0kr"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_5uo8n"), "attack", "empty", SubResource("AnimationNodeStateMachineTransition_so7hh"), "equip", "idle", SubResource("AnimationNodeStateMachineTransition_nbo1b"), "empty", "broken", SubResource("AnimationNodeStateMachineTransition_341va"), "equip", "broken", SubResource("AnimationNodeStateMachineTransition_jea1f"), "initialize", "item", SubResource("AnimationNodeStateMachineTransition_v4jlu"), "separate", "terminate", SubResource("AnimationNodeStateMachineTransition_5jyn2"), "initialize", "trash", SubResource("AnimationNodeStateMachineTransition_djdfj"), "enemy_equip", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_b1blv"), "enemy_idle", "enemy_attack", SubResource("AnimationNodeStateMachineTransition_3l5ja"), "enemy_equip", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_t2q68"), "enemy_empty", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_jfwv6"), "enemy_attack", "enemy_empty", SubResource("AnimationNodeStateMachineTransition_j22ty"), "enemy_attack", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_m05sc"), "terminate", "initialize", SubResource("AnimationNodeStateMachineTransition_ka6qp"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_lvi0y")]
 graph_offset = Vector2(61, -104)
 
-[node name="WheelGun" instance=ExtResource("1_7akvg")]
+[node name="WheelGun" unique_id=1994662858 instance=ExtResource("1_7akvg")]
 self_modulate = Color(0.196078, 0.196078, 0.196078, 1)
 collision_layer = 0
 script = ExtResource("2_tox07")
@@ -345,36 +345,34 @@ Bullet = ExtResource("3_n4v1e")
 NumOfBullets = 160
 HasEnemyStatemachine = true
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_6quan")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="1" unique_id=1289633695]
 texture = ExtResource("3_8ksdg")
 hframes = 2
 
-[node name="AnimationPlayer" parent="." index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_4do32")
-}
+[node name="AnimationPlayer" parent="." index="2" unique_id=1363664342]
+libraries/ = SubResource("AnimationLibrary_4do32")
 
-[node name="AnimationTree" parent="." index="3"]
+[node name="AnimationTree" parent="." index="3" unique_id=1355508401]
 tree_root = SubResource("AnimationNodeStateMachine_lo8gk")
 parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Marker2D_1" type="Marker2D" parent="Muzzle" index="0"]
+[node name="Marker2D_1" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="0" unique_id=288213833]
 position = Vector2(50, 0)
 
-[node name="Marker2D_2" type="Marker2D" parent="Muzzle" index="1"]
+[node name="Marker2D_2" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="1" unique_id=1489552608]
 position = Vector2(0, 50)
 rotation = 1.5708
 
-[node name="Marker2D_3" type="Marker2D" parent="Muzzle" index="2"]
+[node name="Marker2D_3" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="2" unique_id=487595950]
 position = Vector2(-50, 0)
 rotation = 3.14159
 
-[node name="Marker2D_4" type="Marker2D" parent="Muzzle" index="3"]
+[node name="Marker2D_4" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="3" unique_id=330279814]
 position = Vector2(0, -50)
 rotation = 4.71239

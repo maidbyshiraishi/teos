@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dhf56hjt4x67j"]
+[gd_scene format=3 uid="uid://dhf56hjt4x67j"]
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_ixbby"]
 [ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/bullet/small_bullet_2.tscn" id="2_5acs8"]
@@ -355,7 +355,7 @@ states/trash/position = Vector2(6, 84)
 transitions = ["equip", "idle", SubResource("AnimationNodeStateMachineTransition_tmlyw"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_uyrem"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_35cfn"), "attack", "empty", SubResource("AnimationNodeStateMachineTransition_wkvig"), "empty", "broken", SubResource("AnimationNodeStateMachineTransition_fuvys"), "equip", "broken", SubResource("AnimationNodeStateMachineTransition_8b73b"), "initialize", "item", SubResource("AnimationNodeStateMachineTransition_mfbvp"), "separate", "terminate", SubResource("AnimationNodeStateMachineTransition_khxg7"), "initialize", "trash", SubResource("AnimationNodeStateMachineTransition_hu182"), "enemy_equip", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_hhuux"), "enemy_idle", "enemy_attack", SubResource("AnimationNodeStateMachineTransition_y7mya"), "enemy_attack", "enemy_empty", SubResource("AnimationNodeStateMachineTransition_rorhc"), "enemy_attack", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_v4dkp"), "enemy_empty", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_o2tyw"), "enemy_equip", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_1xksd"), "terminate", "initialize", SubResource("AnimationNodeStateMachineTransition_e7jv1"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_svq5q")]
 graph_offset = Vector2(185, -212)
 
-[node name="FourwayGun" instance=ExtResource("1_ixbby")]
+[node name="FourwayGun" unique_id=598096804 instance=ExtResource("1_ixbby")]
 collision_layer = 0
 EquipSe = "weapon_fourway_gun"
 Approach = 64.0
@@ -375,9 +375,7 @@ texture = ExtResource("2_7dj4i")
 hframes = 2
 
 [node name="AnimationPlayer" parent="." index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_35ewt")
-}
+libraries/ = SubResource("AnimationLibrary_35ewt")
 
 [node name="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeStateMachine_1fdec")
@@ -385,18 +383,18 @@ parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Marker2D_1" type="Marker2D" parent="Muzzle" index="0"]
+[node name="Marker2D_1" type="Marker2D" parent="Muzzle" index="0" unique_id=456604919]
 position = Vector2(44, -26)
 rotation = -0.785398
 
-[node name="Marker2D_2" type="Marker2D" parent="Muzzle" index="1"]
+[node name="Marker2D_2" type="Marker2D" parent="Muzzle" index="1" unique_id=1850903]
 position = Vector2(44, -18)
 rotation = -0.261799
 
-[node name="Marker2D_3" type="Marker2D" parent="Muzzle" index="2"]
+[node name="Marker2D_3" type="Marker2D" parent="Muzzle" index="2" unique_id=541041003]
 position = Vector2(44, 18)
 rotation = 0.349066
 
-[node name="Marker2D_4" type="Marker2D" parent="Muzzle" index="3"]
+[node name="Marker2D_4" type="Marker2D" parent="Muzzle" index="3" unique_id=1190767140]
 position = Vector2(44, 26)
 rotation = 0.785398

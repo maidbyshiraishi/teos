@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cygelshl76255"]
+[gd_scene format=3 uid="uid://cygelshl76255"]
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_kt8ad"]
 [ext_resource type="Texture2D" uid="uid://c3hdtt7mlltcg" path="res://contents/image/weapon/sword.png" id="2_du1dk"]
@@ -1182,7 +1182,7 @@ graph_offset = Vector2(10, -175)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ea5yx"]
 size = Vector2(149, 20)
 
-[node name="Sword" instance=ExtResource("1_kt8ad")]
+[node name="Sword" unique_id=40543639 instance=ExtResource("1_kt8ad")]
 self_modulate = Color(0, 0, 0, 1)
 collision_layer = 0
 script = ExtResource("2_eqorv")
@@ -1197,11 +1197,11 @@ NumOfBullets = 30
 position = Vector2(-28.5, 0)
 shape = SubResource("RectangleShape2D_2gbex")
 
-[node name="Shield" type="Area2D" parent="." index="1"]
+[node name="Shield" type="Area2D" parent="." index="1" unique_id=2047818161]
 collision_layer = 6
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shield" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shield" index="0" unique_id=641813955]
 position = Vector2(-125, 0)
 polygon = PackedVector2Array(68, -25, 78, -25, 70, -7, 70, 7, 78, 25, 68, 25, 56, 7, 56, -7)
 disabled = true
@@ -1213,9 +1213,7 @@ texture = ExtResource("2_du1dk")
 hframes = 8
 
 [node name="AnimationPlayer" parent="." index="3"]
-libraries = {
-&"": SubResource("AnimationLibrary_1ekul")
-}
+libraries/ = SubResource("AnimationLibrary_1ekul")
 
 [node name="AnimationTree" parent="." index="4"]
 tree_root = SubResource("AnimationNodeStateMachine_ponnr")
@@ -1223,13 +1221,13 @@ parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Blade" parent="." index="6" instance=ExtResource("4_ky2et")]
+[node name="Blade" parent="." index="6" unique_id=614541612 instance=ExtResource("4_ky2et")]
 collision_mask = 0
 Pierce = true
 Attack = -10
 RemoveScreenExited = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blade" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blade" index="1" unique_id=657846891]
 position = Vector2(80.5, 0)
 shape = SubResource("RectangleShape2D_ea5yx")
 disabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c2m8uy8nogdof"]
+[gd_scene format=3 uid="uid://c2m8uy8nogdof"]
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_20l3n"]
 [ext_resource type="Script" uid="uid://jt2peo5dhd43" path="res://weapon/Rocket.cs" id="2_mx218"]
@@ -805,7 +805,7 @@ size = Vector2(24, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahiai"]
 size = Vector2(24, 64)
 
-[node name="Rocket" instance=ExtResource("1_20l3n")]
+[node name="Rocket" unique_id=751870476 instance=ExtResource("1_20l3n")]
 self_modulate = Color(0, 0, 0, 1)
 collision_layer = 0
 script = ExtResource("2_mx218")
@@ -830,9 +830,7 @@ texture = ExtResource("4_liobu")
 hframes = 6
 
 [node name="AnimationPlayer" parent="." index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_a7ney")
-}
+libraries/ = SubResource("AnimationLibrary_a7ney")
 
 [node name="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeStateMachine_vl4pm")
@@ -840,23 +838,23 @@ parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Blade" parent="." index="5" instance=ExtResource("6_64ueb")]
+[node name="Blade" parent="." index="5" unique_id=1010950267 instance=ExtResource("6_64ueb")]
 Pierce = true
 Attack = -10
 RemoveScreenExited = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blade" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blade" index="1" unique_id=1097177121]
 visible = false
 position = Vector2(68, 0)
 shape = SubResource("RectangleShape2D_fi1ju")
 disabled = true
 
-[node name="Shield" type="Area2D" parent="." index="6"]
+[node name="Shield" type="Area2D" parent="." index="6" unique_id=1249385090]
 position = Vector2(72, 0)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield" index="0" unique_id=1504331808]
 visible = false
 position = Vector2(-12, -16)
 shape = SubResource("RectangleShape2D_ahiai")

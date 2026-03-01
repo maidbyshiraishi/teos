@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl7nkfohuvbj7"]
+[gd_scene format=3 uid="uid://cl7nkfohuvbj7"]
 
 [ext_resource type="Script" uid="uid://b2m22ykpty8l2" path="res://command/ButtonPressedCommand.cs" id="1_64tvm"]
 
-[node name="ButtonPressedCommand" type="Node"]
+[node name="ButtonPressedCommand" type="Node" unique_id=1525084818]
 script = ExtResource("1_64tvm")

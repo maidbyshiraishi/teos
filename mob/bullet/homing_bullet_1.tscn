@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbit4otpyw7v0"]
+[gd_scene format=3 uid="uid://dbit4otpyw7v0"]
 
 [ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/bullet/bullet_root.tscn" id="1_xww7g"]
 [ext_resource type="Texture2D" uid="uid://dx62xxsx3es54" path="res://contents/image/weapon/homing_bullet.png" id="2_b7201"]
@@ -29,30 +29,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmiex"]
 size = Vector2(12, 8)
 
-[node name="HormingBullet" instance=ExtResource("1_xww7g")]
+[node name="HormingBullet" unique_id=908859848 instance=ExtResource("1_xww7g")]
 script = ExtResource("2_hvine")
 LerpAngle = 10.0
 InitialMaxSpeed = 200.0
 
-[node name="OnScreen" parent="." index="0"]
+[node name="OnScreen" parent="." index="0" unique_id=118332893]
 position = Vector2(4.17233e-07, -4.76837e-07)
 scale = Vector2(0.8, 0.6)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1538305660]
 sprite_frames = SubResource("SpriteFrames_h6hm6")
 autoplay = "default"
 frame_progress = 0.285294
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=1374750521]
 shape = SubResource("RectangleShape2D_kmiex")
 
-[node name="StopHomingTimer" type="Timer" parent="." index="3"]
+[node name="StopHomingTimer" type="Timer" parent="." index="3" unique_id=1259064149]
 wait_time = 1.5
 one_shot = true
 autostart = true
 
-[node name="ClearTargetTimer" type="Timer" parent="." index="4"]
+[node name="ClearTargetTimer" type="Timer" parent="." index="4" unique_id=1626468131]
 
-[node name="FindTargetTimer" type="Timer" parent="." index="5"]
+[node name="FindTargetTimer" type="Timer" parent="." index="5" unique_id=953395260]
 wait_time = 0.3
 autostart = true

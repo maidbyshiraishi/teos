@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dctt81ljv6gk0"]
+[gd_scene format=3 uid="uid://dctt81ljv6gk0"]
 
 [ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://decoration/Decoration.cs" id="1_hiqpa"]
 [ext_resource type="Texture2D" uid="uid://b8k6rtvfexuqk" path="res://contents/image/decoration/excitation.png" id="2_52oy4"]
@@ -48,14 +48,14 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Excitation" type="Node2D"]
+[node name="Excitation" type="Node2D" unique_id=1568663280]
 script = ExtResource("1_hiqpa")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=372216508]
 sprite_frames = SubResource("SpriteFrames_yqmls")
 autoplay = "default"
 
-[node name="AnimationFinishedTrigger" parent="AnimatedSprite2D" instance=ExtResource("3_wyaxi")]
+[node name="AnimationFinishedTrigger" parent="AnimatedSprite2D" unique_id=1729422897 instance=ExtResource("3_wyaxi")]
 
-[node name="TerminateCharacterCommand" parent="AnimatedSprite2D/AnimationFinishedTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("4_aq0d5")]
+[node name="TerminateCharacterCommand" parent="AnimatedSprite2D/AnimationFinishedTrigger" unique_id=1144556184 node_paths=PackedStringArray("Target") instance=ExtResource("4_aq0d5")]
 Target = NodePath("../../..")

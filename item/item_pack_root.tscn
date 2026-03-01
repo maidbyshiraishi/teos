@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c87dtcgrwdrpw"]
+[gd_scene format=3 uid="uid://c87dtcgrwdrpw"]
 
 [ext_resource type="Script" uid="uid://gqlaft3ulmg2" path="res://item/ItemPackRoot.cs" id="1_6myxk"]
 
-[node name="ItemPack" type="Node2D"]
+[node name="ItemPack" type="Node2D" unique_id=1307393045]
 script = ExtResource("1_6myxk")

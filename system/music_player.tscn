@@ -1,20 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cooxg6bevunkv"]
+[gd_scene format=3 uid="uid://cooxg6bevunkv"]
 
 [ext_resource type="Script" uid="uid://bifdqu5kutkxq" path="res://system/MusicPlayer.cs" id="1_3lnsu"]
 [ext_resource type="AnimationLibrary" uid="uid://crs8ow3swhcu0" path="res://contents/audio/fader.tres" id="2_t8ias"]
 
-[node name="MusicPlayer" type="Node"]
+[node name="MusicPlayer" type="Node" unique_id=1135103440]
 process_mode = 3
 script = ExtResource("1_3lnsu")
 
-[node name="Deck_1" type="AudioStreamPlayer" parent="."]
+[node name="Deck_1" type="AudioStreamPlayer" parent="." unique_id=1422941893]
 volume_db = -80.0
 bus = &"BGM"
 
-[node name="Deck_2" type="AudioStreamPlayer" parent="."]
+[node name="Deck_2" type="AudioStreamPlayer" parent="." unique_id=1320013629]
 bus = &"BGM"
 
-[node name="Fader" type="AnimationPlayer" parent="."]
-libraries = {
-&"fader": ExtResource("2_t8ias")
-}
+[node name="Fader" type="AnimationPlayer" parent="." unique_id=1933043301]
+libraries/fader = ExtResource("2_t8ias")

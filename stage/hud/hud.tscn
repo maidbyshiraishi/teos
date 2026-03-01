@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr2lwjlb07c3g"]
+[gd_scene format=3 uid="uid://cr2lwjlb07c3g"]
 
 [ext_resource type="Script" uid="uid://cwsufbgy5awh0" path="res://stage/hud/Hud.cs" id="1_paadw"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="3_bwh5j"]
@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://bywx24kvk8t5h" path="res://contents/stage/hud/remain.png" id="6_yli5s"]
 [ext_resource type="Texture2D" uid="uid://bkriva4vdycw2" path="res://contents/stage/hud/bullet.png" id="10_xak3t"]
 
-[node name="Hud" type="CanvasLayer"]
+[node name="Hud" type="CanvasLayer" unique_id=330330902]
 script = ExtResource("1_paadw")
 metadata/_edit_vertical_guides_ = [320.0]
 metadata/_edit_horizontal_guides_ = [240.0]
 
-[node name="Score" type="Label" parent="."]
+[node name="Score" type="Label" parent="." unique_id=1918322852]
 light_mask = 2
 anchors_preset = -1
 anchor_left = -0.1125
@@ -28,7 +28,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Life" type="TextureProgressBar" parent="."]
+[node name="Life" type="TextureProgressBar" parent="." unique_id=1875628754]
 light_mask = 2
 offset_left = 16.0
 offset_top = 440.0
@@ -39,11 +39,11 @@ value = 3.0
 texture_progress = ExtResource("4_wpn8b")
 metadata/_edit_use_anchors_ = true
 
-[node name="RemainIcon" type="Sprite2D" parent="."]
+[node name="RemainIcon" type="Sprite2D" parent="." unique_id=117395917]
 position = Vector2(552, 456)
 texture = ExtResource("6_yli5s")
 
-[node name="Remain" type="Label" parent="."]
+[node name="Remain" type="Label" parent="." unique_id=1677374401]
 light_mask = 2
 offset_left = 576.0
 offset_top = 440.0
@@ -55,12 +55,12 @@ text = "0"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Rotation" type="Sprite2D" parent="."]
+[node name="Rotation" type="Sprite2D" parent="." unique_id=1631075872]
 position = Vector2(408, 456)
 texture = ExtResource("5_e1str")
 hframes = 2
 
-[node name="Bullets" type="Label" parent="."]
+[node name="Bullets" type="Label" parent="." unique_id=678160218]
 light_mask = 2
 anchors_preset = -1
 anchor_left = -0.0171875
@@ -75,7 +75,7 @@ text = "0"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Start" type="Control" parent="."]
+[node name="Start" type="Control" parent="." unique_id=1597161484]
 visible = false
 light_mask = 2
 layout_mode = 3
@@ -85,7 +85,7 @@ offset_bottom = 480.0
 theme = ExtResource("3_bwh5j")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label_1" type="Label" parent="Start"]
+[node name="Label_1" type="Label" parent="Start" unique_id=707689549]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -101,7 +101,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label_2" type="Label" parent="Start"]
+[node name="Label_2" type="Label" parent="Start" unique_id=126643752]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -117,7 +117,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label_3" type="Label" parent="Start"]
+[node name="Label_3" type="Label" parent="Start" unique_id=1923179965]
 light_mask = 2
 layout_mode = 1
 anchors_preset = -1
@@ -133,6 +133,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Bullet" type="Sprite2D" parent="."]
+[node name="Bullet" type="Sprite2D" parent="." unique_id=815149327]
 position = Vector2(448, 456)
 texture = ExtResource("10_xak3t")

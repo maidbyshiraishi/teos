@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfvrydl1rgai2"]
+[gd_scene format=3 uid="uid://cfvrydl1rgai2"]
 
 [ext_resource type="Script" uid="uid://c5rqgqe053uuu" path="res://command/FocusedCommandContainer.cs" id="1_7w021"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="2_rosxs"]
 
-[node name="Focus" type="Node"]
+[node name="Focus" type="Node" unique_id=635287796]
 script = ExtResource("1_7w021")
 
-[node name="PlaySeCommand" parent="." instance=ExtResource("2_rosxs")]
+[node name="PlaySeCommand" parent="." unique_id=1364717969 instance=ExtResource("2_rosxs")]
 SeName = "menu_move"
 ProcessAlways = true

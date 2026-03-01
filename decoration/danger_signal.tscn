@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bafb1w4pq0jmv"]
+[gd_scene format=3 uid="uid://bafb1w4pq0jmv"]
 
 [ext_resource type="Script" uid="uid://dpfy3sqf6yk4p" path="res://decoration/Decoration.cs" id="1_s23er"]
 [ext_resource type="Texture2D" uid="uid://tcttpka1554m" path="res://contents/image/decoration/danger_signal.png" id="2_uaxrb"]
@@ -27,21 +27,21 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="DangerSignal" type="Node2D"]
+[node name="DangerSignal" type="Node2D" unique_id=1034901000]
 script = ExtResource("1_s23er")
 SeName = "danger_signal"
 StaticOnScreen = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1184224793]
 sprite_frames = SubResource("SpriteFrames_okrh2")
 autoplay = "default"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=989078690]
 wait_time = 1.5
 one_shot = true
 autostart = true
 
-[node name="TimerTrigger" parent="Timer" instance=ExtResource("3_pjmwj")]
+[node name="TimerTrigger" parent="Timer" unique_id=846792008 instance=ExtResource("3_pjmwj")]
 
-[node name="TerminateCharacterCommand" parent="Timer/TimerTrigger" node_paths=PackedStringArray("Target") instance=ExtResource("4_uaxrb")]
+[node name="TerminateCharacterCommand" parent="Timer/TimerTrigger" unique_id=1579435608 node_paths=PackedStringArray("Target") instance=ExtResource("4_uaxrb")]
 Target = NodePath("../../..")

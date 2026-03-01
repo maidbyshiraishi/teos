@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlogfuoolbbgt"]
+[gd_scene format=3 uid="uid://dlogfuoolbbgt"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_tdxxv"]
 [ext_resource type="Script" uid="uid://dacue8d4cvrem" path="res://screen/VolumeOptionDialog.cs" id="2_18wg2"]
@@ -16,14 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="15_deamu"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="16_yg6hs"]
 
-[node name="VolumeOptionDialog" type="Control"]
+[node name="VolumeOptionDialog" type="Control" unique_id=1562442054]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_tdxxv")
 script = ExtResource("2_18wg2")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=585216016]
 light_mask = 2
 layout_mode = 0
 offset_left = 50.0
@@ -32,7 +32,7 @@ offset_right = 590.0
 offset_bottom = 431.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Border" type="ReferenceRect" parent="."]
+[node name="Border" type="ReferenceRect" parent="." unique_id=1489760484]
 light_mask = 2
 layout_mode = 0
 offset_left = 48.0
@@ -43,7 +43,7 @@ border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1592950501]
 light_mask = 2
 layout_mode = 0
 offset_left = 280.0
@@ -54,7 +54,7 @@ text = "音量設定"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bgm" type="Label" parent="."]
+[node name="Bgm" type="Label" parent="." unique_id=1165552659]
 light_mask = 2
 layout_mode = 0
 offset_left = 100.0
@@ -64,7 +64,7 @@ offset_bottom = 150.0
 text = "BGM 音量"
 vertical_alignment = 1
 
-[node name="BgmValue" type="Label" parent="."]
+[node name="BgmValue" type="Label" parent="." unique_id=1210266250]
 light_mask = 2
 layout_mode = 0
 offset_left = 472.0
@@ -76,7 +76,7 @@ text = "0%
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Se" type="Label" parent="."]
+[node name="Se" type="Label" parent="." unique_id=1796025567]
 light_mask = 2
 layout_mode = 0
 offset_left = 100.0
@@ -86,7 +86,7 @@ offset_bottom = 190.0
 text = "効果音 音量"
 vertical_alignment = 1
 
-[node name="SeValue" type="Label" parent="."]
+[node name="SeValue" type="Label" parent="." unique_id=1792718183]
 light_mask = 2
 layout_mode = 0
 offset_left = 472.0
@@ -97,11 +97,11 @@ text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1405240829]
 light_mask = 2
 anchors_preset = 0
 
-[node name="BgmSlider" type="HSlider" parent="Control"]
+[node name="BgmSlider" type="HSlider" parent="Control" unique_id=62514997]
 light_mask = 2
 layout_mode = 0
 offset_left = 232.0
@@ -110,9 +110,9 @@ offset_right = 464.0
 offset_bottom = 150.0
 step = 5.0
 
-[node name="Focus" parent="Control/BgmSlider" instance=ExtResource("3_dx0br")]
+[node name="Focus" parent="Control/BgmSlider" unique_id=363735509 instance=ExtResource("3_dx0br")]
 
-[node name="SeSlider" type="HSlider" parent="Control"]
+[node name="SeSlider" type="HSlider" parent="Control" unique_id=680526048]
 light_mask = 2
 layout_mode = 0
 offset_left = 232.0
@@ -121,9 +121,9 @@ offset_right = 464.0
 offset_bottom = 190.0
 step = 5.0
 
-[node name="Focus" parent="Control/SeSlider" instance=ExtResource("3_dx0br")]
+[node name="Focus" parent="Control/SeSlider" unique_id=1506188559 instance=ExtResource("3_dx0br")]
 
-[node name="Back" type="Button" parent="Control"]
+[node name="Back" type="Button" parent="Control" unique_id=1088909278]
 light_mask = 2
 layout_mode = 0
 offset_left = 240.0
@@ -132,15 +132,15 @@ offset_right = 400.0
 offset_bottom = 256.0
 text = "保存して戻る"
 
-[node name="Exec" type="Node" parent="Control/Back"]
+[node name="Exec" type="Node" parent="Control/Back" unique_id=1218301911]
 script = ExtResource("5_fe6ad")
 
-[node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("15_deamu")]
+[node name="ReferenceCommandContainer" parent="Control/Back/Exec" unique_id=1726423458 node_paths=PackedStringArray("Target") instance=ExtResource("15_deamu")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("3_dx0br")]
+[node name="Focus" parent="Control/Back" unique_id=1435838523 instance=ExtResource("3_dx0br")]
 
-[node name="Undo" type="Button" parent="Control"]
+[node name="Undo" type="Button" parent="Control" unique_id=989647665]
 light_mask = 2
 layout_mode = 0
 offset_left = 184.0
@@ -150,22 +150,22 @@ offset_bottom = 304.0
 focus_neighbor_right = NodePath("../Reset")
 text = "前回保存した音量にリセット"
 
-[node name="Exec" type="Node" parent="Control/Undo"]
+[node name="Exec" type="Node" parent="Control/Undo" unique_id=231587933]
 script = ExtResource("5_fe6ad")
 
-[node name="PlaySeCommand" parent="Control/Undo/Exec" instance=ExtResource("5_1whwo")]
+[node name="PlaySeCommand" parent="Control/Undo/Exec" unique_id=279235822 instance=ExtResource("5_1whwo")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="LoadGameOptionsCommand" parent="Control/Undo/Exec" instance=ExtResource("10_12k4t")]
+[node name="LoadGameOptionsCommand" parent="Control/Undo/Exec" unique_id=1960854278 instance=ExtResource("10_12k4t")]
 
-[node name="SetGameOptionsCommand" parent="Control/Undo/Exec" instance=ExtResource("11_0e2uc")]
+[node name="SetGameOptionsCommand" parent="Control/Undo/Exec" unique_id=1782071757 instance=ExtResource("11_0e2uc")]
 
-[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" instance=ExtResource("12_xh88y")]
+[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" unique_id=950692591 instance=ExtResource("12_xh88y")]
 
-[node name="Focus" parent="Control/Undo" instance=ExtResource("3_dx0br")]
+[node name="Focus" parent="Control/Undo" unique_id=614575917 instance=ExtResource("3_dx0br")]
 
-[node name="Reset" type="Button" parent="Control"]
+[node name="Reset" type="Button" parent="Control" unique_id=1173300498]
 light_mask = 2
 layout_mode = 0
 offset_left = 176.0
@@ -174,22 +174,22 @@ offset_right = 464.0
 offset_bottom = 352.0
 text = "ゲームの初期音量にリセット"
 
-[node name="Exec" type="Node" parent="Control/Reset"]
+[node name="Exec" type="Node" parent="Control/Reset" unique_id=344220065]
 script = ExtResource("5_fe6ad")
 
-[node name="PlaySeCommand" parent="Control/Reset/Exec" instance=ExtResource("5_1whwo")]
+[node name="PlaySeCommand" parent="Control/Reset/Exec" unique_id=1716473603 instance=ExtResource("5_1whwo")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="ResetDefaultGameOptionsCommand" parent="Control/Reset/Exec" instance=ExtResource("13_4ty8t")]
+[node name="ResetDefaultGameOptionsCommand" parent="Control/Reset/Exec" unique_id=800017078 instance=ExtResource("13_4ty8t")]
 
-[node name="SetGameOptionsCommand" parent="Control/Reset/Exec" instance=ExtResource("11_0e2uc")]
+[node name="SetGameOptionsCommand" parent="Control/Reset/Exec" unique_id=1694838330 instance=ExtResource("11_0e2uc")]
 
-[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" instance=ExtResource("12_xh88y")]
+[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" unique_id=905552791 instance=ExtResource("12_xh88y")]
 
-[node name="Focus" parent="Control/Reset" instance=ExtResource("3_dx0br")]
+[node name="Focus" parent="Control/Reset" unique_id=117467135 instance=ExtResource("3_dx0br")]
 
-[node name="OpenFileManager" type="Button" parent="Control"]
+[node name="OpenFileManager" type="Button" parent="Control" unique_id=455543414]
 light_mask = 2
 layout_mode = 0
 offset_left = 200.0
@@ -198,35 +198,35 @@ offset_right = 440.0
 offset_bottom = 400.0
 text = "データフォルダを開く"
 
-[node name="Exec" type="Node" parent="Control/OpenFileManager"]
+[node name="Exec" type="Node" parent="Control/OpenFileManager" unique_id=1170068893]
 script = ExtResource("5_fe6ad")
 
-[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("5_1whwo")]
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" unique_id=2123495007 instance=ExtResource("5_1whwo")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("13_wbecy")]
+[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" unique_id=395571989 instance=ExtResource("13_wbecy")]
 
-[node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("3_dx0br")]
+[node name="Focus" parent="Control/OpenFileManager" unique_id=1462200042 instance=ExtResource("3_dx0br")]
 
-[node name="EscapeKey" parent="." instance=ExtResource("16_yg6hs")]
+[node name="EscapeKey" parent="." unique_id=1621984776 instance=ExtResource("16_yg6hs")]
 ActionName = "escape"
 
-[node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("15_deamu")]
+[node name="ReferenceCommandContainer" parent="EscapeKey" unique_id=1408217758 node_paths=PackedStringArray("Target") instance=ExtResource("15_deamu")]
 Target = NodePath("../../Close")
 
-[node name="OptionKey" parent="." instance=ExtResource("16_yg6hs")]
+[node name="OptionKey" parent="." unique_id=1743615235 instance=ExtResource("16_yg6hs")]
 ActionName = "option"
 
-[node name="ReferenceCommandContainer" parent="OptionKey" node_paths=PackedStringArray("Target") instance=ExtResource("15_deamu")]
+[node name="ReferenceCommandContainer" parent="OptionKey" unique_id=430184083 node_paths=PackedStringArray("Target") instance=ExtResource("15_deamu")]
 Target = NodePath("../../Close")
 
-[node name="Close" parent="." instance=ExtResource("4_3ts1x")]
+[node name="Close" parent="." unique_id=264828481 instance=ExtResource("4_3ts1x")]
 
-[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_1whwo")]
+[node name="PlaySeCommand" parent="Close" unique_id=1220071155 instance=ExtResource("5_1whwo")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="SaveGameOptionsCommand" parent="Close" instance=ExtResource("8_6ciug")]
+[node name="SaveGameOptionsCommand" parent="Close" unique_id=2088061671 instance=ExtResource("8_6ciug")]
 
-[node name="CloseDialogCommand2" parent="Close" instance=ExtResource("9_x2o4e")]
+[node name="CloseDialogCommand2" parent="Close" unique_id=1796618595 instance=ExtResource("9_x2o4e")]

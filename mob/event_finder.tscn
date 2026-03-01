@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4nwxoqqvmpv2"]
+[gd_scene format=3 uid="uid://d4nwxoqqvmpv2"]
 
 [ext_resource type="Script" uid="uid://bx4oow6yoktae" path="res://mob/EventFinder.cs" id="1_paada"]
 
-[node name="EventFinder" type="Area2D"]
+[node name="EventFinder" type="Area2D" unique_id=96563706]
 collision_layer = 32768
 collision_mask = 65536
 script = ExtResource("1_paada")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1140000923]
 wait_time = 0.1
 autostart = true

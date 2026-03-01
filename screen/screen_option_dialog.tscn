@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkbeng4umqnfc"]
+[gd_scene format=3 uid="uid://bkbeng4umqnfc"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_m16sm"]
 [ext_resource type="Script" uid="uid://322xyg67h8tu" path="res://screen/ScreenOptionDialog.cs" id="2_luj6q"]
@@ -13,14 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="16_fr1ca"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="17_jkvoy"]
 
-[node name="ScreenOptionDialog" type="Control"]
+[node name="ScreenOptionDialog" type="Control" unique_id=723948998]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_m16sm")
 script = ExtResource("2_luj6q")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=666770532]
 light_mask = 2
 layout_mode = 0
 offset_left = 128.0
@@ -29,7 +29,7 @@ offset_right = 512.0
 offset_bottom = 352.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Border" type="ReferenceRect" parent="."]
+[node name="Border" type="ReferenceRect" parent="." unique_id=554036020]
 light_mask = 2
 layout_mode = 0
 offset_left = 128.0
@@ -40,7 +40,7 @@ border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1831585618]
 light_mask = 2
 layout_mode = 0
 offset_left = 280.0
@@ -51,7 +51,7 @@ text = "画面設定"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fullscreen" type="Label" parent="."]
+[node name="Fullscreen" type="Label" parent="." unique_id=822677045]
 light_mask = 2
 layout_mode = 0
 offset_left = 184.0
@@ -61,7 +61,7 @@ offset_bottom = 160.0
 text = "フルスクリーン"
 vertical_alignment = 1
 
-[node name="FullscreenCheckValue" type="Label" parent="."]
+[node name="FullscreenCheckValue" type="Label" parent="." unique_id=1625909728]
 light_mask = 2
 layout_mode = 0
 offset_left = 392.0
@@ -72,11 +72,11 @@ text = "OFF"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1614670368]
 light_mask = 2
 anchors_preset = 0
 
-[node name="FullscreenCheck" type="CheckButton" parent="Control"]
+[node name="FullscreenCheck" type="CheckButton" parent="Control" unique_id=1605237297]
 light_mask = 2
 layout_mode = 0
 offset_left = 344.0
@@ -85,21 +85,21 @@ offset_right = 392.0
 offset_bottom = 160.0
 alignment = 1
 
-[node name="Toggled" type="Node" parent="Control/FullscreenCheck"]
+[node name="Toggled" type="Node" parent="Control/FullscreenCheck" unique_id=374993011]
 script = ExtResource("5_6qy83")
 
-[node name="PlaySeCommand1" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("5_hmtv0")]
+[node name="PlaySeCommand1" parent="Control/FullscreenCheck/Toggled" unique_id=1410661688 instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="PlaySeCommand2" parent="Control/FullscreenCheck/Toggled" instance=ExtResource("5_hmtv0")]
+[node name="PlaySeCommand2" parent="Control/FullscreenCheck/Toggled" unique_id=1928008819 instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"
 ProcessAlways = true
 ExecFlag = false
 
-[node name="Focus" parent="Control/FullscreenCheck" instance=ExtResource("5_8jhn7")]
+[node name="Focus" parent="Control/FullscreenCheck" unique_id=28233344 instance=ExtResource("5_8jhn7")]
 
-[node name="Back" type="Button" parent="Control"]
+[node name="Back" type="Button" parent="Control" unique_id=1705751538]
 light_mask = 2
 layout_mode = 0
 offset_left = 240.0
@@ -108,15 +108,15 @@ offset_right = 400.0
 offset_bottom = 224.0
 text = "保存して戻る"
 
-[node name="Exec" type="Node" parent="Control/Back"]
+[node name="Exec" type="Node" parent="Control/Back" unique_id=1949267575]
 script = ExtResource("6_pt5pa")
 
-[node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("17_jkvoy")]
+[node name="ReferenceCommandContainer" parent="Control/Back/Exec" unique_id=758373598 node_paths=PackedStringArray("Target") instance=ExtResource("17_jkvoy")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("5_8jhn7")]
+[node name="Focus" parent="Control/Back" unique_id=1765206182 instance=ExtResource("5_8jhn7")]
 
-[node name="Reset" type="Button" parent="Control"]
+[node name="Reset" type="Button" parent="Control" unique_id=297699616]
 light_mask = 2
 layout_mode = 0
 offset_left = 184.0
@@ -125,16 +125,16 @@ offset_right = 456.0
 offset_bottom = 272.0
 text = "ゲームの初期値にリセット"
 
-[node name="Exec" type="Node" parent="Control/Reset"]
+[node name="Exec" type="Node" parent="Control/Reset" unique_id=232495441]
 script = ExtResource("6_pt5pa")
 
-[node name="PlaySeCommand" parent="Control/Reset/Exec" instance=ExtResource("5_hmtv0")]
+[node name="PlaySeCommand" parent="Control/Reset/Exec" unique_id=1867200783 instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="Focus" parent="Control/Reset" instance=ExtResource("5_8jhn7")]
+[node name="Focus" parent="Control/Reset" unique_id=200189806 instance=ExtResource("5_8jhn7")]
 
-[node name="OpenFileManager" type="Button" parent="Control"]
+[node name="OpenFileManager" type="Button" parent="Control" unique_id=402558907]
 light_mask = 2
 layout_mode = 0
 offset_left = 200.0
@@ -143,35 +143,35 @@ offset_right = 440.0
 offset_bottom = 320.0
 text = "データフォルダを開く"
 
-[node name="Exec" type="Node" parent="Control/OpenFileManager"]
+[node name="Exec" type="Node" parent="Control/OpenFileManager" unique_id=2085492944]
 script = ExtResource("6_pt5pa")
 
-[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("5_hmtv0")]
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" unique_id=1012419917 instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("9_0ojyc")]
+[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" unique_id=2111564805 instance=ExtResource("9_0ojyc")]
 
-[node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("5_8jhn7")]
+[node name="Focus" parent="Control/OpenFileManager" unique_id=1906782154 instance=ExtResource("5_8jhn7")]
 
-[node name="EscapeKey" parent="." instance=ExtResource("16_fr1ca")]
+[node name="EscapeKey" parent="." unique_id=2052838834 instance=ExtResource("16_fr1ca")]
 ActionName = "escape"
 
-[node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_jkvoy")]
+[node name="ReferenceCommandContainer" parent="EscapeKey" unique_id=1703958299 node_paths=PackedStringArray("Target") instance=ExtResource("17_jkvoy")]
 Target = NodePath("../../Close")
 
-[node name="OptionKey" parent="." instance=ExtResource("16_fr1ca")]
+[node name="OptionKey" parent="." unique_id=1103108125 instance=ExtResource("16_fr1ca")]
 ActionName = "option"
 
-[node name="ReferenceCommandContainer" parent="OptionKey" node_paths=PackedStringArray("Target") instance=ExtResource("17_jkvoy")]
+[node name="ReferenceCommandContainer" parent="OptionKey" unique_id=272706386 node_paths=PackedStringArray("Target") instance=ExtResource("17_jkvoy")]
 Target = NodePath("../../Close")
 
-[node name="Close" parent="." instance=ExtResource("4_qsf5g")]
+[node name="Close" parent="." unique_id=1419904829 instance=ExtResource("4_qsf5g")]
 
-[node name="PlaySeCommand" parent="Close" instance=ExtResource("5_hmtv0")]
+[node name="PlaySeCommand" parent="Close" unique_id=261725546 instance=ExtResource("5_hmtv0")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="SaveScreenOptionsCommand" parent="Close" instance=ExtResource("7_qwuuy")]
+[node name="SaveScreenOptionsCommand" parent="Close" unique_id=832128666 instance=ExtResource("7_qwuuy")]
 
-[node name="CloseDialogCommand" parent="Close" instance=ExtResource("9_mjuga")]
+[node name="CloseDialogCommand" parent="Close" unique_id=1785659144 instance=ExtResource("9_mjuga")]

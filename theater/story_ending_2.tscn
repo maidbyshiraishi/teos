@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://r5mbwmmdg3hw"]
+[gd_scene format=3 uid="uid://r5mbwmmdg3hw"]
 
 [ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_oea57"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_cvu3c"]
@@ -163,7 +163,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="ScrollTheater" instance=ExtResource("1_oea57")]
+[node name="ScrollTheater" unique_id=863191776 instance=ExtResource("1_oea57")]
 ScrollTime = 80.0
 metadata/_edit_horizontal_guides_ = [2176.0]
 metadata/_edit_vertical_guides_ = [640.0]
@@ -171,7 +171,7 @@ metadata/_edit_vertical_guides_ = [640.0]
 [node name="Background" parent="." index="0"]
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect" type="ColorRect" parent="." index="1"]
+[node name="ColorRect" type="ColorRect" parent="." index="1" unique_id=1093764082]
 visible = false
 layout_mode = 0
 offset_top = 1928.0
@@ -179,7 +179,7 @@ offset_right = 640.0
 offset_bottom = 2408.0
 color = Color(0.588235, 0.588235, 0.588235, 1)
 
-[node name="Contents" type="Control" parent="Path2D/Socket" index="0"]
+[node name="Contents" type="Control" parent="Path2D/Socket" parent_id_path=PackedInt32Array(20169039) index="0" unique_id=759546787]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -191,7 +191,7 @@ grow_horizontal = 2
 pivot_offset = Vector2(320, 0)
 theme = ExtResource("2_cvu3c")
 
-[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
+[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0" unique_id=1621174679]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 19.0
@@ -205,9 +205,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" instance=ExtResource("3_d1l78")]
+[node name="ChangeBGM1" parent="Path2D/Socket/Contents" index="1" unique_id=351065932 instance=ExtResource("3_d1l78")]
 
-[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2"]
+[node name="Label" type="Label" parent="Path2D/Socket/Contents" index="2" unique_id=1064333477]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 179.0
@@ -220,7 +220,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label3" type="Label" parent="Path2D/Socket/Contents" index="3"]
+[node name="Label3" type="Label" parent="Path2D/Socket/Contents" index="3" unique_id=24426819]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 412.0
@@ -232,7 +232,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="4"]
+[node name="Label2" type="Label" parent="Path2D/Socket/Contents" index="4" unique_id=1892712414]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 226.0
@@ -244,13 +244,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/Socket/Contents" index="5"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/Socket/Contents" index="5" unique_id=584987850]
 position = Vector2(319, 323)
 sprite_frames = SubResource("SpriteFrames_v0mqf")
 autoplay = "default"
 frame_progress = 0.706491
 
-[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="6"]
+[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="6" unique_id=603661988]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 395.0
@@ -261,7 +261,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label4" type="Label" parent="Path2D/Socket/Contents" index="7"]
+[node name="Label4" type="Label" parent="Path2D/Socket/Contents" index="7" unique_id=2040547077]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 491.0
@@ -305,34 +305,34 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="8" instance=ExtResource("5_yivp3")]
+[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="8" unique_id=1467634432 instance=ExtResource("5_yivp3")]
 position = Vector2(319, 1389)
 
-[node name="SetScrollCommand" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" instance=ExtResource("5_o8e4p")]
+[node name="SetScrollCommand" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" unique_id=1632095091 instance=ExtResource("5_o8e4p")]
 
-[node name="DelayCommandContainer1" parent="Path2D/Socket/Contents/InvisibleTrigger" index="1" instance=ExtResource("6_ve6dq")]
+[node name="DelayCommandContainer1" parent="Path2D/Socket/Contents/InvisibleTrigger" index="1" unique_id=905801956 instance=ExtResource("6_ve6dq")]
 WaitTime = 1.0
 
-[node name="PlayAnimatedSpriteCommand" parent="Path2D/Socket/Contents/InvisibleTrigger/DelayCommandContainer1" index="0" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("7_so84y")]
-AnimationName = "default"
+[node name="PlayAnimatedSpriteCommand" parent="Path2D/Socket/Contents/InvisibleTrigger/DelayCommandContainer1" index="0" unique_id=1578681707 node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("7_so84y")]
 AnimatedSprite = NodePath("../../../AnimatedSprite2D2")
+AnimationName = "default"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Path2D/Socket/Contents" index="9"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Path2D/Socket/Contents" index="9" unique_id=250424624]
 position = Vector2(319, 1555)
 sprite_frames = SubResource("SpriteFrames_wsncm")
 
-[node name="AnimationFinishedTrigger" parent="Path2D/Socket/Contents/AnimatedSprite2D2" index="0" instance=ExtResource("9_so84y")]
+[node name="AnimationFinishedTrigger" parent="Path2D/Socket/Contents/AnimatedSprite2D2" index="0" unique_id=917776849 instance=ExtResource("9_so84y")]
 
-[node name="ShowCanvasItemCommand" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("14_erue3")]
+[node name="ShowCanvasItemCommand" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger" index="0" unique_id=1798644592 node_paths=PackedStringArray("Target") instance=ExtResource("14_erue3")]
 Target = NodePath("../../../Label9")
 
-[node name="DelayCommandContainer" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger" index="1" instance=ExtResource("6_ve6dq")]
+[node name="DelayCommandContainer" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger" index="1" unique_id=115266425 instance=ExtResource("6_ve6dq")]
 WaitTime = 8.5
 
-[node name="OpenScreenCommand" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("10_0nalh")]
+[node name="OpenScreenCommand" parent="Path2D/Socket/Contents/AnimatedSprite2D2/AnimationFinishedTrigger/DelayCommandContainer" index="0" unique_id=1890151808 instance=ExtResource("10_0nalh")]
 Screen = "res://screen/title_screen.tscn"
 
-[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="10"]
+[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="10" unique_id=140777339]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 1667.0
@@ -345,7 +345,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="11"]
+[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="11" unique_id=1737211522]
 visible = false
 layout_mode = 0
 offset_left = 31.0
@@ -358,21 +358,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Focus" parent="Path2D/Socket/Contents" index="12" instance=ExtResource("5_yk18a")]
+[node name="Focus" parent="Path2D/Socket/Contents" index="12" unique_id=248828464 instance=ExtResource("5_yk18a")]
 position = Vector2(43, 38)
 
-[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus" index="0" instance=ExtResource("3_d1l78")]
+[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/Focus" index="0" unique_id=1746790911 instance=ExtResource("3_d1l78")]
 Command = 1
 Stream = ExtResource("13_wsncm")
 
-[node name="VisibleTrigger" parent="Path2D/Socket/Contents" index="13" instance=ExtResource("5_yk18a")]
+[node name="VisibleTrigger" parent="Path2D/Socket/Contents" index="13" unique_id=1639887286 instance=ExtResource("5_yk18a")]
 position = Vector2(447, 411)
 
-[node name="ShowCanvasItemCommand" parent="Path2D/Socket/Contents/VisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("14_erue3")]
-GrubFocus = true
+[node name="ShowCanvasItemCommand" parent="Path2D/Socket/Contents/VisibleTrigger" index="0" unique_id=831684663 node_paths=PackedStringArray("Target") instance=ExtResource("14_erue3")]
 Target = NodePath("../../../../../Control/CloseButton")
+GrubFocus = true
 
-[node name="CloseButton" type="Button" parent="Control" index="0"]
+[node name="CloseButton" type="Button" parent="Control" index="0" unique_id=2026504716]
 visible = false
 light_mask = 2
 layout_mode = 0
@@ -383,19 +383,19 @@ offset_bottom = 456.0
 theme = ExtResource("14_q5l2u")
 text = "タイトルに戻る"
 
-[node name="Exec" type="Node" parent="Control/CloseButton" index="0"]
+[node name="Exec" type="Node" parent="Control/CloseButton" index="0" unique_id=1294792669]
 script = ExtResource("16_72ksj")
 
-[node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("18_ta5gv")]
+[node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="0" unique_id=934280897 node_paths=PackedStringArray("Target") instance=ExtResource("18_ta5gv")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/CloseButton" index="1" instance=ExtResource("18_72ksj")]
+[node name="Focus" parent="Control/CloseButton" index="1" unique_id=94480531 instance=ExtResource("18_72ksj")]
 
-[node name="Close" parent="." index="5" instance=ExtResource("9_1ty71")]
+[node name="Close" parent="." index="5" unique_id=2133271961 instance=ExtResource("9_1ty71")]
 
-[node name="PlaySeCommand" parent="Close" index="0" instance=ExtResource("17_dpbwf")]
+[node name="PlaySeCommand" parent="Close" index="0" unique_id=1648833116 instance=ExtResource("17_dpbwf")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenScreenCommand" parent="Close" index="1" instance=ExtResource("10_0nalh")]
+[node name="OpenScreenCommand" parent="Close" index="1" unique_id=1429098024 instance=ExtResource("10_0nalh")]
 Screen = "res://screen/title_screen.tscn"

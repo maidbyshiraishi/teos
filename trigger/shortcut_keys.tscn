@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://7lc2ks6h6ce"]
+[gd_scene format=3 uid="uid://7lc2ks6h6ce"]
 
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="1_ie4ch"]
 [ext_resource type="PackedScene" uid="uid://4dnj27cvdryh" path="res://command/dialog/open_dialog_command.tscn" id="3_3cafv"]
 
-[node name="ShortcutKeys" type="Node"]
+[node name="ShortcutKeys" type="Node" unique_id=581003534]
 
-[node name="EscapeKey" parent="." instance=ExtResource("1_ie4ch")]
+[node name="EscapeKey" parent="." unique_id=74532725 instance=ExtResource("1_ie4ch")]
 ActionName = "escape"
 
-[node name="OpenDialogCommand" parent="EscapeKey" instance=ExtResource("3_3cafv")]
+[node name="OpenDialogCommand" parent="EscapeKey" unique_id=1156087757 instance=ExtResource("3_3cafv")]
 DialogPath = "res://screen/escape_dialog.tscn"
 
-[node name="OptionKey" parent="." instance=ExtResource("1_ie4ch")]
+[node name="OptionKey" parent="." unique_id=339237633 instance=ExtResource("1_ie4ch")]
 ActionName = "option"
 
-[node name="OpenDialogCommand" parent="OptionKey" instance=ExtResource("3_3cafv")]
+[node name="OpenDialogCommand" parent="OptionKey" unique_id=1659159705 instance=ExtResource("3_3cafv")]
 DialogPath = "res://screen/option_list_and_pause_dialog.tscn"

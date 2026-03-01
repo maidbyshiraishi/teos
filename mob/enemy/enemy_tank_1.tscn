@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b6ixw7pqqcldr"]
+[gd_scene format=3 uid="uid://b6ixw7pqqcldr"]
 
 [ext_resource type="PackedScene" uid="uid://qyjfbwuobtjm" path="res://mob/enemy/enemy_root.tscn" id="1_ueql5"]
 [ext_resource type="Script" uid="uid://nx2as8vo3a3h" path="res://mob/enemy/EnemySimple1.cs" id="2_pdxlx"]
@@ -133,46 +133,44 @@ states/terminate/position = Vector2(261, 213)
 transitions = ["idle", "damage_control", SubResource("AnimationNodeStateMachineTransition_utt05"), "damage_control", "damaged", SubResource("AnimationNodeStateMachineTransition_pco6u"), "damaged", "idle", SubResource("AnimationNodeStateMachineTransition_5u06l"), "initialize", "idle", SubResource("AnimationNodeStateMachineTransition_xpo4n"), "dead", "terminate", SubResource("AnimationNodeStateMachineTransition_bvl24"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_y82rm")]
 graph_offset = Vector2(-38, 92)
 
-[node name="EnemyTank1" instance=ExtResource("1_ueql5")]
+[node name="EnemyTank1" unique_id=649671780 instance=ExtResource("1_ueql5")]
 script = ExtResource("2_pdxlx")
 SearchWaitTime = 0.5
 ClearWaitTime = 3.0
 
-[node name="OnScreen" parent="." index="0"]
+[node name="OnScreen" parent="." index="0" unique_id=118332893]
 position = Vector2(0, 1.43051e-06)
 scale = Vector2(4.8, 4)
 
-[node name="BurialArea" parent="." index="1"]
+[node name="BurialArea" parent="." index="1" unique_id=648333766]
 visible = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" index="1" unique_id=1160370887]
 shape = SubResource("RectangleShape2D_evmk1")
 
-[node name="EventFinder" parent="." index="2"]
+[node name="EventFinder" parent="." index="2" unique_id=1819585117]
 visible = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" index="0" unique_id=1231863763]
 shape = SubResource("CircleShape2D_lfcj4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=420781559]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_u1ugj")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="4" unique_id=305097847]
 texture = ExtResource("3_80i5i")
 hframes = 7
 
-[node name="MountPoint" parent="." index="5"]
+[node name="MountPoint" parent="." index="5" unique_id=833389509]
 position = Vector2(-4, -28)
 LerpAngle = 100.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
-libraries = {
-&"": SubResource("AnimationLibrary_5xim0")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6" unique_id=783776929]
+libraries/ = SubResource("AnimationLibrary_5xim0")
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="7"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="7" unique_id=1424187745]
 tree_root = SubResource("AnimationNodeStateMachine_s3hvb")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="SearchTargetTimer" type="Timer" parent="." index="8"]
+[node name="SearchTargetTimer" type="Timer" parent="." index="8" unique_id=1477369]

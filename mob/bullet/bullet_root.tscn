@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj37pjdv2t2ib"]
+[gd_scene format=3 uid="uid://bj37pjdv2t2ib"]
 
 [ext_resource type="PackedScene" uid="uid://bovsu61evhei7" path="res://mob/mob.tscn" id="1_hxqsb"]
 [ext_resource type="Script" uid="uid://b3xevuwr6ojl3" path="res://mob/bullet/SmallBullet.cs" id="2_21uw2"]
 
-[node name="BulletRoot" instance=ExtResource("1_hxqsb")]
+[node name="BulletRoot" unique_id=1763237939 instance=ExtResource("1_hxqsb")]
 collision_layer = 0
 collision_mask = 40
 script = ExtResource("2_21uw2")
@@ -16,6 +16,6 @@ InitialLife = 1
 MaxLife = 1
 InitialApproach = 4.0
 
-[node name="ModulateTimer" type="Timer" parent="." index="1"]
+[node name="ModulateTimer" type="Timer" parent="." index="1" unique_id=1379775447]
 wait_time = 0.1
 autostart = true

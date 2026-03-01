@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ddw2g00yqtlmx"]
+[gd_scene format=3 uid="uid://ddw2g00yqtlmx"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_7ly80"]
 [ext_resource type="Script" uid="uid://rmx1t3loo6oa" path="res://stage/GameStageRoot.cs" id="2_3hrrl"]
@@ -60,7 +60,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Stage" type="Control"]
+[node name="Stage" type="Control" unique_id=1927764603]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_7ly80")
@@ -68,77 +68,77 @@ script = ExtResource("2_3hrrl")
 MouseCaptured = true
 metadata/_edit_horizontal_guides_ = [240.0, 0.0, 480.0]
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="." unique_id=2085872195]
 
-[node name="Parallax2D_1" type="Parallax2D" parent="Background"]
+[node name="Parallax2D_1" type="Parallax2D" parent="Background" unique_id=1956032343]
 z_index = -1000
 repeat_size = Vector2(1, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Background/Parallax2D_1"]
+[node name="ColorRect" type="ColorRect" parent="Background/Parallax2D_1" unique_id=1877482563]
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0.447059, 0.678431, 0.933333, 1)
 
-[node name="Parallax2D_2" type="Parallax2D" parent="Background"]
+[node name="Parallax2D_2" type="Parallax2D" parent="Background" unique_id=1592002278]
 z_index = -990
 scroll_scale = Vector2(0.5, 1)
 repeat_size = Vector2(640, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D_2"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D_2" unique_id=927515823]
 modulate = Color(1, 1, 1, 0.196078)
 centered = false
 
-[node name="Parallax2D_3" type="Parallax2D" parent="Background"]
+[node name="Parallax2D_3" type="Parallax2D" parent="Background" unique_id=356573136]
 visible = false
 z_index = -980
 repeat_size = Vector2(1, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D_3"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D_3" unique_id=1311209861]
 scale = Vector2(2, 2)
 centered = false
 
-[node name="TileMap" type="Node2D" parent="."]
+[node name="TileMap" type="Node2D" parent="." unique_id=1964429083]
 
-[node name="Background" type="TileMapLayer" parent="TileMap"]
+[node name="Background" type="TileMapLayer" parent="TileMap" unique_id=2128930294]
 self_modulate = Color(0.627451, 0.627451, 0.627451, 1)
 z_index = -20
 tile_set = ExtResource("4_w2etb")
 collision_enabled = false
 
-[node name="Ground" type="TileMapLayer" parent="TileMap"]
+[node name="Ground" type="TileMapLayer" parent="TileMap" unique_id=1704716621]
 tile_set = ExtResource("4_w2etb")
 script = ExtResource("3_kiuo3")
 
-[node name="ObservationHole" type="Polygon2D" parent="TileMap"]
+[node name="ObservationHole" type="Polygon2D" parent="TileMap" unique_id=2047074424]
 clip_children = 1
 z_index = 70
 invert_enabled = true
 invert_border = 16384.0
 script = ExtResource("5_omjrv")
 
-[node name="Foreground" type="TileMapLayer" parent="TileMap/ObservationHole"]
+[node name="Foreground" type="TileMapLayer" parent="TileMap/ObservationHole" unique_id=1595235901]
 tile_set = ExtResource("4_w2etb")
 collision_enabled = false
 
-[node name="Bullet" type="Node2D" parent="."]
+[node name="Bullet" type="Node2D" parent="." unique_id=1959977855]
 z_index = 60
 
-[node name="Enemy" type="Node2D" parent="."]
+[node name="Enemy" type="Node2D" parent="." unique_id=980800814]
 z_index = 30
 
-[node name="Item" type="Node2D" parent="."]
+[node name="Item" type="Node2D" parent="." unique_id=1203315214]
 z_index = 10
 
-[node name="AutoScrollPath" type="Path2D" parent="."]
+[node name="AutoScrollPath" type="Path2D" parent="." unique_id=1280595377]
 script = ExtResource("7_cpqe1")
 
-[node name="AutoScroll" type="PathFollow2D" parent="AutoScrollPath"]
+[node name="AutoScroll" type="PathFollow2D" parent="AutoScrollPath" unique_id=379597367]
 rotates = false
 script = ExtResource("8_elhkq")
 Speed = 90.0
 PathEndType = 0
 
-[node name="PlayerBorderRect" type="ReferenceRect" parent="AutoScrollPath/AutoScroll"]
+[node name="PlayerBorderRect" type="ReferenceRect" parent="AutoScrollPath/AutoScroll" unique_id=2060768915]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 8
@@ -153,78 +153,78 @@ offset_bottom = 224.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Player" parent="AutoScrollPath/AutoScroll" node_paths=PackedStringArray("Target", "BorderRect", "Hud") instance=ExtResource("5_epwon")]
+[node name="Player" parent="AutoScrollPath/AutoScroll" unique_id=1724998951 node_paths=PackedStringArray("Target", "BorderRect", "Hud") instance=ExtResource("5_epwon")]
 unique_name_in_owner = true
 z_index = 50
 Target = NodePath("../TargetMarker")
 BorderRect = NodePath("../PlayerBorderRect")
 Hud = NodePath("../../../Hud")
 
-[node name="ObservationHoleCenter" type="Node2D" parent="AutoScrollPath/AutoScroll/Player" node_paths=PackedStringArray("Target")]
+[node name="ObservationHoleCenter" type="Node2D" parent="AutoScrollPath/AutoScroll/Player" unique_id=891231523 node_paths=PackedStringArray("Target")]
 script = ExtResource("9_jg5on")
 Target = NodePath("../../../../TileMap/ObservationHole")
 
-[node name="GameOver" parent="AutoScrollPath/AutoScroll/Player" instance=ExtResource("10_ubbni")]
+[node name="GameOver" parent="AutoScrollPath/AutoScroll/Player" unique_id=1081579492 instance=ExtResource("10_ubbni")]
 
-[node name="PlaySeCommand" parent="AutoScrollPath/AutoScroll/Player/GameOver" instance=ExtResource("11_rkaqo")]
+[node name="PlaySeCommand" parent="AutoScrollPath/AutoScroll/Player/GameOver" unique_id=1810039587 instance=ExtResource("11_rkaqo")]
 SeName = "player_game_over"
 
-[node name="DelayCommandContainer" parent="AutoScrollPath/AutoScroll/Player/GameOver" instance=ExtResource("12_nyma3")]
+[node name="DelayCommandContainer" parent="AutoScrollPath/AutoScroll/Player/GameOver" unique_id=605840732 instance=ExtResource("12_nyma3")]
 WaitTime = 2.0
 
-[node name="OpenResultScreen" parent="AutoScrollPath/AutoScroll/Player/GameOver/DelayCommandContainer" instance=ExtResource("11_v6viv")]
+[node name="OpenResultScreen" parent="AutoScrollPath/AutoScroll/Player/GameOver/DelayCommandContainer" unique_id=2093438772 instance=ExtResource("11_v6viv")]
 
-[node name="StageVictory" parent="AutoScrollPath/AutoScroll/Player" instance=ExtResource("10_ubbni")]
+[node name="StageVictory" parent="AutoScrollPath/AutoScroll/Player" unique_id=783145277 instance=ExtResource("10_ubbni")]
 
-[node name="Camera" parent="AutoScrollPath/AutoScroll" instance=ExtResource("7_cwvs4")]
+[node name="Camera" parent="AutoScrollPath/AutoScroll" unique_id=1890269350 instance=ExtResource("7_cwvs4")]
 unique_name_in_owner = true
 
-[node name="Area2D" type="Area2D" parent="AutoScrollPath/AutoScroll"]
+[node name="Area2D" type="Area2D" parent="AutoScrollPath/AutoScroll" unique_id=421374648]
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D_1" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/Area2D"]
+[node name="CollisionShape2D_1" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/Area2D" unique_id=1655609417]
 shape = SubResource("RectangleShape2D_0fhsg")
 debug_color = Color(1, 0, 1, 0.54902)
 
-[node name="CollisionShape2D_2" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/Area2D"]
+[node name="CollisionShape2D_2" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/Area2D" unique_id=879209044]
 shape = SubResource("RectangleShape2D_c38uu")
 debug_color = Color(1, 0, 1, 0.54902)
 
-[node name="CenterOfCamera" type="Area2D" parent="AutoScrollPath/AutoScroll"]
+[node name="CenterOfCamera" type="Area2D" parent="AutoScrollPath/AutoScroll" unique_id=861519834]
 collision_layer = 512
 collision_mask = 0
 script = ExtResource("9_q34mi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/CenterOfCamera"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoScrollPath/AutoScroll/CenterOfCamera" unique_id=655813097]
 shape = SubResource("CircleShape2D_yfu1x")
 debug_color = Color(1, 0, 1, 1)
 
-[node name="StaticDecoration" type="Node2D" parent="AutoScrollPath/AutoScroll"]
+[node name="StaticDecoration" type="Node2D" parent="AutoScrollPath/AutoScroll" unique_id=573669796]
 z_index = 40
 
-[node name="TargetMarker" type="Node2D" parent="AutoScrollPath/AutoScroll" node_paths=PackedStringArray("BorderRect")]
+[node name="TargetMarker" type="Node2D" parent="AutoScrollPath/AutoScroll" unique_id=2005171175 node_paths=PackedStringArray("BorderRect")]
 script = ExtResource("9_tbeiw")
 BorderRect = NodePath("../PlayerBorderRect")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AutoScrollPath/AutoScroll/TargetMarker"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AutoScrollPath/AutoScroll/TargetMarker" unique_id=2021942799]
 z_index = 20
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_owebc")
 autoplay = "default"
 
-[node name="Decoration_1" type="Node2D" parent="."]
+[node name="Decoration_1" type="Node2D" parent="." unique_id=1145690436]
 z_index = 40
 
-[node name="Decoration_2" type="Node2D" parent="."]
+[node name="Decoration_2" type="Node2D" parent="." unique_id=485343107]
 z_index = -10
 
-[node name="Scenario" type="Node2D" parent="."]
+[node name="Scenario" type="Node2D" parent="." unique_id=1970122834]
 
-[node name="CharacterManager" parent="." instance=ExtResource("10_s44a6")]
+[node name="CharacterManager" parent="." unique_id=454624965 instance=ExtResource("10_s44a6")]
 
-[node name="Hud" parent="." instance=ExtResource("8_u0rxu")]
+[node name="Hud" parent="." unique_id=322564473 instance=ExtResource("8_u0rxu")]
 
-[node name="ShortcutKeys" parent="." instance=ExtResource("13_rx2t0")]
+[node name="ShortcutKeys" parent="." unique_id=836282455 instance=ExtResource("13_rx2t0")]
 
-[node name="GameSpeedManager" parent="." instance=ExtResource("17_ivm8h")]
+[node name="GameSpeedManager" parent="." unique_id=2062744784 instance=ExtResource("17_ivm8h")]

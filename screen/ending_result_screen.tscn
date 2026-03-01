@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddsg81jfw7gew"]
+[gd_scene format=3 uid="uid://ddsg81jfw7gew"]
 
 [ext_resource type="PackedScene" uid="uid://dyg37pipmdu78" path="res://screen/result_screen.tscn" id="1_833lb"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="2_edv6i"]
@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="5_dpp0h"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/open_screen_command.tscn" id="5_mniuh"]
 
-[node name="ResultScreen" instance=ExtResource("1_833lb")]
+[node name="ResultScreen" unique_id=1748060014 instance=ExtResource("1_833lb")]
 
 [node name="Title" parent="." index="1"]
 text = "最終結果発表"
 
-[node name="StartEnding" type="Button" parent="Control" index="0"]
+[node name="StartEnding" type="Button" parent="Control" index="0" unique_id=417626723]
 light_mask = 2
 layout_mode = 0
 offset_left = 96.0
@@ -21,17 +21,17 @@ offset_bottom = 456.0
 size_flags_horizontal = 4
 text = "エンディングを見る"
 
-[node name="Exec" type="Node" parent="Control/StartEnding" index="0"]
+[node name="Exec" type="Node" parent="Control/StartEnding" index="0" unique_id=972179150]
 script = ExtResource("2_edv6i")
 
-[node name="PlaySeCommand" parent="Control/StartEnding/Exec" index="0" instance=ExtResource("4_ct5ou")]
+[node name="PlaySeCommand" parent="Control/StartEnding/Exec" index="0" unique_id=912066491 instance=ExtResource("4_ct5ou")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenScreenCommand" parent="Control/StartEnding/Exec" index="1" instance=ExtResource("5_mniuh")]
+[node name="OpenScreenCommand" parent="Control/StartEnding/Exec" index="1" unique_id=700879793 instance=ExtResource("5_mniuh")]
 Screen = "res://theater/story_ending_1.tscn"
 
-[node name="Focus" parent="Control/StartEnding" index="1" instance=ExtResource("5_dpp0h")]
+[node name="Focus" parent="Control/StartEnding" index="1" unique_id=181758906 instance=ExtResource("5_dpp0h")]
 
 [node name="EscapeKey" parent="." index="7"]
 ActionName = ""

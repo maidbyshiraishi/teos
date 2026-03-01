@@ -1,21 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cadwe7xmpwmnq"]
+[gd_scene format=3 uid="uid://cadwe7xmpwmnq"]
 
 [ext_resource type="Script" uid="uid://c8btv2jv05rm3" path="res://weapon/WeaponRoot.cs" id="1_0kc65"]
 
-[node name="WeaponRoot" type="Area2D"]
+[node name="WeaponRoot" type="Area2D" unique_id=1875391211]
 collision_layer = 65536
 collision_mask = 0
 script = ExtResource("1_0kc65")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=754525591]
 visible = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1289633695]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1363664342]
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1355508401]
 deterministic = false
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="Muzzle" type="Node2D" parent="."]
+[node name="Muzzle" type="Node2D" parent="." unique_id=1497377361]

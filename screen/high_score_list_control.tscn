@@ -1,34 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://dopc2wenxil8y"]
+[gd_scene format=3 uid="uid://dopc2wenxil8y"]
 
 [ext_resource type="Script" uid="uid://becgm1warkbap" path="res://screen/HighScoreListControl.cs" id="1_tm48w"]
 
-[node name="HighScoreListControl" type="Control"]
+[node name="HighScoreListControl" type="Control" unique_id=445976399]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 512.0
 offset_bottom = 320.0
 script = ExtResource("1_tm48w")
 
-[node name="Rank_1" type="Control" parent="."]
+[node name="Rank_1" type="Control" parent="." unique_id=574171459]
 anchors_preset = 0
 offset_right = 512.0
 offset_bottom = 32.0
 
-[node name="Rank" type="Label" parent="Rank_1"]
+[node name="Rank" type="Label" parent="Rank_1" unique_id=1042419983]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "1"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_1"]
+[node name="Score" type="Label" parent="Rank_1" unique_id=361654919]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_1"]
+[node name="Date" type="Label" parent="Rank_1" unique_id=1470020301]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -36,34 +36,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_1"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_1" unique_id=1759715967]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_2" type="Control" parent="."]
+[node name="Rank_2" type="Control" parent="." unique_id=1631395140]
 anchors_preset = 0
 offset_top = 32.0
 offset_right = 512.0
 offset_bottom = 64.0
 
-[node name="Rank" type="Label" parent="Rank_2"]
+[node name="Rank" type="Label" parent="Rank_2" unique_id=659040910]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "2"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_2"]
+[node name="Score" type="Label" parent="Rank_2" unique_id=1946481369]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_2"]
+[node name="Date" type="Label" parent="Rank_2" unique_id=1868953397]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -71,34 +71,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_2"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_2" unique_id=341593632]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_3" type="Control" parent="."]
+[node name="Rank_3" type="Control" parent="." unique_id=929453930]
 anchors_preset = 0
 offset_top = 64.0
 offset_right = 512.0
 offset_bottom = 96.0
 
-[node name="Rank" type="Label" parent="Rank_3"]
+[node name="Rank" type="Label" parent="Rank_3" unique_id=634595430]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "3"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_3"]
+[node name="Score" type="Label" parent="Rank_3" unique_id=499845965]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_3"]
+[node name="Date" type="Label" parent="Rank_3" unique_id=917587952]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -106,34 +106,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_3"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_3" unique_id=370863553]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_4" type="Control" parent="."]
+[node name="Rank_4" type="Control" parent="." unique_id=1219918277]
 anchors_preset = 0
 offset_top = 96.0
 offset_right = 512.0
 offset_bottom = 128.0
 
-[node name="Rank" type="Label" parent="Rank_4"]
+[node name="Rank" type="Label" parent="Rank_4" unique_id=1883101029]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "4"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_4"]
+[node name="Score" type="Label" parent="Rank_4" unique_id=380340679]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_4"]
+[node name="Date" type="Label" parent="Rank_4" unique_id=504789609]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -141,34 +141,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_4"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_4" unique_id=1319983063]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_5" type="Control" parent="."]
+[node name="Rank_5" type="Control" parent="." unique_id=1301366387]
 anchors_preset = 0
 offset_top = 128.0
 offset_right = 512.0
 offset_bottom = 160.0
 
-[node name="Rank" type="Label" parent="Rank_5"]
+[node name="Rank" type="Label" parent="Rank_5" unique_id=1879950233]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "5"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_5"]
+[node name="Score" type="Label" parent="Rank_5" unique_id=682676437]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_5"]
+[node name="Date" type="Label" parent="Rank_5" unique_id=1442983639]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -176,34 +176,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_5"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_5" unique_id=717113182]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_6" type="Control" parent="."]
+[node name="Rank_6" type="Control" parent="." unique_id=1645225058]
 anchors_preset = 0
 offset_top = 160.0
 offset_right = 512.0
 offset_bottom = 192.0
 
-[node name="Rank" type="Label" parent="Rank_6"]
+[node name="Rank" type="Label" parent="Rank_6" unique_id=422023863]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "6"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_6"]
+[node name="Score" type="Label" parent="Rank_6" unique_id=1196081746]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_6"]
+[node name="Date" type="Label" parent="Rank_6" unique_id=1406366788]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -211,34 +211,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_6"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_6" unique_id=1223883872]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_7" type="Control" parent="."]
+[node name="Rank_7" type="Control" parent="." unique_id=588270819]
 anchors_preset = 0
 offset_top = 192.0
 offset_right = 512.0
 offset_bottom = 224.0
 
-[node name="Rank" type="Label" parent="Rank_7"]
+[node name="Rank" type="Label" parent="Rank_7" unique_id=1372702163]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "7"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_7"]
+[node name="Score" type="Label" parent="Rank_7" unique_id=461098033]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_7"]
+[node name="Date" type="Label" parent="Rank_7" unique_id=903213069]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -246,34 +246,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_7"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_7" unique_id=1203541316]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_8" type="Control" parent="."]
+[node name="Rank_8" type="Control" parent="." unique_id=848952841]
 anchors_preset = 0
 offset_top = 224.0
 offset_right = 512.0
 offset_bottom = 256.0
 
-[node name="Rank" type="Label" parent="Rank_8"]
+[node name="Rank" type="Label" parent="Rank_8" unique_id=1946311760]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "8"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_8"]
+[node name="Score" type="Label" parent="Rank_8" unique_id=602235028]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_8"]
+[node name="Date" type="Label" parent="Rank_8" unique_id=2111113493]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -281,34 +281,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_8"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_8" unique_id=2109924]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_9" type="Control" parent="."]
+[node name="Rank_9" type="Control" parent="." unique_id=1351003512]
 anchors_preset = 0
 offset_top = 256.0
 offset_right = 512.0
 offset_bottom = 288.0
 
-[node name="Rank" type="Label" parent="Rank_9"]
+[node name="Rank" type="Label" parent="Rank_9" unique_id=1934318768]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "9"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_9"]
+[node name="Score" type="Label" parent="Rank_9" unique_id=220552827]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_9"]
+[node name="Date" type="Label" parent="Rank_9" unique_id=989173292]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -316,34 +316,34 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_9"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_9" unique_id=1923726764]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 bbcode_enabled = true
 
-[node name="Rank_10" type="Control" parent="."]
+[node name="Rank_10" type="Control" parent="." unique_id=1739364504]
 anchors_preset = 0
 offset_top = 288.0
 offset_right = 512.0
 offset_bottom = 320.0
 
-[node name="Rank" type="Label" parent="Rank_10"]
+[node name="Rank" type="Label" parent="Rank_10" unique_id=1604059197]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 22.0
 text = "10"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Rank_10"]
+[node name="Score" type="Label" parent="Rank_10" unique_id=761938316]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0
 offset_bottom = 22.0
 text = "記録なし"
 
-[node name="Date" type="Label" parent="Rank_10"]
+[node name="Date" type="Label" parent="Rank_10" unique_id=771830281]
 layout_mode = 0
 offset_left = 320.0
 offset_right = 520.0
@@ -351,7 +351,7 @@ offset_bottom = 22.0
 text = "-"
 horizontal_alignment = 1
 
-[node name="RichScore" type="RichTextLabel" parent="Rank_10"]
+[node name="RichScore" type="RichTextLabel" parent="Rank_10" unique_id=41854013]
 layout_mode = 0
 offset_left = 40.0
 offset_right = 320.0

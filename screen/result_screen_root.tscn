@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bcop8mm2o6pye"]
+[gd_scene format=3 uid="uid://bcop8mm2o6pye"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_hlehd"]
 [ext_resource type="Script" uid="uid://5if7njfe3jq7" path="res://screen/ResultScreen.cs" id="2_r0ebf"]
@@ -14,21 +14,21 @@
 [ext_resource type="PackedScene" uid="uid://dopc2wenxil8y" path="res://screen/high_score_list_control.tscn" id="17_fyyvg"]
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="18_lyrif"]
 
-[node name="ResultScreen" type="Control"]
+[node name="ResultScreen" type="Control" unique_id=67717000]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_hlehd")
 script = ExtResource("2_r0ebf")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1594478351]
 light_mask = 2
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0, 0, 0, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=600186711]
 layout_mode = 0
 offset_left = 256.0
 offset_top = 16.0
@@ -36,18 +36,18 @@ offset_right = 384.0
 offset_bottom = 40.0
 horizontal_alignment = 1
 
-[node name="HighScoreListControl" parent="." instance=ExtResource("17_fyyvg")]
+[node name="HighScoreListControl" parent="." unique_id=1346615657 instance=ExtResource("17_fyyvg")]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 96.0
 offset_right = 576.0
 offset_bottom = 416.0
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=869863187]
 light_mask = 2
 anchors_preset = 0
 
-[node name="Back" type="Button" parent="Control"]
+[node name="Back" type="Button" parent="Control" unique_id=1083110746]
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0
@@ -57,32 +57,32 @@ offset_bottom = 456.0
 size_flags_horizontal = 4
 text = "タイトルに戻る"
 
-[node name="Exec" type="Node" parent="Control/Back"]
+[node name="Exec" type="Node" parent="Control/Back" unique_id=1276385260]
 script = ExtResource("4_cbytk")
 
-[node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("11_y4nud")]
+[node name="ReferenceCommandContainer" parent="Control/Back/Exec" unique_id=1655599064 node_paths=PackedStringArray("Target") instance=ExtResource("11_y4nud")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("5_y4nud")]
+[node name="Focus" parent="Control/Back" unique_id=717163019 instance=ExtResource("5_y4nud")]
 
-[node name="Focus" parent="." instance=ExtResource("12_qj8vk")]
+[node name="Focus" parent="." unique_id=777277669 instance=ExtResource("12_qj8vk")]
 position = Vector2(10, 10)
 
-[node name="ChangeBgmCommand" parent="Focus" instance=ExtResource("14_i8o1y")]
+[node name="ChangeBgmCommand" parent="Focus" unique_id=1239968880 instance=ExtResource("14_i8o1y")]
 Command = 1
 Stream = ExtResource("11_ldigc")
 
-[node name="EscapeKey" parent="." instance=ExtResource("18_lyrif")]
+[node name="EscapeKey" parent="." unique_id=1801624357 instance=ExtResource("18_lyrif")]
 ActionName = "escape"
 
-[node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("11_y4nud")]
+[node name="ReferenceCommandContainer" parent="EscapeKey" unique_id=1856645743 node_paths=PackedStringArray("Target") instance=ExtResource("11_y4nud")]
 Target = NodePath("../../Close")
 
-[node name="Close" parent="." instance=ExtResource("7_8faqi")]
+[node name="Close" parent="." unique_id=1853113597 instance=ExtResource("7_8faqi")]
 
-[node name="PlaySeCommand" parent="Close" instance=ExtResource("8_s1m5c")]
+[node name="PlaySeCommand" parent="Close" unique_id=1439576446 instance=ExtResource("8_s1m5c")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenScreenCommand" parent="Close" instance=ExtResource("11_x64qr")]
+[node name="OpenScreenCommand" parent="Close" unique_id=649694303 instance=ExtResource("11_x64qr")]
 Screen = "res://screen/title_screen.tscn"

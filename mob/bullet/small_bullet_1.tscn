@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdou8vt06ok1y"]
+[gd_scene format=3 uid="uid://cdou8vt06ok1y"]
 
 [ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/bullet/bullet_root.tscn" id="1_v3mag"]
 [ext_resource type="Texture2D" uid="uid://cfi0uvw4d3c1g" path="res://contents/image/weapon/small_bullet.png" id="2_g6y36"]
@@ -28,18 +28,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ymqj"]
 size = Vector2(20, 8)
 
-[node name="SmallBullet" instance=ExtResource("1_v3mag")]
+[node name="SmallBullet" unique_id=1353086569 instance=ExtResource("1_v3mag")]
 InitialMaxSpeed = 400.0
 
-[node name="OnScreen" parent="." index="0"]
+[node name="OnScreen" parent="." index="0" unique_id=118332893]
 position = Vector2(0, -5.96046e-08)
 scale = Vector2(1, 0.3)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1010215161]
 sprite_frames = SubResource("SpriteFrames_8v4pi")
 autoplay = "default"
 frame_progress = 0.0722323
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=442985595]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_5ymqj")

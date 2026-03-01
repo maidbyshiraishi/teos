@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbaooyekcn8y1"]
+[gd_scene format=3 uid="uid://cbaooyekcn8y1"]
 
 [ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://item/item_root.tscn" id="1_v12jw"]
 [ext_resource type="Texture2D" uid="uid://blm1rrj0omf8w" path="res://contents/image/item/life1.png" id="2_wf70k"]
@@ -22,7 +22,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_v12jw"]
 radius = 66.6667
 
-[node name="ItemLife3" instance=ExtResource("1_v12jw")]
+[node name="ItemLife3" unique_id=213979347 instance=ExtResource("1_v12jw")]
 scale = Vector2(1.2, 1.2)
 
 [node name="AnimatedSprite2D" parent="." index="2"]
@@ -32,7 +32,7 @@ autoplay = "default"
 [node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
 shape = SubResource("CircleShape2D_v12jw")
 
-[node name="AddLifeCommand" parent="." index="5" instance=ExtResource("3_iet8d")]
+[node name="AddLifeCommand" parent="." index="5" unique_id=1246499928 instance=ExtResource("3_iet8d")]
 Value = 3
 
 [node name="PlaySeCommand" parent="." index="6"]

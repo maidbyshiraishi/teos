@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://3r16tce2nd2t"]
+[gd_scene format=3 uid="uid://3r16tce2nd2t"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_dgins"]
 [ext_resource type="Texture2D" uid="uid://si3xgb2yh3n2" path="res://contents/screen/key_option_dialog/swap.png" id="2_1qi7l"]
@@ -48,14 +48,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="KeyOptionDialog" type="Control"]
+[node name="KeyOptionDialog" type="Control" unique_id=2004983147]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_dgins")
 script = ExtResource("2_jahy0")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=880399942]
 light_mask = 2
 layout_mode = 0
 offset_left = 16.0
@@ -64,7 +64,7 @@ offset_right = 624.0
 offset_bottom = 416.0
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Border" type="ReferenceRect" parent="."]
+[node name="Border" type="ReferenceRect" parent="." unique_id=1319986948]
 light_mask = 2
 layout_mode = 0
 offset_left = 16.0
@@ -75,7 +75,7 @@ border_color = Color(0.933333, 0.933333, 0.933333, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1361808824]
 light_mask = 2
 layout_mode = 0
 offset_left = 224.0
@@ -86,7 +86,7 @@ text = "操作設定"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GamePad" type="Label" parent="."]
+[node name="GamePad" type="Label" parent="." unique_id=1242254507]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 96.0
@@ -95,7 +95,7 @@ offset_bottom = 118.0
 text = "ゲームパッド設定"
 horizontal_alignment = 1
 
-[node name="Sensitivity" type="Label" parent="."]
+[node name="Sensitivity" type="Label" parent="." unique_id=643179850]
 layout_mode = 0
 offset_left = 328.0
 offset_top = 96.0
@@ -104,7 +104,7 @@ offset_bottom = 118.0
 text = "ターゲット移動速度"
 horizontal_alignment = 1
 
-[node name="TargetSensitivity" type="Label" parent="."]
+[node name="TargetSensitivity" type="Label" parent="." unique_id=511252551]
 layout_mode = 0
 offset_left = 288.0
 offset_top = 136.0
@@ -113,7 +113,7 @@ offset_bottom = 158.0
 text = "スティック"
 horizontal_alignment = 2
 
-[node name="MouseSensitivity" type="Label" parent="."]
+[node name="MouseSensitivity" type="Label" parent="." unique_id=1500325365]
 layout_mode = 0
 offset_left = 288.0
 offset_top = 168.0
@@ -122,7 +122,7 @@ offset_bottom = 190.0
 text = "マウス"
 horizontal_alignment = 2
 
-[node name="PlayerMove" type="Label" parent="."]
+[node name="PlayerMove" type="Label" parent="." unique_id=1077533222]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 240.0
@@ -131,7 +131,7 @@ offset_bottom = 264.0
 text = "主人公移動"
 horizontal_alignment = 1
 
-[node name="TargetMove" type="Label" parent="."]
+[node name="TargetMove" type="Label" parent="." unique_id=1422397854]
 layout_mode = 0
 offset_left = 176.0
 offset_top = 240.0
@@ -140,7 +140,7 @@ offset_bottom = 262.0
 text = "ターゲット移動"
 horizontal_alignment = 1
 
-[node name="PlayerMoveStick" type="Label" parent="."]
+[node name="PlayerMoveStick" type="Label" parent="." unique_id=2128138054]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 208.0
@@ -149,7 +149,7 @@ offset_bottom = 230.0
 text = "左スティック"
 horizontal_alignment = 1
 
-[node name="TargetMoveStick" type="Label" parent="."]
+[node name="TargetMoveStick" type="Label" parent="." unique_id=1588656648]
 layout_mode = 0
 offset_left = 168.0
 offset_top = 208.0
@@ -158,23 +158,23 @@ offset_bottom = 230.0
 text = "右スティック"
 horizontal_alignment = 1
 
-[node name="Swap2" type="Sprite2D" parent="."]
+[node name="Swap2" type="Sprite2D" parent="." unique_id=1997215958]
 position = Vector2(176, 192)
 scale = Vector2(1.65323, 1)
 texture = ExtResource("2_1qi7l")
 
-[node name="TargetMarker" type="Node2D" parent="." node_paths=PackedStringArray("BorderRect")]
+[node name="TargetMarker" type="Node2D" parent="." unique_id=1128023367 node_paths=PackedStringArray("BorderRect")]
 position = Vector2(320, 192)
 script = ExtResource("17_slu4a")
 BorderRect = NodePath("../PlayerBorderRect")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TargetMarker"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TargetMarker" unique_id=2023690661]
 z_index = 20
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_xu33j")
 autoplay = "default"
 
-[node name="PlayerBorderRect" type="ReferenceRect" parent="."]
+[node name="PlayerBorderRect" type="ReferenceRect" parent="." unique_id=1820260768]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -191,13 +191,13 @@ grow_horizontal = 2
 grow_vertical = 2
 editor_only = false
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=194516961]
 light_mask = 2
 anchors_preset = 0
 offset_top = -37.0
 offset_bottom = -37.0
 
-[node name="SwapStick" type="Button" parent="Control"]
+[node name="SwapStick" type="Button" parent="Control" unique_id=256177678]
 light_mask = 2
 layout_mode = 0
 offset_left = 96.0
@@ -206,16 +206,16 @@ offset_right = 256.0
 offset_bottom = 205.0
 text = "設定入れ替え"
 
-[node name="Exec" type="Node" parent="Control/SwapStick"]
+[node name="Exec" type="Node" parent="Control/SwapStick" unique_id=1659962824]
 script = ExtResource("4_ffloj")
 
-[node name="PlaySeCommand" parent="Control/SwapStick/Exec" instance=ExtResource("4_h8vmb")]
+[node name="PlaySeCommand" parent="Control/SwapStick/Exec" unique_id=1003052213 instance=ExtResource("4_h8vmb")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="Focus" parent="Control/SwapStick" instance=ExtResource("6_ffloj")]
+[node name="Focus" parent="Control/SwapStick" unique_id=1710986783 instance=ExtResource("6_ffloj")]
 
-[node name="TargetSensitivity" type="HSlider" parent="Control"]
+[node name="TargetSensitivity" type="HSlider" parent="Control" unique_id=1018202078]
 light_mask = 2
 layout_mode = 0
 offset_left = 408.0
@@ -227,9 +227,9 @@ max_value = 3.0
 step = 0.1
 value = 1.0
 
-[node name="Focus" parent="Control/TargetSensitivity" instance=ExtResource("6_ffloj")]
+[node name="Focus" parent="Control/TargetSensitivity" unique_id=172619243 instance=ExtResource("6_ffloj")]
 
-[node name="MouseSensitivity" type="HSlider" parent="Control"]
+[node name="MouseSensitivity" type="HSlider" parent="Control" unique_id=135411925]
 light_mask = 2
 layout_mode = 0
 offset_left = 408.0
@@ -241,9 +241,9 @@ max_value = 3.0
 step = 0.1
 value = 1.0
 
-[node name="Focus" parent="Control/MouseSensitivity" instance=ExtResource("6_ffloj")]
+[node name="Focus" parent="Control/MouseSensitivity" unique_id=407788962 instance=ExtResource("6_ffloj")]
 
-[node name="Back" type="Button" parent="Control"]
+[node name="Back" type="Button" parent="Control" unique_id=110330120]
 light_mask = 2
 layout_mode = 0
 offset_left = 48.0
@@ -252,15 +252,15 @@ offset_right = 304.0
 offset_bottom = 373.0
 text = "保存して戻る"
 
-[node name="Exec" type="Node" parent="Control/Back"]
+[node name="Exec" type="Node" parent="Control/Back" unique_id=89135115]
 script = ExtResource("4_ffloj")
 
-[node name="ReferenceCommandContainer" parent="Control/Back/Exec" node_paths=PackedStringArray("Target") instance=ExtResource("16_slu4a")]
+[node name="ReferenceCommandContainer" parent="Control/Back/Exec" unique_id=1019212994 node_paths=PackedStringArray("Target") instance=ExtResource("16_slu4a")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/Back" instance=ExtResource("6_ffloj")]
+[node name="Focus" parent="Control/Back" unique_id=1882425004 instance=ExtResource("6_ffloj")]
 
-[node name="ResetSensitivity" type="Button" parent="Control"]
+[node name="ResetSensitivity" type="Button" parent="Control" unique_id=1465739181]
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0
@@ -270,16 +270,16 @@ offset_bottom = 269.0
 theme = ExtResource("11_eljme")
 text = "ターゲット移動速度のみリセット"
 
-[node name="Exec" type="Node" parent="Control/ResetSensitivity"]
+[node name="Exec" type="Node" parent="Control/ResetSensitivity" unique_id=1463818083]
 script = ExtResource("4_ffloj")
 
-[node name="PlaySeCommand" parent="Control/ResetSensitivity/Exec" instance=ExtResource("4_h8vmb")]
+[node name="PlaySeCommand" parent="Control/ResetSensitivity/Exec" unique_id=1807452023 instance=ExtResource("4_h8vmb")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="Focus" parent="Control/ResetSensitivity" instance=ExtResource("6_ffloj")]
+[node name="Focus" parent="Control/ResetSensitivity" unique_id=1302326550 instance=ExtResource("6_ffloj")]
 
-[node name="Undo" type="Button" parent="Control"]
+[node name="Undo" type="Button" parent="Control" unique_id=594932880]
 light_mask = 2
 layout_mode = 0
 offset_left = 48.0
@@ -288,20 +288,20 @@ offset_right = 304.0
 offset_bottom = 421.0
 text = "前回保存した値にリセット"
 
-[node name="Exec" type="Node" parent="Control/Undo"]
+[node name="Exec" type="Node" parent="Control/Undo" unique_id=1781484528]
 script = ExtResource("4_ffloj")
 
-[node name="PlaySeCommand" parent="Control/Undo/Exec" instance=ExtResource("4_h8vmb")]
+[node name="PlaySeCommand" parent="Control/Undo/Exec" unique_id=165854835 instance=ExtResource("4_h8vmb")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="LoadKeyOptionsCommand" parent="Control/Undo/Exec" instance=ExtResource("2_b7ksl")]
+[node name="LoadKeyOptionsCommand" parent="Control/Undo/Exec" unique_id=20381564 instance=ExtResource("2_b7ksl")]
 
-[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" instance=ExtResource("2_q4wlk")]
+[node name="UpdateDialogScreenCommand" parent="Control/Undo/Exec" unique_id=421047288 instance=ExtResource("2_q4wlk")]
 
-[node name="Focus" parent="Control/Undo" instance=ExtResource("6_ffloj")]
+[node name="Focus" parent="Control/Undo" unique_id=932754148 instance=ExtResource("6_ffloj")]
 
-[node name="Reset" type="Button" parent="Control"]
+[node name="Reset" type="Button" parent="Control" unique_id=1656528260]
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0
@@ -310,20 +310,20 @@ offset_right = 592.0
 offset_bottom = 421.0
 text = "ゲームの初期値にリセット"
 
-[node name="Exec" type="Node" parent="Control/Reset"]
+[node name="Exec" type="Node" parent="Control/Reset" unique_id=2094870818]
 script = ExtResource("4_ffloj")
 
-[node name="PlaySeCommand" parent="Control/Reset/Exec" instance=ExtResource("4_h8vmb")]
+[node name="PlaySeCommand" parent="Control/Reset/Exec" unique_id=1806950458 instance=ExtResource("4_h8vmb")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="ResetDefaultKeyOptionsCommand" parent="Control/Reset/Exec" instance=ExtResource("5_dog2l")]
+[node name="ResetDefaultKeyOptionsCommand" parent="Control/Reset/Exec" unique_id=919923302 instance=ExtResource("5_dog2l")]
 
-[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" instance=ExtResource("2_q4wlk")]
+[node name="UpdateDialogScreenCommand" parent="Control/Reset/Exec" unique_id=1265218322 instance=ExtResource("2_q4wlk")]
 
-[node name="Focus" parent="Control/Reset" instance=ExtResource("6_ffloj")]
+[node name="Focus" parent="Control/Reset" unique_id=1439572464 instance=ExtResource("6_ffloj")]
 
-[node name="OpenFileManager" type="Button" parent="Control"]
+[node name="OpenFileManager" type="Button" parent="Control" unique_id=1340735180]
 light_mask = 2
 layout_mode = 0
 offset_left = 336.0
@@ -332,35 +332,35 @@ offset_right = 592.0
 offset_bottom = 373.0
 text = "データフォルダを開く"
 
-[node name="Exec" type="Node" parent="Control/OpenFileManager"]
+[node name="Exec" type="Node" parent="Control/OpenFileManager" unique_id=1461578698]
 script = ExtResource("4_ffloj")
 
-[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("4_h8vmb")]
+[node name="PlaySeCommand" parent="Control/OpenFileManager/Exec" unique_id=591319628 instance=ExtResource("4_h8vmb")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" instance=ExtResource("14_2nrta")]
+[node name="OpenFileManagerCommand" parent="Control/OpenFileManager/Exec" unique_id=1664376054 instance=ExtResource("14_2nrta")]
 
-[node name="Focus" parent="Control/OpenFileManager" instance=ExtResource("6_ffloj")]
+[node name="Focus" parent="Control/OpenFileManager" unique_id=477714967 instance=ExtResource("6_ffloj")]
 
-[node name="EscapeKey" parent="." instance=ExtResource("15_ucmy4")]
+[node name="EscapeKey" parent="." unique_id=1876841626 instance=ExtResource("15_ucmy4")]
 ActionName = "escape"
 
-[node name="ReferenceCommandContainer" parent="EscapeKey" node_paths=PackedStringArray("Target") instance=ExtResource("16_slu4a")]
+[node name="ReferenceCommandContainer" parent="EscapeKey" unique_id=1154072046 node_paths=PackedStringArray("Target") instance=ExtResource("16_slu4a")]
 Target = NodePath("../../Close")
 
-[node name="OptionKey" parent="." instance=ExtResource("15_ucmy4")]
+[node name="OptionKey" parent="." unique_id=612239330 instance=ExtResource("15_ucmy4")]
 ActionName = "option"
 
-[node name="ReferenceCommandContainer" parent="OptionKey" node_paths=PackedStringArray("Target") instance=ExtResource("16_slu4a")]
+[node name="ReferenceCommandContainer" parent="OptionKey" unique_id=760000583 node_paths=PackedStringArray("Target") instance=ExtResource("16_slu4a")]
 Target = NodePath("../../Close")
 
-[node name="Close" parent="." instance=ExtResource("5_kjl5n")]
+[node name="Close" parent="." unique_id=544427185 instance=ExtResource("5_kjl5n")]
 
-[node name="PlaySeCommand" parent="Close" instance=ExtResource("4_h8vmb")]
+[node name="PlaySeCommand" parent="Close" unique_id=1006486346 instance=ExtResource("4_h8vmb")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="SaveKeyOptionsCommand" parent="Close" instance=ExtResource("2_o5guw")]
+[node name="SaveKeyOptionsCommand" parent="Close" unique_id=1693641167 instance=ExtResource("2_o5guw")]
 
-[node name="CloseDialogCommand" parent="Close" instance=ExtResource("5_wq4oo")]
+[node name="CloseDialogCommand" parent="Close" unique_id=662674191 instance=ExtResource("5_wq4oo")]

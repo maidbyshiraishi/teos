@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bn1mdfrdailj6"]
+[gd_scene format=3 uid="uid://bn1mdfrdailj6"]
 
 [ext_resource type="Script" uid="uid://b47xonbt2i8nk" path="res://system/game_button_controller/GameButtonStateMachine.cs" id="1_rgw3d"]
 
@@ -141,16 +141,14 @@ states/repeat/position = Vector2(150, 383)
 transitions = ["long_press", "release", SubResource("AnimationNodeStateMachineTransition_cl3yx"), "repeat", "release", SubResource("AnimationNodeStateMachineTransition_271ry"), "repeat", "long_press", SubResource("AnimationNodeStateMachineTransition_7fveq"), "release", "press", SubResource("AnimationNodeStateMachineTransition_d18y3"), "press", "long_press", SubResource("AnimationNodeStateMachineTransition_huokc"), "press", "press_release", SubResource("AnimationNodeStateMachineTransition_guo4p"), "press_release", "release", SubResource("AnimationNodeStateMachineTransition_0gm0l"), "press_release", "repeat", SubResource("AnimationNodeStateMachineTransition_hck4q"), "Start", "release", SubResource("AnimationNodeStateMachineTransition_t6qrh")]
 graph_offset = Vector2(-6, -91)
 
-[node name="GameButtonStateMachine" type="Node"]
+[node name="GameButtonStateMachine" type="Node" unique_id=177357553]
 script = ExtResource("1_rgw3d")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=110602550]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_wl4re")
-}
+libraries/ = SubResource("AnimationLibrary_wl4re")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1309659941]
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeStateMachine_a2pgc")
 anim_player = NodePath("../AnimationPlayer")

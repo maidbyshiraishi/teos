@@ -1,26 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce8up4votf0wb"]
+[gd_scene format=3 uid="uid://ce8up4votf0wb"]
 
 [ext_resource type="PackedScene" uid="uid://c87dtcgrwdrpw" path="res://item/item_pack_root.tscn" id="1_6nup4"]
 [ext_resource type="PackedScene" uid="uid://djwsrswe5c1vx" path="res://item/item_score_1000.tscn" id="2_5l5n2"]
 
-[node name="PackScore10000" instance=ExtResource("1_6nup4")]
+[node name="PackScore10000" unique_id=340972596 instance=ExtResource("1_6nup4")]
 
-[node name="ItemScore1000_1" parent="." index="0" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_1" parent="." index="0" unique_id=1800509820 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_2" parent="." index="1" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_2" parent="." index="1" unique_id=1678953796 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_3" parent="." index="2" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_3" parent="." index="2" unique_id=191420269 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_4" parent="." index="3" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_4" parent="." index="3" unique_id=20686954 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_5" parent="." index="4" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_5" parent="." index="4" unique_id=267578030 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_6" parent="." index="5" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_6" parent="." index="5" unique_id=156330645 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_7" parent="." index="6" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_7" parent="." index="6" unique_id=2140160656 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_8" parent="." index="7" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_8" parent="." index="7" unique_id=999192270 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_9" parent="." index="8" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_9" parent="." index="8" unique_id=1184501648 instance=ExtResource("2_5l5n2")]
 
-[node name="ItemScore1000_10" parent="." index="9" instance=ExtResource("2_5l5n2")]
+[node name="ItemScore1000_10" parent="." index="9" unique_id=1890921658 instance=ExtResource("2_5l5n2")]

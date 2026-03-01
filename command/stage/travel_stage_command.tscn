@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://colbvavuo7wh"]
+[gd_scene format=3 uid="uid://colbvavuo7wh"]
 
 [ext_resource type="Script" uid="uid://bgi6xwd4jn3ju" path="res://command/stage/TravelStageCommand.cs" id="1_uqrnv"]
 
-[node name="TravelStageCommand" type="Node"]
+[node name="TravelStageCommand" type="Node" unique_id=1389473840]
 script = ExtResource("1_uqrnv")

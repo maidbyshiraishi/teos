@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://3li5o20ncuud"]
+[gd_scene format=3 uid="uid://3li5o20ncuud"]
 
 [ext_resource type="Script" uid="uid://b3enqjgwsjt0b" path="res://path/Path.cs" id="1_2phry"]
 [ext_resource type="Script" uid="uid://etipmx6dpuow" path="res://path/PathFollow.cs" id="2_e27qi"]
@@ -9,12 +9,12 @@ _data = {
 }
 point_count = 2
 
-[node name="Path2D" type="Path2D"]
+[node name="Path2D" type="Path2D" unique_id=1248319667]
 curve = SubResource("Curve2D_08nms")
 script = ExtResource("1_2phry")
 metadata/_edit_vertical_guides_ = [-640.0]
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=624304682]
 rotates = false
 cubic_interp = false
 script = ExtResource("2_e27qi")

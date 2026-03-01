@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://brd5hy1fa8yl5"]
+[gd_scene format=3 uid="uid://brd5hy1fa8yl5"]
 
 [ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://item/item_root.tscn" id="1_500i2"]
 [ext_resource type="Texture2D" uid="uid://dh3xhd41sovph" path="res://contents/image/item/score10000.png" id="2_pmqwh"]
@@ -29,22 +29,22 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_00ydq"]
 radius = 32.0
 
-[node name="ItemScore10000" instance=ExtResource("1_500i2")]
+[node name="ItemScore10000" unique_id=1442244634 instance=ExtResource("1_500i2")]
 scale = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=213184391]
 sprite_frames = SubResource("SpriteFrames_7k4eg")
 autoplay = "default"
 frame_progress = 0.611599
 
-[node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
+[node name="CollisionShape2D" parent="ApproachPlayer" parent_id_path=PackedInt32Array(1356587759) index="0" unique_id=373565522]
 shape = SubResource("CircleShape2D_00ydq")
 
-[node name="AddScoreCommand" parent="." index="5" instance=ExtResource("3_ywv6i")]
+[node name="AddScoreCommand" parent="." index="5" unique_id=1672814270 instance=ExtResource("3_ywv6i")]
 Score = 10000
 
-[node name="PlaySeCommand" parent="." index="6"]
+[node name="PlaySeCommand" parent="." index="6" unique_id=1531061922]
 SeName = "item_score"
 
-[node name="ShowFloatingMessageCommand" parent="." index="7"]
+[node name="ShowFloatingMessageCommand" parent="." index="7" unique_id=1333560571]
 Message = "+10000"

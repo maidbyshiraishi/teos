@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cex2tqli4fmgg"]
+[gd_scene format=3 uid="uid://cex2tqli4fmgg"]
 
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_cy00v"]
 [ext_resource type="Script" uid="uid://ccueitrspq0fx" path="res://screen/DialogRoot.cs" id="2_247ql"]
@@ -19,36 +19,36 @@
 [ext_resource type="PackedScene" uid="uid://r4oifw5npwps" path="res://trigger/key_releaseed_trigger.tscn" id="17_uhsa7"]
 [ext_resource type="PackedScene" uid="uid://ye80q7cyvfw8" path="res://command/dialog/quit_game_command.tscn" id="18_85irx"]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" unique_id=427307109]
 light_mask = 2
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_cy00v")
 script = ExtResource("2_247ql")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=861188849]
 light_mask = 2
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0.133333, 0.12549, 0.203922, 1)
 
-[node name="Title" type="AnimatedSprite2D" parent="."]
+[node name="Title" type="AnimatedSprite2D" parent="." unique_id=1442277860]
 light_mask = 2
 position = Vector2(320, 160)
 scale = Vector2(2.25, 2.25)
 sprite_frames = ExtResource("3_7xxci")
 autoplay = "default"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1391943156]
 wait_time = 8.0
 
-[node name="TimerTrigger" parent="Timer" instance=ExtResource("4_dhnnd")]
+[node name="TimerTrigger" parent="Timer" unique_id=144338828 instance=ExtResource("4_dhnnd")]
 
-[node name="OpenDialogCommand_1" parent="Timer/TimerTrigger" instance=ExtResource("7_0002q")]
+[node name="OpenDialogCommand_1" parent="Timer/TimerTrigger" unique_id=952396628 instance=ExtResource("7_0002q")]
 DialogPath = "res://theater/story_opening.tscn"
 
-[node name="LabelVersion" type="Label" parent="."]
+[node name="LabelVersion" type="Label" parent="." unique_id=1761747904]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 440.0
@@ -57,7 +57,7 @@ offset_bottom = 464.0
 text = "Version"
 vertical_alignment = 2
 
-[node name="LabelVersionNo" type="Label" parent="."]
+[node name="LabelVersionNo" type="Label" parent="." unique_id=1610167513]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 440.0
@@ -65,11 +65,11 @@ offset_right = 208.0
 offset_bottom = 464.0
 vertical_alignment = 2
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1494458470]
 light_mask = 2
 anchors_preset = 0
 
-[node name="Start" type="Button" parent="Control"]
+[node name="Start" type="Button" parent="Control" unique_id=1502069983]
 light_mask = 2
 layout_mode = 0
 offset_left = 128.0
@@ -81,18 +81,18 @@ focus_neighbor_right = NodePath("../Story")
 focus_neighbor_bottom = NodePath("../OptionList")
 text = "最初から"
 
-[node name="Exec" type="Node" parent="Control/Start"]
+[node name="Exec" type="Node" parent="Control/Start" unique_id=1610036820]
 script = ExtResource("11_j6aw5")
 
-[node name="PlaySeCommand" parent="Control/Start/Exec" instance=ExtResource("9_bvcnx")]
+[node name="PlaySeCommand" parent="Control/Start/Exec" unique_id=255800466 instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenGameCommand" parent="Control/Start/Exec" instance=ExtResource("9_lh4gl")]
+[node name="OpenGameCommand" parent="Control/Start/Exec" unique_id=1977181552 instance=ExtResource("9_lh4gl")]
 
-[node name="Focus" parent="Control/Start" instance=ExtResource("9_7ac0i")]
+[node name="Focus" parent="Control/Start" unique_id=1538707827 instance=ExtResource("9_7ac0i")]
 
-[node name="OptionList" type="Button" parent="Control"]
+[node name="OptionList" type="Button" parent="Control" unique_id=1342347299]
 light_mask = 2
 layout_mode = 0
 offset_left = 152.0
@@ -105,19 +105,19 @@ focus_neighbor_right = NodePath("../HighScore")
 focus_neighbor_bottom = NodePath("../Quit")
 text = "設定一覧"
 
-[node name="Exec" type="Node" parent="Control/OptionList"]
+[node name="Exec" type="Node" parent="Control/OptionList" unique_id=1092991207]
 script = ExtResource("11_j6aw5")
 
-[node name="PlaySeCommand" parent="Control/OptionList/Exec" instance=ExtResource("9_bvcnx")]
+[node name="PlaySeCommand" parent="Control/OptionList/Exec" unique_id=1996600534 instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenDialogCommand" parent="Control/OptionList/Exec" instance=ExtResource("7_0002q")]
+[node name="OpenDialogCommand" parent="Control/OptionList/Exec" unique_id=1203321819 instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/option_list_dialog.tscn"
 
-[node name="Focus" parent="Control/OptionList" instance=ExtResource("9_7ac0i")]
+[node name="Focus" parent="Control/OptionList" unique_id=989668560 instance=ExtResource("9_7ac0i")]
 
-[node name="Quit" type="Button" parent="Control"]
+[node name="Quit" type="Button" parent="Control" unique_id=518852314]
 light_mask = 2
 layout_mode = 0
 offset_left = 176.0
@@ -128,19 +128,19 @@ size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../OptionList")
 text = "終了"
 
-[node name="Exec" type="Node" parent="Control/Quit"]
+[node name="Exec" type="Node" parent="Control/Quit" unique_id=58026352]
 script = ExtResource("11_j6aw5")
 
-[node name="PlaySeCommand" parent="Control/Quit/Exec" instance=ExtResource("9_bvcnx")]
+[node name="PlaySeCommand" parent="Control/Quit/Exec" unique_id=1658740144 instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenDialogCommand" parent="Control/Quit/Exec" instance=ExtResource("7_0002q")]
+[node name="OpenDialogCommand" parent="Control/Quit/Exec" unique_id=1315882790 instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/quit_dialog.tscn"
 
-[node name="Focus" parent="Control/Quit" instance=ExtResource("9_7ac0i")]
+[node name="Focus" parent="Control/Quit" unique_id=1703508186 instance=ExtResource("9_7ac0i")]
 
-[node name="Story" type="Button" parent="Control"]
+[node name="Story" type="Button" parent="Control" unique_id=1509964926]
 light_mask = 2
 layout_mode = 0
 offset_left = 304.0
@@ -152,19 +152,19 @@ focus_neighbor_left = NodePath("../Start")
 focus_neighbor_bottom = NodePath("../HighScore")
 text = "ストーリー"
 
-[node name="Exec" type="Node" parent="Control/Story"]
+[node name="Exec" type="Node" parent="Control/Story" unique_id=1445776576]
 script = ExtResource("11_j6aw5")
 
-[node name="PlaySeCommand" parent="Control/Story/Exec" instance=ExtResource("9_bvcnx")]
+[node name="PlaySeCommand" parent="Control/Story/Exec" unique_id=463438739 instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenDialogCommand" parent="Control/Story/Exec" instance=ExtResource("7_0002q")]
+[node name="OpenDialogCommand" parent="Control/Story/Exec" unique_id=2096708556 instance=ExtResource("7_0002q")]
 DialogPath = "res://theater/story_opening.tscn"
 
-[node name="Focus" parent="Control/Story" instance=ExtResource("9_7ac0i")]
+[node name="Focus" parent="Control/Story" unique_id=1583503215 instance=ExtResource("9_7ac0i")]
 
-[node name="HighScore" type="Button" parent="Control"]
+[node name="HighScore" type="Button" parent="Control" unique_id=1480063578]
 light_mask = 2
 layout_mode = 0
 offset_left = 328.0
@@ -176,19 +176,19 @@ focus_neighbor_left = NodePath("../OptionList")
 focus_neighbor_top = NodePath("../Story")
 text = "ハイスコア"
 
-[node name="Exec" type="Node" parent="Control/HighScore"]
+[node name="Exec" type="Node" parent="Control/HighScore" unique_id=623533455]
 script = ExtResource("11_j6aw5")
 
-[node name="PlaySeCommand" parent="Control/HighScore/Exec" instance=ExtResource("9_bvcnx")]
+[node name="PlaySeCommand" parent="Control/HighScore/Exec" unique_id=717128496 instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenScreenCommand" parent="Control/HighScore/Exec" instance=ExtResource("11_xa21i")]
+[node name="OpenScreenCommand" parent="Control/HighScore/Exec" unique_id=2119798203 instance=ExtResource("11_xa21i")]
 Screen = "res://screen/high_score_screen.tscn"
 
-[node name="Focus" parent="Control/HighScore" instance=ExtResource("9_7ac0i")]
+[node name="Focus" parent="Control/HighScore" unique_id=1751153645 instance=ExtResource("9_7ac0i")]
 
-[node name="BGM" type="Button" parent="Control"]
+[node name="BGM" type="Button" parent="Control" unique_id=319445120]
 light_mask = 2
 layout_mode = 0
 offset_left = 352.0
@@ -198,35 +198,35 @@ offset_bottom = 432.0
 size_flags_horizontal = 4
 text = "BGMを聞く"
 
-[node name="Exec" type="Node" parent="Control/BGM"]
+[node name="Exec" type="Node" parent="Control/BGM" unique_id=937502499]
 script = ExtResource("11_j6aw5")
 
-[node name="PlaySeCommand" parent="Control/BGM/Exec" instance=ExtResource("9_bvcnx")]
+[node name="PlaySeCommand" parent="Control/BGM/Exec" unique_id=181953106 instance=ExtResource("9_bvcnx")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="OpenDialogCommand" parent="Control/BGM/Exec" instance=ExtResource("7_0002q")]
+[node name="OpenDialogCommand" parent="Control/BGM/Exec" unique_id=395477430 instance=ExtResource("7_0002q")]
 DialogPath = "res://screen/jukebox_dialog.tscn"
 
-[node name="Focus" parent="Control/BGM" instance=ExtResource("9_7ac0i")]
+[node name="Focus" parent="Control/BGM" unique_id=1313303389 instance=ExtResource("9_7ac0i")]
 
-[node name="Focus" parent="." instance=ExtResource("13_6nn80")]
+[node name="Focus" parent="." unique_id=391057031 instance=ExtResource("13_6nn80")]
 position = Vector2(10, 10)
 
-[node name="StartTimerCommand" parent="Focus" node_paths=PackedStringArray("Target") instance=ExtResource("13_hmmf8")]
+[node name="StartTimerCommand" parent="Focus" unique_id=1363135382 node_paths=PackedStringArray("Target") instance=ExtResource("13_hmmf8")]
 Target = NodePath("../../Timer")
 
-[node name="ChangeBgmCommand" parent="Focus" instance=ExtResource("15_7piwm")]
+[node name="ChangeBgmCommand" parent="Focus" unique_id=864649597 instance=ExtResource("15_7piwm")]
 Command = 1
 Stream = ExtResource("15_3la61")
 
-[node name="PauseTimerCommand" parent="Focus" node_paths=PackedStringArray("Target") instance=ExtResource("16_5wfdf")]
+[node name="PauseTimerCommand" parent="Focus" unique_id=1904097595 node_paths=PackedStringArray("Target") instance=ExtResource("16_5wfdf")]
 Target = NodePath("../../Timer")
 
-[node name="VersionLabelCommand" parent="Focus" node_paths=PackedStringArray("VersionLabel") instance=ExtResource("17_igc8e")]
+[node name="VersionLabelCommand" parent="Focus" unique_id=18710407 node_paths=PackedStringArray("VersionLabel") instance=ExtResource("17_igc8e")]
 VersionLabel = NodePath("../../LabelVersionNo")
 
-[node name="EscapeKey" parent="." instance=ExtResource("17_uhsa7")]
+[node name="EscapeKey" parent="." unique_id=189073609 instance=ExtResource("17_uhsa7")]
 ActionName = "escape"
 
-[node name="QuitGameCommand" parent="EscapeKey" instance=ExtResource("18_85irx")]
+[node name="QuitGameCommand" parent="EscapeKey" unique_id=1024751941 instance=ExtResource("18_85irx")]

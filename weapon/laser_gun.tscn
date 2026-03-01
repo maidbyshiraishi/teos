@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://d18atpn7n6gkj"]
+[gd_scene format=3 uid="uid://d18atpn7n6gkj"]
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_b7372"]
 [ext_resource type="PackedScene" uid="uid://cr21qyu4bdr2s" path="res://mob/bullet/laser_100.tscn" id="2_etjqq"]
@@ -871,7 +871,7 @@ states/warmingup/position = Vector2(-89, 388)
 transitions = ["equip", "idle", SubResource("AnimationNodeStateMachineTransition_3raur"), "idle", "warmingup", SubResource("AnimationNodeStateMachineTransition_nd0xf"), "warmingup", "attack", SubResource("AnimationNodeStateMachineTransition_dflhc"), "empty", "broken", SubResource("AnimationNodeStateMachineTransition_0434y"), "equip", "broken", SubResource("AnimationNodeStateMachineTransition_18oof"), "warmingup", "idle", SubResource("AnimationNodeStateMachineTransition_s5v5g"), "attack", "empty", SubResource("AnimationNodeStateMachineTransition_xg0ne"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_x3tr1"), "initialize", "item", SubResource("AnimationNodeStateMachineTransition_1fsbw"), "separate", "terminate", SubResource("AnimationNodeStateMachineTransition_ghfyq"), "initialize", "trash", SubResource("AnimationNodeStateMachineTransition_cvm45"), "terminate", "initialize", SubResource("AnimationNodeStateMachineTransition_joxt1"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_2hb2m")]
 graph_offset = Vector2(-580.295, 248.594)
 
-[node name="LaserGun" instance=ExtResource("1_b7372")]
+[node name="LaserGun" unique_id=929248288 instance=ExtResource("1_b7372")]
 self_modulate = Color(0, 0, 0, 1)
 collision_layer = 0
 EquipSe = "weapon_laser_gun"
@@ -885,23 +885,23 @@ NumOfBullets = 1
 position = Vector2(36.5, 0)
 shape = SubResource("RectangleShape2D_5vd1n")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=512925997]
 position = Vector2(35, 0)
 sprite_frames = SubResource("SpriteFrames_dw8o6")
 autoplay = "default"
 
-[node name="Up" type="Marker2D" parent="." index="2"]
+[node name="Up" type="Marker2D" parent="." index="2" unique_id=676574744]
 position = Vector2(23, 6)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Up" index="0"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Up" index="0" unique_id=273335008]
 position = Vector2(25, -4)
 sprite_frames = SubResource("SpriteFrames_pgkch")
 autoplay = "default"
 
-[node name="Down" type="Marker2D" parent="." index="3"]
+[node name="Down" type="Marker2D" parent="." index="3" unique_id=21517148]
 position = Vector2(0, -7)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Down" index="0"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Down" index="0" unique_id=1246267778]
 position = Vector2(41, 5)
 sprite_frames = SubResource("SpriteFrames_yy73r")
 autoplay = "default"
@@ -915,9 +915,7 @@ offset = Vector2(-16, -16)
 hframes = 2
 
 [node name="AnimationPlayer" parent="." index="5"]
-libraries = {
-&"": SubResource("AnimationLibrary_gx3hg")
-}
+libraries/ = SubResource("AnimationLibrary_gx3hg")
 
 [node name="AnimationTree" parent="." index="6"]
 tree_root = SubResource("AnimationNodeStateMachine_56mcy")
@@ -925,5 +923,5 @@ parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Marker2D" type="Marker2D" parent="Muzzle" index="0"]
+[node name="Marker2D" type="Marker2D" parent="Muzzle" index="0" unique_id=980931037]
 position = Vector2(43, 0)

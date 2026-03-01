@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c364lq1bpqb88"]
+[gd_scene format=3 uid="uid://c364lq1bpqb88"]
 
 [ext_resource type="PackedScene" uid="uid://0nlf0c8xqq10" path="res://item/item_root.tscn" id="1_olyho"]
 [ext_resource type="Texture2D" uid="uid://ddiy4q0slscpn" path="res://contents/image/item/oneup.png" id="2_u1ol0"]
@@ -22,7 +22,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_op38p"]
 radius = 40.0
 
-[node name="ItemOneup" instance=ExtResource("1_olyho")]
+[node name="ItemOneup" unique_id=748122330 instance=ExtResource("1_olyho")]
 scale = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" parent="." index="2"]
@@ -35,7 +35,7 @@ visible = true
 [node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
 shape = SubResource("CircleShape2D_op38p")
 
-[node name="AddRemainCommand" parent="." index="5" instance=ExtResource("3_autd3")]
+[node name="AddRemainCommand" parent="." index="5" unique_id=493866889 instance=ExtResource("3_autd3")]
 
 [node name="ShowFloatingMessageCommand" parent="." index="7"]
 Message = "1up"

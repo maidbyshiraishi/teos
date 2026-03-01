@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://detvqwqihlaoj"]
+[gd_scene format=3 uid="uid://detvqwqihlaoj"]
 
 [ext_resource type="Script" uid="uid://d1cxwx853lomu" path="res://command/stage/AddLifeCommand.cs" id="1_vfjx5"]
 
-[node name="AddLifeCommand" type="Node"]
+[node name="AddLifeCommand" type="Node" unique_id=657491985]
 script = ExtResource("1_vfjx5")

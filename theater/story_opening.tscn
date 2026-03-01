@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://g3hdps2tkgeh"]
+[gd_scene format=3 uid="uid://g3hdps2tkgeh"]
 
 [ext_resource type="PackedScene" uid="uid://du45ne6v10als" path="res://theater/scroll_theater.tscn" id="1_6emye"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="1_7amvo"]
@@ -15,11 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="11_al1n2"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="13_ehk5a"]
 
-[node name="ScrollTheater" instance=ExtResource("1_6emye")]
+[node name="ScrollTheater" unique_id=698465940 instance=ExtResource("1_6emye")]
 ScrollTime = 30.0
 metadata/_edit_vertical_guides_ = [640.0]
 
-[node name="ColorRect" type="ColorRect" parent="." index="1"]
+[node name="ColorRect" type="ColorRect" parent="." index="1" unique_id=1794078631]
 visible = false
 layout_mode = 0
 offset_top = 896.0
@@ -27,7 +27,7 @@ offset_right = 640.0
 offset_bottom = 1376.0
 color = Color(0.588235, 0.588235, 0.588235, 1)
 
-[node name="Contents" type="Control" parent="Path2D/Socket" index="0"]
+[node name="Contents" type="Control" parent="Path2D/Socket" parent_id_path=PackedInt32Array(20169039) index="0" unique_id=1951118872]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -38,7 +38,7 @@ offset_bottom = 1416.0
 grow_horizontal = 2
 theme = ExtResource("1_7amvo")
 
-[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0"]
+[node name="Label5" type="Label" parent="Path2D/Socket/Contents" index="0" unique_id=924965466]
 layout_mode = 0
 offset_top = 17.0
 offset_right = 544.0
@@ -49,7 +49,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="1"]
+[node name="Label6" type="Label" parent="Path2D/Socket/Contents" index="1" unique_id=770503850]
 layout_mode = 0
 offset_top = 97.0
 offset_right = 544.0
@@ -60,7 +60,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label7" type="Label" parent="Path2D/Socket/Contents" index="2"]
+[node name="Label7" type="Label" parent="Path2D/Socket/Contents" index="2" unique_id=1109848614]
 layout_mode = 0
 offset_top = 177.0
 offset_right = 544.0
@@ -71,7 +71,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="3"]
+[node name="Label8" type="Label" parent="Path2D/Socket/Contents" index="3" unique_id=1210175894]
 layout_mode = 0
 offset_top = 273.0
 offset_right = 544.0
@@ -81,7 +81,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="4"]
+[node name="Label9" type="Label" parent="Path2D/Socket/Contents" index="4" unique_id=563639811]
 layout_mode = 0
 offset_top = 577.0
 offset_right = 544.0
@@ -91,7 +91,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label10" type="Label" parent="Path2D/Socket/Contents" index="5"]
+[node name="Label10" type="Label" parent="Path2D/Socket/Contents" index="5" unique_id=79679475]
 layout_mode = 0
 offset_left = -48.0
 offset_top = 1029.0
@@ -103,7 +103,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Label11" type="Label" parent="Path2D/Socket/Contents" index="6"]
+[node name="Label11" type="Label" parent="Path2D/Socket/Contents" index="6" unique_id=397629239]
 layout_mode = 0
 offset_top = 1201.0
 offset_right = 363.0
@@ -115,26 +115,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="VisibleCommand" parent="Path2D/Socket/Contents" index="7" instance=ExtResource("5_qcw2s")]
+[node name="VisibleCommand" parent="Path2D/Socket/Contents" index="7" unique_id=1833637608 instance=ExtResource("5_qcw2s")]
 position = Vector2(16, 16)
 
-[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/VisibleCommand" index="0" instance=ExtResource("4_h87ul")]
+[node name="ChangeBgmCommand" parent="Path2D/Socket/Contents/VisibleCommand" index="0" unique_id=1769647437 instance=ExtResource("4_h87ul")]
 
-[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="8" instance=ExtResource("6_8lq7n")]
+[node name="InvisibleTrigger" parent="Path2D/Socket/Contents" index="8" unique_id=784985623 instance=ExtResource("6_8lq7n")]
 position = Vector2(272, 1321)
 
-[node name="ReferenceCommandContainer" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_nxx3m")]
+[node name="ReferenceCommandContainer" parent="Path2D/Socket/Contents/InvisibleTrigger" index="0" unique_id=218379264 node_paths=PackedStringArray("Target") instance=ExtResource("9_nxx3m")]
 Target = NodePath("../../../../../Close")
 
-[node name="Sprite2D_1" type="Sprite2D" parent="Path2D/Socket/Contents" index="9"]
+[node name="Sprite2D_1" type="Sprite2D" parent="Path2D/Socket/Contents" index="9" unique_id=431726352]
 position = Vector2(272, 473)
 texture = ExtResource("7_0l1vt")
 
-[node name="Sprite2D_2" type="Sprite2D" parent="Path2D/Socket/Contents" index="10"]
+[node name="Sprite2D_2" type="Sprite2D" parent="Path2D/Socket/Contents" index="10" unique_id=1459461050]
 position = Vector2(272, 925)
 texture = ExtResource("8_p4r6x")
 
-[node name="CloseButton" type="Button" parent="Control" index="0"]
+[node name="CloseButton" type="Button" parent="Control" index="0" unique_id=660166610]
 light_mask = 2
 layout_mode = 0
 offset_left = 520.0
@@ -144,18 +144,18 @@ offset_bottom = 456.0
 theme = ExtResource("9_76s3t")
 text = "タイトルに戻る"
 
-[node name="Exec" type="Node" parent="Control/CloseButton" index="0"]
+[node name="Exec" type="Node" parent="Control/CloseButton" index="0" unique_id=724989899]
 script = ExtResource("10_al1n2")
 
-[node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("9_nxx3m")]
+[node name="ReferenceCommandContainer" parent="Control/CloseButton/Exec" index="0" unique_id=690341440 node_paths=PackedStringArray("Target") instance=ExtResource("9_nxx3m")]
 Target = NodePath("../../../../Close")
 
-[node name="Focus" parent="Control/CloseButton" index="1" instance=ExtResource("11_al1n2")]
+[node name="Focus" parent="Control/CloseButton" index="1" unique_id=1933753874 instance=ExtResource("11_al1n2")]
 
-[node name="Close" parent="." index="5" instance=ExtResource("9_0lcym")]
+[node name="Close" parent="." index="5" unique_id=1111031510 instance=ExtResource("9_0lcym")]
 
-[node name="PlaySeCommand" parent="Close" index="0" instance=ExtResource("13_ehk5a")]
+[node name="PlaySeCommand" parent="Close" index="0" unique_id=1595519268 instance=ExtResource("13_ehk5a")]
 SeName = "menu_select"
 ProcessAlways = true
 
-[node name="CloseDialogCommand" parent="Close" index="1" instance=ExtResource("8_42s1e")]
+[node name="CloseDialogCommand" parent="Close" index="1" unique_id=199134560 instance=ExtResource("8_42s1e")]

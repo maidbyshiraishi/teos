@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3r1s07530kir"]
+[gd_scene format=3 uid="uid://c3r1s07530kir"]
 
 [ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/bullet/bullet_root.tscn" id="1_k84q0"]
 [ext_resource type="Script" uid="uid://bjfa8g3vsbu8y" path="res://mob/bullet/ExplosiveBullet.cs" id="2_jem6h"]
@@ -33,26 +33,26 @@ size = Vector2(24, 8)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jem6h"]
 radius = 53.0
 
-[node name="ExplosiveBullet1" instance=ExtResource("1_k84q0")]
+[node name="ExplosiveBullet1" unique_id=1082486391 instance=ExtResource("1_k84q0")]
 script = ExtResource("2_jem6h")
 Bullet = ExtResource("3_nd3mp")
 InitialMaxSpeed = 350.0
 
-[node name="OnScreen" parent="." index="0"]
+[node name="OnScreen" parent="." index="0" unique_id=118332893]
 position = Vector2(1.90735e-06, -2.38419e-07)
 scale = Vector2(2, 1.2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=49980868]
 sprite_frames = SubResource("SpriteFrames_f2l4o")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=1255884527]
 shape = SubResource("RectangleShape2D_nd3mp")
 
-[node name="ExplosiveArea2D" type="Area2D" parent="." index="3"]
+[node name="ExplosiveArea2D" type="Area2D" parent="." index="3" unique_id=1872387983]
 position = Vector2(-1, 0)
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosiveArea2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosiveArea2D" index="0" unique_id=1173649336]
 shape = SubResource("CircleShape2D_jem6h")

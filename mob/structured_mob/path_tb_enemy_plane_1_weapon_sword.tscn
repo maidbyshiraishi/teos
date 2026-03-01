@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://di0k6l05et1nh"]
+[gd_scene format=3 uid="uid://di0k6l05et1nh"]
 
 [ext_resource type="Script" uid="uid://b3enqjgwsjt0b" path="res://path/Path.cs" id="1_2gmbu"]
 [ext_resource type="Script" uid="uid://etipmx6dpuow" path="res://path/PathFollow.cs" id="2_w4c16"]
@@ -11,28 +11,27 @@ _data = {
 }
 point_count = 2
 
-[node name="Path2D" type="Path2D"]
+[node name="Path2D" type="Path2D" unique_id=1848760245]
 curve = SubResource("Curve2D_08nms")
 script = ExtResource("1_2gmbu")
 metadata/_edit_vertical_guides_ = [-640.0]
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=500756524]
 rotates = false
 cubic_interp = false
 script = ExtResource("2_w4c16")
 Speed = 60.0
 
-[node name="EnemyPlane1" parent="PathFollow2D" instance=ExtResource("3_qubiy")]
+[node name="EnemyPlane1" parent="PathFollow2D" unique_id=1063004692 instance=ExtResource("3_qubiy")]
 WeaponRotationEnabled = true
+
+[node name="AddScoreCommand" parent="PathFollow2D/EnemyPlane1/Dead" parent_id_path=PackedInt32Array(1063004692, 1607806562) index="1" unique_id=1371130473]
 Score = 0
 
-[node name="AddScoreCommand" parent="PathFollow2D/EnemyPlane1/Dead" index="1"]
-Score = 0
-
-[node name="ShowFloatingMessageCommand" parent="PathFollow2D/EnemyPlane1/Dead" index="2"]
+[node name="ShowFloatingMessageCommand" parent="PathFollow2D/EnemyPlane1/Dead" parent_id_path=PackedInt32Array(1063004692, 1607806562) index="2" unique_id=2095709811]
 Message = ""
 
-[node name="Sword" parent="PathFollow2D/EnemyPlane1" instance=ExtResource("4_schds")]
+[node name="Sword" parent="PathFollow2D/EnemyPlane1" unique_id=469312110 instance=ExtResource("4_schds")]
 rotation = 3.14159
 
 [editable path="PathFollow2D/EnemyPlane1"]

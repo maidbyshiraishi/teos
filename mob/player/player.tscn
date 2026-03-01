@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://c42o6ebyl3yqa"]
+[gd_scene format=3 uid="uid://c42o6ebyl3yqa"]
 
 [ext_resource type="PackedScene" uid="uid://c4x2qs78dvgg" path="res://mob/fighter.tscn" id="1_mn3f4"]
 [ext_resource type="Texture2D" uid="uid://dulc6txv1m7rj" path="res://contents/image/player/rocket_maid.png" id="2_en8yy"]
@@ -978,7 +978,7 @@ size = Vector2(32, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fjmj"]
 size = Vector2(64, 8)
 
-[node name="Player" instance=ExtResource("1_mn3f4")]
+[node name="Player" unique_id=221553418 instance=ExtResource("1_mn3f4")]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("2_r1hgm")
@@ -992,86 +992,84 @@ InitialLife = 3
 MaxLife = 5
 InitialMaxSpeed = 300.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurialArea" parent_id_path=PackedInt32Array(648333766) index="1" unique_id=1873131324]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_dsrd0")
 
-[node name="EventFinder" parent="." index="2"]
+[node name="EventFinder" parent="." index="2" unique_id=1819585117]
 collision_mask = 66560
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventFinder" index="0" unique_id=1401225139]
 shape = SubResource("RectangleShape2D_oio0d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=1303740111]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_ff7pu")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="4" unique_id=442256698]
 texture = ExtResource("2_en8yy")
 hframes = 10
 
-[node name="MountPoint" parent="." index="5"]
+[node name="MountPoint" parent="." index="5" unique_id=833389509]
 position = Vector2(0, 16)
 LerpAngle = 270.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
-libraries = {
-&"": SubResource("AnimationLibrary_jwqxc")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6" unique_id=16073879]
+libraries/ = SubResource("AnimationLibrary_jwqxc")
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="7"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="7" unique_id=1496325187]
 tree_root = SubResource("AnimationNodeStateMachine_7dutn")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/separate = false
 
-[node name="TeaWagon" parent="." index="8" instance=ExtResource("5_rmb5e")]
+[node name="TeaWagon" parent="." index="8" unique_id=1317365334 instance=ExtResource("5_rmb5e")]
 collision_mask = 2080
 Pierce = true
 RemoveScreenExited = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TeaWagon" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeaWagon" index="1" unique_id=388285583]
 position = Vector2(4, 16)
 shape = SubResource("RectangleShape2D_xuo8m")
 
-[node name="Shield" type="Area2D" parent="." index="9"]
+[node name="Shield" type="Area2D" parent="." index="9" unique_id=1919756576]
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield" index="0" unique_id=372776866]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_6fjmj")
 
-[node name="InitializeCharacter" parent="." index="10" instance=ExtResource("5_obiyy")]
+[node name="InitializeCharacter" parent="." index="10" unique_id=305848485 instance=ExtResource("5_obiyy")]
 
-[node name="PlaySeCommand2" parent="InitializeCharacter" index="0" instance=ExtResource("6_m7mfw")]
+[node name="PlaySeCommand2" parent="InitializeCharacter" index="0" unique_id=1379633153 instance=ExtResource("6_m7mfw")]
 SeName = "rocket_maid"
 
-[node name="TerminateCharacter" parent="." index="11" instance=ExtResource("5_obiyy")]
+[node name="TerminateCharacter" parent="." index="11" unique_id=2142411617 instance=ExtResource("5_obiyy")]
 
-[node name="Dead" parent="." index="12" instance=ExtResource("5_obiyy")]
+[node name="Dead" parent="." index="12" unique_id=1375303687 instance=ExtResource("5_obiyy")]
 
-[node name="AddRemainCommand" parent="Dead" index="0" instance=ExtResource("6_whkhs")]
+[node name="AddRemainCommand" parent="Dead" index="0" unique_id=1244817900 instance=ExtResource("6_whkhs")]
 Value = -1
 
-[node name="PlaySeCommand" parent="Dead" index="1" instance=ExtResource("6_m7mfw")]
+[node name="PlaySeCommand" parent="Dead" index="1" unique_id=873733110 instance=ExtResource("6_m7mfw")]
 SeName = "player_dead"
 
-[node name="Damaged" parent="." index="13" instance=ExtResource("5_obiyy")]
+[node name="Damaged" parent="." index="13" unique_id=1717889787 instance=ExtResource("5_obiyy")]
 
-[node name="PlaySeCommand" parent="Damaged" index="0" instance=ExtResource("6_m7mfw")]
+[node name="PlaySeCommand" parent="Damaged" index="0" unique_id=245815765 instance=ExtResource("6_m7mfw")]
 SeName = "player_damaged"
 
-[node name="Resurrected" parent="." index="14" instance=ExtResource("5_obiyy")]
+[node name="Resurrected" parent="." index="14" unique_id=1865319780 instance=ExtResource("5_obiyy")]
 
-[node name="ResetPlayerLifeCommand" parent="Resurrected" index="0" instance=ExtResource("7_whkhs")]
+[node name="ResetPlayerLifeCommand" parent="Resurrected" index="0" unique_id=188422455 instance=ExtResource("7_whkhs")]
 
-[node name="PlaySeCommand" parent="Resurrected" index="1" instance=ExtResource("6_m7mfw")]
+[node name="PlaySeCommand" parent="Resurrected" index="1" unique_id=2005971926 instance=ExtResource("6_m7mfw")]
 SeName = "player_resurrected"
 
-[node name="PlaySeCommand2" parent="Resurrected" index="2" instance=ExtResource("6_m7mfw")]
+[node name="PlaySeCommand2" parent="Resurrected" index="2" unique_id=811076864 instance=ExtResource("6_m7mfw")]
 SeName = "rocket_maid"
 
-[node name="SeparateWeapon" parent="." index="15" instance=ExtResource("5_obiyy")]
+[node name="SeparateWeapon" parent="." index="15" unique_id=998972300 instance=ExtResource("5_obiyy")]
 
-[node name="PlaySeCommand" parent="SeparateWeapon" index="0" instance=ExtResource("6_m7mfw")]
+[node name="PlaySeCommand" parent="SeparateWeapon" index="0" unique_id=2130558110 instance=ExtResource("6_m7mfw")]
 SeName = "player_separate_weapon"

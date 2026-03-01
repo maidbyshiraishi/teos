@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://c43txyodixmdu"]
+[gd_scene format=4 uid="uid://c43txyodixmdu"]
 
 [ext_resource type="PackedScene" uid="uid://bkoe5i6gpyyth" path="res://theater/story_theater.tscn" id="1_d358e"]
 [ext_resource type="Theme" uid="uid://dttxtjxuax841" path="res://contents/theme/theme_default.tres" id="2_gd8bc"]
@@ -673,14 +673,14 @@ _data = {
 &"default": SubResource("Animation_74367")
 }
 
-[node name="StoryTheater" instance=ExtResource("1_d358e")]
+[node name="StoryTheater" unique_id=921584699 instance=ExtResource("1_d358e")]
 metadata/_edit_horizontal_guides_ = [118.0, 359.0]
 metadata/_edit_vertical_guides_ = [166.0, 479.0, 320.0]
 
 [node name="Background" parent="." index="0"]
 color = Color(0, 0, 0, 1)
 
-[node name="Contents" type="Control" parent="Socket" index="0"]
+[node name="Contents" type="Control" parent="Socket" index="0" unique_id=900228614]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -696,7 +696,7 @@ grow_vertical = 2
 pivot_offset = Vector2(160, 120)
 theme = ExtResource("2_gd8bc")
 
-[node name="Page1" type="Control" parent="Socket/Contents" index="0"]
+[node name="Page1" type="Control" parent="Socket/Contents" index="0" unique_id=2012800965]
 visible = false
 anchors_preset = 0
 offset_left = 168.0
@@ -704,35 +704,35 @@ offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page1" index="0"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page1" index="0" unique_id=229024090]
 position = Vector2(152, 121)
 sprite_frames = SubResource("SpriteFrames_f72mv")
 
-[node name="AnimatedSpriteFinishedTrigger" parent="Socket/Contents/Page1/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+[node name="AnimatedSpriteFinishedTrigger" parent="Socket/Contents/Page1/AnimatedSprite2D" index="0" unique_id=1963731421 instance=ExtResource("4_n05pt")]
 
-[node name="DelayCommandContainer" parent="Socket/Contents/Page1/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="0" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer" parent="Socket/Contents/Page1/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="0" unique_id=1381780392 instance=ExtResource("17_u5pv3")]
 WaitTime = 0.8
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page1/AnimatedSprite2D/AnimatedSpriteFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
+[node name="GoNextPageCommand" parent="Socket/Contents/Page1/AnimatedSprite2D/AnimatedSpriteFinishedTrigger/DelayCommandContainer" index="0" unique_id=472028183 instance=ExtResource("6_hqai5")]
 
-[node name="VisibleTrigger" parent="Socket/Contents/Page1" index="1" instance=ExtResource("4_uclh4")]
+[node name="VisibleTrigger" parent="Socket/Contents/Page1" index="1" unique_id=1222536074 instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
-[node name="ChangeBgmCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="0" unique_id=800281045 instance=ExtResource("5_jn6f3")]
 Command = 3
 Stream = ExtResource("9_cfg8y")
 
-[node name="PlayAnimatedSpriteCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+[node name="PlayAnimatedSpriteCommand" parent="Socket/Contents/Page1/VisibleTrigger" index="1" unique_id=845398021 node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
-[node name="Control" type="Control" parent="Socket/Contents/Page1" index="2"]
+[node name="Control" type="Control" parent="Socket/Contents/Page1" index="2" unique_id=275601600]
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
 offset_right = 236.0
 offset_bottom = 234.0
 
-[node name="Page2" type="Control" parent="Socket/Contents" index="1"]
+[node name="Page2" type="Control" parent="Socket/Contents" index="1" unique_id=1948035727]
 visible = false
 anchors_preset = 0
 offset_left = 168.0
@@ -740,70 +740,68 @@ offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="Mask" type="Sprite2D" parent="Socket/Contents/Page2" index="0"]
+[node name="Mask" type="Sprite2D" parent="Socket/Contents/Page2" index="0" unique_id=1204549456]
 clip_children = 1
 position = Vector2(152, 97)
 texture = ExtResource("11_jmh61")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Socket/Contents/Page2/Mask" index="0"]
-libraries = {
-&"": SubResource("AnimationLibrary_74367")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Socket/Contents/Page2/Mask" index="0" unique_id=670797532]
+libraries/ = SubResource("AnimationLibrary_74367")
 
-[node name="AnimationPlayerFinishedTrigger" parent="Socket/Contents/Page2/Mask/AnimationPlayer" index="0" instance=ExtResource("11_u5pv3")]
+[node name="AnimationPlayerFinishedTrigger" parent="Socket/Contents/Page2/Mask/AnimationPlayer" index="0" unique_id=1741674287 instance=ExtResource("11_u5pv3")]
 
-[node name="DelayCommandContainer" parent="Socket/Contents/Page2/Mask/AnimationPlayer/AnimationPlayerFinishedTrigger" index="0" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer" parent="Socket/Contents/Page2/Mask/AnimationPlayer/AnimationPlayerFinishedTrigger" index="0" unique_id=903966863 instance=ExtResource("17_u5pv3")]
 WaitTime = 1.5
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page2/Mask/AnimationPlayer/AnimationPlayerFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
+[node name="GoNextPageCommand" parent="Socket/Contents/Page2/Mask/AnimationPlayer/AnimationPlayerFinishedTrigger/DelayCommandContainer" index="0" unique_id=814511200 instance=ExtResource("6_hqai5")]
 
-[node name="StageBoss" type="TileMapLayer" parent="Socket/Contents/Page2/Mask" index="1"]
+[node name="StageBoss" type="TileMapLayer" parent="Socket/Contents/Page2/Mask" index="1" unique_id=767848386]
 position = Vector2(0, 120)
 tile_map_data = PackedByteArray("AAD+//3/AAAGAAgAAAD///7/AAAEAAoAAAD///3/AAAMAAgAAAD9//7/AAAGAAgAAAD+//7/AAAHAAoAAAAAAP7/AAAHAAoAAAAAAP3/AAAHAAoAAAABAP7/AAAHAAoAAAABAP3/AAAHAAgAAAACAP7/AAAHAAgAAAA=")
 tile_set = ExtResource("12_mg2b6")
 
-[node name="AnimatedSprite2D_1" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="2"]
+[node name="AnimatedSprite2D_1" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="2" unique_id=29146772]
 visible = false
 position = Vector2(0, 48)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_wudv3")
 
-[node name="AnimatedSprite2D_2" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="3"]
+[node name="AnimatedSprite2D_2" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="3" unique_id=1976214180]
 visible = false
 position = Vector2(56, 72)
 sprite_frames = SubResource("SpriteFrames_wudv3")
 
-[node name="AnimatedSprite2D_3" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="4"]
+[node name="AnimatedSprite2D_3" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="4" unique_id=58249032]
 visible = false
 position = Vector2(32, 24)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_wudv3")
 
-[node name="AnimatedSprite2D_4" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="5"]
+[node name="AnimatedSprite2D_4" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="5" unique_id=414356060]
 visible = false
 position = Vector2(16, 72)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_wudv3")
 
-[node name="AnimatedSprite2D_5" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="6"]
+[node name="AnimatedSprite2D_5" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="6" unique_id=2005947573]
 visible = false
 position = Vector2(-48, 48)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wudv3")
 
-[node name="AnimatedSprite2D_6" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="7"]
+[node name="AnimatedSprite2D_6" type="AnimatedSprite2D" parent="Socket/Contents/Page2/Mask" index="7" unique_id=701510268]
 visible = false
 position = Vector2(-16, 24)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wudv3")
 
-[node name="Player" type="Sprite2D" parent="Socket/Contents/Page2/Mask" index="8"]
+[node name="Player" type="Sprite2D" parent="Socket/Contents/Page2/Mask" index="8" unique_id=895733822]
 position = Vector2(-200, -120)
 rotation = 0.436332
 texture = ExtResource("14_k4hiv")
 hframes = 10
 
-[node name="Label" type="Label" parent="Socket/Contents/Page2" index="1"]
+[node name="Label" type="Label" parent="Socket/Contents/Page2" index="1" unique_id=1665990725]
 visible = false
 layout_mode = 0
 offset_left = 16.0
@@ -814,26 +812,26 @@ text = "成敗!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VisibleTrigger" parent="Socket/Contents/Page2" index="2" instance=ExtResource("4_uclh4")]
+[node name="VisibleTrigger" parent="Socket/Contents/Page2" index="2" unique_id=900786337 instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
-[node name="ChangeBgmCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="0" unique_id=1743942009 instance=ExtResource("5_jn6f3")]
 
-[node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
-AnimationName = "default"
+[node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="1" unique_id=1523882894 node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
 AnimationPlayer = NodePath("../../Mask/AnimationPlayer")
+AnimationName = "default"
 
-[node name="Control" type="Control" parent="Socket/Contents/Page2" index="3"]
+[node name="Control" type="Control" parent="Socket/Contents/Page2" index="3" unique_id=1899019593]
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
 offset_right = 236.0
 offset_bottom = 234.0
 
-[node name="PlaySeCommand" parent="Socket/Contents/Page2" index="4" instance=ExtResource("14_73c1f")]
+[node name="PlaySeCommand" parent="Socket/Contents/Page2" index="4" unique_id=988389458 instance=ExtResource("14_73c1f")]
 SeName = "explosion"
 
-[node name="Page3" type="Control" parent="Socket/Contents" index="2"]
+[node name="Page3" type="Control" parent="Socket/Contents" index="2" unique_id=1447120390]
 visible = false
 anchors_preset = 0
 offset_left = 168.0
@@ -841,37 +839,37 @@ offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page3" index="0"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Socket/Contents/Page3" index="0" unique_id=46538393]
 position = Vector2(152, 97)
 sprite_frames = SubResource("SpriteFrames_jmh61")
 
-[node name="AnimatedSpriteFinishedTrigger" parent="Socket/Contents/Page3/AnimatedSprite2D" index="0" instance=ExtResource("4_n05pt")]
+[node name="AnimatedSpriteFinishedTrigger" parent="Socket/Contents/Page3/AnimatedSprite2D" index="0" unique_id=868230594 instance=ExtResource("4_n05pt")]
 
-[node name="ShowCanvasItemCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+[node name="ShowCanvasItemCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="0" unique_id=173888483 node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
 Target = NodePath("../../../Label")
 
-[node name="DelayCommandContainer" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="1" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger" index="1" unique_id=2072101022 instance=ExtResource("17_u5pv3")]
 WaitTime = 1.5
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
+[node name="GoNextPageCommand" parent="Socket/Contents/Page3/AnimatedSprite2D/AnimatedSpriteFinishedTrigger/DelayCommandContainer" index="0" unique_id=478044642 instance=ExtResource("6_hqai5")]
 
-[node name="VisibleTrigger" parent="Socket/Contents/Page3" index="1" instance=ExtResource("4_uclh4")]
+[node name="VisibleTrigger" parent="Socket/Contents/Page3" index="1" unique_id=643157311 instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
-[node name="ChangeBgmCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="0" unique_id=380701449 instance=ExtResource("5_jn6f3")]
 Command = 4
 
-[node name="PlayAnimatedSpriteCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="1" node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
+[node name="PlayAnimatedSpriteCommand" parent="Socket/Contents/Page3/VisibleTrigger" index="1" unique_id=2041150977 node_paths=PackedStringArray("AnimatedSprite") instance=ExtResource("5_12ygv")]
 AnimatedSprite = NodePath("../../AnimatedSprite2D")
 
-[node name="Control" type="Control" parent="Socket/Contents/Page3" index="2"]
+[node name="Control" type="Control" parent="Socket/Contents/Page3" index="2" unique_id=1416896924]
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
 offset_right = 236.0
 offset_bottom = 234.0
 
-[node name="Label" type="Label" parent="Socket/Contents/Page3" index="3"]
+[node name="Label" type="Label" parent="Socket/Contents/Page3" index="3" unique_id=1658851372]
 visible = false
 layout_mode = 0
 offset_top = 201.0
@@ -881,7 +879,7 @@ text = "今の・・・文字だった？"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Page4" type="Control" parent="Socket/Contents" index="3"]
+[node name="Page4" type="Control" parent="Socket/Contents" index="3" unique_id=625138721]
 visible = false
 anchors_preset = 0
 offset_left = 168.0
@@ -889,67 +887,67 @@ offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page4" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page4" index="0" unique_id=1960967555]
 visible = false
 position = Vector2(152, 97)
 texture = ExtResource("19_k4hiv")
 
-[node name="VisibleTrigger" parent="Socket/Contents/Page4" index="1" instance=ExtResource("4_uclh4")]
+[node name="VisibleTrigger" parent="Socket/Contents/Page4" index="1" unique_id=1362334261 instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
-[node name="PlaySeCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="0" instance=ExtResource("14_73c1f")]
+[node name="PlaySeCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="0" unique_id=177476388 instance=ExtResource("14_73c1f")]
 SeName = "message_stage_0000"
 
-[node name="ChangeBgmCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="1" instance=ExtResource("5_jn6f3")]
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="1" unique_id=1162286732 instance=ExtResource("5_jn6f3")]
 Command = 1
 Stream = ExtResource("21_ig1dy")
 
-[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger" index="2" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger" index="2" unique_id=1309787966 node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
 Target = NodePath("../../Sprite2D")
 
-[node name="ShowCanvasItemCommand2" parent="Socket/Contents/Page4/VisibleTrigger" index="3" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+[node name="ShowCanvasItemCommand2" parent="Socket/Contents/Page4/VisibleTrigger" index="3" unique_id=131501888 node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
 Target = NodePath("../../Label0")
 
-[node name="DelayCommandContainer1" parent="Socket/Contents/Page4/VisibleTrigger" index="4" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer1" parent="Socket/Contents/Page4/VisibleTrigger" index="4" unique_id=707172447 instance=ExtResource("17_u5pv3")]
 WaitTime = 2.0
 
-[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer1" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
+[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer1" index="0" unique_id=311382521 node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
 Target = NodePath("../../../Label0")
 
-[node name="ShowCanvasItemCommand2" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer1" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+[node name="ShowCanvasItemCommand2" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer1" index="1" unique_id=805986336 node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
 Target = NodePath("../../../Label1")
 
-[node name="DelayCommandContainer2" parent="Socket/Contents/Page4/VisibleTrigger" index="5" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer2" parent="Socket/Contents/Page4/VisibleTrigger" index="5" unique_id=979674282 instance=ExtResource("17_u5pv3")]
 WaitTime = 3.5
 
-[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer2" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
+[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer2" index="0" unique_id=1043723555 node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
 Target = NodePath("../../../Label1")
 
-[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer2" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer2" index="1" unique_id=1075978592 node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
 Target = NodePath("../../../Label2")
 
-[node name="DelayCommandContainer3" parent="Socket/Contents/Page4/VisibleTrigger" index="6" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer3" parent="Socket/Contents/Page4/VisibleTrigger" index="6" unique_id=1558248114 instance=ExtResource("17_u5pv3")]
 WaitTime = 4.5
 
-[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer3" index="0" node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
+[node name="HideCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer3" index="0" unique_id=1586350907 node_paths=PackedStringArray("Target") instance=ExtResource("20_74367")]
 Target = NodePath("../../../Label2")
 
-[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer3" index="1" node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
+[node name="ShowCanvasItemCommand1" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer3" index="1" unique_id=1634580431 node_paths=PackedStringArray("Target") instance=ExtResource("18_wudv3")]
 Target = NodePath("../../../Label3")
 
-[node name="DelayCommandContainer4" parent="Socket/Contents/Page4/VisibleTrigger" index="7" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer4" parent="Socket/Contents/Page4/VisibleTrigger" index="7" unique_id=1459269365 instance=ExtResource("17_u5pv3")]
 WaitTime = 5.5
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer4" index="0" instance=ExtResource("6_hqai5")]
+[node name="GoNextPageCommand" parent="Socket/Contents/Page4/VisibleTrigger/DelayCommandContainer4" index="0" unique_id=1226745520 instance=ExtResource("6_hqai5")]
 
-[node name="Control" type="Control" parent="Socket/Contents/Page4" index="2"]
+[node name="Control" type="Control" parent="Socket/Contents/Page4" index="2" unique_id=954698178]
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
 offset_right = 236.0
 offset_bottom = 234.0
 
-[node name="Label0" type="Label" parent="Socket/Contents/Page4" index="3"]
+[node name="Label0" type="Label" parent="Socket/Contents/Page4" index="3" unique_id=1714509711]
 visible = false
 layout_mode = 0
 offset_left = 24.0
@@ -960,7 +958,7 @@ text = "メイド司令部より突撃隊へ"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label1" type="Label" parent="Socket/Contents/Page4" index="4"]
+[node name="Label1" type="Label" parent="Socket/Contents/Page4" index="4" unique_id=41019734]
 visible = false
 layout_mode = 0
 offset_left = 24.0
@@ -971,7 +969,7 @@ text = "おーい、何してんの！"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Socket/Contents/Page4" index="5"]
+[node name="Label2" type="Label" parent="Socket/Contents/Page4" index="5" unique_id=1775754625]
 visible = false
 layout_mode = 0
 offset_left = 24.0
@@ -982,7 +980,7 @@ text = "みんな待ってるよ！"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="Socket/Contents/Page4" index="6"]
+[node name="Label3" type="Label" parent="Socket/Contents/Page4" index="6" unique_id=1891516666]
 visible = false
 layout_mode = 0
 offset_left = 24.0
@@ -993,7 +991,7 @@ text = "イチゴもあるよ！"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Page5" type="Control" parent="Socket/Contents" index="4"]
+[node name="Page5" type="Control" parent="Socket/Contents" index="4" unique_id=1795637115]
 visible = false
 anchors_preset = 0
 offset_left = 168.0
@@ -1001,28 +999,28 @@ offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page5" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page5" index="0" unique_id=1750462740]
 position = Vector2(152, 97)
 texture = ExtResource("18_mg2b6")
 
-[node name="VisibleTrigger" parent="Socket/Contents/Page5" index="1" instance=ExtResource("4_uclh4")]
+[node name="VisibleTrigger" parent="Socket/Contents/Page5" index="1" unique_id=1592178737 instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
-[node name="ChangeBgmCommand" parent="Socket/Contents/Page5/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page5/VisibleTrigger" index="0" unique_id=557565277 instance=ExtResource("5_jn6f3")]
 
-[node name="DelayCommandContainer" parent="Socket/Contents/Page5/VisibleTrigger" index="1" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer" parent="Socket/Contents/Page5/VisibleTrigger" index="1" unique_id=1454661325 instance=ExtResource("17_u5pv3")]
 WaitTime = 2.0
 
-[node name="GoNextPageCommand" parent="Socket/Contents/Page5/VisibleTrigger/DelayCommandContainer" index="0" instance=ExtResource("6_hqai5")]
+[node name="GoNextPageCommand" parent="Socket/Contents/Page5/VisibleTrigger/DelayCommandContainer" index="0" unique_id=457136202 instance=ExtResource("6_hqai5")]
 
-[node name="Control" type="Control" parent="Socket/Contents/Page5" index="2"]
+[node name="Control" type="Control" parent="Socket/Contents/Page5" index="2" unique_id=419922981]
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
 offset_right = 236.0
 offset_bottom = 234.0
 
-[node name="Label" type="Label" parent="Socket/Contents/Page5" index="3"]
+[node name="Label" type="Label" parent="Socket/Contents/Page5" index="3" unique_id=1797393739]
 layout_mode = 0
 offset_top = 201.0
 offset_right = 312.0
@@ -1031,46 +1029,44 @@ text = "イチゴ、見つかったんだ！"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Page6" type="Control" parent="Socket/Contents" index="5"]
+[node name="Page6" type="Control" parent="Socket/Contents" index="5" unique_id=1722004075]
 anchors_preset = 0
 offset_left = 168.0
 offset_top = 120.0
 offset_right = 480.0
 offset_bottom = 360.0
 
-[node name="VisibleTrigger" parent="Socket/Contents/Page6" index="0" instance=ExtResource("4_uclh4")]
+[node name="VisibleTrigger" parent="Socket/Contents/Page6" index="0" unique_id=941716627 instance=ExtResource("4_uclh4")]
 position = Vector2(16, 17)
 
-[node name="ChangeBgmCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="0" instance=ExtResource("5_jn6f3")]
+[node name="ChangeBgmCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="0" unique_id=2009544586 instance=ExtResource("5_jn6f3")]
 
-[node name="PlaySeCommand2" parent="Socket/Contents/Page6/VisibleTrigger" index="1" instance=ExtResource("14_73c1f")]
+[node name="PlaySeCommand2" parent="Socket/Contents/Page6/VisibleTrigger" index="1" unique_id=2047717153 instance=ExtResource("14_73c1f")]
 SeName = "rocket_maid"
 
-[node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="2" node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
-AnimationName = "default"
+[node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="2" unique_id=2093585708 node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
 AnimationPlayer = NodePath("../../AnimationPlayer")
+AnimationName = "default"
 
-[node name="Control" type="Control" parent="Socket/Contents/Page6" index="1"]
+[node name="Control" type="Control" parent="Socket/Contents/Page6" index="1" unique_id=1988658546]
 anchors_preset = 0
 offset_left = 196.0
 offset_top = 194.0
 offset_right = 236.0
 offset_bottom = 234.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Socket/Contents/Page6" index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_cfg8y")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Socket/Contents/Page6" index="2" unique_id=1218151848]
+libraries/ = SubResource("AnimationLibrary_cfg8y")
 
-[node name="AnimationPlayerFinishedTrigger" parent="Socket/Contents/Page6/AnimationPlayer" index="0" instance=ExtResource("11_u5pv3")]
+[node name="AnimationPlayerFinishedTrigger" parent="Socket/Contents/Page6/AnimationPlayer" index="0" unique_id=676798082 instance=ExtResource("11_u5pv3")]
 
-[node name="DelayCommandContainer" parent="Socket/Contents/Page6/AnimationPlayer/AnimationPlayerFinishedTrigger" index="0" instance=ExtResource("17_u5pv3")]
+[node name="DelayCommandContainer" parent="Socket/Contents/Page6/AnimationPlayer/AnimationPlayerFinishedTrigger" index="0" unique_id=1460134686 instance=ExtResource("17_u5pv3")]
 WaitTime = 1.0
 
-[node name="OpenScreenCommand" parent="Socket/Contents/Page6/AnimationPlayer/AnimationPlayerFinishedTrigger/DelayCommandContainer" index="0" instance=ExtResource("20_jmh61")]
+[node name="OpenScreenCommand" parent="Socket/Contents/Page6/AnimationPlayer/AnimationPlayerFinishedTrigger/DelayCommandContainer" index="0" unique_id=1923050488 instance=ExtResource("20_jmh61")]
 Screen = "res://theater/story_ending_2.tscn"
 
-[node name="Label" type="Label" parent="Socket/Contents/Page6" index="3"]
+[node name="Label" type="Label" parent="Socket/Contents/Page6" index="3" unique_id=2058996215]
 layout_mode = 0
 offset_top = 201.0
 offset_right = 312.0
@@ -1079,9 +1075,9 @@ text = "急いで、帰還する!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Node2D" type="Node2D" parent="Socket/Contents/Page6" index="4"]
+[node name="Node2D" type="Node2D" parent="Socket/Contents/Page6" index="4" unique_id=775418600]
 position = Vector2(64, 137)
 
-[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page6/Node2D" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Socket/Contents/Page6/Node2D" index="0" unique_id=558174118]
 texture = ExtResource("14_k4hiv")
 hframes = 10

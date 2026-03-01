@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c8ok4t16na8fy"]
+[gd_scene format=3 uid="uid://c8ok4t16na8fy"]
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_etmxl"]
 [ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/bullet/small_bullet_2.tscn" id="2_5h7vb"]
@@ -354,7 +354,7 @@ states/trash/position = Vector2(36, 67)
 transitions = ["equip", "idle", SubResource("AnimationNodeStateMachineTransition_tmlyw"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_uyrem"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_35cfn"), "attack", "empty", SubResource("AnimationNodeStateMachineTransition_wkvig"), "empty", "broken", SubResource("AnimationNodeStateMachineTransition_qimcf"), "equip", "broken", SubResource("AnimationNodeStateMachineTransition_dnix2"), "initialize", "item", SubResource("AnimationNodeStateMachineTransition_mib7f"), "separate", "terminate", SubResource("AnimationNodeStateMachineTransition_skygm"), "initialize", "trash", SubResource("AnimationNodeStateMachineTransition_20f2b"), "enemy_equip", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_6mpeq"), "enemy_idle", "enemy_attack", SubResource("AnimationNodeStateMachineTransition_235pe"), "enemy_attack", "enemy_idle", SubResource("AnimationNodeStateMachineTransition_6b738"), "enemy_attack", "enemy_empty", SubResource("AnimationNodeStateMachineTransition_7mmig"), "enemy_equip", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_3w2cn"), "enemy_empty", "enemy_broken", SubResource("AnimationNodeStateMachineTransition_338b5"), "terminate", "initialize", SubResource("AnimationNodeStateMachineTransition_oh3my"), "Start", "sleep", SubResource("AnimationNodeStateMachineTransition_eqsmi")]
 graph_offset = Vector2(-233, -157)
 
-[node name="SingleGun" instance=ExtResource("1_etmxl")]
+[node name="SingleGun" unique_id=1634965245 instance=ExtResource("1_etmxl")]
 self_modulate = Color(0, 0, 0, 1)
 collision_layer = 0
 EquipSe = "weapon_single_gun"
@@ -376,9 +376,7 @@ texture = ExtResource("2_vu26l")
 hframes = 2
 
 [node name="AnimationPlayer" parent="." index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_m42rp")
-}
+libraries/ = SubResource("AnimationLibrary_m42rp")
 
 [node name="AnimationTree" parent="." index="3"]
 tree_root = SubResource("AnimationNodeStateMachine_1fdec")
@@ -386,5 +384,5 @@ parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Marker2D" type="Marker2D" parent="Muzzle" index="0"]
+[node name="Marker2D" type="Marker2D" parent="Muzzle" index="0" unique_id=1852932026]
 position = Vector2(52, 0)
