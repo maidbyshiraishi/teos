@@ -37,7 +37,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
         m_PathFollow = EnemyRoot.FindPathFollow(this);
         AddToGroup(CharacterManager.CharacterGroup);
         AddToGroup(IGameNode.GameNodeGroup);
-        AddToGroup(StageRoot.ProcessGroup);
+        AddToGroup(GameStageRoot.ProcessGroup);
     }
 
     private async void ActivateOnScreen()
@@ -157,7 +157,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
     }
 
     #region IGameNodeインタフェース
-    public virtual void InitializeNode() => SceneAdded += GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().AddScene;
+    public virtual void InitializeNode() => SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
 
     public virtual void ExitScreen()
     {

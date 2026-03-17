@@ -28,12 +28,6 @@ public partial class DialogLayer : CanvasLayer
     public DialogRoot GetCurrentScreen() => GetTree().CurrentScene as DialogRoot;
 
     /// <summary>
-    /// 現在のゲーム画面を返す
-    /// </summary>
-    /// <returns>ScreenRoot</returns>
-    public StageRoot GetCurrentStageRoot() => GetTree().CurrentScene as StageRoot;
-
-    /// <summary>
     /// 現在のダイアログを返す
     /// </summary>
     /// <returns>DialogRoot</returns>
@@ -238,4 +232,58 @@ public partial class DialogLayer : CanvasLayer
     }
 
     public void QuitGame() => GetTree().Quit();
+
+    /// <summary>
+    /// ゲーム画面を開く
+    /// </summary>
+    /// <param name="startStageType">ゲーム開始種別</param>
+    /// <param name="slotNo">データ番号</param>
+    public void OpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
+    {
+        GetTree().Paused = true;
+        _ = CallDeferred(MethodName.DeferredOpenGame, [(int)startStageType, slotNo, fadeout, fadein]);
+    }
+
+    private void DeferredOpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
+    {
+        GameDataManager gameDataManager = GetNode<GameDataManager>("/root/GameDataManager");
+        Error e = Error.Ok;
+
+        // TravelStageとRestartは何もしない。
+        switch (startStageType)
+        {
+            case StartGameType.NewGame:
+
+                e = gameDataManager.LoadInitialStartData();
+                break;
+
+            case StartGameType.Load:
+
+                e = gameDataManager.Load(slotNo);
+                break;
+        }
+
+        if (e is not Error.Ok)
+        {
+            string msg = $"ゲームを開始できません。エラーの値は{e}です。";
+            GD.PrintErr(msg);
+            return;
+        }
+
+        string path = GameStageRoot.GetResourcePath(gameDataManager.GetStageData());
+
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            GD.PrintErr("pathがnullまたはホワイトスペースです。ChangeSceneToFile()できません。");
+            return;
+        }
+
+        DeferredOpenScreen(path, fadeout, fadein);
+    }
+
+    /// <summary>
+    /// 現在のゲーム画面を返す
+    /// </summary>
+    /// <returns>ScreenRoot</returns>
+    public GameStageRoot GetCurrentGameStageRoot() => GetTree().CurrentScene as GameStageRoot;
 }

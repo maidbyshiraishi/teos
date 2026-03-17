@@ -202,7 +202,7 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
     }
 
     #region IGameNodeインタフェース
-    public virtual void InitializeNode() => SceneAdded += GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().AddScene;
+    public virtual void InitializeNode() => SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
     #endregion
 
     #region ICharacterManagerインタフェース

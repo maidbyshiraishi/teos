@@ -54,7 +54,7 @@ public partial class CharacterManager : Node2D
 
         // 各種CharacterEnablerがセットされている場合は登録を行う
         cenabler.SetCharacterManager(this);
-        _ = GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot();
+        _ = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
 
         if (cnode.GetParent() is null)
         {

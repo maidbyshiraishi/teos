@@ -55,6 +55,6 @@ public partial class OpenGameCommand : CommandRoot
             SlotNo = GameDataManager.NullSlotNo;
         }
 
-        GetNode<GameDialogLayer>("/root/DialogLayer").OpenGame(StartGame, SlotNo, Fadeout, Fadein);
+        GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGame, SlotNo, Fadeout, Fadein);
     }
 }

@@ -12,7 +12,7 @@ public partial class ProcessTriggerRoot : Node
     [Export]
     public Node Target { get; set; }
 
-    public override void _Ready() => AddToGroup(StageRoot.ProcessGroup);
+    public override void _Ready() => AddToGroup(GameStageRoot.ProcessGroup);
 
     public override void _Process(double delta) => Exec();
 

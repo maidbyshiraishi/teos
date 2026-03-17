@@ -1,6 +1,7 @@
 using Godot;
 using teos.data;
 using teos.path;
+using teos.screen;
 using teos.stage.character_manager;
 using teos.system;
 
@@ -9,12 +10,24 @@ namespace teos.stage;
 /// <summary>
 /// ゲームステージの親
 /// </summary>
-public partial class GameStageRoot : StageRoot
+public partial class GameStageRoot : DialogRoot, IStateful
 {
+    public static readonly string ProcessGroup = "ProcessGroup";
     public static readonly string StagePath = "res://stage/stage_{0:D4}.tscn";
 
     [Export]
     public bool PauseAutoScroll { get; set; } = false;
+
+    [ExportGroup("BGM")]
+
+    /// <summary>
+    /// BGMなし
+    /// </summary>
+    [Export]
+    public bool NoBgm { get; set; }
+
+    [Export]
+    public AudioStream BgmStream { get; set; }
 
     private PathFollow _autoScroll;
 
@@ -29,7 +42,9 @@ public partial class GameStageRoot : StageRoot
     public override void InitializeNode()
     {
         GetNode<GameDataManager>("/root/GameDataManager").Restore();
-        base.InitializeNode();
+        GetTree().CallGroup(IGameNode.GameNodeGroup, "InitializeNode");
+        LoadState();
+        PlayBgm();
     }
 
     public override void _Process(double delta)
@@ -97,4 +112,30 @@ public partial class GameStageRoot : StageRoot
     }
 
     public void ReparentNode(Node2D node, string nodeName) => node?.CallDeferred(Node.MethodName.Reparent, [GetNode(nodeName)]);
+
+    protected void PlayBgm()
+    {
+        if (NoBgm)
+        {
+            GetNode<MusicPlayer>("/root/MusicPlayer").Play(MusicPlayer.Command.Mute);
+            return;
+        }
+
+        if (BgmStream is null)
+        {
+            return;
+        }
+
+        GetNode<MusicPlayer>("/root/MusicPlayer").Play(MusicPlayer.Command.FastPlay, BgmStream);
+    }
+
+    #region IStatefulインタフェース
+    /// <summary>
+    /// ステージ状態の保存を行う。
+    /// 画面切り替え前、セーブ前に行われる
+    /// </summary>
+    public void SaveState() => GetTree().CallGroup(IStateful.StatefulGroup, "StateSave");
+
+    public void LoadState() => GetTree().CallGroup(IStateful.StatefulGroup, "StateLoad");
+    #endregion
 }

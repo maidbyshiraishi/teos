@@ -20,7 +20,7 @@ public partial class EnemyEmpty : Node2D, IGameNode, ICharacterManager, ISweep, 
         m_PathFollow = FindPathFollow();
         AddToGroup(CharacterManager.CharacterGroup);
         AddToGroup(IGameNode.GameNodeGroup);
-        AddToGroup(StageRoot.ProcessGroup);
+        AddToGroup(GameStageRoot.ProcessGroup);
     }
 
     private Array<PathFollow> FindPathFollow()
