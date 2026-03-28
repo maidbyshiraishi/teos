@@ -3025,7 +3025,7 @@ script = ExtResource("36_7wcn7")
 
 [node name="CrackBlock_1" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1" index="2" unique_id=539511643 instance=ExtResource("3_pnamt")]
 position = Vector2(47.9583, -16.121)
-Life = 6
+Life = 3
 
 [node name="PackScore3000" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1/CrackBlock_1" index="3" unique_id=2135105252 instance=ExtResource("25_3tala")]
 visible = false
@@ -3037,7 +3037,7 @@ MaxSpeed = 200.0
 
 [node name="CrackBlock_2" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1" index="3" unique_id=1956883907 instance=ExtResource("3_pnamt")]
 position = Vector2(-15.97, -47.5184)
-Life = 6
+Life = 3
 
 [node name="PackScore3000" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1/CrackBlock_2" index="3" unique_id=1709384556 instance=ExtResource("25_3tala")]
 visible = false
@@ -3049,7 +3049,7 @@ MaxSpeed = 200.0
 
 [node name="CrackBlock_3" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1" index="4" unique_id=1786914638 instance=ExtResource("3_pnamt")]
 position = Vector2(-48.0241, 16.0684)
-Life = 6
+Life = 3
 
 [node name="PackScore3000" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1/CrackBlock_3" index="3" unique_id=766809142 instance=ExtResource("25_3tala")]
 visible = false
@@ -3061,7 +3061,7 @@ MaxSpeed = 200.0
 
 [node name="CrackBlock_4" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1" index="5" unique_id=1180634479 instance=ExtResource("3_pnamt")]
 position = Vector2(16.0612, 48.0753)
-Life = 6
+Life = 3
 
 [node name="PackScore3000" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1/CrackBlock_4" index="3" unique_id=351019731 instance=ExtResource("25_3tala")]
 visible = false
@@ -3073,7 +3073,6 @@ MaxSpeed = 200.0
 
 [node name="CrackBlock_5" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1" index="6" unique_id=370374130 instance=ExtResource("3_pnamt")]
 position = Vector2(16.1296, 79.9918)
-Life = 8
 
 [node name="PackScore3000" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1/CrackBlock_5" index="5" unique_id=251880383 instance=ExtResource("25_3tala")]
 visible = false
@@ -3085,7 +3084,6 @@ MaxSpeed = 200.0
 
 [node name="CrackBlock_6" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1" index="7" unique_id=236657452 instance=ExtResource("3_pnamt")]
 position = Vector2(79.9805, -16.1031)
-Life = 8
 
 [node name="PackScore3000" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1/CrackBlock_6" index="5" unique_id=1558201532 instance=ExtResource("25_3tala")]
 visible = false
@@ -3097,7 +3095,6 @@ MaxSpeed = 200.0
 
 [node name="CrackBlock_7" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1" index="8" unique_id=909905069 instance=ExtResource("3_pnamt")]
 position = Vector2(-15.9896, -79.5724)
-Life = 8
 
 [node name="PackScore3000" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1/CrackBlock_7" index="5" unique_id=990585863 instance=ExtResource("25_3tala")]
 visible = false
@@ -3109,7 +3106,6 @@ MaxSpeed = 200.0
 
 [node name="CrackBlock_8" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1" index="9" unique_id=1650611921 instance=ExtResource("3_pnamt")]
 position = Vector2(-80.0163, 16.0502)
-Life = 8
 
 [node name="PackScore3000" parent="Enemy/BossPath2D/PathFollow2D/StageBoss_1/CrackBlock_8" index="5" unique_id=1648383924 instance=ExtResource("25_3tala")]
 visible = false
