@@ -12,7 +12,8 @@ public partial class StageBoss3 : TileMapMob
     private int _state = 0;
     private float _angle;
     private int _pileIndex = 0;
-    private Array<Marker2D> _markers = [];
+    private Array<Marker2D> _marker = [];
+    private int _markerCount = 0;
     private int _index = 0;
     private AddSceneCommand _addSceneCommand;
 
@@ -82,18 +83,18 @@ public partial class StageBoss3 : TileMapMob
 
     public void MakeTentacle()
     {
-        if (_markers.Count == 0)
+        if (_markerCount == 0)
         {
             return;
         }
 
-        if (_markers[_index].GetChildCount() < 4)
+        if (_marker[_index].GetChildCount() < 4)
         {
-            _addSceneCommand.ParentNode = _markers[_index];
+            _addSceneCommand.ParentNode = _marker[_index];
             _addSceneCommand.AddScene();
         }
 
-        _index = Mathf.Clamp(_index + 1, 0, _markers.Count - 1);
+        _index = (_index + 1) % _markerCount;
     }
 
     #region ICharacterManagerインタフェース
@@ -112,10 +113,11 @@ public partial class StageBoss3 : TileMapMob
         {
             if (n is Marker2D marker)
             {
-                _markers.Add(marker);
+                _marker.Add(marker);
             }
         }
 
+        _markerCount = _marker.Count;
         _addSceneCommand = GetNodeOrNull<AddSceneCommand>("AddSceneCommand");
         GetNodeOrNull<Timer>("Timer")?.Start();
     }

@@ -60,7 +60,7 @@ public partial class Mob : Area2D, IGameNode, ILife
     {
         ActivateOnScreen();
         AddToGroup(IGameNode.GameNodeGroup);
-        AddToGroup(StageRoot.ProcessGroup);
+        AddToGroup(GameStageRoot.ProcessGroup);
         Life = InitialLife;
     }
 
@@ -164,7 +164,7 @@ public partial class Mob : Area2D, IGameNode, ILife
     #region IGameNodeインタフェース
     public virtual void InitializeNode()
     {
-        SceneAdded += GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().AddScene;
+        SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
         InitialSpeed();
     }
 

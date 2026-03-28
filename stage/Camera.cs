@@ -20,7 +20,7 @@ public partial class Camera : Camera2D, IGameNode
     private void LimitToInsideTileMap()
     {
         // カメラの移動範囲を制限する
-        TileMapLayer map = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentStageRoot().GetNode<TileMapLayer>("TileMap/Ground");
+        TileMapLayer map = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().GetNode<TileMapLayer>("TileMap/Ground");
         Rect2I limits = map.GetUsedRect();
         Vector2I tileSetSize = map.TileSet.TileSize;
         LimitTop = limits.Position.Y * tileSetSize.Y;

@@ -14,7 +14,7 @@ public partial class WheelGun : WeaponRoot
     public override void _Ready()
     {
         base._Ready();
-        AddToGroup(StageRoot.ProcessGroup);
+        AddToGroup(GameStageRoot.ProcessGroup);
     }
 
     public override void _Process(double delta)

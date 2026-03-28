@@ -29,7 +29,7 @@ public partial class Decoration : Node2D, ICharacterManager
 
             if (StaticOnScreen)
             {
-                GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().ReparentNode(this, StaticNodeName);
+                GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().ReparentNode(this, StaticNodeName);
             }
         }
     }

@@ -21,6 +21,6 @@ public partial class PauseAutoScroll : CommandRoot
             return;
         }
 
-        GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot().PauseAutoScroll = Paused;
+        GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().PauseAutoScroll = Paused;
     }
 }

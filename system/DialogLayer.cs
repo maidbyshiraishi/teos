@@ -28,12 +28,6 @@ public partial class DialogLayer : CanvasLayer
     public DialogRoot GetCurrentScreen() => GetTree().CurrentScene as DialogRoot;
 
     /// <summary>
-    /// 現在のゲーム画面を返す
-    /// </summary>
-    /// <returns>ScreenRoot</returns>
-    public StageRoot GetCurrentStageRoot() => GetTree().CurrentScene as StageRoot;
-
-    /// <summary>
     /// 現在のダイアログを返す
     /// </summary>
     /// <returns>DialogRoot</returns>
@@ -49,7 +43,7 @@ public partial class DialogLayer : CanvasLayer
     {
         if (string.IsNullOrWhiteSpace(path))
         {
-            GD.PrintErr("pathがnullまたはホワイトスペースです。OpenDialog()を実行できません。");
+            GD.PrintErr("ダイアログのパスがnullまたはホワイトスペースです。");
             return;
         }
 
@@ -64,36 +58,31 @@ public partial class DialogLayer : CanvasLayer
 
     private void DeferredOpenDialog(string path)
     {
-        if (Lib.GetPackedScene(path) is not PackedScene pack || pack.Instantiate() is not Node node)
+        if (Lib.GetPackedScene(path) is not PackedScene pack || pack.Instantiate() is not DialogRoot dnode)
         {
-            return;
-        }
-
-        DialogRoot screen = GetCurrentScreen();
-
-        if (screen is null)
-        {
-            GD.PrintErr($"スクリーンが開いていない状態でOpenDialog()を実行できません。");
-            return;
-        }
-
-        if (node is not DialogRoot dnode)
-        {
-            GD.PrintErr($"{path}はダイアログではありません。OpenDialog()を実行できません。");
+            GD.PrintErr($"{path}はダイアログではありません。");
             return;
         }
 
         // ダイアログが開いていないなら画面を停止させる
         if (IsEmpty())
         {
-            screen.Inactive();
-            GetTree().Paused = true;
+            if (GetCurrentScreen() is DialogRoot screen)
+            {
+                screen.Inactive();
+            }
+            else
+            {
+                GD.PrintErr($"スクリーンが開いていない状態でダイアログを開けません。");
+                return;
+            }
         }
         // ダイアログが開いているなら停止させる
         else
         {
-            GetCurrentDialog().Inactive();
-            GetCurrentDialog().ProcessMode = ProcessModeEnum.Pausable;
+            DialogRoot dialog = GetCurrentDialog();
+            dialog.Inactive();
+            dialog.ProcessMode = ProcessModeEnum.Pausable;
         }
 
         Push(dnode);
@@ -121,9 +110,7 @@ public partial class DialogLayer : CanvasLayer
     /// <param name="skipActive">Controlをアクティブに戻さない</param>
     public void CloseDialog(bool undo = false, bool skipActive = false)
     {
-        DialogRoot dnode = Pop(true);
-
-        if (dnode is null)
+        if (Pop(true) is not DialogRoot dnode)
         {
             return;
         }
@@ -133,29 +120,24 @@ public partial class DialogLayer : CanvasLayer
             dnode.Undo();
         }
 
+        dnode.Inactive();
         dnode.Close();
 
         if (IsEmpty())
         {
-            if (!skipActive)
+            if (!skipActive && GetCurrentScreen() is DialogRoot current)
             {
-                DialogRoot current = GetCurrentScreen();
                 current.Active();
                 Input.MouseMode = current.MouseCaptured ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
             }
 
             GetTree().Paused = false;
         }
-        else if (!skipActive)
+        else if (!skipActive && GetCurrentDialog() is DialogRoot dialogRoot)
         {
-            DialogRoot dialogRoot = GetCurrentDialog();
-
-            if (dialogRoot is not null)
-            {
-                dialogRoot.Active();
-                Input.MouseMode = dialogRoot.MouseCaptured ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
-                dialogRoot.ProcessMode = ProcessModeEnum.Inherit;
-            }
+            dialogRoot.Active();
+            Input.MouseMode = dialogRoot.MouseCaptured ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
+            dialogRoot.ProcessMode = ProcessModeEnum.Inherit;
         }
     }
 
@@ -171,7 +153,7 @@ public partial class DialogLayer : CanvasLayer
     {
         if (string.IsNullOrWhiteSpace(path))
         {
-            GD.PrintErr("pathがnullまたはホワイトスペースです。ChangeSceneToFile()できません。");
+            GD.PrintErr("スクリーンのパスがnullまたはホワイトスペースです。");
             return;
         }
 
@@ -181,18 +163,6 @@ public partial class DialogLayer : CanvasLayer
         }
 
         GetTree().Paused = true;
-        DialogRoot dialog = GetCurrentDialog();
-
-        if (dialog is null)
-        {
-            DialogRoot screen = GetCurrentScreen();
-            screen?.Inactive();
-        }
-        else
-        {
-            dialog.Inactive();
-        }
-
         _ = CallDeferred(MethodName.DeferredOpenScreen, [path, fadeout, fadein]);
     }
 
@@ -202,6 +172,7 @@ public partial class DialogLayer : CanvasLayer
         fader.ScreenFade(fadeout);
         _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
         CloseAllDialog();
+        GetCurrentScreen()?.Inactive();
 
         if (Lib.GetPackedScene(path) is PackedScene pack)
         {
@@ -238,4 +209,58 @@ public partial class DialogLayer : CanvasLayer
     }
 
     public void QuitGame() => GetTree().Quit();
+
+    /// <summary>
+    /// ゲーム画面を開く
+    /// </summary>
+    /// <param name="startStageType">ゲーム開始種別</param>
+    /// <param name="slotNo">データ番号</param>
+    public void OpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
+    {
+        GetTree().Paused = true;
+        _ = CallDeferred(MethodName.DeferredOpenGame, [(int)startStageType, slotNo, fadeout, fadein]);
+    }
+
+    private void DeferredOpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
+    {
+        GameDataManager gameDataManager = GetNode<GameDataManager>("/root/GameDataManager");
+        Error e = Error.Ok;
+
+        // TravelStageとRestartは何もしない。
+        switch (startStageType)
+        {
+            case StartGameType.NewGame:
+
+                e = gameDataManager.LoadInitialStartData();
+                break;
+
+            case StartGameType.Load:
+
+                e = gameDataManager.Load(slotNo);
+                break;
+        }
+
+        if (e is not Error.Ok)
+        {
+            string msg = $"ゲームを開始できません。エラーの値は{e}です。";
+            GD.PrintErr(msg);
+            return;
+        }
+
+        string path = GameStageRoot.GetResourcePath(gameDataManager.GetStageData());
+
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            GD.PrintErr("ステージのリソースパスがnullまたはホワイトスペースです。");
+            return;
+        }
+
+        DeferredOpenScreen(path, fadeout, fadein);
+    }
+
+    /// <summary>
+    /// 現在のゲーム画面を返す
+    /// </summary>
+    /// <returns>ScreenRoot</returns>
+    public GameStageRoot GetCurrentGameStageRoot() => GetTree().CurrentScene as GameStageRoot;
 }

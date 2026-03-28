@@ -37,7 +37,7 @@ public partial class AddSceneCommand : CommandRoot
 
     public override void _Ready()
     {
-        _gameStageRoot = GetNode<GameDialogLayer>("/root/DialogLayer").GetCurrentGameRoot();
+        _gameStageRoot = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
         SceneAdded += _gameStageRoot.AddScene;
         SceneToNodeAdded += _gameStageRoot.AddSceneToNode;
     }

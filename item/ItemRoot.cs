@@ -45,7 +45,7 @@ public partial class ItemRoot : Area2D, IGameNode, IItem
         ActivateOnScreen();
         _collisionShape = GetNodeOrNull<CollisionShape2D>("ApproachPlayer/CollisionShape2D");
         AddToGroup(IGameNode.GameNodeGroup);
-        AddToGroup(StageRoot.ProcessGroup);
+        AddToGroup(GameStageRoot.ProcessGroup);
         _homing = new(this, LerpAngle);
     }
 
