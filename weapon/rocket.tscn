@@ -821,18 +821,18 @@ ReductionApproach = 50.0
 AutoScrollSpeed = 60.0
 NumOfBullets = 30
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(13.5, 0)
 shape = SubResource("RectangleShape2D_1e54g")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="1" unique_id=1289633695]
 texture = ExtResource("4_liobu")
 hframes = 6
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="2" unique_id=1363664342]
 libraries/ = SubResource("AnimationLibrary_a7ney")
 
-[node name="AnimationTree" parent="." index="3"]
+[node name="AnimationTree" parent="." index="3" unique_id=1355508401]
 tree_root = SubResource("AnimationNodeStateMachine_vl4pm")
 parameters/conditions/empty = false
 parameters/conditions/press = false

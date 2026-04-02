@@ -149,8 +149,8 @@ graph_offset = Vector2(50, 89)
 
 [node name="EnemySpearShell1" unique_id=737174715 instance=ExtResource("1_2yjy7")]
 script = ExtResource("2_0xqn8")
-LerpAngle = 20.0
 InitialLife = 10
+LerpAngle = 20.0
 InitialMaxSpeed = 200.0
 
 [node name="OnScreen" parent="." index="0" unique_id=118332893]

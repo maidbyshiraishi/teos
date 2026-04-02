@@ -4,7 +4,7 @@
 
 [node name="ResultScreen" unique_id=1775563040 instance=ExtResource("1_1i8rs")]
 
-[node name="Title" parent="." index="1"]
+[node name="Title" parent="." index="1" unique_id=600186711]
 text = "結果発表"
 
 [node name="Label" type="Label" parent="." index="3" unique_id=433751689]

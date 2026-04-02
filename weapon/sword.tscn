@@ -1193,7 +1193,7 @@ ReductionApproach = 24.0
 AutoScrollSpeed = 80.0
 NumOfBullets = 30
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(-28.5, 0)
 shape = SubResource("RectangleShape2D_2gbex")
 
@@ -1206,16 +1206,16 @@ position = Vector2(-125, 0)
 polygon = PackedVector2Array(68, -25, 78, -25, 70, -7, 70, 7, 78, 25, 68, 25, 56, 7, 56, -7)
 disabled = true
 
-[node name="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" parent="." index="2" unique_id=1289633695]
 position = Vector2(40, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_du1dk")
 hframes = 8
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="3" unique_id=1363664342]
 libraries/ = SubResource("AnimationLibrary_1ekul")
 
-[node name="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" parent="." index="4" unique_id=1355508401]
 tree_root = SubResource("AnimationNodeStateMachine_ponnr")
 parameters/conditions/empty = false
 parameters/conditions/press = false

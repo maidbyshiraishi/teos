@@ -134,7 +134,7 @@ texture = ExtResource("7_0l1vt")
 position = Vector2(272, 925)
 texture = ExtResource("8_p4r6x")
 
-[node name="CloseButton" type="Button" parent="Control" index="0" unique_id=660166610]
+[node name="CloseButton" type="Button" parent="Control" parent_id_path=PackedInt32Array(2073071261) index="0" unique_id=660166610]
 light_mask = 2
 layout_mode = 0
 offset_left = 520.0

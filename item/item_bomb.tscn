@@ -32,19 +32,19 @@ radius = 32.0
 [node name="ItemBomb" unique_id=605103885 instance=ExtResource("1_ngonf")]
 scale = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=213184391]
 sprite_frames = SubResource("SpriteFrames_23k5o")
 autoplay = "default"
 frame_progress = 0.523312
 
-[node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
+[node name="CollisionShape2D" parent="ApproachPlayer" parent_id_path=PackedInt32Array(1356587759) index="0" unique_id=373565522]
 shape = SubResource("CircleShape2D_owwf4")
 
 [node name="SweepCommand" parent="." index="5" unique_id=1666873595 instance=ExtResource("3_owwf4")]
 SweepTargetGroup = "EnemyGroup"
 
-[node name="PlaySeCommand" parent="." index="6"]
+[node name="PlaySeCommand" parent="." index="6" unique_id=1531061922]
 SeName = "item_bomb"
 
-[node name="ShowFloatingMessageCommand" parent="." index="7"]
+[node name="ShowFloatingMessageCommand" parent="." index="7" unique_id=1333560571]
 Message = "ぼんばー"

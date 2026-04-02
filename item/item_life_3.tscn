@@ -25,18 +25,18 @@ radius = 66.6667
 [node name="ItemLife3" unique_id=213979347 instance=ExtResource("1_v12jw")]
 scale = Vector2(1.2, 1.2)
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=213184391]
 sprite_frames = SubResource("SpriteFrames_toi7v")
 autoplay = "default"
 
-[node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
+[node name="CollisionShape2D" parent="ApproachPlayer" parent_id_path=PackedInt32Array(1356587759) index="0" unique_id=373565522]
 shape = SubResource("CircleShape2D_v12jw")
 
 [node name="AddLifeCommand" parent="." index="5" unique_id=1246499928 instance=ExtResource("3_iet8d")]
 Value = 3
 
-[node name="PlaySeCommand" parent="." index="6"]
+[node name="PlaySeCommand" parent="." index="6" unique_id=1531061922]
 SeName = "player_recovered"
 
-[node name="ShowFloatingMessageCommand" parent="." index="7"]
+[node name="ShowFloatingMessageCommand" parent="." index="7" unique_id=1333560571]
 Message = "中回復"

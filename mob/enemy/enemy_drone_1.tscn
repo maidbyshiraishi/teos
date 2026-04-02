@@ -184,8 +184,8 @@ position = Vector2(21, 14)
 [node name="ShotTimer" type="Timer" parent="." index="9" unique_id=1477223337]
 autostart = true
 
-[node name="AddScoreCommand" parent="Dead" index="1"]
+[node name="AddScoreCommand" parent="Dead" parent_id_path=PackedInt32Array(1607806562) index="1" unique_id=1371130473]
 Score = 100
 
-[node name="ShowFloatingMessageCommand" parent="Dead" index="2"]
+[node name="ShowFloatingMessageCommand" parent="Dead" parent_id_path=PackedInt32Array(1607806562) index="2" unique_id=2095709811]
 Message = "+100"

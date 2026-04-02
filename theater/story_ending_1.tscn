@@ -677,10 +677,10 @@ _data = {
 metadata/_edit_horizontal_guides_ = [118.0, 359.0]
 metadata/_edit_vertical_guides_ = [166.0, 479.0, 320.0]
 
-[node name="Background" parent="." index="0"]
+[node name="Background" parent="." index="0" unique_id=1818411291]
 color = Color(0, 0, 0, 1)
 
-[node name="Contents" type="Control" parent="Socket" index="0" unique_id=900228614]
+[node name="Contents" type="Control" parent="Socket" parent_id_path=PackedInt32Array(832893757) index="0" unique_id=900228614]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -818,8 +818,8 @@ position = Vector2(16, 17)
 [node name="ChangeBgmCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="0" unique_id=1743942009 instance=ExtResource("5_jn6f3")]
 
 [node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="1" unique_id=1523882894 node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
-AnimationPlayer = NodePath("../../Mask/AnimationPlayer")
 AnimationName = "default"
+AnimationPlayer = NodePath("../../Mask/AnimationPlayer")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page2" index="3" unique_id=1899019593]
 anchors_preset = 0
@@ -1045,8 +1045,8 @@ position = Vector2(16, 17)
 SeName = "rocket_maid"
 
 [node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="2" unique_id=2093585708 node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
-AnimationPlayer = NodePath("../../AnimationPlayer")
 AnimationName = "default"
+AnimationPlayer = NodePath("../../AnimationPlayer")
 
 [node name="Control" type="Control" parent="Socket/Contents/Page6" index="1" unique_id=1988658546]
 anchors_preset = 0

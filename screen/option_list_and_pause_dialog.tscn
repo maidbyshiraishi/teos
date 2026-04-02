@@ -7,13 +7,13 @@
 
 [node name="OptionListAndPauseDialog" unique_id=1023138092 instance=ExtResource("1_jcb5i")]
 
-[node name="Background" parent="." index="0"]
+[node name="Background" parent="." index="0" unique_id=1280132000]
 offset_bottom = 416.0
 
-[node name="Border" parent="." index="1"]
+[node name="Border" parent="." index="1" unique_id=347756515]
 offset_bottom = 416.0
 
-[node name="Title" parent="." index="2"]
+[node name="Title" parent="." index="2" unique_id=1324198916]
 text = "設定一覧 / ポーズ"
 
 [node name="Label" type="Label" parent="." index="3" unique_id=1306753163]
@@ -27,29 +27,29 @@ text = "BGMを一時停止しています。
 BGMの演奏を再開します"
 horizontal_alignment = 1
 
-[node name="Back" parent="Control" index="0"]
+[node name="Back" parent="Control" parent_id_path=PackedInt32Array(1069981254) index="0" unique_id=988453184]
 offset_top = 368.0
 offset_bottom = 400.0
 
-[node name="VolumeOptions" parent="Control" index="1"]
+[node name="VolumeOptions" parent="Control" parent_id_path=PackedInt32Array(1069981254) index="1" unique_id=745970192]
 offset_top = 224.0
 offset_bottom = 256.0
 
-[node name="ResumeBgmCommand" parent="Control/VolumeOptions/Exec" index="1" unique_id=233595126 instance=ExtResource("2_1boa5")]
+[node name="ResumeBgmCommand" parent="Control/VolumeOptions/Exec" parent_id_path=PackedInt32Array(1964663431) index="1" unique_id=233595126 instance=ExtResource("2_1boa5")]
 
-[node name="KeyOptions" parent="Control" index="2"]
+[node name="KeyOptions" parent="Control" parent_id_path=PackedInt32Array(1069981254) index="2" unique_id=570180115]
 offset_top = 272.0
 offset_bottom = 304.0
 
-[node name="ResumeBgmCommand" parent="Control/KeyOptions/Exec" index="1" unique_id=1622330699 instance=ExtResource("2_1boa5")]
+[node name="ResumeBgmCommand" parent="Control/KeyOptions/Exec" parent_id_path=PackedInt32Array(1001501102) index="1" unique_id=1622330699 instance=ExtResource("2_1boa5")]
 
-[node name="ScreenOptions" parent="Control" index="3"]
+[node name="ScreenOptions" parent="Control" parent_id_path=PackedInt32Array(1069981254) index="3" unique_id=798728937]
 offset_top = 320.0
 offset_bottom = 352.0
 
-[node name="ResumeBgmCommand" parent="Control/ScreenOptions/Exec" index="1" unique_id=996224284 instance=ExtResource("2_1boa5")]
+[node name="ResumeBgmCommand" parent="Control/ScreenOptions/Exec" parent_id_path=PackedInt32Array(1111208222) index="1" unique_id=996224284 instance=ExtResource("2_1boa5")]
 
-[node name="ResumeBgmCommand" parent="Close" index="1" unique_id=1155260115 instance=ExtResource("2_1boa5")]
+[node name="ResumeBgmCommand" parent="Close" parent_id_path=PackedInt32Array(2139708725) index="1" unique_id=1155260115 instance=ExtResource("2_1boa5")]
 
 [node name="Focus" parent="." index="8" unique_id=757452679 instance=ExtResource("2_uuw54")]
 position = Vector2(200, 96)

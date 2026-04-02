@@ -354,23 +354,23 @@ Bullet = ExtResource("2_jnrqm")
 NumOfBullets = 30
 HasEnemyStatemachine = true
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_h3gra")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="1" unique_id=1289633695]
 position = Vector2(8, 0)
 texture = ExtResource("2_pmspy")
 hframes = 2
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="2" unique_id=1363664342]
 libraries/ = SubResource("AnimationLibrary_4j6vm")
 
-[node name="AnimationTree" parent="." index="3"]
+[node name="AnimationTree" parent="." index="3" unique_id=1355508401]
 tree_root = SubResource("AnimationNodeStateMachine_h7hrb")
 parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Marker2D" type="Marker2D" parent="Muzzle" index="0" unique_id=429712567]
+[node name="Marker2D" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="0" unique_id=429712567]
 position = Vector2(30, 0)

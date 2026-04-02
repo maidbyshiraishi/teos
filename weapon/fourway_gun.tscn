@@ -365,36 +365,36 @@ Bullet = ExtResource("2_5acs8")
 NumOfBullets = 200
 HasEnemyStatemachine = true
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_k5u0o")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="1" unique_id=1289633695]
 position = Vector2(6, 0)
 texture = ExtResource("2_7dj4i")
 hframes = 2
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="2" unique_id=1363664342]
 libraries/ = SubResource("AnimationLibrary_35ewt")
 
-[node name="AnimationTree" parent="." index="3"]
+[node name="AnimationTree" parent="." index="3" unique_id=1355508401]
 tree_root = SubResource("AnimationNodeStateMachine_1fdec")
 parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Marker2D_1" type="Marker2D" parent="Muzzle" index="0" unique_id=456604919]
+[node name="Marker2D_1" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="0" unique_id=456604919]
 position = Vector2(44, -26)
 rotation = -0.785398
 
-[node name="Marker2D_2" type="Marker2D" parent="Muzzle" index="1" unique_id=1850903]
+[node name="Marker2D_2" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="1" unique_id=1850903]
 position = Vector2(44, -18)
 rotation = -0.261799
 
-[node name="Marker2D_3" type="Marker2D" parent="Muzzle" index="2" unique_id=541041003]
+[node name="Marker2D_3" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="2" unique_id=541041003]
 position = Vector2(44, 18)
 rotation = 0.349066
 
-[node name="Marker2D_4" type="Marker2D" parent="Muzzle" index="3" unique_id=1190767140]
+[node name="Marker2D_4" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="3" unique_id=1190767140]
 position = Vector2(44, 26)
 rotation = 0.785398

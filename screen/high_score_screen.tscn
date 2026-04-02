@@ -4,5 +4,5 @@
 
 [node name="ResultScreen" unique_id=1950982136 instance=ExtResource("1_uwq1d")]
 
-[node name="Title" parent="." index="1"]
+[node name="Title" parent="." index="1" unique_id=600186711]
 text = "ハイスコア"

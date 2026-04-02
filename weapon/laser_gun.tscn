@@ -881,7 +881,7 @@ AutoScrollSpeed = 60.0
 Bullet = ExtResource("2_etjqq")
 NumOfBullets = 1
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(36.5, 0)
 shape = SubResource("RectangleShape2D_5vd1n")
 
@@ -907,21 +907,21 @@ sprite_frames = SubResource("SpriteFrames_yy73r")
 autoplay = "default"
 frame_progress = 0.0868832
 
-[node name="Sprite2D" parent="." index="4"]
+[node name="Sprite2D" parent="." index="4" unique_id=1289633695]
 visible = false
 position = Vector2(30, 6)
 centered = false
 offset = Vector2(-16, -16)
 hframes = 2
 
-[node name="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" parent="." index="5" unique_id=1363664342]
 libraries/ = SubResource("AnimationLibrary_gx3hg")
 
-[node name="AnimationTree" parent="." index="6"]
+[node name="AnimationTree" parent="." index="6" unique_id=1355508401]
 tree_root = SubResource("AnimationNodeStateMachine_56mcy")
 parameters/conditions/empty = false
 parameters/conditions/press = false
 parameters/conditions/release = false
 
-[node name="Marker2D" type="Marker2D" parent="Muzzle" index="0" unique_id=980931037]
+[node name="Marker2D" type="Marker2D" parent="Muzzle" parent_id_path=PackedInt32Array(1497377361) index="0" unique_id=980931037]
 position = Vector2(43, 0)

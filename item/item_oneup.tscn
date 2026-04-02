@@ -25,17 +25,17 @@ radius = 40.0
 [node name="ItemOneup" unique_id=748122330 instance=ExtResource("1_olyho")]
 scale = Vector2(1.5, 1.5)
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=213184391]
 sprite_frames = SubResource("SpriteFrames_bbl8w")
 autoplay = "default"
 
-[node name="ApproachPlayer" parent="." index="3"]
+[node name="ApproachPlayer" parent="." index="3" unique_id=1356587759]
 visible = true
 
-[node name="CollisionShape2D" parent="ApproachPlayer" index="0"]
+[node name="CollisionShape2D" parent="ApproachPlayer" index="0" unique_id=373565522]
 shape = SubResource("CircleShape2D_op38p")
 
 [node name="AddRemainCommand" parent="." index="5" unique_id=493866889 instance=ExtResource("3_autd3")]
 
-[node name="ShowFloatingMessageCommand" parent="." index="7"]
+[node name="ShowFloatingMessageCommand" parent="." index="7" unique_id=1333560571]
 Message = "1up"

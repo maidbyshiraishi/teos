@@ -8,10 +8,10 @@
 
 [node name="ResultScreen" unique_id=1748060014 instance=ExtResource("1_833lb")]
 
-[node name="Title" parent="." index="1"]
+[node name="Title" parent="." index="1" unique_id=600186711]
 text = "最終結果発表"
 
-[node name="StartEnding" type="Button" parent="Control" index="0" unique_id=417626723]
+[node name="StartEnding" type="Button" parent="Control" parent_id_path=PackedInt32Array(869863187) index="0" unique_id=417626723]
 light_mask = 2
 layout_mode = 0
 offset_left = 96.0
@@ -33,5 +33,5 @@ Screen = "res://theater/story_ending_1.tscn"
 
 [node name="Focus" parent="Control/StartEnding" index="1" unique_id=181758906 instance=ExtResource("5_dpp0h")]
 
-[node name="EscapeKey" parent="." index="7"]
+[node name="EscapeKey" parent="." index="7" unique_id=1801624357]
 ActionName = ""
