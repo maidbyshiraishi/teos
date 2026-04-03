@@ -1,15 +1,15 @@
 using Godot;
 using Godot.Collections;
-using teos.command;
-using teos.decoration;
-using teos.mob;
-using teos.mob.enemy;
-using teos.path;
-using teos.stage;
-using teos.stage.character_manager;
-using teos.system;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.decoration;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.mob.enemy;
+using maid_by_shiraishi.path;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.stage.character_manager;
+using maid_by_shiraishi.system;
 
-namespace teos.tilemap.mob;
+namespace maid_by_shiraishi.tilemap.mob;
 
 /// <summary>
 /// タイルマップ型MOB

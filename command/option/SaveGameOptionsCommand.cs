@@ -1,7 +1,7 @@
 using Godot;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.command.option;
+namespace maid_by_shiraishi.command.option;
 
 /// <summary>
 /// ゲームオプションを保存するコマンド

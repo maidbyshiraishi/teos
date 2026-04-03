@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.stage;
+namespace maid_by_shiraishi.stage;
 
 /// <summary>
 /// 画面中央に配置され、CenterOfCameraCharacterEnablerと接触する

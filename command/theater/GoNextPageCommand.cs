@@ -1,7 +1,7 @@
 using Godot;
-using teos.theater;
+using maid_by_shiraishi.theater;
 
-namespace teos.command.theater;
+namespace maid_by_shiraishi.command.theater;
 
 /// <summary>
 /// ストーリーシアターの次ページへ移動するコマンド

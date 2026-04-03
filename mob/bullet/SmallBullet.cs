@@ -1,4 +1,4 @@
-namespace teos.mob.bullet;
+namespace maid_by_shiraishi.mob.bullet;
 
 /// <summary>
 /// 小弾

@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// エラーダイアログ

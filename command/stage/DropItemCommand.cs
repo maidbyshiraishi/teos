@@ -1,7 +1,7 @@
 using Godot;
-using teos.mob;
+using maid_by_shiraishi.mob;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// ドロップアイテムを有効化するコマンド

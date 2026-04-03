@@ -1,8 +1,8 @@
 using Godot;
-using teos.command;
-using teos.stage;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.stage;
 
-namespace teos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// Processトリガーの親

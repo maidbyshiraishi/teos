@@ -1,9 +1,9 @@
 using Godot;
 using System;
 using System.Text.RegularExpressions;
-using teos.data;
+using maid_by_shiraishi.data;
 
-namespace teos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// ゲームのユーザーデータのセーブとロードを管理

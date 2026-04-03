@@ -1,13 +1,13 @@
 using Godot;
 using Godot.Collections;
-using teos.command;
-using teos.mob;
-using teos.mob.bullet;
-using teos.stage;
-using teos.stage.character_manager;
-using teos.system;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.mob.bullet;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.stage.character_manager;
+using maid_by_shiraishi.system;
 
-namespace teos.weapon;
+namespace maid_by_shiraishi.weapon;
 
 /// <summary>
 /// 武器の親

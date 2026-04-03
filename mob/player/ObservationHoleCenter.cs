@@ -1,8 +1,8 @@
 using Godot;
-using teos.stage;
-using teos.tilemap;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.tilemap;
 
-namespace teos.mob.player;
+namespace maid_by_shiraishi.mob.player;
 
 /// <summary>
 /// 前面ブロック透過中心点

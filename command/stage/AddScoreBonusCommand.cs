@@ -1,10 +1,10 @@
 using Godot;
-using teos.command.hud;
-using teos.data;
-using teos.mob.player;
-using teos.system;
+using maid_by_shiraishi.command.hud;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.mob.player;
+using maid_by_shiraishi.system;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// ステージクリアボーナスを操作するコマンド

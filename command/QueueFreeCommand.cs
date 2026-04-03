@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// Nodeを開放するコマンド

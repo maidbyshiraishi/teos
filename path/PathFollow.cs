@@ -1,7 +1,7 @@
 using Godot;
-using teos.command;
+using maid_by_shiraishi.command;
 
-namespace teos.path;
+namespace maid_by_shiraishi.path;
 
 /// <summary>
 /// パスに沿って動くもの

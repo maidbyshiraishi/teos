@@ -1,9 +1,9 @@
 using Godot;
 using Godot.Collections;
-using teos.mob.bullet;
-using teos.weapon;
+using maid_by_shiraishi.mob.bullet;
+using maid_by_shiraishi.weapon;
 
-namespace teos.mob.enemy;
+namespace maid_by_shiraishi.mob.enemy;
 
 /// <summary>
 /// 敵ドローン1

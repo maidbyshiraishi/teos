@@ -1,10 +1,10 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-using teos.data;
-using teos.system;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.system;
 
-namespace teos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// ハイスコア一覧コントロール

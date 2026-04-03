@@ -1,7 +1,7 @@
 using Godot;
 using static Godot.Control;
 
-namespace teos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// フォーカスコマンドコンテナ

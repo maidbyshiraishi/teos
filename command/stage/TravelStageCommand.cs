@@ -1,8 +1,8 @@
 using Godot;
-using teos.stage;
-using teos.system;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// ステージを変更するコマンド

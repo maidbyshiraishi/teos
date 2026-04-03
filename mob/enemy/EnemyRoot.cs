@@ -1,12 +1,12 @@
 using Godot;
 using Godot.Collections;
-using teos.command;
-using teos.mob.player;
-using teos.path;
-using teos.stage.character_manager;
-using teos.weapon;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.mob.player;
+using maid_by_shiraishi.path;
+using maid_by_shiraishi.stage.character_manager;
+using maid_by_shiraishi.weapon;
 
-namespace teos.mob.enemy;
+namespace maid_by_shiraishi.mob.enemy;
 
 /// <summary>
 /// 敵の親

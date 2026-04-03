@@ -1,9 +1,9 @@
 using Godot;
 using Godot.Collections;
-using teos.mob.enemy;
-using teos.mob.player;
+using maid_by_shiraishi.mob.enemy;
+using maid_by_shiraishi.mob.player;
 
-namespace teos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// ホーミング弾

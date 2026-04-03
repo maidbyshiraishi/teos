@@ -1,9 +1,9 @@
 using Godot;
-using teos.command;
-using teos.stage;
-using teos.system;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.system;
 
-namespace teos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// キャラクターの親

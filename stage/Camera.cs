@@ -1,7 +1,7 @@
 using Godot;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.stage;
+namespace maid_by_shiraishi.stage;
 
 /// <summary>
 /// カメラ

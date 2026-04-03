@@ -1,8 +1,8 @@
 using Godot;
-using teos.item;
-using teos.weapon;
+using maid_by_shiraishi.item;
+using maid_by_shiraishi.weapon;
 
-namespace teos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// イベント処理との接触判定を行う。

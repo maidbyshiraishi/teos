@@ -1,9 +1,9 @@
 using Godot;
 using Godot.Collections;
-using teos.system;
-using teos.trigger;
+using maid_by_shiraishi.system;
+using maid_by_shiraishi.trigger;
 
-namespace teos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// 画面とダイアログの親

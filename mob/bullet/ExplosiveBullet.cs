@@ -1,8 +1,8 @@
 using Godot;
-using teos.decoration;
-using teos.system;
+using maid_by_shiraishi.decoration;
+using maid_by_shiraishi.system;
 
-namespace teos.mob.bullet;
+namespace maid_by_shiraishi.mob.bullet;
 
 /// <summary>
 /// 炸裂弾

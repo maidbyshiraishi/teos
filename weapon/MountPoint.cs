@@ -1,8 +1,8 @@
 using Godot;
-using teos.mob;
-using teos.system;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.system;
 
-namespace teos.weapon;
+namespace maid_by_shiraishi.weapon;
 
 /// <summary>
 /// 銃座

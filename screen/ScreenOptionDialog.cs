@@ -1,7 +1,7 @@
 using Godot;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// 画面設定ダイアログ

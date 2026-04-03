@@ -1,7 +1,7 @@
 using Godot;
-using teos.stage;
+using maid_by_shiraishi.stage;
 
-namespace teos.weapon;
+namespace maid_by_shiraishi.weapon;
 
 /// <summary>
 /// 武器(回転ガン)

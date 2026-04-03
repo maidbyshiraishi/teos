@@ -1,8 +1,8 @@
 using Godot;
-using teos.command;
-using teos.weapon;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.weapon;
 
-namespace teos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// 主人公と敵の親

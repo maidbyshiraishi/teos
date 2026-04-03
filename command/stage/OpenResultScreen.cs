@@ -1,8 +1,8 @@
 using Godot;
-using teos.data;
-using teos.system;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.system;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 結果発表画面を表示するコマンド

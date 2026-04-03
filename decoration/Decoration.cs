@@ -1,8 +1,8 @@
 using Godot;
-using teos.stage.character_manager;
-using teos.system;
+using maid_by_shiraishi.stage.character_manager;
+using maid_by_shiraishi.system;
 
-namespace teos.decoration;
+namespace maid_by_shiraishi.decoration;
 
 /// <summary>
 /// 飾りエフェクト

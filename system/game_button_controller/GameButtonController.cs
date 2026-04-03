@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.system.game_button_controller;
+namespace maid_by_shiraishi.system.game_button_controller;
 
 /// <summary>
 /// ゲームの入力の連打、押しっぱなしを検出する

@@ -1,7 +1,7 @@
 using Godot;
-using teos.stage;
+using maid_by_shiraishi.stage;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 接触したGameNodeを除去するコマンド

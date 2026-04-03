@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.stage.character_manager;
+namespace maid_by_shiraishi.stage.character_manager;
 
 /// <summary>
 /// 手動制御用のCharacterEnabler

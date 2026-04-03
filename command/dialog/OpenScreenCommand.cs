@@ -1,7 +1,7 @@
 using Godot;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.command.dialog;
+namespace maid_by_shiraishi.command.dialog;
 
 /// <summary>
 /// 指定スクリーンへ移動するコマンド

@@ -1,6 +1,6 @@
-using teos.stage.character_manager;
+using maid_by_shiraishi.stage.character_manager;
 
-namespace teos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// アイテムを落とすインターフェース

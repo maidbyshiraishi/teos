@@ -1,7 +1,7 @@
-using teos.mob;
-using teos.mob.bullet;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.mob.bullet;
 
-namespace teos.weapon;
+namespace maid_by_shiraishi.weapon;
 
 /// <summary>
 /// 武器(剣と盾)

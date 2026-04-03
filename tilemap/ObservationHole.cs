@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.tilemap;
+namespace maid_by_shiraishi.tilemap;
 
 /// <summary>
 /// 前面タイルマップレイヤーの切り抜きポリゴン

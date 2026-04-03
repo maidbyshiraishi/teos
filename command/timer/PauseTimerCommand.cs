@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.command.timer;
+namespace maid_by_shiraishi.command.timer;
 
 /// <summary>
 /// タイマーを一時停止するコマンド

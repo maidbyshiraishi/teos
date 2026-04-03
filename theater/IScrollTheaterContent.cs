@@ -1,4 +1,4 @@
-namespace teos.theater;
+namespace maid_by_shiraishi.theater;
 
 /// <summary>
 /// スクロールシアターのインタフェース

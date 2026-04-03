@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace teos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// CallGroupを実行する

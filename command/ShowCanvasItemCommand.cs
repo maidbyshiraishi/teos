@@ -1,7 +1,7 @@
 using Godot;
-using teos.screen;
+using maid_by_shiraishi.screen;
 
-namespace teos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// CanvasItemを表示するコマンド

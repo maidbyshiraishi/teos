@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.command.animation;
+namespace maid_by_shiraishi.command.animation;
 
 /// <summary>
 /// AnimationPlayerのアニメーションを開始するコマンド

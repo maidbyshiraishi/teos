@@ -1,8 +1,8 @@
 using Godot;
-using teos.command;
-using teos.screen;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.screen;
 
-namespace teos.theater;
+namespace maid_by_shiraishi.theater;
 
 /// <summary>
 /// ストーリーシアターダイアログ

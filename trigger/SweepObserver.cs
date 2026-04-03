@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace teos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// グループ内のノード数がゼロになった場合にコマンドを実行するトリガー

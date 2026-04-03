@@ -1,11 +1,11 @@
 using Godot;
-using teos.data;
-using teos.path;
-using teos.screen;
-using teos.stage.character_manager;
-using teos.system;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.path;
+using maid_by_shiraishi.screen;
+using maid_by_shiraishi.stage.character_manager;
+using maid_by_shiraishi.system;
 
-namespace teos.stage;
+namespace maid_by_shiraishi.stage;
 
 /// <summary>
 /// ゲームステージの親

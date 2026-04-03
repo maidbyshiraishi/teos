@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.item;
+namespace maid_by_shiraishi.item;
 
 /// <summary>
 /// アイテムのインターフェース

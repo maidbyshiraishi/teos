@@ -1,9 +1,9 @@
 using Godot;
-using teos.command;
-using teos.mob;
-using teos.stage;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.stage;
 
-namespace teos.item;
+namespace maid_by_shiraishi.item;
 
 /// <summary>
 /// アイテムの親

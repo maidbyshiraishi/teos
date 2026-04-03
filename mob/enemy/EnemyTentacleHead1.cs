@@ -1,9 +1,9 @@
 using Godot;
-using teos.mob.tentacle;
-using teos.system;
-using teos.weapon;
+using maid_by_shiraishi.mob.tentacle;
+using maid_by_shiraishi.system;
+using maid_by_shiraishi.weapon;
 
-namespace teos.mob.enemy;
+namespace maid_by_shiraishi.mob.enemy;
 
 /// <summary>
 /// 触手敵1

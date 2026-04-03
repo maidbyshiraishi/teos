@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.stage.character_manager;
+namespace maid_by_shiraishi.stage.character_manager;
 
 /// <summary>
 /// キャラクター有効化・無効化制御

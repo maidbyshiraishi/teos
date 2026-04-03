@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.tilemap.mob;
+namespace maid_by_shiraishi.tilemap.mob;
 
 /// <summary>
 /// ステージ1ボス

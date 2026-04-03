@@ -1,7 +1,7 @@
 using Godot;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 自動スクロールを停止するコマンド

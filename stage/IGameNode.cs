@@ -1,4 +1,4 @@
-namespace teos.stage;
+namespace maid_by_shiraishi.stage;
 
 /// <summary>
 /// ゲーム内で使用されるオブジェクト全般のインタフェース

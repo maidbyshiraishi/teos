@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace teos.data;
+namespace maid_by_shiraishi.data;
 
 /// <summary>
 /// スコアデータのセット

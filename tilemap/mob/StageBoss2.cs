@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using teos.stage.character_manager;
+using maid_by_shiraishi.stage.character_manager;
 
-namespace teos.tilemap.mob;
+namespace maid_by_shiraishi.tilemap.mob;
 
 /// <summary>
 /// ステージ2ボス

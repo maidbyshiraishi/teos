@@ -1,7 +1,7 @@
 using Godot;
-using teos.mob.player;
+using maid_by_shiraishi.mob.player;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// プレイヤーのライフを初期値に設定するコマンド

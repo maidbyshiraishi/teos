@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// コマンド延滞実行コンテナ

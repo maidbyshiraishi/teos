@@ -1,11 +1,11 @@
 using Godot;
 using Godot.Collections;
-using teos.command;
-using teos.mob;
-using teos.stage.character_manager;
-using teos.system;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.mob;
+using maid_by_shiraishi.stage.character_manager;
+using maid_by_shiraishi.system;
 
-namespace teos.tilemap;
+namespace maid_by_shiraishi.tilemap;
 
 /// <summary>
 /// ひび割れブロック

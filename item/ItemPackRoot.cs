@@ -1,9 +1,9 @@
 using Godot;
 using Godot.Collections;
-using teos.stage.character_manager;
-using teos.system;
+using maid_by_shiraishi.stage.character_manager;
+using maid_by_shiraishi.system;
 
-namespace teos.item;
+namespace maid_by_shiraishi.item;
 
 /// <summary>
 /// アイテムをセットで表示・非表示させる入れ物

@@ -1,7 +1,7 @@
 using Godot;
-using teos.command;
+using maid_by_shiraishi.command;
 
-namespace teos.trigger;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
 /// トリガーArea2D版

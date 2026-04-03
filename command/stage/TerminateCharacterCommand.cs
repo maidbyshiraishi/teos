@@ -1,7 +1,7 @@
 using Godot;
-using teos.stage.character_manager;
+using maid_by_shiraishi.stage.character_manager;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// ICharacterManagerのTerminateCharacter()を実行する

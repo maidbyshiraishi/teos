@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.stage.character_manager;
+namespace maid_by_shiraishi.stage.character_manager;
 
 /// <summary>
 /// 画面中央のマーカーと接触することで起動するCharacterEnabler

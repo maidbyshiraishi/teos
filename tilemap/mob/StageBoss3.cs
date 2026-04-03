@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using teos.command;
+using maid_by_shiraishi.command;
 
-namespace teos.tilemap.mob;
+namespace maid_by_shiraishi.tilemap.mob;
 
 /// <summary>
 /// ステージ3ボス

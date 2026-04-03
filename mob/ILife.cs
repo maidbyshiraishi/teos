@@ -1,4 +1,4 @@
-namespace teos.mob;
+namespace maid_by_shiraishi.mob;
 
 /// <summary>
 /// ライフ操作のインターフェース

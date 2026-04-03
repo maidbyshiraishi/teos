@@ -1,7 +1,7 @@
 using Godot;
-using teos.weapon;
+using maid_by_shiraishi.weapon;
 
-namespace teos.stage.hud;
+namespace maid_by_shiraishi.stage.hud;
 
 /// <summary>
 /// ステータス表示

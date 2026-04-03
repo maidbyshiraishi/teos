@@ -1,7 +1,7 @@
 using Godot;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.command.audio;
+namespace maid_by_shiraishi.command.audio;
 
 /// <summary>
 /// 効果音を再生するコマンド

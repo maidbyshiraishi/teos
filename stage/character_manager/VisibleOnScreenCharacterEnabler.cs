@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.stage.character_manager;
+namespace maid_by_shiraishi.stage.character_manager;
 
 /// <summary>
 /// 画面内への進入と退出で起動するCharacterEnabler

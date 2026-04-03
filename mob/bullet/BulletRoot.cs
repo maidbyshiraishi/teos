@@ -1,8 +1,8 @@
 using Godot;
-using teos.mob.enemy;
-using teos.system;
+using maid_by_shiraishi.mob.enemy;
+using maid_by_shiraishi.system;
 
-namespace teos.mob.bullet;
+namespace maid_by_shiraishi.mob.bullet;
 
 /// <summary>
 /// 弾の親、動かない

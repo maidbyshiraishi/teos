@@ -1,11 +1,11 @@
 using Godot;
 using Godot.Collections;
-using teos.command;
-using teos.command.stage;
-using teos.stage;
-using teos.trigger;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.command.stage;
+using maid_by_shiraishi.stage;
+using maid_by_shiraishi.trigger;
 
-namespace teos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// グループ内のノード数に応じてコマンドを実行するトリガー

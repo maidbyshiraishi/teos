@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.system;
+namespace maid_by_shiraishi.system;
 
 /// <summary>
 /// 便利関数

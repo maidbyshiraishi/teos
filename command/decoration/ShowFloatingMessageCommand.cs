@@ -1,8 +1,8 @@
 using Godot;
-using teos.decoration;
-using teos.system;
+using maid_by_shiraishi.decoration;
+using maid_by_shiraishi.system;
 
-namespace teos.command.decoration;
+namespace maid_by_shiraishi.command.decoration;
 
 /// <summary>
 /// フローティングメッセージを表示するコマンド

@@ -1,8 +1,8 @@
 using Godot;
 using Godot.Collections;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.command;
+namespace maid_by_shiraishi.command;
 
 /// <summary>
 /// 条件式コマンド

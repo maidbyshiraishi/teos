@@ -1,13 +1,13 @@
 using Godot;
-using teos.command;
-using teos.data;
-using teos.path;
-using teos.stage.character_manager;
-using teos.stage.hud;
-using teos.system;
-using teos.weapon;
+using maid_by_shiraishi.command;
+using maid_by_shiraishi.data;
+using maid_by_shiraishi.path;
+using maid_by_shiraishi.stage.character_manager;
+using maid_by_shiraishi.stage.hud;
+using maid_by_shiraishi.system;
+using maid_by_shiraishi.weapon;
 
-namespace teos.mob.player;
+namespace maid_by_shiraishi.mob.player;
 
 /// <summary>
 /// 主人公

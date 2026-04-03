@@ -1,7 +1,7 @@
 using Godot;
-using teos.system;
+using maid_by_shiraishi.system;
 
-namespace teos.command.state;
+namespace maid_by_shiraishi.command.state;
 
 /// <summary>
 /// ステージ情報を保存するコマンド

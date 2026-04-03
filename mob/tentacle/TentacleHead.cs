@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.mob.tentacle;
+namespace maid_by_shiraishi.mob.tentacle;
 
 /// <summary>
 /// 触手の頭

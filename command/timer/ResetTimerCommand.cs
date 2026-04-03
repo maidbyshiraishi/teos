@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.command.timer;
+namespace maid_by_shiraishi.command.timer;
 
 /// <summary>
 /// タイマーをリセットして再開するコマンド

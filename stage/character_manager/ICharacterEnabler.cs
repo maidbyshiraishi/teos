@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.stage.character_manager;
+namespace maid_by_shiraishi.stage.character_manager;
 
 /// <summary>
 /// キャラクター有効化判定処理のインタフェース

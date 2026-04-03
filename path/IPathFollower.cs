@@ -1,4 +1,4 @@
-namespace teos.path;
+namespace maid_by_shiraishi.path;
 
 /// <summary>
 /// パス移動時に終端処理を行うインタフェース

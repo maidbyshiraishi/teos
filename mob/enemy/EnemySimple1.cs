@@ -1,7 +1,7 @@
 using Godot;
-using teos.weapon;
+using maid_by_shiraishi.weapon;
 
-namespace teos.mob.enemy;
+namespace maid_by_shiraishi.mob.enemy;
 
 /// <summary>
 /// 敵シンプル1

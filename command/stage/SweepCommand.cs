@@ -1,6 +1,6 @@
 using Godot;
 
-namespace teos.command.stage;
+namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
 /// 敵をすべて倒すコマンド

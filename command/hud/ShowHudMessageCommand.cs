@@ -1,8 +1,8 @@
 using Godot;
-using teos.stage.hud;
-using teos.system;
+using maid_by_shiraishi.stage.hud;
+using maid_by_shiraishi.system;
 
-namespace teos.command.hud;
+namespace maid_by_shiraishi.command.hud;
 
 /// <summary>
 /// HUDメッセージを表示するコマンド

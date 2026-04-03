@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace teos.command.dialog;
+namespace maid_by_shiraishi.command.dialog;
 
 /// <summary>
 /// スクリーンショット保存コマンド

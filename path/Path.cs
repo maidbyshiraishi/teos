@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace teos.path;
+namespace maid_by_shiraishi.path;
 
 /// <summary>
 /// 終端処理を行うパス

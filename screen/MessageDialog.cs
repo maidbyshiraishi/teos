@@ -1,7 +1,7 @@
 using Godot;
-using teos.trigger;
+using maid_by_shiraishi.trigger;
 
-namespace teos.screen;
+namespace maid_by_shiraishi.screen;
 
 /// <summary>
 /// メッセージダイアログ

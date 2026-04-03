@@ -1,8 +1,8 @@
 using Godot;
-using teos.mob.player;
-using teos.stage.character_manager;
+using maid_by_shiraishi.mob.player;
+using maid_by_shiraishi.stage.character_manager;
 
-namespace teos.mob.enemy;
+namespace maid_by_shiraishi.mob.enemy;
 
 /// <summary>
 /// ヤリ貝敵1
