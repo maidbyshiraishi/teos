@@ -13,6 +13,12 @@ public partial class DelayCommandContainer : CommandRoot
     [Export]
     public double WaitTime { get; set; } = 0f;
 
+    private bool _start = false;
+    private double _waitTime = 0f;
+    private double _count = 0f;
+    private Node _node;
+    private bool _flag = false;
+
     public override void ExecCommand(Node node, bool flag)
     {
         if (ExecFlag != flag)
@@ -20,16 +26,24 @@ public partial class DelayCommandContainer : CommandRoot
             return;
         }
 
-        WaitExec(node, flag);
+        _waitTime = WaitTime;
+        _count = 0f;
+        _node = node;
+        _flag = flag;
+        _start = true;
     }
 
-    private async void WaitExec(Node node, bool flag)
+    public override void _Process(double delta)
     {
-        if (WaitTime >= 0.05f)
+        if (_start)
         {
-            _ = await ToSignal(GetTree().CreateTimer(WaitTime, false), Timer.SignalName.Timeout);
-        }
+            _count += delta;
 
-        ExecAllCommand(this, node, flag);
+            if (_waitTime <= _count)
+            {
+                _start = false;
+                ExecAllCommand(this, _node, _flag);
+            }
+        }
     }
 }
