@@ -21,6 +21,7 @@ public partial class ScrollTheater : DialogRoot
 
     public override void _Ready()
     {
+        base._Ready();
         _path = GetNode<Path2D>("Path2D");
         _socket = _path.GetNode<PathFollow2D>("Socket");
         _content = GetNode<Control>("Path2D/Socket/Contents");

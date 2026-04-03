@@ -5,6 +5,7 @@
 [node name="SePlayer" type="Node" unique_id=1137056550]
 process_mode = 3
 script = ExtResource("1_vw2l8")
+DefaultMaxPolyphony = 1
 MaxPolyphony = Dictionary[String, int]({
 "enemy_damaged": 2,
 "explosion": 2,

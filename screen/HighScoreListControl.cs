@@ -1,8 +1,8 @@
 using Godot;
-using System;
-using System.Collections.Generic;
 using maid_by_shiraishi.data;
 using maid_by_shiraishi.system;
+using System;
+using System.Collections.Generic;
 
 namespace maid_by_shiraishi.screen;
 

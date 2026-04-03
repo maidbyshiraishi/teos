@@ -23,14 +23,9 @@ public partial class ScreenOption : Node
 
     public override void _Ready()
     {
-        if (GetNodeOrNull<Timer>("Timer") is Timer timer)
-        {
-            // Godotエディタからシグナルを接続すると
-            // リリースビルドのエクスポート時、接続が失われることがある。
-            timer.Timeout += CorrectOnScreen;
-
-            timer.Start();
-        }
+        Timer timer = GetNode<Timer>("Timer");
+        timer.Timeout += CorrectOnScreen;
+        timer.Start();
     }
 
     public override void _Notification(int what)

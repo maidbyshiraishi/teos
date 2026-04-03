@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using maid_by_shiraishi.system;
 
 namespace maid_by_shiraishi.command.dialog;
@@ -14,6 +15,12 @@ public partial class OpenDialogCommand : CommandRoot
     [Export]
     public string DialogPath { get; set; }
 
+    [Export]
+    public string ArgumentKey { get; set; }
+
+    [Export]
+    public Array<Variant> Argument { get; set; } = [];
+
     public override void ExecCommand(Node node, bool flag)
     {
         if (ExecFlag != flag)
@@ -21,6 +28,6 @@ public partial class OpenDialogCommand : CommandRoot
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog(DialogPath);
+        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog(DialogPath, ArgumentKey, Argument);
     }
 }

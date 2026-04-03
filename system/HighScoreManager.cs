@@ -1,6 +1,6 @@
 using Godot;
-using System.Collections.Generic;
 using maid_by_shiraishi.data;
+using System.Collections.Generic;
 
 namespace maid_by_shiraishi.system;
 

@@ -9,6 +9,13 @@ namespace maid_by_shiraishi.system;
 /// </summary>
 public partial class SePlayer : Node
 {
+    /// <summary>
+    /// 効果音のデフォルト同時再生数
+    /// 音声の場合は1になる。
+    /// </summary>
+    [Export]
+    public int DefaultMaxPolyphony { get; set; } = 2;
+
     [Export]
     public Dictionary<string, int> MaxPolyphony { get; set; } = [];
 
@@ -36,7 +43,7 @@ public partial class SePlayer : Node
         {
             Name = name,
             Bus = voice ? "VOICE" : "SE",
-            MaxPolyphony = MaxPolyphony.TryGetValue(name, out int value) ? value : 1,
+            MaxPolyphony = MaxPolyphony.TryGetValue(name, out int value) ? value : voice ? 1 : DefaultMaxPolyphony,
             Stream = audio,
             ProcessMode = processAlways ? ProcessModeEnum.Inherit : ProcessModeEnum.Pausable,
             Autoplay = true

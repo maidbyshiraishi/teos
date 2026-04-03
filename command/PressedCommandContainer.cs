@@ -8,24 +8,61 @@ namespace maid_by_shiraishi.command;
 /// </summary>
 public partial class PressedCommandContainer : CommandContainer
 {
-    private Control _control;
+    private Node _node;
 
     public override void _Ready()
     {
         base._Ready();
-        _control = GetParent<Control>();
+        _node = GetParent();
 
-        if (_control is BaseButton baseButton)
+        if (_node is null)
         {
-            baseButton.Pressed += Pressed;
+            return;
+        }
+
+        // Godotデフォ由来は小文字スタート
+        if (_node.HasSignal("pressed"))
+        {
+            _ = _node.Connect("pressed", new(this, MethodName.Pressed));
+            return;
+        }
+
+        // C#由来は大文字スタート
+        if (_node.HasSignal("Pressed"))
+        {
+            _ = _node.Connect("Pressed", new(this, MethodName.Pressed));
+            return;
         }
     }
 
     public virtual void Pressed()
     {
-        if (_control.FocusMode != FocusModeEnum.None)
+        switch (_node)
         {
-            ExecAllCommand(this, _control, true);
+            case null:
+                return;
+
+            case Control control:
+
+                // ノードがControlの場合はフォーカスモードを確認する
+                if (control.FocusMode == FocusModeEnum.None)
+                {
+                    return;
+                }
+
+                break;
+
+            case CanvasItem canvasItem:
+
+                // ノードがCanvasItemの場合は画面に表示されているかを確認する
+                if (!canvasItem.IsVisibleInTree())
+                {
+                    return;
+                }
+
+                break;
         }
+
+        ExecAllCommand(this, _node, true);
     }
 }

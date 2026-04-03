@@ -1,7 +1,7 @@
 using Godot;
+using maid_by_shiraishi.data;
 using System;
 using System.Text.RegularExpressions;
-using maid_by_shiraishi.data;
 
 namespace maid_by_shiraishi.system;
 

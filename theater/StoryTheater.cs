@@ -63,6 +63,8 @@ public partial class StoryTheater : DialogRoot
     /// </summary>
     private void ClosePage(int index)
     {
+        base._Ready();
+
         if (_content is null)
         {
             return;

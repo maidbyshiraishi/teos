@@ -52,7 +52,7 @@ public partial class DialogRoot : Control
     /// <summary>
     /// フォーカスのあるControlを保存する
     /// </summary>
-    public virtual void SaveFocus() => _lastFocus = GetFocus();
+    public virtual void SaveFocus(Control control = null) => _lastFocus = control is null ? GetFocus() : control;
 
     public virtual Control GetFocus(Control root = null)
     {
