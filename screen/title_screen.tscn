@@ -65,6 +65,8 @@ offset_right = 208.0
 offset_bottom = 464.0
 vertical_alignment = 2
 
+[node name="VersionLabelCommand" parent="LabelVersionNo" unique_id=1729303899 instance=ExtResource("17_igc8e")]
+
 [node name="Control" type="Control" parent="." unique_id=1494458470]
 light_mask = 2
 anchors_preset = 0
@@ -222,9 +224,6 @@ Stream = ExtResource("15_3la61")
 
 [node name="PauseTimerCommand" parent="Focus" unique_id=1904097595 node_paths=PackedStringArray("Target") instance=ExtResource("16_5wfdf")]
 Target = NodePath("../../Timer")
-
-[node name="VersionLabelCommand" parent="Focus" unique_id=18710407 node_paths=PackedStringArray("VersionLabel") instance=ExtResource("17_igc8e")]
-VersionLabel = NodePath("../../LabelVersionNo")
 
 [node name="EscapeKey" parent="." unique_id=189073609 instance=ExtResource("17_uhsa7")]
 ActionName = "escape"
