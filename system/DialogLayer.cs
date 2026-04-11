@@ -88,6 +88,7 @@ public partial class DialogLayer : CanvasLayer
         Push(dnode);
         AddChild(dnode);
         dnode.Active();
+        dnode.ProcessMode = ProcessModeEnum.Always;
         Input.MouseMode = dnode.MouseCaptured ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
     }
 
@@ -136,8 +137,8 @@ public partial class DialogLayer : CanvasLayer
         else if (!skipActive && GetCurrentDialog() is DialogRoot dialogRoot)
         {
             dialogRoot.Active();
+            dialogRoot.ProcessMode = ProcessModeEnum.Always;
             Input.MouseMode = dialogRoot.MouseCaptured ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
-            dialogRoot.ProcessMode = ProcessModeEnum.Inherit;
         }
     }
 
@@ -209,54 +210,6 @@ public partial class DialogLayer : CanvasLayer
     }
 
     public void QuitGame() => GetTree().Quit();
-
-    /// <summary>
-    /// ゲーム画面を開く
-    /// </summary>
-    /// <param name="startStageType">ゲーム開始種別</param>
-    /// <param name="slotNo">データ番号</param>
-    public void OpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
-    {
-        GetTree().Paused = true;
-        _ = CallDeferred(MethodName.DeferredOpenGame, [(int)startStageType, slotNo, fadeout, fadein]);
-    }
-
-    private void DeferredOpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
-    {
-        GameDataManager gameDataManager = GetNode<GameDataManager>("/root/GameDataManager");
-        Error e = Error.Ok;
-
-        // TravelStageとRestartは何もしない。
-        switch (startStageType)
-        {
-            case StartGameType.NewGame:
-
-                e = gameDataManager.LoadInitialStartData();
-                break;
-
-            case StartGameType.Load:
-
-                e = gameDataManager.Load(slotNo);
-                break;
-        }
-
-        if (e is not Error.Ok)
-        {
-            string msg = $"ゲームを開始できません。エラーの値は{e}です。";
-            GD.PrintErr(msg);
-            return;
-        }
-
-        string path = GameStageRoot.GetResourcePath(gameDataManager.GetStageData());
-
-        if (string.IsNullOrWhiteSpace(path))
-        {
-            GD.PrintErr("ステージのリソースパスがnullまたはホワイトスペースです。");
-            return;
-        }
-
-        DeferredOpenScreen(path, fadeout, fadein);
-    }
 
     /// <summary>
     /// 現在のゲーム画面を返す
