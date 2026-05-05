@@ -4,7 +4,7 @@ using maid_by_shiraishi.system;
 namespace maid_by_shiraishi.command.flag;
 
 /// <summary>
-/// フラグを操作するコマンド
+/// ゲームフラグを操作するコマンド
 /// </summary>
 public partial class AddFlagDataCommand : CommandRoot
 {

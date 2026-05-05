@@ -4,7 +4,7 @@ using maid_by_shiraishi.stage;
 namespace maid_by_shiraishi.command.stage;
 
 /// <summary>
-/// 接触したGameNodeを除去するコマンド
+/// 指定したGameNodeを除去するコマンド
 /// </summary>
 public partial class RemoveGameNodeCommand : CommandRoot
 {

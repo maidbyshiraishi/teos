@@ -3,7 +3,7 @@ using Godot;
 namespace maid_by_shiraishi.command.timer;
 
 /// <summary>
-/// タイマーの一時停止を解除するコマンド
+/// 一時停止されたタイマーを再開するコマンド
 /// </summary>
 public partial class ResumeTimerCommand : CommandRoot
 {

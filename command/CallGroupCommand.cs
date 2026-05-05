@@ -4,7 +4,7 @@ using Godot.Collections;
 namespace maid_by_shiraishi.command;
 
 /// <summary>
-/// CallGroupを実行する
+/// CallGroupを実行するコマンド
 /// </summary>
 public partial class CallGroupCommand : CommandRoot
 {
