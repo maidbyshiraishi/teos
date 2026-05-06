@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://df5mlk8jlyrud" path="res://screen/KeyOptionDialog.cs" id="2_jahy0"]
 [ext_resource type="PackedScene" uid="uid://cu6skmjvn6qt1" path="res://command/option/save_key_options_command.tscn" id="2_o5guw"]
 [ext_resource type="PackedScene" uid="uid://doubmd3r22t1r" path="res://command/dialog/update_dialog_screen_command.tscn" id="2_q4wlk"]
-[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="4_ffloj"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://trigger/PressedCommandTrigger.cs" id="4_ffloj"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="4_h8vmb"]
 [ext_resource type="PackedScene" uid="uid://dy1dvjhw72vd8" path="res://command/option/reset_default_key_options_command.tscn" id="5_dog2l"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_kjl5n"]

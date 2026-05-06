@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://bvxquv5u5dkif" path="res://contents/bgm/bgm11_song.ogg" id="13_wsncm"]
 [ext_resource type="PackedScene" uid="uid://cc0w3te8ab0ed" path="res://command/show_canvas_item_command.tscn" id="14_erue3"]
 [ext_resource type="Theme" uid="uid://cib6gefddtud7" path="res://contents/theme/theme_small.tres" id="14_q5l2u"]
-[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="16_72ksj"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://trigger/PressedCommandTrigger.cs" id="16_72ksj"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="17_dpbwf"]
 [ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="18_72ksj"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="18_ta5gv"]

@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bvxquv5u5dkif" path="res://contents/bgm/bgm11_song.ogg" id="9_fldbg"]
 [ext_resource type="AudioStream" uid="uid://desswc5ojc6g7" path="res://contents/bgm/bgm12.ogg" id="9_o72l3"]
 [ext_resource type="AudioStream" uid="uid://dm4r6k3lvkfb" path="res://contents/bgm/bgm6.ogg" id="12_60qon"]
-[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="13_jao6p"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://trigger/PressedCommandTrigger.cs" id="13_jao6p"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="14_m5k74"]
 [ext_resource type="PackedScene" uid="uid://cxuhm7osw7v00" path="res://command/option/load_game_options_command.tscn" id="16_rncda"]
 [ext_resource type="PackedScene" uid="uid://brisrw4lbj3fy" path="res://command/option/set_game_options_command.tscn" id="17_54top"]

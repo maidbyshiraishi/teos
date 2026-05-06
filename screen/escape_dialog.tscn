@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="5_x0pca"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="6_j4fdm"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="7_8rrvl"]
-[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="8_gaobp"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://trigger/PressedCommandTrigger.cs" id="8_gaobp"]
 [ext_resource type="PackedScene" uid="uid://bre2fb1drg3wq" path="res://command/reference_command_container.tscn" id="9_41aka"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="9_o15a3"]
 [ext_resource type="PackedScene" uid="uid://bp6p2o3vupf7t" path="res://command/audio/pause_bgm_command.tscn" id="10_2mcok"]

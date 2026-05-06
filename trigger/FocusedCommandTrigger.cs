@@ -1,12 +1,13 @@
 using Godot;
+using maid_by_shiraishi.command;
 using static Godot.Control;
 
-namespace maid_by_shiraishi.command;
+namespace maid_by_shiraishi.trigger;
 
 /// <summary>
-/// フォーカスコマンドコンテナ
+/// フォーカスコマンドトリガー
 /// </summary>
-public partial class FocusedCommandContainer : CommandContainer
+public partial class FocusedCommandTrigger : CommandContainer
 {
     private Control _control;
 

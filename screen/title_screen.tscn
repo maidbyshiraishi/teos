@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="9_7ac0i"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="9_bvcnx"]
 [ext_resource type="PackedScene" uid="uid://closkw7p3bd1g" path="res://command/dialog/open_game_command.tscn" id="9_lh4gl"]
-[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="11_j6aw5"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://trigger/PressedCommandTrigger.cs" id="11_j6aw5"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/open_screen_command.tscn" id="11_xa21i"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="13_6nn80"]
 [ext_resource type="PackedScene" uid="uid://l7xudjpc38ac" path="res://command/timer/start_timer_command.tscn" id="13_hmmf8"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ccueitrspq0fx" path="res://screen/DialogRoot.cs" id="2_015eg"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="2_5461d"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="3_41fmg"]
-[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://command/PressedCommandContainer.cs" id="3_vbqgr"]
+[ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://trigger/PressedCommandTrigger.cs" id="3_vbqgr"]
 [ext_resource type="PackedScene" uid="uid://0g2eonhitvku" path="res://command/audio/resume_bgm_command.tscn" id="4_e6yyl"]
 [ext_resource type="PackedScene" uid="uid://c6qlmwp7c1hu5" path="res://command/dialog/close_dialog_command.tscn" id="5_ey1cc"]
 [ext_resource type="PackedScene" uid="uid://cfvrydl1rgai2" path="res://command/focus.tscn" id="5_vbqgr"]
