@@ -12,7 +12,7 @@ public partial class SaveScreenshotCommand : CommandRoot
     /// スクリーンショットのパス
     /// </summary>
     [Export]
-    public string ScreenshotPath { get; set; } = "user://teos_{0}.png";
+    public string ScreenshotPath { get; set; } = "user://{0}_{1}.png";
 
     public override void ExecCommand(Node node, bool flag)
     {
@@ -24,7 +24,8 @@ public partial class SaveScreenshotCommand : CommandRoot
         Image image = GetViewport().GetTexture().GetImage();
         DateTime datetime = DateTime.Now;
         string datetimeString = datetime.ToString("yyyyMMddHHmmss");
-        string file = string.Format(ScreenshotPath, datetimeString);
+        string projectName = ProjectSettings.GetSetting("application/config/name", "screenshot").AsString();
+        string file = string.Format(ScreenshotPath, [projectName, datetimeString]);
         Error e = image.SavePng(file);
 
         if (e is not Error.Ok)
