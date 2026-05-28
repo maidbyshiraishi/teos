@@ -40,6 +40,7 @@ public partial class Player : Fighter, ICharacterManager
 
     public override void _Ready()
     {
+        // todo: エディタ内で設定しているTarget,BorderRect,Hudがエクスポート時に失われる可能性あり
         _mountPoint = GetNode<MountPoint>("MountPoint");
         _animationTree = GetNode<AnimationTree>("AnimationTree");
         _autoScrollPathFollow = GetParentOrNull<PathFollow>();
