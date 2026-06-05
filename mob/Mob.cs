@@ -114,7 +114,7 @@ public partial class Mob : Area2D, IGameNode, ILife
 
         node.SetPhysicsProcess(false);
         node.GlobalPosition = new(-2000f, -2000f);
-        _ = await node世の中にはリフレッシュレートが60Hzをはるかに超えるモニタがあるらしいので_PhysicsProcessで更新することにした。.ToSignal(node.GetTree().CreateTimer(0.05f, false), Timer.SignalName.Timeout);
+        _ = await node.ToSignal(node.GetTree().CreateTimer(0.05f, false), Timer.SignalName.Timeout);
         node.QueueFree();
     }
 
