@@ -28,7 +28,7 @@ public partial class KeyReleaseedTrigger : Node
         AddToGroup(KeyTriggerGroup);
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (_enabled && !string.IsNullOrWhiteSpace(ActionName) && Input.IsActionJustReleased(ActionName))
         {

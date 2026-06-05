@@ -14,7 +14,7 @@ public partial class ProcessTriggerRoot : Node
 
     public override void _Ready() => AddToGroup(GameStageRoot.ProcessGroup);
 
-    public override void _Process(double delta) => Exec();
+    public override void _PhysicsProcess(double delta) => Exec();
 
     public void Exec() => CommandRoot.ExecChildren(this, Target, true);
 }

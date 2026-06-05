@@ -29,7 +29,7 @@ public partial class ExplosiveBullet : BulletRoot
         }
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         _speed = HomingFunction.MoveToward(this, _speed, m_MaxSpeed, m_Acceleration, delta);
 

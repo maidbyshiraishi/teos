@@ -17,7 +17,7 @@ public partial class WheelGun : WeaponRoot
         AddToGroup(GameStageRoot.ProcessGroup);
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (m_StateMachine.GetCurrentNode() == "idle" || m_StateMachine.GetCurrentNode() == "attack" || m_StateMachine.GetCurrentNode() == "enemy_idle" || m_StateMachine.GetCurrentNode() == "enemy_attack")
         {

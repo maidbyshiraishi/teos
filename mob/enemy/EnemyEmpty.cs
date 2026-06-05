@@ -41,7 +41,7 @@ public partial class EnemyEmpty : Node2D, IGameNode, ICharacterManager, ISweep, 
         return ret;
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (!Visible)
         {

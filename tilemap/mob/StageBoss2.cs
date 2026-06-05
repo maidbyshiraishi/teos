@@ -31,7 +31,7 @@ public partial class StageBoss2 : TileMapMob
         }
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (!m_Active)
         {

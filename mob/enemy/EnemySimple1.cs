@@ -33,7 +33,7 @@ public partial class EnemySimple1 : EnemyRoot
         base._Ready();
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (m_StateMachine.GetCurrentNode() == "idle")
         {

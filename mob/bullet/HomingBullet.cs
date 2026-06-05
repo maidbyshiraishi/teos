@@ -36,7 +36,7 @@ public partial class HomingBullet : BulletRoot
         _homing = new(this, LerpAngle);
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         _homing.Homing(delta, m_MaxSpeed, m_Acceleration);
 

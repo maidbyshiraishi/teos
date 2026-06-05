@@ -62,7 +62,7 @@ public partial class ItemRoot : Area2D, IGameNode, IItem
         m_AMomentWaited = true;
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (!_active)
         {

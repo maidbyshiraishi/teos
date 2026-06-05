@@ -7,7 +7,7 @@ public partial class SmallBullet : BulletRoot
 {
     private float _speed = 0f;
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         _speed = HomingFunction.MoveToward(this, _speed, m_MaxSpeed, m_Acceleration, delta);
 

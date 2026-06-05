@@ -16,7 +16,7 @@ public partial class SweepObserver : ProcessTriggerRoot
 
     private bool _opened = false;
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (_opened || string.IsNullOrWhiteSpace(GroupName))
         {

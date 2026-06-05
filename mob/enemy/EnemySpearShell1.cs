@@ -33,7 +33,7 @@ public partial class EnemySpearShell1 : EnemyRoot
         _homing = new(this, LerpAngle);
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (m_StateMachine.GetCurrentNode() == "idle")
         {

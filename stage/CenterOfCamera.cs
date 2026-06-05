@@ -16,7 +16,7 @@ public partial class CenterOfCamera : Area2D
         _collisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         Vector2 vec = GlobalPosition - _oldPosition;
         _collisionShape.Position = vec.Length() > 2.0f ? vec : Vector2.Zero;

@@ -30,7 +30,7 @@ public partial class EnemyDrone1 : EnemyRoot
         }
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (m_StateMachine.GetCurrentNode() == "idle")
         {

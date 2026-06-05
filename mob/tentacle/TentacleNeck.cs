@@ -15,7 +15,7 @@ public partial class TentacleNeck : Node2D
 
     private bool _disable = false;
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (_disable || MobPrevious is null || MobNext is null)
         {

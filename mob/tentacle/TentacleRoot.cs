@@ -21,7 +21,7 @@ public partial class TentacleRoot : Node2D, ICharacterManager
         AddToGroup(CharacterManager.CharacterGroup);
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (_disableRoot)
         {

@@ -21,7 +21,7 @@ public partial class StageBoss1 : TileMapMob
         _timer.Timeout += TimerTimeout;
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (!m_Active)
         {

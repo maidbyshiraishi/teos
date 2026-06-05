@@ -49,7 +49,7 @@ public partial class Player : Fighter, ICharacterManager
         AddToGroup(CharacterManager.CharacterGroup);
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         Vector2 input = GetInput();
 

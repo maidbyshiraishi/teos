@@ -18,5 +18,5 @@ public partial class ObservationHoleCenter : Node2D, IGameNode
         AddToGroup(GameStageRoot.ProcessGroup);
     }
 
-    public override void _Process(double delta) => Target?.ManageObservationHole(GlobalPosition);
+    public override void _PhysicsProcess(double delta) => Target?.ManageObservationHole(GlobalPosition);
 }

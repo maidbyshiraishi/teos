@@ -19,7 +19,7 @@ public partial class GameButtonStateMachine : Node
         _action = Name;
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         bool press = Input.IsActionPressed(_action);
         m_AnimationTree.Set("parameters/conditions/press", press);

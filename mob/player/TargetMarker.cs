@@ -21,7 +21,7 @@ public partial class TargetMarker : Node2D, IGameNode
         AddToGroup(IGameNode.GameNodeGroup);
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         Vector2 input = Input.GetVector("game_target_left", "game_target_right", "game_target_up", "game_target_down");
         Vector2 position = Position;

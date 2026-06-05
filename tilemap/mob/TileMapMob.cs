@@ -52,7 +52,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
         m_AMomentWaited = true;
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (!m_Active)
         {

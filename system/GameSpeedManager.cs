@@ -53,7 +53,7 @@ public partial class GameSpeedManager : ProcessTriggerRoot
         }
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (string.IsNullOrWhiteSpace(GroupName))
         {

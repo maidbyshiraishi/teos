@@ -18,11 +18,11 @@ public partial class Path : Path2D
         SetChildrenPathLooped();
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (GetChildCount() == 0)
         {
-            SetProcess(false);
+            SetPhysicsProcess(false);
             QueueFree();
         }
     }

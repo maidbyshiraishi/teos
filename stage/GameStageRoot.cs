@@ -47,7 +47,7 @@ public partial class GameStageRoot : DialogRoot, IStateful
         PlayBgm();
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (!PauseAutoScroll)
         {
