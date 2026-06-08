@@ -132,6 +132,14 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
         }
     }
 
+    public override void ExitScreen()
+    {
+        if (RemoveScreenExited)
+        {
+            TerminateCharacter();
+        }
+    }
+
     #region ILifeインタフェース
     public override void AddLife(int value)
     {
@@ -177,14 +185,6 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
     {
         base.InitializeNode();
         m_Player = Player.GetPlayer(this);
-    }
-
-    public override void ExitScreen()
-    {
-        if (RemoveScreenExited)
-        {
-            TerminateCharacter();
-        }
     }
     #endregion
 

@@ -118,6 +118,14 @@ public partial class Mob : Area2D, IGameNode, ILife
         node.QueueFree();
     }
 
+    public virtual void ExitScreen()
+    {
+        if (RemoveScreenExited)
+        {
+            RemoveNode();
+        }
+    }
+
     #region ILifeインタフェース
     public virtual void AddLife(int value)
     {
@@ -166,14 +174,6 @@ public partial class Mob : Area2D, IGameNode, ILife
     {
         SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
         InitialSpeed();
-    }
-
-    public virtual void ExitScreen()
-    {
-        if (RemoveScreenExited)
-        {
-            RemoveNode();
-        }
     }
 
     public virtual void RemoveNode() => ThrowAwayNode2D(this);

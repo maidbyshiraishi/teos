@@ -156,9 +156,6 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
         }
     }
 
-    #region IGameNodeインタフェース
-    public virtual void InitializeNode() => SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
-
     public virtual void ExitScreen()
     {
         if (RemoveScreenExited)
@@ -166,6 +163,9 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
             TerminateCharacter();
         }
     }
+
+    #region IGameNodeインタフェース
+    public virtual void InitializeNode() => SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
 
     public virtual void RemoveNode() => Mob.ThrowAwayNode2D(this);
     #endregion

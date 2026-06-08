@@ -113,10 +113,9 @@ public partial class ItemRoot : Area2D, IGameNode, IItem
         _homing.StopHoming();
     }
 
-    #region IGameNodeインタフェース
-
     public void ExitScreen() => RemoveNode();
 
+    #region IGameNodeインタフェース
     public void RemoveNode() => Mob.ThrowAwayNode2D(this);
     #endregion
 
