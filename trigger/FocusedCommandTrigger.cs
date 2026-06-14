@@ -14,21 +14,25 @@ public partial class FocusedCommandTrigger : CommandContainer
     public override void _Ready()
     {
         base._Ready();
-        _control = GetParent<Control>();
 
-        if (_control.HasSignal(Control.SignalName.FocusEntered))
+        if (GetParent() is Control control)
         {
-            _control.FocusEntered += ExecFocusEntered;
-        }
+            _control = control;
 
-        if (_control.HasSignal(Control.SignalName.FocusExited))
-        {
-            _control.FocusExited += ExecFocusExited;
-        }
+            if (_control.HasSignal(Control.SignalName.FocusEntered))
+            {
+                _control.FocusEntered += ExecFocusEntered;
+            }
 
-        if (_control.HasSignal(Control.SignalName.MouseEntered))
-        {
-            _control.MouseEntered += ExecMouseEntered;
+            if (_control.HasSignal(Control.SignalName.FocusExited))
+            {
+                _control.FocusExited += ExecFocusExited;
+            }
+
+            if (_control.HasSignal(Control.SignalName.MouseEntered))
+            {
+                _control.MouseEntered += ExecMouseEntered;
+            }
         }
     }
 

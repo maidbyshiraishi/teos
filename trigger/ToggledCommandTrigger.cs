@@ -14,10 +14,10 @@ public partial class ToggledCommandTrigger : CommandContainer
     public override void _Ready()
     {
         base._Ready();
-        _control = GetParent<Control>();
 
-        if (_control is BaseButton baseButton)
+        if (GetParent() is Control control && control is BaseButton baseButton)
         {
+            _control = control;
             baseButton.Toggled += Toggled;
         }
     }
