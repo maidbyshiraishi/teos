@@ -31,7 +31,7 @@ public partial class EventFinder : Area2D
         AreaEntered += Area2DEntered;
     }
 
-    public void Area2DEntered(Area2D area) => CallDeferred(MethodName.DeferredNodeEntered, [area]);
+    public void Area2DEntered(Area2D area) => _ = CallDeferred(MethodName.DeferredNodeEntered, [area]);
 
     public void DeferredNodeEntered(Area2D node)
     {

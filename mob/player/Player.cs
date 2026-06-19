@@ -329,7 +329,7 @@ public partial class Player : Fighter, ICharacterManager
         if (m_StateMachine.GetCurrentNode() == "idle")
         {
             // プレーヤーへのダメージはレーザーとソード以外は-1固定
-            if (value is < 0 and >= (-5))
+            if (value is < 0 and >= -5)
             {
                 value = -1;
             }

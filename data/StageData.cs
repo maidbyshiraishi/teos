@@ -15,10 +15,7 @@ public class StageData : DataRoot
 
     public int StageNo { get; set; }
 
-    public StageData(int stageNo = 1)
-    {
-        StageNo = stageNo;
-    }
+    public StageData(int stageNo = 1) => StageNo = stageNo;
 
     public StageData Copy() => new()
     {

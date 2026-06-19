@@ -58,11 +58,5 @@ public partial class TimerTrigger : Node
     /// タイマーを一時停止する
     /// </summary>
     /// <param name="paused">停止するか</param>
-    public void PauseTimer(bool paused)
-    {
-        if (_timer is not null)
-        {
-            _timer.Paused = paused;
-        }
-    }
+    public void PauseTimer(bool paused) => _ = _timer?.Paused = paused;
 }

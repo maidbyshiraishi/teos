@@ -58,12 +58,7 @@ public partial class EnemyRoot : Fighter, ICharacterManager, ISweep, IPathFollow
         m_StateMachine = (AnimationNodeStateMachinePlayback)m_AnimationTree.Get("parameters/playback");
         m_PathFollow = FindPathFollow(this);
         m_Sprite2d = GetNodeOrNull<Sprite2D>("Sprite2D");
-
-        if (m_Sprite2d is not null)
-        {
-            m_Sprite2d.FlipH = Flipped;
-        }
-
+        _ = m_Sprite2d?.FlipH = Flipped;
         m_OldPosition = GlobalPosition;
         base._Ready();
         AddToGroup(CharacterManager.CharacterGroup);

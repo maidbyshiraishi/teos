@@ -72,12 +72,7 @@ public partial class GameSpeedManager : ProcessTriggerRoot
                 if (_container2.TryGetValue(name, out Node node))
                 {
                     CommandRoot.ExecChildren(node, Target is null ? this : Target, true);
-
-                    if (_label is not null)
-                    {
-                        _label.Text = $"{100 * GetNode<ChangeGameSpeedCommand>($"{name}/ChangeGameSpeedCommand").Scale}%";
-                    }
-
+                    _ = _label?.Text = $"{100 * GetNode<ChangeGameSpeedCommand>($"{name}/ChangeGameSpeedCommand").Scale}%";
                     break;
                 }
             }

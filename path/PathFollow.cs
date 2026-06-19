@@ -74,7 +74,7 @@ public partial class PathFollow : PathFollow2D
 
         Progress = Mathf.Clamp(Progress + ((Reverse ? -1f : 1f) * Speed * (float)delta), 0, _parentPath.Curve.GetBakedLength());
 
-        if (Progress is > (-1f) and < 1.0f)
+        if (Progress is > -1f and < 1.0f)
         {
             _reachedToEdge = false;
         }

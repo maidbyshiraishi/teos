@@ -65,7 +65,7 @@ public partial class GameStageRoot : DialogRoot, IStateful
         }
     }
 
-    public void AddSceneToNode(Node node, Node parentNode) => CallDeferred(MethodName.DeferredAddSceneToNode, [node, parentNode]);
+    public void AddSceneToNode(Node node, Node parentNode) => _ = CallDeferred(MethodName.DeferredAddSceneToNode, [node, parentNode]);
 
     private void DeferredAddSceneToNode(Node node, Node parentNode)
     {
@@ -111,7 +111,7 @@ public partial class GameStageRoot : DialogRoot, IStateful
         }
     }
 
-    public void ReparentNode(Node2D node, string nodeName) => node?.CallDeferred(Node.MethodName.Reparent, [GetNode(nodeName)]);
+    public void ReparentNode(Node2D node, string nodeName) => _ = (node?.CallDeferred(Node.MethodName.Reparent, [GetNode(nodeName)]));
 
     protected void PlayBgm()
     {

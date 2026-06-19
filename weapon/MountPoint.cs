@@ -12,12 +12,11 @@ public partial class MountPoint : Marker2D
     [Export]
     public float LerpAngle
     {
-        get => _lerpAngle;
-        set => _lerpAngle = Mathf.DegToRad(value);
+        get;
+        set => field = Mathf.DegToRad(value);
     }
 
     private WeaponRoot _weapon;
-    private float _lerpAngle;
 
     public bool EquipWeapon(Fighter fighter, WeaponRoot weapon, bool enemy, bool instantly)
     {
@@ -46,7 +45,7 @@ public partial class MountPoint : Marker2D
     {
         if (_weapon is not null && _weapon.RotationEnabled)
         {
-            GlobalRotation = (float)Mathf.LerpAngle(GlobalRotation, angle, _lerpAngle * delta);
+            GlobalRotation = (float)Mathf.LerpAngle(GlobalRotation, angle, LerpAngle * delta);
         }
     }
 }
