@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_ywom7"]
 [ext_resource type="Texture2D" uid="uid://dhq8erd2tdr66" path="res://contents/image/weapon/gatling_gun.png" id="2_ng0ab"]
-[ext_resource type="PackedScene" uid="uid://cdou8vt06ok1y" path="res://mob/bullet/small_bullet_1.tscn" id="2_uo3bu"]
+[ext_resource type="PackedScene" uid="uid://cdou8vt06ok1y" path="res://mob/shot/small_shot_1.tscn" id="2_uo3bu"]
 [ext_resource type="Animation" uid="uid://dh22vhxeq1oxb" path="res://contents/state_machine/weapon/item.tres" id="11_ta2ht"]
 [ext_resource type="Animation" uid="uid://camfd07a5xaye" path="res://contents/state_machine/weapon/separate.tres" id="12_q8rf2"]
 [ext_resource type="Animation" uid="uid://c4i4h4s5l4pxu" path="res://contents/state_machine/weapon/empty.tres" id="13_hciu2"]
@@ -418,8 +418,8 @@ EquipSe = "weapon_gatling_gun"
 Approach = 64.0
 MaxSpeed = 200.0
 AutoScrollSpeed = 70.0
-Bullet = ExtResource("2_uo3bu")
-NumOfBullets = 300
+Shot = ExtResource("2_uo3bu")
+NumOfShots = 300
 HasEnemyStatemachine = true
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=754525591]

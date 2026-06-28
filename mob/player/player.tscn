@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dulc6txv1m7rj" path="res://contents/image/player/rocket_maid.png" id="2_en8yy"]
 [ext_resource type="Script" uid="uid://dtoxemi0od3d5" path="res://mob/player/Player.cs" id="2_r1hgm"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="5_obiyy"]
-[ext_resource type="PackedScene" uid="uid://d3es3oeyqy3tl" path="res://mob/bullet/fixed_bullet.tscn" id="5_rmb5e"]
+[ext_resource type="PackedScene" uid="uid://d3es3oeyqy3tl" path="res://mob/shot/fixed_shot.tscn" id="5_rmb5e"]
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="6_m7mfw"]
 [ext_resource type="PackedScene" uid="uid://bwp4y1nte25hm" path="res://command/stage/add_remain_command.tscn" id="6_whkhs"]
 [ext_resource type="PackedScene" uid="uid://451w28ffcqj0" path="res://command/stage/reset_player_life_command.tscn" id="7_whkhs"]
@@ -986,8 +986,8 @@ DefaultAutoScrollSpeed = 90.0
 AffectedByWeapon = true
 DefaultDirection = Vector2(1, 0)
 PlaySeEquipWeapon = true
-BulletTargetLayer = 2149
-BulletModulate = Color(0.196078, 1, 1, 1)
+ShotTargetLayer = 2149
+ShotModulate = Color(0.196078, 1, 1, 1)
 InitialLife = 3
 MaxLife = 5
 InitialMaxSpeed = 300.0

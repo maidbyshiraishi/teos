@@ -1,6 +1,6 @@
 using Godot;
 using maid_by_shiraishi.mob;
-using maid_by_shiraishi.mob.bullet;
+using maid_by_shiraishi.mob.shot;
 
 namespace maid_by_shiraishi.weapon;
 
@@ -34,7 +34,7 @@ public partial class Rocket : WeaponRoot
 
     public override void Fire()
     {
-        if (NumOfBullets > 0)
+        if (NumOfShots > 0)
         {
             if (!_fire)
             {
@@ -43,7 +43,7 @@ public partial class Rocket : WeaponRoot
             }
 
             _fire = true;
-            NumOfBullets--;
+            NumOfShots--;
         }
     }
 
@@ -71,9 +71,9 @@ public partial class Rocket : WeaponRoot
 
         if (ret)
         {
-            BulletRoot bullet = GetNode<BulletRoot>("Blade");
-            bullet.CollisionMask = m_BulletTargetLayer;
-            bullet.BulletModulate = m_BulletModulate;
+            ShotRoot shot = GetNode<ShotRoot>("Blade");
+            shot.CollisionMask = m_ShotTargetLayer;
+            shot.ShotModulate = m_ShotModulate;
             _fighter = fighter;
         }
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cr21qyu4bdr2s"]
 
-[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/bullet/bullet_root.tscn" id="1_mgnin"]
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/shot/shot_root.tscn" id="1_mgnin"]
 [ext_resource type="Texture2D" uid="uid://bp6e8qm2f7yee" path="res://contents/image/weapon/laser.png" id="3_revj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xljfl"]

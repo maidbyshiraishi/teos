@@ -16,13 +16,13 @@
 [ext_resource type="PackedScene" uid="uid://dn10ef6ikja86" path="res://weapon/double_gun.tscn" id="14_icat0"]
 [ext_resource type="PackedScene" uid="uid://b1owyaexbyvlj" path="res://weapon/wheel_gun.tscn" id="15_basrc"]
 [ext_resource type="PackedScene" uid="uid://dhf56hjt4x67j" path="res://weapon/fourway_gun.tscn" id="16_lwju7"]
-[ext_resource type="PackedScene" uid="uid://c3r1s07530kir" path="res://mob/bullet/explosive_bullet_1.tscn" id="17_brvys"]
+[ext_resource type="PackedScene" uid="uid://c3r1s07530kir" path="res://mob/shot/explosive_shot_1.tscn" id="17_brvys"]
 [ext_resource type="Script" uid="uid://b3enqjgwsjt0b" path="res://path/Path.cs" id="18_vdus0"]
 [ext_resource type="Script" uid="uid://etipmx6dpuow" path="res://path/PathFollow.cs" id="19_7ljon"]
 [ext_resource type="PackedScene" uid="uid://b6ixw7pqqcldr" path="res://mob/enemy/enemy_tank_1.tscn" id="20_tkfxp"]
 [ext_resource type="PackedScene" uid="uid://c8ok4t16na8fy" path="res://weapon/single_gun.tscn" id="21_q3xa0"]
 [ext_resource type="PackedScene" uid="uid://c52cbgble83ja" path="res://weapon/gatling_gun.tscn" id="22_2kg0l"]
-[ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/bullet/small_bullet_2.tscn" id="23_2bodi"]
+[ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/shot/small_shot_2.tscn" id="23_2bodi"]
 [ext_resource type="PackedScene" uid="uid://b3ee3yj6cktje" path="res://mob/enemy/enemy_plane_1.tscn" id="24_05pyi"]
 [ext_resource type="PackedScene" uid="uid://bvvqfywsnjeau" path="res://item/pack_score_3000.tscn" id="25_3tala"]
 [ext_resource type="PackedScene" uid="uid://xu7h1aceaxya" path="res://item/item_life_1.tscn" id="26_x2ihd"]
@@ -42,7 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="40_qsqel"]
 [ext_resource type="PackedScene" uid="uid://dm1ew8f4l8o0o" path="res://command/stage/sweep_command.tscn" id="41_elnm0"]
 [ext_resource type="PackedScene" uid="uid://ca7v4ux5jvfh7" path="res://command/stage/drop_item_command.tscn" id="42_xrgba"]
-[ext_resource type="PackedScene" uid="uid://cfe82r55av3n1" path="res://mob/bullet/small_bullet_5.tscn" id="48_o6m8u"]
+[ext_resource type="PackedScene" uid="uid://cfe82r55av3n1" path="res://mob/shot/small_shot_5.tscn" id="48_o6m8u"]
 [ext_resource type="PackedScene" uid="uid://brysj8hlpanae" path="res://item/item_bomb.tscn" id="49_l8e7o"]
 [ext_resource type="PackedScene" uid="uid://d2o1ahqecgbdt" path="res://stage/character_manager/secret_character_enabler.tscn" id="50_lochw"]
 [ext_resource type="PackedScene" uid="uid://dpv4a3n4jjw7w" path="res://item/item_life_5.tscn" id="51_si88i"]
@@ -753,7 +753,7 @@ position = Vector2(1468, 0)
 [node name="EnemyTentacleHead" parent="Enemy/TentacleRoot_5/TentacleHead" index="0" unique_id=457898430 instance=ExtResource("10_u74yr")]
 
 [node name="FourwayGun_1" parent="Enemy/TentacleRoot_5/TentacleHead/EnemyTentacleHead" index="9" unique_id=404906461 instance=ExtResource("16_lwju7")]
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/TentacleRoot_5/TentacleHead/EnemyTentacleHead" index="10" unique_id=488616148 instance=ExtResource("11_ttml2")]
 
@@ -780,7 +780,7 @@ Speed = 20.0
 
 [node name="SingleGun_1" parent="Enemy/Path2D_1/PathFollow2D/EnemyTank_1" index="8" unique_id=1160967441 instance=ExtResource("21_q3xa0")]
 rotation = 3.31613
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/Path2D_1/PathFollow2D/EnemyTank_1" index="9" unique_id=1616287539 instance=ExtResource("11_ttml2")]
 
@@ -805,7 +805,7 @@ Speed = 20.0
 
 [node name="SingleGun_1" parent="Enemy/Path2D_2/PathFollow2D/EnemyTank_1" index="0" unique_id=1543678404 instance=ExtResource("21_q3xa0")]
 rotation = -2.96706
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/Path2D_2/PathFollow2D/EnemyTank_1" index="9" unique_id=1120342665 instance=ExtResource("11_ttml2")]
 
@@ -854,7 +854,7 @@ Speed = 20.0
 
 [node name="SingleGun_1" parent="Enemy/Path2D_4/PathFollow2D/EnemyTank_1" index="8" unique_id=880075478 instance=ExtResource("21_q3xa0")]
 rotation = 3.31613
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/Path2D_4/PathFollow2D/EnemyTank_1" index="9" unique_id=982159784 instance=ExtResource("11_ttml2")]
 
@@ -879,7 +879,7 @@ Speed = 20.0
 
 [node name="SingleGun_1" parent="Enemy/Path2D_5/PathFollow2D/EnemyTank_1" index="0" unique_id=636075366 instance=ExtResource("21_q3xa0")]
 rotation = -2.96706
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/Path2D_5/PathFollow2D/EnemyTank_1" index="9" unique_id=1208440259 instance=ExtResource("11_ttml2")]
 
@@ -953,7 +953,7 @@ rotation = 0.785398
 
 [node name="SingleGun_1" parent="Enemy/Path2D_8/PathFollow2D/EnemyTank_1" index="8" unique_id=1298134244 instance=ExtResource("21_q3xa0")]
 rotation = -2.96706
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/Path2D_8/PathFollow2D/EnemyTank_1" index="9" unique_id=293150136 instance=ExtResource("11_ttml2")]
 
@@ -979,7 +979,7 @@ rotation = 0.785398
 
 [node name="SingleGun_1" parent="Enemy/Path2D_9/PathFollow2D/EnemyTank_1" index="8" unique_id=1023138809 instance=ExtResource("21_q3xa0")]
 rotation = -2.96706
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/Path2D_9/PathFollow2D/EnemyTank_1" index="9" unique_id=547426827 instance=ExtResource("11_ttml2")]
 
@@ -1012,7 +1012,7 @@ position = Vector2(-178.191, -212.132)
 
 [node name="GatlingGun_2" parent="Enemy/Path2D_10/PathFollow2D/EnemyTank_1" index="11" unique_id=250067666 instance=ExtResource("22_2kg0l")]
 rotation = -2.96706
-Bullet = ExtResource("23_2bodi")
+Shot = ExtResource("23_2bodi")
 
 [node name="Path2D_11" type="Path2D" parent="Enemy" parent_id_path=PackedInt32Array(980800814) index="15" unique_id=166791965]
 position = Vector2(2296, 480)
@@ -1030,7 +1030,7 @@ Speed = 60.0
 
 [node name="SingleGun_1" parent="Enemy/Path2D_11/PathFollow2D/EnemyPlane_1" index="8" unique_id=1714799463 instance=ExtResource("21_q3xa0")]
 rotation = 3.14159
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore3000" parent="Enemy/Path2D_11/PathFollow2D/EnemyPlane_1" index="9" unique_id=1388915252 instance=ExtResource("25_3tala")]
 
@@ -1112,7 +1112,7 @@ position = Vector2(-360, -144)
 
 [node name="DoubleGun" parent="Enemy/Path2D_14/PathFollow2D/EnemyPlane_1" index="12" unique_id=873274600 instance=ExtResource("14_icat0")]
 rotation = 3.14159
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="Path2D_15" type="Path2D" parent="Enemy" parent_id_path=PackedInt32Array(980800814) index="19" unique_id=1334739817]
 position = Vector2(2672, 480)
@@ -1280,7 +1280,7 @@ position = Vector2(-360, -144)
 
 [node name="FourwayGun" parent="Enemy/Path2D_21/PathFollow2D/EnemyPlane_1" index="12" unique_id=1999506986 instance=ExtResource("16_lwju7")]
 rotation = 3.14159
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="Path2D_22" type="Path2D" parent="Enemy" parent_id_path=PackedInt32Array(980800814) index="26" unique_id=1271392576]
 position = Vector2(3240, 800)
@@ -2372,7 +2372,7 @@ Speed = 20.0
 
 [node name="SingleGun_1" parent="Enemy/Path2D_80/PathFollow2D/EnemyTank_1" index="8" unique_id=1331461163 instance=ExtResource("21_q3xa0")]
 rotation = 3.31613
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/Path2D_80/PathFollow2D/EnemyTank_1" index="9" unique_id=1515109825 instance=ExtResource("11_ttml2")]
 
@@ -2404,7 +2404,7 @@ position = Vector2(-355, -152)
 
 [node name="GatlingGun" parent="Enemy/Path2D_81/PathFollow2D/EnemyTank_1" index="12" unique_id=1727041759 instance=ExtResource("22_2kg0l")]
 rotation = -2.96706
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="Path2D_82" type="Path2D" parent="Enemy" parent_id_path=PackedInt32Array(980800814) index="86" unique_id=1222120344]
 position = Vector2(4676, 448)
@@ -2422,7 +2422,7 @@ Speed = 20.0
 
 [node name="SingleGun_1" parent="Enemy/Path2D_82/PathFollow2D/EnemyTank_1" index="8" unique_id=1127962332 instance=ExtResource("21_q3xa0")]
 rotation = -2.96706
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore5000" parent="Enemy/Path2D_82/PathFollow2D/EnemyTank_1" index="9" unique_id=1181399677 instance=ExtResource("11_ttml2")]
 
@@ -2447,7 +2447,7 @@ Speed = 60.0
 
 [node name="SingleGun_1" parent="Enemy/Path2D_83/PathFollow2D/EnemyPlane_1" index="8" unique_id=978826441 instance=ExtResource("21_q3xa0")]
 rotation = 2.96706
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore3000" parent="Enemy/Path2D_83/PathFollow2D/EnemyPlane_1" index="9" unique_id=212585241 instance=ExtResource("25_3tala")]
 
@@ -2729,7 +2729,7 @@ scale = Vector2(1.5, 1.5)
 
 [node name="FourwayGun_1" parent="Enemy/Path2D_87/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="9" unique_id=1481191366 instance=ExtResource("16_lwju7")]
 rotation = -3.14159
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="CenterOfCameraCharacterEnabler" parent="Enemy/Path2D_87/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="10" unique_id=893129248 instance=ExtResource("13_880td")]
 position = Vector2(-246.667, 0)
@@ -2835,7 +2835,7 @@ Speed = 30.0
 
 [node name="FourwayGun_1" parent="Enemy/Path2D_90/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="9" unique_id=2039512078 instance=ExtResource("16_lwju7")]
 rotation = -3.14159
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore3000" parent="Enemy/Path2D_90/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="10" unique_id=1519801008 instance=ExtResource("25_3tala")]
 
@@ -2874,7 +2874,7 @@ Speed = 30.0
 
 [node name="FourwayGun_1" parent="Enemy/Path2D_91/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="9" unique_id=1860904468 instance=ExtResource("16_lwju7")]
 rotation = -3.14159
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="PackScore3000" parent="Enemy/Path2D_91/PathFollow2D/Path2D_1/PathFollow2D/EnemyPlane1" index="10" unique_id=438622614 instance=ExtResource("25_3tala")]
 
@@ -3171,7 +3171,7 @@ rotation = -2.0944
 
 [node name="GatlingGun_1" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="0" unique_id=1294688078 instance=ExtResource("22_2kg0l")]
 position = Vector2(748, 320)
-Bullet = ExtResource("48_o6m8u")
+Shot = ExtResource("48_o6m8u")
 
 [node name="ItemBomb_1" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="1" unique_id=768208150 instance=ExtResource("49_l8e7o")]
 position = Vector2(3600, 624)
@@ -3196,16 +3196,16 @@ position = Vector2(5792, 896)
 
 [node name="DoubleGun_1" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="8" unique_id=109028720 instance=ExtResource("14_icat0")]
 position = Vector2(2856, 608)
-Bullet = ExtResource("48_o6m8u")
+Shot = ExtResource("48_o6m8u")
 
 [node name="DoubleGun_3" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="9" unique_id=1467440870 instance=ExtResource("14_icat0")]
 position = Vector2(3496, 704)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="GatlingGun_3" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="10" unique_id=1846648948 instance=ExtResource("22_2kg0l")]
 position = Vector2(5136, 816)
 rotation = -1.5708
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="SecretCharacterEnabler" parent="Item/GatlingGun_3" index="5" unique_id=1326141797 instance=ExtResource("50_lochw")]
 
@@ -3223,7 +3223,7 @@ position = Vector2(4704, 672)
 
 [node name="FourwayGun_1" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="15" unique_id=2062935225 instance=ExtResource("16_lwju7")]
 position = Vector2(6048, 800)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="ItemLife5_5" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="16" unique_id=1206851027 instance=ExtResource("51_si88i")]
 position = Vector2(5592, 928)
@@ -3251,7 +3251,7 @@ position = Vector2(8768, 576)
 
 [node name="SingleGun_1" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="24" unique_id=1137515018 instance=ExtResource("21_q3xa0")]
 position = Vector2(592, 80)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="SecretCharacterEnabler" parent="Item/SingleGun_1" index="5" unique_id=1798328702 instance=ExtResource("50_lochw")]
 Life = 3
@@ -3494,27 +3494,27 @@ position = Vector2(9016, 544)
 
 [node name="FourwayGun_2" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="74" unique_id=598096804 instance=ExtResource("16_lwju7")]
 position = Vector2(9272, 768)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="GatlingGun_2" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="75" unique_id=440806357 instance=ExtResource("22_2kg0l")]
 position = Vector2(9472, 864)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="GatlingGun_4" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="76" unique_id=351903487 instance=ExtResource("22_2kg0l")]
 position = Vector2(9024, 864)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="SingleGun_2" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="77" unique_id=1634965245 instance=ExtResource("21_q3xa0")]
 position = Vector2(9472, 705)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="SingleGun_3" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="78" unique_id=1986304237 instance=ExtResource("21_q3xa0")]
 position = Vector2(9024, 704)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="WheelGun_2" parent="Item" parent_id_path=PackedInt32Array(1203315214) index="79" unique_id=1994662858 instance=ExtResource("15_basrc")]
 position = Vector2(9280, 640)
-Bullet = ExtResource("17_brvys")
+Shot = ExtResource("17_brvys")
 
 [node name="AutoScrollPath" parent="." index="5" unique_id=1280595377]
 curve = SubResource("Curve2D_extf4")

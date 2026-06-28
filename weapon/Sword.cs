@@ -1,5 +1,5 @@
 using maid_by_shiraishi.mob;
-using maid_by_shiraishi.mob.bullet;
+using maid_by_shiraishi.mob.shot;
 
 namespace maid_by_shiraishi.weapon;
 
@@ -10,9 +10,9 @@ public partial class Sword : WeaponRoot
 {
     public override void Fire()
     {
-        if (NumOfBullets > 0)
+        if (NumOfShots > 0)
         {
-            NumOfBullets--;
+            NumOfShots--;
         }
     }
 
@@ -22,9 +22,9 @@ public partial class Sword : WeaponRoot
 
         if (ret)
         {
-            BulletRoot bullet = GetNode<BulletRoot>("Blade");
-            bullet.CollisionMask = m_BulletTargetLayer;
-            bullet.BulletModulate = m_BulletModulate;
+            ShotRoot shot = GetNode<ShotRoot>("Blade");
+            shot.CollisionMask = m_ShotTargetLayer;
+            shot.ShotModulate = m_ShotModulate;
         }
 
         return ret;

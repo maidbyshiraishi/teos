@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdou8vt06ok1y"]
 
-[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/bullet/bullet_root.tscn" id="1_v3mag"]
-[ext_resource type="Texture2D" uid="uid://cfi0uvw4d3c1g" path="res://contents/image/weapon/small_bullet.png" id="2_g6y36"]
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/shot/shot_root.tscn" id="1_v3mag"]
+[ext_resource type="Texture2D" uid="uid://cfi0uvw4d3c1g" path="res://contents/image/weapon/small_shot.png" id="2_g6y36"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pe6dn"]
 atlas = ExtResource("2_g6y36")
@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ymqj"]
 size = Vector2(20, 8)
 
-[node name="SmallBullet" unique_id=1353086569 instance=ExtResource("1_v3mag")]
+[node name="SmallShot" unique_id=1353086569 instance=ExtResource("1_v3mag")]
 InitialMaxSpeed = 400.0
 
 [node name="OnScreen" parent="." index="0" unique_id=118332893]

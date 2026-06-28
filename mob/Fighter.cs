@@ -18,13 +18,13 @@ public partial class Fighter : Mob
     [Export]
     public bool PlaySeEquipWeapon { get; set; } = false;
 
-    [ExportGroup("Bullet")]
+    [ExportGroup("Shot")]
 
     [Export(PropertyHint.Layers2DPhysics)]
-    public uint BulletTargetLayer { get; set; }
+    public uint ShotTargetLayer { get; set; }
 
     [Export]
-    public Color BulletModulate { get; set; } = Color.Color8(255, 255, 255);
+    public Color ShotModulate { get; set; } = Color.Color8(255, 255, 255);
 
     public override void _Ready()
     {

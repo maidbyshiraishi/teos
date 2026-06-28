@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d18atpn7n6gkj"]
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_b7372"]
-[ext_resource type="PackedScene" uid="uid://cr21qyu4bdr2s" path="res://mob/bullet/laser_100.tscn" id="2_etjqq"]
+[ext_resource type="PackedScene" uid="uid://cr21qyu4bdr2s" path="res://mob/shot/laser_100.tscn" id="2_etjqq"]
 [ext_resource type="Texture2D" uid="uid://cftthuijv0xs6" path="res://contents/image/weapon/laser_gun_3.png" id="4_y7xt5"]
 [ext_resource type="Texture2D" uid="uid://qwbs76yai02y" path="res://contents/image/weapon/laser_gun_1.png" id="5_o2aws"]
 [ext_resource type="Texture2D" uid="uid://cgcgxtsxa03lf" path="res://contents/image/weapon/laser_gun_2.png" id="6_ggkvv"]
@@ -878,8 +878,8 @@ EquipSe = "weapon_laser_gun"
 Approach = 48.0
 MaxSpeed = 140.0
 AutoScrollSpeed = 60.0
-Bullet = ExtResource("2_etjqq")
-NumOfBullets = 1
+Shot = ExtResource("2_etjqq")
+NumOfShots = 1
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(36.5, 0)

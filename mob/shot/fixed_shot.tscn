@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d3es3oeyqy3tl"]
 
-[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/bullet/bullet_root.tscn" id="1_g64bm"]
-[ext_resource type="Script" uid="uid://dwy367g6c50dm" path="res://mob/bullet/FixedBullet.cs" id="2_ahixp"]
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/shot/shot_root.tscn" id="1_g64bm"]
+[ext_resource type="Script" uid="uid://dwy367g6c50dm" path="res://mob/shot/FixedShot.cs" id="2_ahixp"]
 
-[node name="FixedBullet" unique_id=588314471 instance=ExtResource("1_g64bm")]
+[node name="FixedShot" unique_id=588314471 instance=ExtResource("1_g64bm")]
 script = ExtResource("2_ahixp")
 InitialMaxSpeed = 180.0
 

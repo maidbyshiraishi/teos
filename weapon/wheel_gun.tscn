@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_7akvg"]
 [ext_resource type="Script" uid="uid://x4clbl6og2w2" path="res://weapon/WheelGun.cs" id="2_tox07"]
 [ext_resource type="Texture2D" uid="uid://cdyk1n5xvgqkv" path="res://contents/image/weapon/wheel_gun.png" id="3_8ksdg"]
-[ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/bullet/small_bullet_2.tscn" id="3_n4v1e"]
+[ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/shot/small_shot_2.tscn" id="3_n4v1e"]
 [ext_resource type="Animation" uid="uid://ewv6bfkr0wpm" path="res://contents/state_machine/weapon/broken.tres" id="6_138j5"]
 [ext_resource type="Animation" uid="uid://drlw0ppky2k28" path="res://contents/state_machine/weapon/idle.tres" id="9_c081v"]
 [ext_resource type="Animation" uid="uid://b50gnru2tsie3" path="res://contents/state_machine/weapon/initialize.tres" id="10_444tc"]
@@ -341,8 +341,8 @@ EquipSe = "weapon_wheel_gun"
 Approach = 64.0
 MaxSpeed = 200.0
 AutoScrollSpeed = 70.0
-Bullet = ExtResource("3_n4v1e")
-NumOfBullets = 160
+Shot = ExtResource("3_n4v1e")
+NumOfShots = 160
 HasEnemyStatemachine = true
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=754525591]

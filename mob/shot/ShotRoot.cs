@@ -2,14 +2,14 @@ using Godot;
 using maid_by_shiraishi.mob.enemy;
 using maid_by_shiraishi.system;
 
-namespace maid_by_shiraishi.mob.bullet;
+namespace maid_by_shiraishi.mob.shot;
 
 /// <summary>
 /// 弾の親、動かない
 /// </summary>
-public partial class BulletRoot : Mob, ISweep
+public partial class ShotRoot : Mob, ISweep
 {
-    public static readonly string ParentNodeName = "Bullet";
+    public static readonly string ParentNodeName = "Shot";
 
     [Export]
     public bool Pierce { get; set; } = false;
@@ -21,10 +21,10 @@ public partial class BulletRoot : Mob, ISweep
     public bool EnemyShot { get; set; } = false;
 
     [Export]
-    public Color BulletModulate { get; set; } = Color.Color8(255, 255, 255);
+    public Color ShotModulate { get; set; } = Color.Color8(255, 255, 255);
 
     [Export]
-    public Color BulletModulateBase { get; set; } = Color.Color8(255, 255, 255);
+    public Color ShotModulateBase { get; set; } = Color.Color8(255, 255, 255);
 
     private bool _blink = false;
     private bool _modulate = false;
@@ -79,7 +79,7 @@ public partial class BulletRoot : Mob, ISweep
     public void ModulateBlink()
     {
         _modulate = !_modulate;
-        Modulate = _modulate ? BulletModulate : BulletModulateBase;
+        Modulate = _modulate ? ShotModulate : ShotModulateBase;
     }
 
     #region IGameNodeインタフェース

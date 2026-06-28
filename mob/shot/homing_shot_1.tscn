@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dbit4otpyw7v0"]
 
-[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/bullet/bullet_root.tscn" id="1_xww7g"]
-[ext_resource type="Texture2D" uid="uid://dx62xxsx3es54" path="res://contents/image/weapon/homing_bullet.png" id="2_b7201"]
-[ext_resource type="Script" uid="uid://d4getiik2v102" path="res://mob/bullet/HomingBullet.cs" id="2_hvine"]
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/shot/shot_root.tscn" id="1_xww7g"]
+[ext_resource type="Texture2D" uid="uid://dx62xxsx3es54" path="res://contents/image/weapon/homing_shot.png" id="2_b7201"]
+[ext_resource type="Script" uid="uid://d4getiik2v102" path="res://mob/shot/HomingShot.cs" id="2_hvine"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3u52"]
 atlas = ExtResource("2_b7201")
@@ -29,7 +29,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmiex"]
 size = Vector2(12, 8)
 
-[node name="HormingBullet" unique_id=908859848 instance=ExtResource("1_xww7g")]
+[node name="HormingShot" unique_id=908859848 instance=ExtResource("1_xww7g")]
 script = ExtResource("2_hvine")
 LerpAngle = 10.0
 InitialMaxSpeed = 200.0

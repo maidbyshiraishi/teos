@@ -2,15 +2,15 @@ using Godot;
 using maid_by_shiraishi.decoration;
 using maid_by_shiraishi.system;
 
-namespace maid_by_shiraishi.mob.bullet;
+namespace maid_by_shiraishi.mob.shot;
 
 /// <summary>
 /// 炸裂弾
 /// </summary>
-public partial class ExplosiveBullet : BulletRoot
+public partial class ExplosiveShot : ShotRoot
 {
     [Export]
-    public PackedScene Bullet { get; set; }
+    public PackedScene Shot { get; set; }
 
     private float _speed = 0f;
     private Area2D _explosiveArea2D;
@@ -55,9 +55,9 @@ public partial class ExplosiveBullet : BulletRoot
             _ = EmitSignal(Mob.SignalName.SceneAdded, [decoration, Decoration.ParentNodeName]);
         }
 
-        if (node is BulletRoot bullet && !bullet.Pierce)
+        if (node is ShotRoot shot && !shot.Pierce)
         {
-            bullet.RemoveNode();
+            shot.RemoveNode();
         }
 
         base.HitNode2D(node);
@@ -83,13 +83,13 @@ public partial class ExplosiveBullet : BulletRoot
 
         for (int i = 0; i < 360; i += 30)
         {
-            if (Bullet.Instantiate() is BulletRoot bullet)
+            if (Shot.Instantiate() is ShotRoot shot)
             {
-                bullet.Transform = GlobalTransform;
-                bullet.Rotate(Mathf.DegToRad(i));
-                bullet.CollisionMask = _targetLayerBackup;
-                bullet.EnemyShot = EnemyShot;
-                _ = EmitSignal(Mob.SignalName.SceneAdded, [bullet, ParentNodeName]);
+                shot.Transform = GlobalTransform;
+                shot.Rotate(Mathf.DegToRad(i));
+                shot.CollisionMask = _targetLayerBackup;
+                shot.EnemyShot = EnemyShot;
+                _ = EmitSignal(Mob.SignalName.SceneAdded, [shot, ParentNodeName]);
             }
         }
 

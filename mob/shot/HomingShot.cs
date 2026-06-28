@@ -1,11 +1,11 @@
 using Godot;
 
-namespace maid_by_shiraishi.mob.bullet;
+namespace maid_by_shiraishi.mob.shot;
 
 /// <summary>
 /// ホーミング弾
 /// </summary>
-public partial class HomingBullet : BulletRoot
+public partial class HomingShot : ShotRoot
 {
     [Export]
     public float LerpAngle { get; set; } = 10f;

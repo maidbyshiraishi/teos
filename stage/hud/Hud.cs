@@ -22,7 +22,7 @@ public partial class Hud : CanvasLayer, IGameNode
     private Label _score;
     private TextureProgressBar _life;
     private Label _remain;
-    private Label _bullets;
+    private Label _shots;
     private Sprite2D _rotation;
 
     public override void _Ready()
@@ -30,7 +30,7 @@ public partial class Hud : CanvasLayer, IGameNode
         _score = GetNode<Label>("Score");
         _life = GetNode<TextureProgressBar>("Life");
         _remain = GetNode<Label>("Remain");
-        _bullets = GetNode<Label>("Bullets");
+        _shots = GetNode<Label>("Shots");
         _rotation = GetNode<Sprite2D>("Rotation");
         AddToGroup(IGameNode.GameNodeGroup);
     }
@@ -45,12 +45,12 @@ public partial class Hud : CanvasLayer, IGameNode
     {
         if (weapon is not null)
         {
-            _bullets.Text = weapon.NumOfBullets.ToString();
+            _shots.Text = weapon.NumOfShots.ToString();
             _rotation.Frame = weapon.RotationEnabled ? 0 : 1;
         }
         else
         {
-            _bullets.Text = "E";
+            _shots.Text = "E";
             _rotation.Frame = 1;
         }
     }

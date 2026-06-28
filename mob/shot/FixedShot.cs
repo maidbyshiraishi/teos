@@ -1,11 +1,11 @@
 using Godot;
 
-namespace maid_by_shiraishi.mob.bullet;
+namespace maid_by_shiraishi.mob.shot;
 
 /// <summary>
 /// 固定弾
 /// </summary>
-public partial class FixedBullet : BulletRoot
+public partial class FixedShot : ShotRoot
 {
     public override void _Ready()
     {

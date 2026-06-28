@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_kt8ad"]
 [ext_resource type="Texture2D" uid="uid://c3hdtt7mlltcg" path="res://contents/image/weapon/sword.png" id="2_du1dk"]
 [ext_resource type="Script" uid="uid://d250mgat3cmu5" path="res://weapon/Sword.cs" id="2_eqorv"]
-[ext_resource type="PackedScene" uid="uid://d3es3oeyqy3tl" path="res://mob/bullet/fixed_bullet.tscn" id="4_ky2et"]
+[ext_resource type="PackedScene" uid="uid://d3es3oeyqy3tl" path="res://mob/shot/fixed_shot.tscn" id="4_ky2et"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gbex"]
 size = Vector2(83, 28)
@@ -1191,7 +1191,7 @@ Approach = 24.0
 MaxSpeed = 280.0
 ReductionApproach = 24.0
 AutoScrollSpeed = 80.0
-NumOfBullets = 30
+NumOfShots = 30
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(-28.5, 0)

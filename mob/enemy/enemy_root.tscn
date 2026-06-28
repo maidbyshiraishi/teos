@@ -19,8 +19,8 @@ DirectAttackSe = ""
 AffectedByWeapon = false
 DefaultDirection = Vector2(-1, 0)
 PlaySeEquipWeapon = false
-BulletTargetLayer = 11
-BulletModulate = Color(1, 0.196078, 0.392157, 1)
+ShotTargetLayer = 11
+ShotModulate = Color(1, 0.196078, 0.392157, 1)
 InitialLife = 1
 
 [node name="BurialArea" parent="." index="1" unique_id=648333766]

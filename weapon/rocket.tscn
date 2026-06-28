@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_20l3n"]
 [ext_resource type="Script" uid="uid://jt2peo5dhd43" path="res://weapon/Rocket.cs" id="2_mx218"]
 [ext_resource type="Texture2D" uid="uid://bnojofg66yak1" path="res://contents/image/weapon/rocket.png" id="4_liobu"]
-[ext_resource type="PackedScene" uid="uid://d3es3oeyqy3tl" path="res://mob/bullet/fixed_bullet.tscn" id="6_64ueb"]
+[ext_resource type="PackedScene" uid="uid://d3es3oeyqy3tl" path="res://mob/shot/fixed_shot.tscn" id="6_64ueb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1e54g"]
 size = Vector2(93, 20)
@@ -819,7 +819,7 @@ Approach = 50.0
 MaxSpeed = 180.0
 ReductionApproach = 50.0
 AutoScrollSpeed = 60.0
-NumOfBullets = 30
+NumOfShots = 30
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=754525591]
 position = Vector2(13.5, 0)

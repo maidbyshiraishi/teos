@@ -120,7 +120,7 @@ script = ExtResource("5_omjrv")
 tile_set = ExtResource("4_w2etb")
 collision_enabled = false
 
-[node name="Bullet" type="Node2D" parent="." unique_id=1959977855]
+[node name="Shot" type="Node2D" parent="." unique_id=1959977855]
 z_index = 60
 
 [node name="Enemy" type="Node2D" parent="." unique_id=980800814]

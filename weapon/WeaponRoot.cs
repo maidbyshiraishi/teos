@@ -2,7 +2,7 @@ using Godot;
 using Godot.Collections;
 using maid_by_shiraishi.command;
 using maid_by_shiraishi.mob;
-using maid_by_shiraishi.mob.bullet;
+using maid_by_shiraishi.mob.shot;
 using maid_by_shiraishi.stage;
 using maid_by_shiraishi.stage.character_manager;
 using maid_by_shiraishi.system;
@@ -45,13 +45,13 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
     [Export]
     public float AutoScrollSpeed { get; set; } = 100f;
 
-    [ExportGroup("Bullet")]
+    [ExportGroup("Shot")]
 
     [Export]
-    public PackedScene Bullet { get; set; }
+    public PackedScene Shot { get; set; }
 
     [Export]
-    public int NumOfBullets { get; set; }
+    public int NumOfShots { get; set; }
 
     [Export]
     public bool UnlimitedMode { get; set; } = false;
@@ -65,8 +65,8 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
     public bool HasEnemyStatemachine { get; set; } = false;
 
     protected AnimationNodeStateMachinePlayback m_StateMachine;
-    protected uint m_BulletTargetLayer;
-    protected Color m_BulletModulate;
+    protected uint m_ShotTargetLayer;
+    protected Color m_ShotModulate;
 
     private AnimationTree _animationTree;
     private CharacterManager _characterManager;
@@ -88,19 +88,19 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
     {
         _animationTree.Set("parameters/conditions/press", pressA);
         _animationTree.Set("parameters/conditions/release", !pressA);
-        _animationTree.Set("parameters/conditions/empty", NumOfBullets <= 0);
+        _animationTree.Set("parameters/conditions/empty", NumOfShots <= 0);
     }
 
     public virtual void Fire()
     {
-        if (Bullet is null || NumOfBullets <= 0 || !_equipped)
+        if (Shot is null || NumOfShots <= 0 || !_equipped)
         {
             return;
         }
 
         foreach (Node node in _muzzle)
         {
-            if (NumOfBullets <= 0)
+            if (NumOfShots <= 0)
             {
                 break;
             }
@@ -110,25 +110,25 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
                 continue;
             }
 
-            if (Bullet.Instantiate() is BulletRoot bullet)
+            if (Shot.Instantiate() is ShotRoot shot)
             {
-                MakeBullet(marker, bullet);
+                MakeShot(marker, shot);
             }
         }
     }
 
-    private void MakeBullet(Marker2D maker, BulletRoot bullet)
+    private void MakeShot(Marker2D maker, ShotRoot shot)
     {
         if (!UnlimitedMode)
         {
-            NumOfBullets--;
+            NumOfShots--;
         }
 
-        bullet.Transform = maker.GlobalTransform;
-        bullet.CollisionMask = m_BulletTargetLayer;
-        bullet.BulletModulate = m_BulletModulate;
-        bullet.EnemyShot = EnemyEquiped;
-        _ = EmitSignal(SignalName.SceneAdded, [bullet, BulletRoot.ParentNodeName]);
+        shot.Transform = maker.GlobalTransform;
+        shot.CollisionMask = m_ShotTargetLayer;
+        shot.ShotModulate = m_ShotModulate;
+        shot.EnemyShot = EnemyEquiped;
+        _ = EmitSignal(SignalName.SceneAdded, [shot, ShotRoot.ParentNodeName]);
     }
 
     public virtual bool Equip(Fighter fighter, MountPoint mountPoint, bool enemy, bool instantly)
@@ -149,8 +149,8 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
             Rotation = 0f;
             Position = Vector2.Zero;
             EnemyEquiped = enemy;
-            m_BulletTargetLayer = fighter.BulletTargetLayer;
-            m_BulletModulate = fighter.BulletModulate;
+            m_ShotTargetLayer = fighter.ShotTargetLayer;
+            m_ShotModulate = fighter.ShotModulate;
             fighter.CalcSpeed(MaxSpeed, Approach, ReductionApproach);
             fighter.UpdateAutoScrollSpeed(AutoScrollSpeed);
             m_StateMachine.Start(enemy && HasEnemyStatemachine ? "enemy_equip" : "equip");
@@ -212,7 +212,7 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
     {
         _animationTree.Set("parameters/conditions/press", false);
         _animationTree.Set("parameters/conditions/release", false);
-        _animationTree.Set("parameters/conditions/empty", NumOfBullets <= 0);
+        _animationTree.Set("parameters/conditions/empty", NumOfShots <= 0);
 
         if (active && GetParent() is Fighter fighter)
         {

@@ -1,9 +1,9 @@
-namespace maid_by_shiraishi.mob.bullet;
+namespace maid_by_shiraishi.mob.shot;
 
 /// <summary>
 /// 小弾
 /// </summary>
-public partial class SmallBullet : BulletRoot
+public partial class SmallShot : ShotRoot
 {
     private float _speed = 0f;
 

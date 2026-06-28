@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8ok4t16na8fy"]
 
 [ext_resource type="PackedScene" uid="uid://cadwe7xmpwmnq" path="res://weapon/weapon_root.tscn" id="1_etmxl"]
-[ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/bullet/small_bullet_2.tscn" id="2_5h7vb"]
+[ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/shot/small_shot_2.tscn" id="2_5h7vb"]
 [ext_resource type="Texture2D" uid="uid://bgr37mslxflp4" path="res://contents/image/weapon/single_gun.png" id="2_vu26l"]
 [ext_resource type="Animation" uid="uid://ewv6bfkr0wpm" path="res://contents/state_machine/weapon/broken.tres" id="5_tklhd"]
 [ext_resource type="Animation" uid="uid://drlw0ppky2k28" path="res://contents/state_machine/weapon/idle.tres" id="8_btdp7"]
@@ -362,8 +362,8 @@ Approach = 32.0
 MaxSpeed = 260.0
 ReductionApproach = 32.0
 AutoScrollSpeed = 80.0
-Bullet = ExtResource("2_5h7vb")
-NumOfBullets = 100
+Shot = ExtResource("2_5h7vb")
+NumOfShots = 100
 HasEnemyStatemachine = true
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=754525591]

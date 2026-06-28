@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c3r1s07530kir"]
 
-[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/bullet/bullet_root.tscn" id="1_k84q0"]
-[ext_resource type="Script" uid="uid://bjfa8g3vsbu8y" path="res://mob/bullet/ExplosiveBullet.cs" id="2_jem6h"]
-[ext_resource type="Texture2D" uid="uid://b3c2hsqdwkwai" path="res://contents/image/weapon/explosive_bullet.png" id="2_k84q0"]
-[ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/bullet/small_bullet_2.tscn" id="3_nd3mp"]
+[ext_resource type="PackedScene" uid="uid://bj37pjdv2t2ib" path="res://mob/shot/shot_root.tscn" id="1_k84q0"]
+[ext_resource type="Script" uid="uid://bjfa8g3vsbu8y" path="res://mob/shot/ExplosiveShot.cs" id="2_jem6h"]
+[ext_resource type="Texture2D" uid="uid://b3c2hsqdwkwai" path="res://contents/image/weapon/explosive_shot.png" id="2_k84q0"]
+[ext_resource type="PackedScene" uid="uid://b22ss726pu0lr" path="res://mob/shot/small_shot_2.tscn" id="3_nd3mp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jem6h"]
 atlas = ExtResource("2_k84q0")
@@ -33,9 +33,9 @@ size = Vector2(24, 8)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jem6h"]
 radius = 53.0
 
-[node name="ExplosiveBullet1" unique_id=1082486391 instance=ExtResource("1_k84q0")]
+[node name="ExplosiveShot1" unique_id=1082486391 instance=ExtResource("1_k84q0")]
 script = ExtResource("2_jem6h")
-Bullet = ExtResource("3_nd3mp")
+Shot = ExtResource("3_nd3mp")
 InitialMaxSpeed = 350.0
 
 [node name="OnScreen" parent="." index="0" unique_id=118332893]

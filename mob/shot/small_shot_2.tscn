@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b22ss726pu0lr"]
+
+[ext_resource type="PackedScene" uid="uid://cdou8vt06ok1y" path="res://mob/shot/small_shot_1.tscn" id="1_o8vy3"]
+
+[node name="SmallShot" unique_id=1159498615 instance=ExtResource("1_o8vy3")]
+Attack = -2

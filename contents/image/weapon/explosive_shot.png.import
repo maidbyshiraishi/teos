@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx62xxsx3es54"
-path="res://.godot/imported/homing_bullet.png-a960404137a9ca332377308049d5a696.ctex"
+uid="uid://b3c2hsqdwkwai"
+path="res://.godot/imported/explosive_shot.png-4a4480987d2f831e9e252780b003a763.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/image/weapon/homing_bullet.png"
-dest_files=["res://.godot/imported/homing_bullet.png-a960404137a9ca332377308049d5a696.ctex"]
+source_file="res://contents/image/weapon/explosive_shot.png"
+dest_files=["res://.godot/imported/explosive_shot.png-4a4480987d2f831e9e252780b003a763.ctex"]
 
 [params]
 
