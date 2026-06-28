@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://cqakycs5ixqq0" path="res://tilemap/mob/boss_controller.tscn" id="20_ti4xr"]
 [ext_resource type="Script" uid="uid://cwrvssh3gu6m6" path="res://tilemap/mob/BossController.cs" id="21_iccsn"]
 [ext_resource type="PackedScene" uid="uid://dpnl48f76kgdj" path="res://command/command_container.tscn" id="22_fk8tk"]
-[ext_resource type="PackedScene" uid="uid://b4xmvxnlcoqxn" path="res://command/stage/pause_auto_scroll.tscn" id="23_jcvrs"]
+[ext_resource type="PackedScene" uid="uid://b4xmvxnlcoqxn" path="res://command/stage/pause_auto_scroll_command.tscn" id="23_jcvrs"]
 [ext_resource type="PackedScene" uid="uid://bvvqfywsnjeau" path="res://item/pack_score_3000.tscn" id="24_orj5t"]
 [ext_resource type="PackedScene" uid="uid://cygelshl76255" path="res://weapon/sword.tscn" id="27_7ipt2"]
 [ext_resource type="PackedScene" uid="uid://bo7rtvsbrpmcg" path="res://stage/character_manager/enemy_drop_character_enabler.tscn" id="28_mf0ru"]

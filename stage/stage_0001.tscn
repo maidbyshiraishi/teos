@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://82q5gith82u0" path="res://item/pack_score_2000.tscn" id="4_aeu60"]
 [ext_resource type="PackedScene" uid="uid://dn10ef6ikja86" path="res://weapon/double_gun.tscn" id="4_xshoi"]
 [ext_resource type="PackedScene" uid="uid://co1pbmrw0nvfl" path="res://trigger/center_of_camera_trigger_v.tscn" id="5_qb5br"]
-[ext_resource type="PackedScene" uid="uid://b4xmvxnlcoqxn" path="res://command/stage/pause_auto_scroll.tscn" id="6_dl11w"]
+[ext_resource type="PackedScene" uid="uid://b4xmvxnlcoqxn" path="res://command/stage/pause_auto_scroll_command.tscn" id="6_dl11w"]
 [ext_resource type="PackedScene" uid="uid://cdw1i41ft8oht" path="res://decoration/danger_signal_boss.tscn" id="6_gliax"]
 [ext_resource type="PackedScene" uid="uid://brd5hy1fa8yl5" path="res://item/item_score_10000.tscn" id="6_xl1rl"]
 [ext_resource type="PackedScene" uid="uid://djwsrswe5c1vx" path="res://item/item_score_1000.tscn" id="7_7rkih"]

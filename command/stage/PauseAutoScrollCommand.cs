@@ -6,7 +6,7 @@ namespace maid_by_shiraishi.command.stage;
 /// <summary>
 /// 自動スクロールを停止するコマンド
 /// </summary>
-public partial class PauseAutoScroll : CommandRoot
+public partial class PauseAutoScrollCommand : CommandRoot
 {
     /// <summary>
     /// 自動スクロールのポーズ状態
