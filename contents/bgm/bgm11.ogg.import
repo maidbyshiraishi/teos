@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/bgm11.ogg-8efbe728d101ee3cd301e496b4ffd35a.og
 [params]
 
 loop=true
-loop_offset=4.0
+loop_offset=2.0
 bpm=0.0
 beat_count=0
 bar_beats=4
