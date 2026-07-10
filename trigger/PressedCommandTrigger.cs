@@ -51,6 +51,7 @@ public partial class PressedCommandTrigger : CommandContainer
                     return;
                 }
 
+                control.GrabFocus();
                 break;
 
             case CanvasItem canvasItem:
