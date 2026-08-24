@@ -38,7 +38,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xddof")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -158,7 +158,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0shyw")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 2.0
 }]

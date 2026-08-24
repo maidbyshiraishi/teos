@@ -22,7 +22,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nd3mp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
