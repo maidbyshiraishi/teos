@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cpr5v3p6w81h3" path="res://command/audio/play_se_command.tscn" id="9_bvcnx"]
 [ext_resource type="PackedScene" uid="uid://closkw7p3bd1g" path="res://command/dialog/open_game_command.tscn" id="9_lh4gl"]
 [ext_resource type="Script" uid="uid://cdcxnmm8ixvnc" path="res://trigger/PressedCommandTrigger.cs" id="11_j6aw5"]
+[ext_resource type="PackedScene" uid="uid://dnubvgc50546i" path="res://command/timer/reset_timer_command.tscn" id="11_wiv1t"]
 [ext_resource type="PackedScene" uid="uid://dvbavm6ut2uel" path="res://command/dialog/open_screen_command.tscn" id="11_xa21i"]
 [ext_resource type="PackedScene" uid="uid://dvy8ox4sfd5hc" path="res://trigger/visible_trigger.tscn" id="13_6nn80"]
 [ext_resource type="PackedScene" uid="uid://l7xudjpc38ac" path="res://command/timer/start_timer_command.tscn" id="13_hmmf8"]
@@ -119,6 +120,9 @@ DialogPath = "res://screen/option_list_dialog.tscn"
 
 [node name="Focus" parent="Control/OptionList" unique_id=989668560 instance=ExtResource("9_7ac0i")]
 
+[node name="ResetTimerCommand" parent="Control/OptionList/Focus" unique_id=1088171696 node_paths=PackedStringArray("Target") instance=ExtResource("11_wiv1t")]
+Target = NodePath("../../../../Timer")
+
 [node name="Quit" type="Button" parent="Control" unique_id=518852314]
 light_mask = 2
 layout_mode = 0
@@ -141,6 +145,9 @@ ProcessAlways = true
 DialogPath = "res://screen/quit_dialog.tscn"
 
 [node name="Focus" parent="Control/Quit" unique_id=1703508186 instance=ExtResource("9_7ac0i")]
+
+[node name="ResetTimerCommand" parent="Control/Quit/Focus" unique_id=1375613095 node_paths=PackedStringArray("Target") instance=ExtResource("11_wiv1t")]
+Target = NodePath("../../../../Timer")
 
 [node name="Story" type="Button" parent="Control" unique_id=1509964926]
 light_mask = 2
@@ -166,6 +173,9 @@ DialogPath = "res://theater/story_opening.tscn"
 
 [node name="Focus" parent="Control/Story" unique_id=1583503215 instance=ExtResource("9_7ac0i")]
 
+[node name="ResetTimerCommand" parent="Control/Story/Focus" unique_id=1357010554 node_paths=PackedStringArray("Target") instance=ExtResource("11_wiv1t")]
+Target = NodePath("../../../../Timer")
+
 [node name="HighScore" type="Button" parent="Control" unique_id=1480063578]
 light_mask = 2
 layout_mode = 0
@@ -190,6 +200,9 @@ Screen = "res://screen/high_score_screen.tscn"
 
 [node name="Focus" parent="Control/HighScore" unique_id=1751153645 instance=ExtResource("9_7ac0i")]
 
+[node name="ResetTimerCommand" parent="Control/HighScore/Focus" unique_id=1768766885 node_paths=PackedStringArray("Target") instance=ExtResource("11_wiv1t")]
+Target = NodePath("../../../../Timer")
+
 [node name="BGM" type="Button" parent="Control" unique_id=319445120]
 light_mask = 2
 layout_mode = 0
@@ -211,6 +224,9 @@ ProcessAlways = true
 DialogPath = "res://screen/jukebox_dialog.tscn"
 
 [node name="Focus" parent="Control/BGM" unique_id=1313303389 instance=ExtResource("9_7ac0i")]
+
+[node name="ResetTimerCommand" parent="Control/BGM/Focus" unique_id=1387217605 node_paths=PackedStringArray("Target") instance=ExtResource("11_wiv1t")]
+Target = NodePath("../../../../Timer")
 
 [node name="Focus" parent="." unique_id=391057031 instance=ExtResource("13_6nn80")]
 position = Vector2(10, 10)
