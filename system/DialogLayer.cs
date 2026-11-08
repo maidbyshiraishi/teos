@@ -20,6 +20,15 @@ namespace maid_by_shiraishi.system;
 public partial class DialogLayer : CanvasLayer
 {
     private readonly Array<DialogRoot> _history = [];
+    private ScreenFader _fader;
+    private string _nextScreenPath;
+    private string _nextScreenFadein;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        _fader = GetNode<ScreenFader>("/root/ScreenFader");
+    }
 
     /// <summary>
     /// 現在の画面を返す
@@ -164,28 +173,46 @@ public partial class DialogLayer : CanvasLayer
         }
 
         GetTree().Paused = true;
-        _ = CallDeferred(MethodName.DeferredOpenScreen, [path, fadeout, fadein]);
+        _ = CallDeferred(MethodName.OpenScreenStep1, [path, fadeout, fadein]);
     }
 
-    protected async void DeferredOpenScreen(string path, string fadeout, string fadein)
+    protected void OpenScreenStep1(string path, string fadeout, string fadein)
     {
-        ScreenFader fader = GetNode<ScreenFader>("/root/ScreenFader");
-        fader.ScreenFade(fadeout);
-        _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
+        _nextScreenPath = path;
+        _nextScreenFadein = fadein;
+        DisconnectStep();
+        _fader.ScreenFadeFinished += OpenScreenStep2;
+        _fader.ScreenFade(fadeout);
+    }
+
+    protected void OpenScreenStep2()
+    {
         CloseAllDialog();
         GetCurrentScreen()?.Inactive();
 
-        if (Lib.GetPackedScene(path) is PackedScene pack)
+        if (Lib.GetPackedScene(_nextScreenPath) is PackedScene pack)
         {
             _ = GetTree().ChangeSceneToPacked(pack);
         }
 
-        fader.ScreenFade(fadein);
-        _ = await ToSignal(fader, ScreenFader.SignalName.ScreenFadeFinished);
+        DisconnectStep();
+        _fader.ScreenFadeFinished += OpenScreenStep3;
+        _fader.ScreenFade(_nextScreenFadein);
+    }
+
+    protected void OpenScreenStep3()
+    {
+        DisconnectStep();
         DialogRoot current = GetCurrentScreen();
         current.Active();
         Input.MouseMode = current.MouseCaptured ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
         GetTree().Paused = false;
+    }
+
+    private void DisconnectStep()
+    {
+        _fader.ScreenFadeFinished -= OpenScreenStep2;
+        _fader.ScreenFadeFinished -= OpenScreenStep3;
     }
 
     private bool IsEmpty() => _history.Count == 0;
@@ -255,7 +282,7 @@ public partial class DialogLayer : CanvasLayer
             return;
         }
 
-        DeferredOpenScreen(path, fadeout, fadein);
+        OpenScreenStep1(path, fadeout, fadein);
     }
 
     /// <summary>
