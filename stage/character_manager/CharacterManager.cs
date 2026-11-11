@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Collections;
-using maid_by_shiraishi.system;
 
 namespace maid_by_shiraishi.stage.character_manager;
 
@@ -54,7 +53,6 @@ public partial class CharacterManager : Node2D
 
         // 各種CharacterEnablerがセットされている場合は登録を行う
         cenabler.SetCharacterManager(this);
-        _ = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot();
 
         if (cnode.GetParent() is null)
         {
