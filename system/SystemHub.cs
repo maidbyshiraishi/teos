@@ -1,5 +1,4 @@
 using Godot;
-using maid_by_shiraishi.system.game_button_controller;
 
 namespace maid_by_shiraishi.system;
 
@@ -15,7 +14,6 @@ public partial class SystemHub : Node
     private static HighScoreManager _highScoreManager;
     private static MusicPlayer _musicPlayer;
     private static SePlayer _sePlayer;
-    private static readonly GameButtonController _gameButtonController;
 
     public override void _Ready()
     {
