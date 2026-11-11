@@ -31,7 +31,7 @@ public partial class SecretCharacterEnabler : Area2D, ILife, ICharacterManagerEn
     {
         if (m_OnScreen is null || m_OnScreen.IsOnScreen())
         {
-            GetNode<SePlayer>("/root/SePlayer").Play(name);
+            SystemHub.GetSePlayer().Play(name);
         }
     }
 

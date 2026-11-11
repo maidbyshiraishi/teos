@@ -35,7 +35,7 @@ public partial class ShowHudMessageCommand : CommandRoot
             return;
         }
 
-        Hud hud = GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().GetNode<Hud>("Hud");
+        Hud hud = SystemHub.GetDialogLayer().GetCurrentGameStageRoot().GetNode<Hud>("Hud");
         hud.SetMessage(Text1, Text2, Text3);
         hud.ShowMessage();
     }

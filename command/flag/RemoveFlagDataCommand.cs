@@ -21,6 +21,6 @@ public partial class RemoveFlagDataCommand : CommandRoot
             return;
         }
 
-        GetNode<GameDataManager>("/root/GameDataManager").RemoveFlagData(Target);
+        SystemHub.GetGameDataManager().RemoveFlagData(Target);
     }
 }

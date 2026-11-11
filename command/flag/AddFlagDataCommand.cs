@@ -27,6 +27,6 @@ public partial class AddFlagDataCommand : CommandRoot
             return;
         }
 
-        GetNode<GameDataManager>("/root/GameDataManager").AddFlagData(Key, Value);
+        SystemHub.GetGameDataManager().AddFlagData(Key, Value);
     }
 }

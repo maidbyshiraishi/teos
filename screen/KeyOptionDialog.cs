@@ -32,7 +32,7 @@ public partial class KeyOptionDialog : DialogRoot
 
     public override void UpdateDialogScreen()
     {
-        GameKeyOption gameKeyOption = GetNode<GameKeyOption>("/root/GameKeyOption");
+        GameKeyOption gameKeyOption = SystemHub.GetGameKeyOption();
 
         if (gameKeyOption.Reverse)
         {
@@ -51,26 +51,26 @@ public partial class KeyOptionDialog : DialogRoot
 
     public void SwapStick()
     {
-        GameKeyOption gameKeyOption = GetNode<GameKeyOption>("/root/GameKeyOption");
+        GameKeyOption gameKeyOption = SystemHub.GetGameKeyOption();
         gameKeyOption.Reverse = !gameKeyOption.Reverse;
         UpdateDialogScreen();
     }
 
     public void TargetSensitivityValueChanged(double value)
     {
-        GameKeyOption gameKeyOption = GetNode<GameKeyOption>("/root/GameKeyOption");
+        GameKeyOption gameKeyOption = SystemHub.GetGameKeyOption();
         gameKeyOption.TargetSensitivity = Mathf.Clamp(value, 0.1f, 3f);
     }
 
     public void MouseSensitivityValueChanged(double value)
     {
-        GameKeyOption gameKeyOption = GetNode<GameKeyOption>("/root/GameKeyOption");
+        GameKeyOption gameKeyOption = SystemHub.GetGameKeyOption();
         gameKeyOption.MouseSensitivity = Mathf.Clamp(value, 0.1f, 3f);
     }
 
     public void ResetSensitivity()
     {
-        GameKeyOption gameKeyOption = GetNode<GameKeyOption>("/root/GameKeyOption");
+        GameKeyOption gameKeyOption = SystemHub.GetGameKeyOption();
         gameKeyOption.TargetSensitivity = 1.0f;
         gameKeyOption.MouseSensitivity = 1.0f;
         UpdateDialogScreen();

@@ -17,7 +17,7 @@ public partial class TargetMarker : Node2D, IGameNode
 
     public override void _Ready()
     {
-        _gameKeyOption = GetNode<GameKeyOption>("/root/GameKeyOption");
+        _gameKeyOption = SystemHub.GetGameKeyOption();
         AddToGroup(IGameNode.GameNodeGroup);
     }
 

@@ -13,7 +13,7 @@ public partial class HighScoreListControl : Control
 {
     public override void _Ready()
     {
-        List<ScoreData> highScoreList = GetNode<HighScoreManager>("/root/HighScoreManager").GetHighScoreList();
+        List<ScoreData> highScoreList = SystemHub.GetHighScoreManager().GetHighScoreList();
         int length = Mathf.Min(highScoreList.Count, 10);
 
         for (int i = 0; i < length; i++)

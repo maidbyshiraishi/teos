@@ -140,7 +140,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
     {
         if (m_OnScreen is null || m_OnScreen.IsOnScreen())
         {
-            GetNode<SePlayer>("/root/SePlayer").Play(name);
+            SystemHub.GetSePlayer().Play(name);
         }
     }
 
@@ -165,7 +165,7 @@ public partial class TileMapMob : TileMapManager, IGameNode, ICharacterManager, 
     }
 
     #region IGameNodeインタフェース
-    public virtual void InitializeNode() => SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
+    public virtual void InitializeNode() => SceneAdded += SystemHub.GetDialogLayer().GetCurrentGameStageRoot().AddScene;
 
     public virtual void RemoveNode() => Mob.ThrowAwayNode2D(this);
     #endregion

@@ -33,6 +33,6 @@ public partial class OpenScreenCommand : CommandRoot
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").OpenScreen(Screen, Fadeout, Fadein);
+        SystemHub.GetDialogLayer().OpenScreen(Screen, Fadeout, Fadein);
     }
 }

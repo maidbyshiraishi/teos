@@ -30,7 +30,7 @@ public partial class ConditionalCommand : CommandRoot
         try
         {
             // 変数はGameDataのキーと値を使用する
-            GetNode<GameDataManager>("/root/GameDataManager").GetKeysAndValues(out string[] keys, out Array values);
+            SystemHub.GetGameDataManager().GetKeysAndValues(out string[] keys, out Array values);
             // 式を評価する
             Expression exp = new();
 

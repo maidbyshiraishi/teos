@@ -37,7 +37,7 @@ public partial class ScreenOptionDialog : DialogRoot
     /// </summary>
     public override void UpdateDialogScreen()
     {
-        ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
+        ScreenOption option = SystemHub.GetScreenOption();
         Fullscreen = option.Fullscreen;
         SetFullscreenCheck(Fullscreen);
     }
@@ -52,7 +52,7 @@ public partial class ScreenOptionDialog : DialogRoot
         GetNode<Label>("FullscreenCheckValue").Text = Fullscreen ? "ON" : "OFF";
 
         // ウィンドウ状態に関しては即座にシステムに反映する
-        ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
+        ScreenOption option = SystemHub.GetScreenOption();
         option.Fullscreen = Fullscreen;
         option.ChangeWindowMode();
     }
@@ -65,7 +65,7 @@ public partial class ScreenOptionDialog : DialogRoot
 
     public void ResetDefaultScreenOptions()
     {
-        ScreenOption option = GetNode<ScreenOption>("/root/ScreenOption");
+        ScreenOption option = SystemHub.GetScreenOption();
         option.CalcScreenOptions();
         option.ApplyScreenOptions();
     }

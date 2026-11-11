@@ -24,7 +24,7 @@ public partial class AddScoreBonusCommand : ShowHudMessageCommand
             return;
         }
 
-        PlayerData playerData = GetNode<GameDataManager>("/root/GameDataManager").GetPlayerData();
+        PlayerData playerData = SystemHub.GetGameDataManager().GetPlayerData();
         int remain = playerData.Remain;
         Player.GetPlayer(this).AddScore(remain * ScoreRate);
         Text1 = "ステージクリアボーナス";

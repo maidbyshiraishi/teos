@@ -179,7 +179,7 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
         _mutex.Unlock();
     }
 
-    public void PlaySe(string name) => GetNode<SePlayer>("/root/SePlayer").Play(name);
+    public void PlaySe(string name) => SystemHub.GetSePlayer().Play(name);
 
     public static Array<Marker2D> FindMuzzle(Node root)
     {
@@ -202,7 +202,7 @@ public partial class WeaponRoot : Area2D, IGameNode, ICharacterManager
     }
 
     #region IGameNodeインタフェース
-    public virtual void InitializeNode() => SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
+    public virtual void InitializeNode() => SceneAdded += SystemHub.GetDialogLayer().GetCurrentGameStageRoot().AddScene;
     #endregion
 
     #region ICharacterManagerインタフェース

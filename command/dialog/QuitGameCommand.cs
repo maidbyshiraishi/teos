@@ -15,6 +15,6 @@ public partial class QuitGameCommand : CommandRoot
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").QuitGame();
+        SystemHub.GetDialogLayer().QuitGame();
     }
 }

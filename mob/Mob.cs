@@ -101,7 +101,7 @@ public partial class Mob : Area2D, IGameNode, ILife
     {
         if (m_OnScreen is null || m_OnScreen.IsOnScreen())
         {
-            GetNode<SePlayer>("/root/SePlayer").Play(name);
+            SystemHub.GetSePlayer().Play(name);
         }
     }
 
@@ -172,7 +172,7 @@ public partial class Mob : Area2D, IGameNode, ILife
     #region IGameNodeインタフェース
     public virtual void InitializeNode()
     {
-        SceneAdded += GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().AddScene;
+        SceneAdded += SystemHub.GetDialogLayer().GetCurrentGameStageRoot().AddScene;
         InitialSpeed();
     }
 

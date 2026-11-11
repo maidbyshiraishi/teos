@@ -15,6 +15,6 @@ public partial class LoadKeyOptionsCommand : CommandRoot
             return;
         }
 
-        GetNode<GameKeyOption>("/root/GameKeyOption").LoadKeyOptions();
+        SystemHub.GetGameKeyOption().LoadKeyOptions();
     }
 }

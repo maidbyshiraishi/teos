@@ -15,6 +15,6 @@ public partial class SaveScreenOptionsCommand : CommandRoot
             return;
         }
 
-        GetNode<ScreenOption>("/root/ScreenOption").SaveScreenOptions();
+        SystemHub.GetScreenOption().SaveScreenOptions();
     }
 }

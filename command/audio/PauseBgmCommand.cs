@@ -15,6 +15,6 @@ public partial class PauseBgmCommand : CommandRoot
             return;
         }
 
-        GetNode<MusicPlayer>("/root/MusicPlayer").Pause(true);
+        SystemHub.GetMusicPlayer().Pause(true);
     }
 }

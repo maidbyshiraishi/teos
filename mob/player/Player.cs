@@ -313,13 +313,13 @@ public partial class Player : Fighter, ICharacterManager
         _autoScrollPathFollow?.SetSpeed(autoScrollSpeed);
     }
 
-    public static Player GetPlayer(Node root) => root.GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().GetNode<Player>("%Player");
+    public static Player GetPlayer(Node root) => SystemHub.GetDialogLayer().GetCurrentGameStageRoot().GetNode<Player>("%Player");
 
     #region IGameNodeインタフェース
     public override void InitializeNode()
     {
         base.InitializeNode();
-        _playerData = GetNode<GameDataManager>("/root/GameDataManager").GetPlayerData();
+        _playerData = SystemHub.GetGameDataManager().GetPlayerData();
     }
     #endregion
 

@@ -15,6 +15,6 @@ public partial class SaveKeyOptionsCommand : CommandRoot
             return;
         }
 
-        GetNode<GameKeyOption>("/root/GameKeyOption").SaveKeyOptions();
+        SystemHub.GetGameKeyOption().SaveKeyOptions();
     }
 }

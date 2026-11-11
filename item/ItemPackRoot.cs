@@ -19,7 +19,7 @@ public partial class ItemPackRoot : Node2D, ICharacterManager
     {
         if (active)
         {
-            GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().ReparentNode(this, "Item");
+            SystemHub.GetDialogLayer().GetCurrentGameStageRoot().ReparentNode(this, "Item");
             DelayActiveItems();
         }
     }

@@ -30,6 +30,6 @@ public partial class PlaySeCommand : CommandRoot
             return;
         }
 
-        GetNode<SePlayer>("/root/SePlayer").Play(SeName, ProcessAlways, Voice);
+        SystemHub.GetSePlayer().Play(SeName, ProcessAlways, Voice);
     }
 }

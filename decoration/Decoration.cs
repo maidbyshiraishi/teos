@@ -25,11 +25,11 @@ public partial class Decoration : Node2D, ICharacterManager
     {
         if (active)
         {
-            GetNode<SePlayer>("/root/SePlayer").Play(SeName);
+            SystemHub.GetSePlayer().Play(SeName);
 
             if (StaticOnScreen)
             {
-                GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().ReparentNode(this, StaticNodeName);
+                SystemHub.GetDialogLayer().GetCurrentGameStageRoot().ReparentNode(this, StaticNodeName);
             }
         }
     }

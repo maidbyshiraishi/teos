@@ -15,6 +15,6 @@ public partial class StateBackupCommand : CommandRoot
             return;
         }
 
-        GetNode<GameDataManager>("/root/GameDataManager").Backup();
+        SystemHub.GetGameDataManager().Backup();
     }
 }

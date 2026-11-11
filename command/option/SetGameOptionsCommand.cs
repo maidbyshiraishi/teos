@@ -15,6 +15,6 @@ public partial class SetGameOptionsCommand : CommandRoot
             return;
         }
 
-        GetNode<GameOption>("/root/GameOption").SetOptions();
+        SystemHub.GetGameOption().SetOptions();
     }
 }

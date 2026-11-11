@@ -21,7 +21,7 @@ public partial class FloatingMessage : Node2D
     {
         GetNode<Label>("Label").Text = Text;
         GetNode<Label>("Label").SelfModulate = Color;
-        GetNode<SePlayer>("/root/SePlayer").Play(SeName);
+        SystemHub.GetSePlayer().Play(SeName);
 
         // Godotエディタからシグナルを接続すると
         // リリースビルドのエクスポート時、接続が失われることがある。

@@ -47,7 +47,7 @@ public partial class CrackBlock : Area2D, ILife, IItemDropper
     {
         if (m_OnScreen is null || m_OnScreen.IsOnScreen())
         {
-            GetNode<SePlayer>("/root/SePlayer").Play(name);
+            SystemHub.GetSePlayer().Play(name);
         }
     }
 

@@ -43,7 +43,7 @@ public partial class VolumeOptionDialog : DialogRoot
     /// </summary>
     public override void UpdateDialogScreen()
     {
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        GameOption option = SystemHub.GetGameOption();
         BgmVolume = option.BgmVolume;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
         GetNode<HSlider>("Control/BgmSlider").SetValueNoSignal(BgmVolume);
@@ -60,7 +60,7 @@ public partial class VolumeOptionDialog : DialogRoot
     {
         BgmVolume = (float)value;
         GetNode<Label>("BgmValue").Text = $"{BgmVolume}%";
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        GameOption option = SystemHub.GetGameOption();
         option.BgmVolume = BgmVolume;
         option.SetOptions();
     }
@@ -73,9 +73,9 @@ public partial class VolumeOptionDialog : DialogRoot
     {
         SeVolume = (float)value;
         GetNode<Label>("SeValue").Text = $"{SeVolume}%";
-        GameOption option = GetNode<GameOption>("/root/GameOption");
+        GameOption option = SystemHub.GetGameOption();
         option.SeVolume = SeVolume;
         option.SetOptions();
-        GetNode<SePlayer>("/root/SePlayer").Play("menu_select", true);
+        SystemHub.GetSePlayer().Play("menu_select", true);
     }
 }

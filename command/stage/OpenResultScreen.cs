@@ -34,9 +34,9 @@ public partial class OpenResultScreen : CommandRoot
             return;
         }
 
-        PlayerData playerData = GetNode<GameDataManager>("/root/GameDataManager").GetPlayerData();
+        PlayerData playerData = SystemHub.GetGameDataManager().GetPlayerData();
         int score = playerData.Score;
-        int rank = GetNode<HighScoreManager>("/root/HighScoreManager").EntryHighScore(score);
-        GetNode<DialogLayer>("/root/DialogLayer").OpenScreen(Ending ? "res://screen/ending_result_screen.tscn" : "res://screen/result_screen.tscn", Fadeout, Fadein, "ResultScreen", [rank, score]);
+        int rank = SystemHub.GetHighScoreManager().EntryHighScore(score);
+        SystemHub.GetDialogLayer().OpenScreen(Ending ? "res://screen/ending_result_screen.tscn" : "res://screen/result_screen.tscn", Fadeout, Fadein, "ResultScreen", [rank, score]);
     }
 }

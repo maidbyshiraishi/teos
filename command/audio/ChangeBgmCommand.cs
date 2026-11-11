@@ -27,6 +27,6 @@ public partial class ChangeBgmCommand : CommandRoot
             return;
         }
 
-        GetNode<MusicPlayer>("/root/MusicPlayer").Play(Command, Stream);
+        SystemHub.GetMusicPlayer().Play(Command, Stream);
     }
 }

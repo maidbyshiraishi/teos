@@ -20,15 +20,8 @@ namespace maid_by_shiraishi.system;
 public partial class DialogLayer : CanvasLayer
 {
     private readonly Array<DialogRoot> _history = [];
-    private ScreenFader _fader;
     private string _nextScreenPath;
     private string _nextScreenFadein;
-
-    public override void _Ready()
-    {
-        base._Ready();
-        _fader = GetNode<ScreenFader>("/root/ScreenFader");
-    }
 
     /// <summary>
     /// 現在の画面を返す
@@ -58,7 +51,7 @@ public partial class DialogLayer : CanvasLayer
 
         if (!string.IsNullOrWhiteSpace(key))
         {
-            GetNode<DialogArgument>("/root/DialogArgument").SetArgument(key, argument);
+            SystemHub.GetDialogArgument().SetArgument(key, argument);
         }
 
         GetTree().Paused = true;
@@ -169,7 +162,7 @@ public partial class DialogLayer : CanvasLayer
 
         if (!string.IsNullOrWhiteSpace(key))
         {
-            GetNode<DialogArgument>("/root/DialogArgument").SetArgument(key, argument);
+            SystemHub.GetDialogArgument().SetArgument(key, argument);
         }
 
         GetTree().Paused = true;
@@ -180,9 +173,11 @@ public partial class DialogLayer : CanvasLayer
     {
         _nextScreenPath = path;
         _nextScreenFadein = fadein;
-        DisconnectStep();
-        _fader.ScreenFadeFinished += OpenScreenStep2;
-        _fader.ScreenFade(fadeout);
+        ScreenFader fader = SystemHub.GetScreenFader();
+        fader.ScreenFadeFinished -= OpenScreenStep2;
+        fader.ScreenFadeFinished -= OpenScreenStep3;
+        fader.ScreenFadeFinished += OpenScreenStep2;
+        fader.ScreenFade(fadeout);
     }
 
     protected void OpenScreenStep2()
@@ -195,24 +190,22 @@ public partial class DialogLayer : CanvasLayer
             _ = GetTree().ChangeSceneToPacked(pack);
         }
 
-        DisconnectStep();
-        _fader.ScreenFadeFinished += OpenScreenStep3;
-        _fader.ScreenFade(_nextScreenFadein);
+        ScreenFader fader = SystemHub.GetScreenFader();
+        fader.ScreenFadeFinished -= OpenScreenStep2;
+        fader.ScreenFadeFinished -= OpenScreenStep3;
+        fader.ScreenFadeFinished += OpenScreenStep3;
+        fader.ScreenFade(_nextScreenFadein);
     }
 
     protected void OpenScreenStep3()
     {
-        DisconnectStep();
+        ScreenFader fader = SystemHub.GetScreenFader();
+        fader.ScreenFadeFinished -= OpenScreenStep2;
+        fader.ScreenFadeFinished -= OpenScreenStep3;
         DialogRoot current = GetCurrentScreen();
         current.Active();
         Input.MouseMode = current.MouseCaptured ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
         GetTree().Paused = false;
-    }
-
-    private void DisconnectStep()
-    {
-        _fader.ScreenFadeFinished -= OpenScreenStep2;
-        _fader.ScreenFadeFinished -= OpenScreenStep3;
     }
 
     private bool IsEmpty() => _history.Count == 0;
@@ -251,7 +244,7 @@ public partial class DialogLayer : CanvasLayer
 
     private void DeferredOpenGame(StartGameType startStageType, int slotNo, string fadeout, string fadein)
     {
-        GameDataManager gameDataManager = GetNode<GameDataManager>("/root/GameDataManager");
+        GameDataManager gameDataManager = SystemHub.GetGameDataManager();
         Error e = Error.Ok;
 
         // TravelStageとRestartは何もしない。

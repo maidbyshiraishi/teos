@@ -35,8 +35,8 @@ public partial class TravelStageCommand : CommandRoot
         }
 
         GetTree().CallGroup(IStateful.StatefulGroup, "StateSave");
-        GetNode<GameDataManager>("/root/GameDataManager").GetStageData().StageNo = DestStageNo;
-        GetNode<GameDataManager>("/root/GameDataManager").Backup();
-        GetNode<DialogLayer>("/root/DialogLayer").OpenGame(StartGameType.TravelStage, GameDataManager.NullSlotNo, Fadeout, Fadein);
+        SystemHub.GetGameDataManager().GetStageData().StageNo = DestStageNo;
+        SystemHub.GetGameDataManager().Backup();
+        SystemHub.GetDialogLayer().OpenGame(StartGameType.TravelStage, GameDataManager.NullSlotNo, Fadeout, Fadein);
     }
 }

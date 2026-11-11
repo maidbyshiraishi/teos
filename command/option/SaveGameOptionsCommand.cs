@@ -15,6 +15,6 @@ public partial class SaveGameOptionsCommand : CommandRoot
             return;
         }
 
-        GetNode<GameOption>("/root/GameOption").SaveOptions();
+        SystemHub.GetGameOption().SaveOptions();
     }
 }

@@ -15,6 +15,6 @@ public partial class CloseAllDialogCommand : CommandRoot
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").CloseAllDialog();
+        SystemHub.GetDialogLayer().CloseAllDialog();
     }
 }

@@ -16,6 +16,6 @@ public partial class HideHudMessageCommand : CommandRoot
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().GetNode<Hud>("Hud").HideMessage();
+        SystemHub.GetDialogLayer().GetCurrentGameStageRoot().GetNode<Hud>("Hud").HideMessage();
     }
 }

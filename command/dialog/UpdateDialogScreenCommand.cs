@@ -15,6 +15,6 @@ public partial class UpdateDialogScreenCommand : CommandRoot
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").UpdateDialogScreen();
+        SystemHub.GetDialogLayer().UpdateDialogScreen();
     }
 }

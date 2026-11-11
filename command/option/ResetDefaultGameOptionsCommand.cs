@@ -15,6 +15,6 @@ public partial class ResetDefaultGameOptionsCommand : CommandRoot
             return;
         }
 
-        GetNode<GameOption>("/root/GameOption").ResetOptions();
+        SystemHub.GetGameOption().ResetOptions();
     }
 }

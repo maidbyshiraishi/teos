@@ -31,7 +31,7 @@ public partial class DialogRoot : Control
     {
     }
 
-    public void GetDialogArgument(string key) => m_Argument = GetNode<DialogArgument>("/root/DialogArgument").GetArgument(key);
+    public void GetDialogArgument(string key) => m_Argument = SystemHub.GetDialogArgument().GetArgument(key);
 
     public virtual void Close() => QueueFree();
 

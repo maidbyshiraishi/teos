@@ -15,6 +15,6 @@ public partial class StateSaveCommand : CommandRoot
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().SaveState();
+        SystemHub.GetDialogLayer().GetCurrentGameStageRoot().SaveState();
     }
 }

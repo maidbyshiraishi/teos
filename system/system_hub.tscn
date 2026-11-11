@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://crdmq7t24dflv"]
+
+[ext_resource type="PackedScene" uid="uid://d368aaamgvhpo" path="res://system/screen_option.tscn" id="1_rigvu"]
+[ext_resource type="Script" uid="uid://cch336rgb88ni" path="res://system/SystemHub.cs" id="1_x0vqt"]
+[ext_resource type="PackedScene" uid="uid://dktarjihhbnl5" path="res://system/dialog_layer.tscn" id="2_3jbhl"]
+[ext_resource type="PackedScene" uid="uid://glvulbgmq66c" path="res://system/dialog_argument.tscn" id="3_x8eur"]
+[ext_resource type="PackedScene" uid="uid://7rukkxaiuebp" path="res://system/screen_fader.tscn" id="4_eechw"]
+[ext_resource type="PackedScene" uid="uid://dfyifaiqj6jnn" path="res://system/game_option.tscn" id="5_qhxdc"]
+[ext_resource type="PackedScene" uid="uid://smtb6ht422wj" path="res://system/game_key_option.tscn" id="6_8ua4n"]
+[ext_resource type="PackedScene" uid="uid://cpsc8fectqfp2" path="res://system/game_data_manager.tscn" id="7_5smyj"]
+[ext_resource type="PackedScene" uid="uid://7tdex2qo40m2" path="res://system/high_score_manager.tscn" id="8_vqqhr"]
+[ext_resource type="PackedScene" uid="uid://cooxg6bevunkv" path="res://system/music_player.tscn" id="9_jg5yi"]
+[ext_resource type="PackedScene" uid="uid://bh0d1pl6uidn6" path="res://system/se_player.tscn" id="10_gmxq5"]
+[ext_resource type="PackedScene" uid="uid://ckm0edg6gqx0v" path="res://system/screenshot.tscn" id="11_fj8bn"]
+[ext_resource type="PackedScene" uid="uid://v4cfsyafofkw" path="res://system/stop_exec_twice.tscn" id="12_jv6su"]
+
+[node name="SystemHub" type="Node" unique_id=958672498]
+script = ExtResource("1_x0vqt")
+
+[node name="ScreenOption" parent="." unique_id=1946556848 instance=ExtResource("1_rigvu")]
+
+[node name="DialogLayer" parent="." unique_id=272493595 instance=ExtResource("2_3jbhl")]
+
+[node name="DialogArgument" parent="." unique_id=1694554497 instance=ExtResource("3_x8eur")]
+
+[node name="ScreenFader" parent="." unique_id=860363377 instance=ExtResource("4_eechw")]
+
+[node name="GameOption" parent="." unique_id=2088895868 instance=ExtResource("5_qhxdc")]
+
+[node name="GameKeyOption" parent="." unique_id=366246323 instance=ExtResource("6_8ua4n")]
+
+[node name="GameDataManager" parent="." unique_id=1673287441 instance=ExtResource("7_5smyj")]
+
+[node name="HighScoreManager" parent="." unique_id=2050909016 instance=ExtResource("8_vqqhr")]
+
+[node name="MusicPlayer" parent="." unique_id=1135103440 instance=ExtResource("9_jg5yi")]
+
+[node name="SePlayer" parent="." unique_id=1137056550 instance=ExtResource("10_gmxq5")]
+
+[node name="Screenshot" parent="." unique_id=247433122 instance=ExtResource("11_fj8bn")]
+
+[node name="StopExecTwice" parent="." unique_id=1245648420 instance=ExtResource("12_jv6su")]

@@ -28,6 +28,6 @@ public partial class OpenDialogCommand : CommandRoot
             return;
         }
 
-        GetNode<DialogLayer>("/root/DialogLayer").OpenDialog(DialogPath, ArgumentKey, Argument);
+        SystemHub.GetDialogLayer().OpenDialog(DialogPath, ArgumentKey, Argument);
     }
 }

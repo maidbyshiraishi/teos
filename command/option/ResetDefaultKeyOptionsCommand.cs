@@ -15,6 +15,6 @@ public partial class ResetDefaultKeyOptionsCommand : CommandRoot
             return;
         }
 
-        GetNode<GameKeyOption>("/root/GameKeyOption").ResetDefaultKeyOptions();
+        SystemHub.GetGameKeyOption().ResetDefaultKeyOptions();
     }
 }

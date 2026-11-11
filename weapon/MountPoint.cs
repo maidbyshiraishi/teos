@@ -34,7 +34,7 @@ public partial class MountPoint : Marker2D
         if (_weapon is not null)
         {
             _weapon.Separate(fighter, this);
-            GetNode<DialogLayer>("/root/DialogLayer").GetCurrentGameStageRoot().ReparentNode(_weapon, "Item");
+            SystemHub.GetDialogLayer().GetCurrentGameStageRoot().ReparentNode(_weapon, "Item");
             _weapon = null;
         }
     }

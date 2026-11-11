@@ -15,6 +15,6 @@ public partial class ResumeBgmCommand : CommandRoot
             return;
         }
 
-        GetNode<MusicPlayer>("/root/MusicPlayer").Pause(false);
+        SystemHub.GetMusicPlayer().Pause(false);
     }
 }
