@@ -52,6 +52,7 @@ public partial class GameOption : Node
     {
         BgmVolume = Mathf.Clamp(BgmVolume, 0f, 100f);
         SeVolume = Mathf.Clamp(SeVolume, 0f, 100f);
+        VoiceVolume = Mathf.Clamp(VoiceVolume, 0f, 100f);
         _audioVolumeOptions.SetValue("Volume", "BGM", BgmVolume);
         _audioVolumeOptions.SetValue("Volume", "SE", SeVolume);
         _audioVolumeOptions.SetValue("Volume", "VOICE", VoiceVolume);
