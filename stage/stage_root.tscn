@@ -168,6 +168,7 @@ Target = NodePath("../../../../TileMap/ObservationHole")
 
 [node name="PlaySeCommand" parent="AutoScrollPath/AutoScroll/Player/GameOver" unique_id=1810039587 instance=ExtResource("11_rkaqo")]
 SeName = "player_game_over"
+Voice = true
 
 [node name="DelayCommandContainer" parent="AutoScrollPath/AutoScroll/Player/GameOver" unique_id=605840732 instance=ExtResource("12_nyma3")]
 WaitTime = 2.0

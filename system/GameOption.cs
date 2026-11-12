@@ -9,19 +9,25 @@ namespace maid_by_shiraishi.system;
 public partial class GameOption : Node
 {
     private static readonly string OptionsFilePath = "user://options.dat";
-    private static readonly float DefaultVolume = 50f;
-
+    private static readonly float BgmDefaultVolume = 70f;
+    private static readonly float SeDefaultVolume = 60f;
+    private static readonly float VoiceDefaultVolume = 75f;
     private ConfigFile _audioVolumeOptions = new();
 
     /// <summary>
     /// BGM音量
     /// </summary>
-    public float BgmVolume { get; set; } = DefaultVolume;
+    public float BgmVolume { get; set; } = BgmDefaultVolume;
 
     /// <summary>
     /// 効果音音量
     /// </summary>
-    public float SeVolume { get; set; } = DefaultVolume;
+    public float SeVolume { get; set; } = SeDefaultVolume;
+
+    /// <summary>
+    /// 音声音量
+    /// </summary>
+    public float VoiceVolume { get; set; } = VoiceDefaultVolume;
 
     public override void _Ready()
     {
@@ -34,8 +40,9 @@ public partial class GameOption : Node
     /// </summary>
     public void ResetOptions()
     {
-        BgmVolume = DefaultVolume;
-        SeVolume = DefaultVolume;
+        BgmVolume = BgmDefaultVolume;
+        SeVolume = SeDefaultVolume;
+        VoiceVolume = VoiceDefaultVolume;
     }
 
     /// <summary>
@@ -47,6 +54,7 @@ public partial class GameOption : Node
         SeVolume = Mathf.Clamp(SeVolume, 0f, 100f);
         _audioVolumeOptions.SetValue("Volume", "BGM", BgmVolume);
         _audioVolumeOptions.SetValue("Volume", "SE", SeVolume);
+        _audioVolumeOptions.SetValue("Volume", "VOICE", VoiceVolume);
         Error e = _audioVolumeOptions.Save(OptionsFilePath);
 
         if (e is not Error.Ok)
@@ -74,8 +82,9 @@ public partial class GameOption : Node
             return;
         }
 
-        BgmVolume = (float)Mathf.Clamp(_audioVolumeOptions.GetValue("Volume", "BGM", DefaultVolume).AsDouble(), 0f, 100f);
-        SeVolume = (float)Mathf.Clamp(_audioVolumeOptions.GetValue("Volume", "SE", DefaultVolume).AsDouble(), 0f, 100f);
+        BgmVolume = (float)Mathf.Clamp(_audioVolumeOptions.GetValue("Volume", "BGM", BgmDefaultVolume).AsDouble(), 0f, 100f);
+        SeVolume = (float)Mathf.Clamp(_audioVolumeOptions.GetValue("Volume", "SE", SeDefaultVolume).AsDouble(), 0f, 100f);
+        VoiceVolume = (float)Mathf.Clamp(_audioVolumeOptions.GetValue("Volume", "VOICE", VoiceDefaultVolume).AsDouble(), 0f, 100f);
     }
 
     /// <summary>
@@ -85,8 +94,10 @@ public partial class GameOption : Node
     {
         BgmVolume = Mathf.Clamp(BgmVolume, 0f, 100f);
         SeVolume = Mathf.Clamp(SeVolume, 0f, 100f);
+        VoiceVolume = Mathf.Clamp(VoiceVolume, 0f, 100f);
         AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("BGM"), ToDecibel(BgmVolume));
         AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("SE"), ToDecibel(SeVolume));
+        AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("VOICE"), ToDecibel(VoiceVolume));
     }
 
     /// <summary>

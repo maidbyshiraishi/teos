@@ -818,8 +818,8 @@ position = Vector2(16, 17)
 [node name="ChangeBgmCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="0" unique_id=1743942009 instance=ExtResource("5_jn6f3")]
 
 [node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page2/VisibleTrigger" index="1" unique_id=1523882894 node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
-AnimationName = "default"
 AnimationPlayer = NodePath("../../Mask/AnimationPlayer")
+AnimationName = "default"
 
 [node name="Control" type="Control" parent="Socket/Contents/Page2" index="3" unique_id=1899019593]
 anchors_preset = 0
@@ -897,6 +897,7 @@ position = Vector2(16, 17)
 
 [node name="PlaySeCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="0" unique_id=177476388 instance=ExtResource("14_73c1f")]
 SeName = "message_stage_0000"
+Voice = true
 
 [node name="ChangeBgmCommand" parent="Socket/Contents/Page4/VisibleTrigger" index="1" unique_id=1162286732 instance=ExtResource("5_jn6f3")]
 Command = 1
@@ -1045,8 +1046,8 @@ position = Vector2(16, 17)
 SeName = "rocket_maid"
 
 [node name="PlayAnimationPlayerCommand" parent="Socket/Contents/Page6/VisibleTrigger" index="2" unique_id=2093585708 node_paths=PackedStringArray("AnimationPlayer") instance=ExtResource("9_k4hiv")]
-AnimationName = "default"
 AnimationPlayer = NodePath("../../AnimationPlayer")
+AnimationName = "default"
 
 [node name="Control" type="Control" parent="Socket/Contents/Page6" index="1" unique_id=1988658546]
 anchors_preset = 0

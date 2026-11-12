@@ -3526,6 +3526,7 @@ position = Vector2(320, 240)
 
 [node name="PlaySeCommand" parent="AutoScrollPath/AutoScroll/Player/StageVictory" parent_id_path=PackedInt32Array(783145277) index="0" unique_id=1610885361 instance=ExtResource("56_qdu6w")]
 SeName = "player_victory"
+Voice = true
 
 [node name="PlaySeCommand2" parent="AutoScrollPath/AutoScroll/Player/StageVictory" parent_id_path=PackedInt32Array(783145277) index="1" unique_id=1765171025 instance=ExtResource("56_qdu6w")]
 SeName = "rocket_maid"
